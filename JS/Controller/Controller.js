@@ -3,11 +3,8 @@ class Controller {
       this.model = model;
       this.view = view;
 
-
-      this.controller_tabs = new Controller_tabs(model, view);
+      this.controller_layout = new Controller_layout(model, view);
       this.controller_rows = new Controller_rows(model, view);
-
-
 
       this.ctrl_pressed = false;
       this.shift_pressed = false;
@@ -15,10 +12,10 @@ class Controller {
 
 
 
-      this.view.bind_sound_tab_button_click(this.controller_tabs.on_sound_tab_button_click);
-      this.view.bind_vol_tab_button_click(this.controller_tabs.on_vol_tab_button_click);
-      this.view.bind_freq_tab_button_click(this.controller_tabs.on_freq_tab_button_click);
-      this.view.bind_dadj_tab_button_click(this.controller_tabs.on_dadj_tab_button_click);
+      this.view.bind_sound_tab_button_click(this.controller_layout.on_sound_tab_button_click);
+      this.view.bind_vol_tab_button_click(this.controller_layout.on_vol_tab_button_click);
+      this.view.bind_freq_tab_button_click(this.controller_layout.on_freq_tab_button_click);
+      this.view.bind_dadj_tab_button_click(this.controller_layout.on_dadj_tab_button_click);
 
       
       this.view.bind_playback_change_enter(this.controller_rows.on_playback_change_enter);
