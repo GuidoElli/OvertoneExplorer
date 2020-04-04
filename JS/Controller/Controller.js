@@ -4,12 +4,22 @@ class Controller {
       this.view = view;
 
 
+      this.controller_tabs = new Controller_tabs();
+
+
+
+      this.ctrl_pressed = false;
+      this.shift_pressed = false;
+
+
+
+
       this.view.bind_sound_tab_button_click(this.on_sound_tab_button_click);
       this.view.bind_vol_tab_button_click(this.on_vol_tab_button_click);
       this.view.bind_freq_tab_button_click(this.on_freq_tab_button_click);
       this.view.bind_dadj_tab_button_click(this.on_dadj_tab_button_click);
 
-
+      
       this.view.bind_playback_change_enter(this.on_playback_change_enter);
       this.view.bind_playback_change(this.on_playback_change);
       this.view.bind_playback_click(this.on_playback_click);
@@ -30,52 +40,17 @@ class Controller {
    }
 
 
-   on_sound_tab_button_click = () => {
-      this.model.set_layout(LAYOUT.SOUND);
-      this.model.set_custom_selection(false);
-
-      this.view.update_layout(this.model.layout);
-      this.view.update_custom_selection(this.model.custom_selection);
-   }
-   on_vol_tab_button_click = () => {
-      this.model.set_layout(LAYOUT.VOL);
-      this.model.set_custom_selection(false);
-
-      this.view.update_layout(this.model.layout);
-      this.view.update_custom_selection(this.model.custom_selection);
-   }
-   on_freq_tab_button_click = () => {
-      this.model.set_layout(LAYOUT.FREQ);
-      this.model.set_custom_selection(false);
-
-      this.view.update_layout(this.model.layout);
-      this.view.update_custom_selection(this.model.custom_selection);
-   }
-   on_dadj_tab_button_click = () => {
-      this.model.set_layout(LAYOUT.DADJ);
-      this.model.set_custom_selection(false);
-
-      this.view.update_layout(this.model.layout);
-      this.view.update_custom_selection(this.model.custom_selection);
-   }
-
-
-
    on_playback_change_enter = () => {
       this.model.backup_playback_tracks();
    }
    on_playback_change = (first, last) => {
       if(first !== null && last !== null){
-         if(first == last){
-            this.model.set_playback_track(first, true);
-         }else{
-            for(let i = 0; i < TOTAL_TRACKS; i++){
-               if(i < first || i > last){
-                  this.model.set_playback_track(i, this.model.playback_tracks_backup[i]);
-               }else{
-                  //TODO selection mode
-                  this.model.set_playback_track(i, true);
-               }
+         for(let i = 0; i < TOTAL_TRACKS; i++){
+            if(i < first || i > last){
+               this.model.set_playback_track(i, this.model.playback_tracks_backup[i]);
+            }else{
+               //TODO selection mode
+               this.model.set_playback_track(i, true);
             }
          }
       }
@@ -92,16 +67,12 @@ class Controller {
    }
    on_vol_edit_change = (first, last) => {
       if(first !== null && last !== null){
-         if(first == last){
-            this.model.set_vol_edit_track(first, true);
-         }else{
-            for(let i = 0; i < TOTAL_TRACKS; i++){
-               if(i < first || i > last){
-                  this.model.set_vol_edit_track(i, this.model.vol_edit_tracks_backup[i]);
-               }else{
-                  //TODO selection mode
-                  this.model.set_vol_edit_track(i, true);
-               }
+         for(let i = 0; i < TOTAL_TRACKS; i++){
+            if(i < first || i > last){
+               this.model.set_vol_edit_track(i, this.model.vol_edit_tracks_backup[i]);
+            }else{
+               //TODO selection mode
+               this.model.set_vol_edit_track(i, true);
             }
          }
       }
@@ -118,16 +89,12 @@ class Controller {
    }
    on_freq_edit_change = (first, last) => {
       if(first !== null && last !== null){
-         if(first == last){
-            this.model.set_freq_edit_track(first, true);
-         }else{
-            for(let i = 0; i < TOTAL_TRACKS; i++){
-               if(i < first || i > last){
-                  this.model.set_freq_edit_track(i, this.model.freq_edit_tracks_backup[i]);
-               }else{
-                  //TODO selection mode
-                  this.model.set_freq_edit_track(i, true);
-               }
+         for(let i = 0; i < TOTAL_TRACKS; i++){
+            if(i < first || i > last){
+               this.model.set_freq_edit_track(i, this.model.freq_edit_tracks_backup[i]);
+            }else{
+               //TODO selection mode
+               this.model.set_freq_edit_track(i, true);
             }
          }
       }
@@ -144,16 +111,12 @@ class Controller {
    }
    on_dadj_edit_change = (first, last) => {
       if(first !== null && last !== null){
-         if(first == last){
-            this.model.set_dadj_edit_track(first, true);
-         }else{
-            for(let i = 0; i < TOTAL_TRACKS; i++){
-               if(i < first || i > last){
-                  this.model.set_dadj_edit_track(i, this.model.dadj_edit_tracks_backup[i]);
-               }else{
-                  //TODO selection mode
-                  this.model.set_dadj_edit_track(i, true);
-               }
+         for(let i = 0; i < TOTAL_TRACKS; i++){
+            if(i < first || i > last){
+               this.model.set_dadj_edit_track(i, this.model.dadj_edit_tracks_backup[i]);
+            }else{
+               //TODO selection mode
+               this.model.set_dadj_edit_track(i, true);
             }
          }
       }
