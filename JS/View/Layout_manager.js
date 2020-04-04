@@ -1,8 +1,30 @@
-class Layout {
-   constructor(){
+class Layout_manager {
+   constructor(view){
+
+      this.v = view;
 
       this.current_layout = null;
 
+      //Tabs
+      this.sound_tab_button = $(".sound_tab_button")[0];
+      this.vol_tab_button = $(".vol_tab_button")[0];
+      this.freq_tab_button = $(".freq_tab_button")[0];
+      this.dadj_tab_button = $(".dadj_tab_button")[0];
+
+      this.sound_tab_button.addEventListener("click", () => {
+         this.v.on_sound_tab_button_click();
+      })
+      this.vol_tab_button.addEventListener("click", () => {
+         this.v.on_vol_edit_tab_button_click();
+      })
+      this.freq_tab_button.addEventListener("click", () => {
+         this.v.on_freq_edit_tab_button_click();
+      })
+      this.dadj_tab_button.addEventListener("click", () => {
+         this.v.on_dadj_edit_tab_button_click();
+      })
+
+      
       //Visual
       this.visual_vol_box = $(".visual_vol_box")[0];
       this.visual_freq_box = $(".visual_freq_box")[0];
@@ -30,6 +52,10 @@ class Layout {
       this.help_window_vol_box = $(".help_window_vol_box")[0];
       this.help_window_dadj_box = $(".help_window_dadj_box")[0];
 
+
+
+
+      
    }
 
    set_layout(layout){
@@ -126,5 +152,9 @@ class Layout {
          }
       }
    }
+
+
+
+
 
 }

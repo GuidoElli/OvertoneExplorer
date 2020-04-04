@@ -1,13 +1,10 @@
 class Row {
    constructor(row, sections, buttons){
       
-
       this.on_change_enter = null;
       this.on_change = null;
       this.on_click = null;
 
-
-      
       this.row = row;
       this.sections = sections;
       this.buttons = buttons;
@@ -28,7 +25,7 @@ class Row {
       })
 
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         this.buttons[i].addEventListener("mousedown", (e) => {
+         this.buttons[i].addEventListener("mousedown", () => {
             this.first_changing = i;
             this.last_changing = i;
          })

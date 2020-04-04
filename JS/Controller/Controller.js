@@ -3,8 +3,8 @@ class Controller {
       this.model = model;
       this.view = view;
 
-      this.controller_layout = new Controller_layout(model, view);
-      this.controller_rows = new Controller_rows(model, view);
+      this.controller_layout = new Controller_layout(this);
+      this.controller_rows = new Controller_rows(this);
 
       this.ctrl_pressed = false;
       this.shift_pressed = false;
