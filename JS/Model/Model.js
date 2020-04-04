@@ -4,6 +4,7 @@ class Model {
       this._layout = new Model_layout(this);
       this._selection = new Model_selection(this);
       this._rows = new Model_rows(this);
+      this._keyboard = new Model_keyboard(this);
 
    }
 
@@ -23,6 +24,12 @@ class Model {
       this._selection.custom_selection = value;
    }
 
+   get selection_mode(){
+      return this._selection.selection_mode;
+   }
+   set selection_mode(value){
+      this._selection.selection_mode = value;
+   }
 
    //Rows
    get playback_tracks(){
@@ -92,6 +99,20 @@ class Model {
       return this._layout.last_visible_track = value;
    }
    
+
+   //Keyboard
+   get ctrl_pressed(){
+      return this._keyboard.ctrl_pressed;
+   }
+   set ctrl_pressed(value){
+      this._keyboard.ctrl_pressed = value;
+   }
+   get shift_pressed(){
+      return this._keyboard.shift_pressed;
+   }
+   set shift_pressed(value){
+      this._keyboard.shift_pressed = value;
+   }
 
 
    

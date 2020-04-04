@@ -2,8 +2,8 @@ class Model_layout {
    constructor(){
       this._layout = LAYOUT.SOUND;
 
-      this._first_visible_track = 3;
-      this._last_visible_track = 50;
+      this._first_visible_track = 0;
+      this._last_visible_track = 20;
 
    }
 

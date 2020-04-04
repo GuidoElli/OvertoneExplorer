@@ -5,19 +5,16 @@ class Controller {
 
       this.controller_layout = new Controller_layout(this);
       this.controller_rows = new Controller_rows(this);
-
-      this.ctrl_pressed = false;
-      this.shift_pressed = false;
+      this.controller_keyboard = new Controller_keyboard(this);
 
 
-
-
+      //Tabs
       this.view.bind_sound_tab_button_click(this.controller_layout.on_sound_tab_button_click);
       this.view.bind_vol_tab_button_click(this.controller_layout.on_vol_tab_button_click);
       this.view.bind_freq_tab_button_click(this.controller_layout.on_freq_tab_button_click);
       this.view.bind_dadj_tab_button_click(this.controller_layout.on_dadj_tab_button_click);
 
-      
+      //Rows
       this.view.bind_playback_change_enter(this.controller_rows.on_playback_change_enter);
       this.view.bind_playback_change(this.controller_rows.on_playback_change);
       this.view.bind_playback_click(this.controller_rows.on_playback_click);
@@ -34,9 +31,28 @@ class Controller {
       this.view.bind_dadj_edit_change(this.controller_rows.on_dadj_edit_change);
       this.view.bind_dadj_edit_click(this.controller_rows.on_dadj_edit_click);
 
+      //keyboard
+      this.view.bind_ctrl_press(this.controller_keyboard.on_ctrl_press);
+      this.view.bind_ctrl_release(this.controller_keyboard.on_ctrl_release);
+      this.view.bind_shift_press(this.controller_keyboard.on_shift_press);
+      this.view.bind_shift_release(this.controller_keyboard.on_shift_release);
+
+
       this.update_view();
    }
 
+
+
+   selection_mode_answer = (previous_value) => {
+      switch(this.model.selection_mode){
+         case SELECTION_MODE.ADD:
+            return true;
+         case SELECTION_MODE.REMOVE:
+            return false;
+         case SELECTION_MODE.TOGGLE:
+            return !previous_value;
+      }
+   }
 
 
 

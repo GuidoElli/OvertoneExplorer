@@ -14,12 +14,14 @@ class Row {
 
       this.changing = false;
       this.old_mouse_x = null;
+      this.new_mouse_x = null;
       this.moved = false;
 
 
 
       this.row.addEventListener("mousedown", (e) => {
          this.changing = true;
+         this.new_mouse_x = e.pageX;
          this.old_mouse_x = e.pageX;
          this.on_change_enter();
       })
@@ -33,7 +35,8 @@ class Row {
 
       document.addEventListener("mousemove", (e) => {
          if(this.changing){
-            var new_mouse_x = e.pageX;
+            this.new_mouse_x = (e.pageX) ? e.pageX : this.new_mouse_x;
+            var new_mouse_x = this.new_mouse_x;
             var old_mouse_x = this.old_mouse_x;
             this.first_changing = null;
             this.last_changing = null;
