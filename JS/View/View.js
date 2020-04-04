@@ -105,6 +105,36 @@ class View {
       this.playback_row.on_click = f;
    }
 
+   bind_vol_edit_change_enter(f){
+      this.vol_edit_row.on_change_enter = f;
+   }
+   bind_vol_edit_change(f){
+      this.vol_edit_row.on_change = f;
+   }
+   bind_vol_edit_click(f){
+      this.vol_edit_row.on_click = f;
+   }
+
+   bind_freq_edit_change_enter(f){
+      this.freq_edit_row.on_change_enter = f;
+   }
+   bind_freq_edit_change(f){
+      this.freq_edit_row.on_change = f;
+   }
+   bind_freq_edit_click(f){
+      this.freq_edit_row.on_click = f;
+   }
+
+   bind_dadj_edit_change_enter(f){
+      this.dadj_edit_row.on_change_enter = f;
+   }
+   bind_dadj_edit_change(f){
+      this.dadj_edit_row.on_change = f;
+   }
+   bind_dadj_edit_click(f){
+      this.dadj_edit_row.on_click = f;
+   }
+
 
 
 
