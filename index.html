@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Harmonic Synth</title>
+		
+		<script src="https://www.w3.org/TR/2018/CR-webaudio-20180918/"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/main.css">
+	</head>
+	<body>
+
+      <div class="app_section section">
+			<div class="app_box box">
+				
+				<!--Top Bar-->
+				<div class="top_bar_section section">
+					<div class="top_bar_box box">
+						
+						<!--Sound-->
+						<div class="sound_tab_button_section section">
+							<button class="sound_tab_button button">Sound</button>
+                  </div>
+                  <!--Vol-->
+						<div class="vol_tab_button_section section">
+							<button class="vol_tab_button button">Volume</button>
+                  </div>
+                  <!--Freq-->
+						<div class="freq_tab_button_section section">
+							<button class="freq_tab_button button">Frequency</button>
+                  </div>
+                  <!--Dadj-->
+						<div class="dadj_tab_button_section section">
+							<button class="dadj_tab_button button">Diatonic Adjustment</button>
+						</div>
+
+               </div>
+            </div>
+            
+
+            <div class="main_section">
+
+               <!--Visual-->
+               <div class="visual_section section">
+                  <div class="visual_vol_box box">
+                     VOL VISUAL
+                  </div>
+                  <div class="visual_freq_box box">
+                     FREQ VISUAL
+                  </div>
+               </div>
+
+               <!--Zoom-->
+               <div class="zoom_section section">
+                  <div class="zoom_box box">
+                     ZOOM
+                  </div>
+               </div>
+
+               <!--Rows-->
+               <div class="rows_section section">
+                  <div class="row_playback_box box">
+                     <div class="row_item_section section">
+                        <button class="row_playback_item row_item">
+                           1
+                        </button>
+                     </div>
+                  </div>
+                  <div class="row_vol_edit_box box">
+                     <div class="row_item_section section">
+                        <button class="row_vol_edit_item row_item">
+                           1
+                        </button>
+                     </div>
+                  </div>
+                  <div class="row_freq_edit_box box">
+                     <div class="row_item_section section">
+                        <button class="row_freq_edit_item row_item">
+                           1
+                        </button>
+                     </div>
+                  </div>
+                  <div class="row_dadj_edit_box box">
+                     <div class="row_item_section section">
+                        <button class="row_dadj_edit_item row_item">
+                           1
+                        </button>
+                     </div>
+                  </div>
+               </div>
+
+               <!--Controls-->
+               <div class="controls_section section">
+                  <div class="sound_box box">
+                     SOUND
+                  </div>
+                  <div class="vol_edit_box box">
+                     VOL
+                  </div>
+                  <div class="freq_edit_box box">
+                     freq
+                  </div>
+                  <div class="dadj_edit_box box">
+                     dadj
+                  </div>
+                  <div class="selection_box box">
+                     selection
+                  </div>
+               </div>
+
+            </div>
+
+
+            <!--Right bar-->
+            <div class="right_bar_section section">
+
+               <!--Scale-->
+               <div class="scale_section section">
+                  <div class="scale_box box">
+                     SCALE
+                  </div>
+               </div>
+
+               <!--Zoom Controls-->
+               <div class="zoom_controls_section section">
+                  <div class="zoom_controls_box box">
+                     ZOOM CONTROLS
+                  </div>
+               </div>
+
+               <!--Row all-->
+               <div class="row_all_section section">
+                  <div class="row_all_box box">
+                     ALL/CUSTOM
+                  </div>
+               </div>
+
+               <!--Help window-->
+               <div class="help_window_section section">
+                  <div class="help_window_sound_box box">
+                     HELP SOUND
+                  </div>
+                  <div class="help_window_freq_box box">
+                     HELP FREQ
+                  </div>
+                  <div class="help_window_vol_box box">
+                     HELP VOL
+                  </div>
+                  <div class="help_window_dadj_box box">
+                     HELP DADJ
+                  </div>
+               </div>
+
+            </div>
+
+
+         </div>
+      </div>
+
+
+
+
+
+   </body>
+	<script src="JS/Const/Const.js"></script>
+	<script src="JS/View/View.js"></script>
+   <script src="JS/View/Layout/Layout.js"></script>
+   <script src="JS/View/Others/Row.js"></script>
+
+   <script src="JS/Model/Model.js"></script>
+   <script src="JS/Controller/Controller.js"></script>
+   
+
+
+   </html>

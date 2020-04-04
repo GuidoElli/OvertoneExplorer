@@ -1,0 +1,320 @@
+/*Variables*/
+
+:root {
+	/*Greyscale*/
+	--greyscale-0: black;
+	--greyscale-1: #111111;
+	--greyscale-1-5: #1b1b1b;
+	--greyscale-2: #222222;
+	--greyscale-3: #333333;
+	--greyscale-4: #444444;
+	--greyscale-5: #555555;
+	--greyscale-6: #666666;
+	--greyscale-6-5: #6d6d6d;
+	--greyscale-7: #777777;
+	--greyscale-8: #888888;
+	--greyscale-8-5: #8d8d8d;
+	--greyscale-9: #999999;
+	--greyscale-10: #aaaaaa;
+	--greyscale-11: #bbbbbb;
+	--greyscale-12: #cccccc;
+	--greyscale-13: #dddddd;
+	--greyscale-14: #eeeeee;
+	--greyscale-15: white;
+
+	/*General*/
+	--border-radius: 6px;
+	--padding: 3px;
+
+	/*Heights*/
+	--sms-section-height: 20%;
+	--solo-height: 30%;
+	--mute-height: 30%;
+	--select-height: 40%;
+	--visualizer-height: 30%;
+	--editor-height: 50%;
+	--editor-select-row-height: 10%;
+	--editor-visualizer-height: 50%;
+	--editor-settings-height: 40%;
+
+	/*Colors*/
+	--solo-color-inactive: rgb(100, 20, 20);
+	--solo-color-inactive-hover: rgb(117, 22, 22);
+	--solo-color-active: rgb(218, 0, 0);
+	--solo-color-active-hover: rgb(182, 7, 7);
+
+	--mute-color-inactive: rgb(88, 88, 23);
+	--mute-color-inactive-hover: rgb(100, 100, 26);
+	--mute-color-active: rgb(231, 231, 17);
+	--mute-color-active-hover: rgb(202, 202, 15);
+	--mute-color-blocked: rgb(133, 133, 19);
+	--mute-color-blocked-hover: rgb(129, 129, 16);
+
+	--select-color-inactive: var(--greyscale-6);
+	--select-color-inactive-hover: var(--greyscale-6-5);
+	--select-color-active: var(--greyscale-9);
+	--select-color-active-hover: var(--greyscale-8-5);
+
+	--editor-color-inactive: rgb(16, 92, 29);
+	--editor-color-inactive-hover: rgb(18, 109, 33);
+	--editor-color-active: rgb(4, 205, 38);
+	--editor-color-active-hover: rgb(6, 184, 35);;
+
+	--editor_color_item_dark: rgb(1, 75, 15);
+	--editor_color_item_light: rgb(0, 228, 38);
+
+	--color_es_type_choose_item_active: rgb(17, 187, 45);
+	--color_es_type_choose_item_hover: var(--greyscale-6);
+
+	--color-scrollbar-thumb: var(--greyscale-6);
+	--color-scrollbar-thumb-hover: var(--greyscale-7);
+
+	--color-group-button-active: rgb(255, 145, 0);
+}
+
+
+*{
+	float: left;
+	box-sizing: border-box;
+	user-select: none;
+	-webkit-user-drag: none;
+
+	/*Font*/
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 11px;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	color: var(--greyscale-14);
+	font-weight: 400;
+
+	position: relative;
+}
+body{
+	margin: 0px;
+	background: var(--greyscale-1);
+}
+
+button, select, option{
+	border-radius: var(--border-radius);
+	outline: none;
+	border: none;
+}
+button{
+	background-color: var(--greyscale-7);
+	color: var(--greyscale-14);
+}
+button:hover{
+	background-color: var(--greyscale-8);
+}
+
+
+
+
+.hidden{
+   display:none;
+}
+
+
+
+
+
+.box{
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius);
+	padding: var(--padding);
+}
+.section{
+	width: 100%;
+	height: 100%;
+	padding: var(--padding);
+}
+
+
+
+
+.app_section{
+	position: absolute;
+	left: 50vw;
+	top: 50vh;
+	height: 98vh;
+	width: 98vw;
+	transform: translate(-50%, -50%);
+}
+.app_box{
+	padding: var(--padding);
+	background-color: var(--greyscale-3);
+}
+	.top_bar_section{
+		height: 8%;
+		width: 100%;
+	}
+	.top_bar_box{
+		background-color: var(--greyscale-5);
+   }
+      .top_bar_box button{
+         width: 100%;
+         height: 100%;
+      }
+		.sound_tab_button_section{
+			width: 15%;
+         border-radius: 10px;
+      }
+      .vol_tab_button_section{
+			width: 15%;
+			border-radius: 10px;
+      }
+      .freq_tab_button_section{
+			width: 15%;
+			border-radius: 10px;
+      }
+      .dadj_tab_button_section{
+			width: 15%;
+			border-radius: 10px;
+      }
+
+   .main_section{
+      height: 92%;
+      width: 85%;
+   }
+      .visual_section{
+         height: 20%;
+         width: 100%;
+      }
+         .visual_vol_box{
+            background-color: rgb(77, 77, 202);
+            height: 50%;
+         }
+         .visual_freq_box{
+            background-color: rgb(34, 112, 53);
+            height: 50%;
+         }
+
+      .zoom_section{
+         height: 5%;
+         width: 100%;
+      }
+         .zoom_box{
+            background-color: rgb(95, 9, 88);
+         }
+
+      .rows_section{
+         height: 10%;
+         width: 100%;
+      }
+      .rows_section .row_item{
+         height: 100%;
+         width: 100%;
+      }
+         .row_playback_box{
+            height: 25%;
+            background-color: rgb(26, 68, 78);
+         }
+            .row_playback_item{
+               background-color: rgb(199, 199, 199);
+            }
+            .row_playback_item.active{
+               background-color: rgb(158, 0, 0);
+            }
+            .row_playback_item:hover{
+               background-color: rgb(124, 124, 124);
+            }
+            .row_playback_item.active:hover{
+               background-color: rgb(173, 0, 0);
+            }
+         .row_vol_edit_box{
+            height: 25%;
+            background-color: rgb(84, 129, 11);
+         }
+            .row_vol_edit_item{
+               background-color: rgb(199, 199, 199);
+            }
+            .row_vol_edit_item.active{
+               background-color: rgb(158, 0, 0);
+            }
+            .row_vol_edit_item:hover{
+               background-color: rgb(124, 124, 124);
+            }
+            .row_vol_edit_item.active:hover{
+               background-color: rgb(173, 0, 0);
+            }
+         .row_freq_edit_box{
+            height: 25%;
+            background-color: rgb(37, 36, 126);
+         }
+            .row_freq_edit_item{
+               background-color: rgb(199, 199, 199);
+            }
+            .row_freq_edit_item.active{
+               background-color: rgb(158, 0, 0);
+            }
+            .row_freq_edit_item:hover{
+               background-color: rgb(124, 124, 124);
+            }
+            .row_freq_edit_item.active:hover{
+               background-color: rgb(173, 0, 0);
+            }
+         .row_dadj_edit_box{
+            height: 25%;
+            background-color: rgb(95, 9, 9);
+         }
+            .row_dadj_edit_item{
+               background-color: rgb(199, 199, 199);
+            }
+            .row_dadj_edit_item.active{
+               background-color: rgb(158, 0, 0);
+            }
+            .row_dadj_edit_item:hover{
+               background-color: rgb(124, 124, 124);
+            }
+            .row_dadj_edit_item.active:hover{
+               background-color: rgb(173, 0, 0);
+            }
+
+      .controls_section{
+         height: 65%;
+         width: 100%;
+      }
+
+         .sound_box{
+            background-color: rgb(17, 114, 138);
+         }
+         .vol_edit_box{
+            background-color: rgb(119, 56, 56);
+         }
+         .freq_edit_box{
+            background-color: rgb(122, 106, 106);
+         }
+         .dadj_edit_box{
+            background-color: rgb(199, 146, 39);
+         }
+         .selection_box{
+            background-color: rgb(71, 171, 28);
+         }
+
+
+
+   .right_bar_section{
+      height: 92%;
+      width: 15%;
+   }
+      .scale_section{
+         width: 100%;
+         height: 20%;
+         background-color: rgb(148, 63, 148);
+      }
+      .zoom_controls_section{
+         width: 100%;
+         height: 5%;
+         background-color: rgb(2, 5, 82);
+      }
+      .row_all_section{
+         width: 100%;
+         height: 10%;
+         background-color: rgb(107, 90, 90);
+      }
+      .help_window_section{
+         width: 100%;
+         height: 65%;
+         background-color: rgb(63, 135, 148);
+      }
