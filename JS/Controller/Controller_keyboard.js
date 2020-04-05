@@ -20,26 +20,22 @@ class Controller_keyboard {
    on_ctrl_press = () => {
       this.ctrl_pressed = true;
       this.update_selection_mode();
-      this.c.view.update_playback_tracks(this.c.model.playback_tracks);
       document.dispatchEvent(new Event("mousemove"));
    }
    on_ctrl_release = () => {
       this.ctrl_pressed = false;
       this.update_selection_mode();
-      this.c.view.update_playback_tracks(this.c.model.playback_tracks);
       document.dispatchEvent(new Event("mousemove"));
    }
 
    on_shift_press = () => {
       this.shift_pressed = true;
       this.update_selection_mode();
-      this.c.view.update_playback_tracks(this.c.model.playback_tracks);
       document.dispatchEvent(new Event("mousemove"));
    }
    on_shift_release = () => {
       this.shift_pressed = false;
       this.update_selection_mode();
-      this.c.view.update_playback_tracks(this.c.model.playback_tracks);
       document.dispatchEvent(new Event("mousemove"));
    }
 
