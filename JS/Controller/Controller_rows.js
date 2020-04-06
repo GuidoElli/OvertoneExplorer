@@ -13,7 +13,7 @@ class Controller_rows {
             if(i < first || i > last){
                this.c.model.set_playback_track(i, this.c.model.playback_tracks_backup[i]);
             }else{
-               this.c.model.set_playback_track(i, this.c.selection_mode_answer(this.c.model.playback_tracks_backup[i]));
+               this.c.model.set_playback_track(i, this.c.selection_answer(this.c.model.playback_tracks_backup[i]));
             }
          }
       }
@@ -34,7 +34,7 @@ class Controller_rows {
             if(i < first || i > last){
                this.c.model.set_vol_edit_track(i, this.c.model.vol_edit_tracks_backup[i]);
             }else{
-               this.c.model.set_vol_edit_track(i, this.c.selection_mode_answer(this.c.model.vol_edit_tracks_backup[i]));
+               this.c.model.set_vol_edit_track(i, this.c.selection_answer(this.c.model.vol_edit_tracks_backup[i]));
             }
          }
       }
@@ -55,7 +55,7 @@ class Controller_rows {
             if(i < first || i > last){
                this.c.model.set_freq_edit_track(i, this.c.model.freq_edit_tracks_backup[i]);
             }else{
-               this.c.model.set_freq_edit_track(i, this.c.selection_mode_answer(this.c.model.freq_edit_tracks_backup[i]));
+               this.c.model.set_freq_edit_track(i, this.c.selection_answer(this.c.model.freq_edit_tracks_backup[i]));
             }
          }
       }
@@ -76,7 +76,7 @@ class Controller_rows {
             if(i < first || i > last){
                this.c.model.set_dadj_edit_track(i, this.c.model.dadj_edit_tracks_backup[i]);
             }else{
-               this.c.model.set_dadj_edit_track(i, this.c.selection_mode_answer(this.c.model.dadj_edit_tracks_backup[i]));
+               this.c.model.set_dadj_edit_track(i, this.c.selection_answer(this.c.model.dadj_edit_tracks_backup[i]));
             }
          }
       }

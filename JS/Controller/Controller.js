@@ -48,7 +48,7 @@ class Controller {
 
 
 
-   selection_mode_answer = (previous_value) => {
+   selection_answer = (previous_value) => {
       switch(this.model.selection_mode){
          case SELECTION_MODE.ADD:
             return true;
