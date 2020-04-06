@@ -40,23 +40,34 @@
 
                <!--Zoom-->
                <div class="zoom_section section">
-                  
-                  <div class="zoom_prevs">
-                     <div class="zoom_playback_prevs_box">
-                        <div class="zoom_playback_prev prev"></div>
-                     </div>
-                     <div class="zoom_vol_edit_prevs_box">
-                        <div class="zoom_vol_edit_prev prev"></div>
-                     </div>
-                     <div class="zoom_freq_edit_prevs_box">
-                        <div class="zoom_freq_edit_prev prev"></div>
-                     </div>
-                     <div class="zoom_dadj_edit_prevs_box">
-                        <div class="zoom_dadj_edit_prev prev"></div>
-                     </div>
-                  </div>
+                  <div class="zoom_box box">
 
-                  <div class="zoom_slider"></div>
+                     <div class="zoom_prevs">
+                        <div class="zoom_playback_prevs_box">
+                           <div class="prev_section">
+                              <div class="zoom_playback_prev prev"></div>
+                           </div>
+                        </div>
+                        <div class="zoom_vol_edit_prevs_box">
+                           <div class="prev_section">
+                              <div class="zoom_vol_edit_prev prev"></div>
+                           </div>
+                        </div>
+                        <div class="zoom_freq_edit_prevs_box">
+                           <div class="prev_section">
+                              <div class="zoom_freq_edit_prev prev"></div>
+                           </div>
+                        </div>
+                        <div class="zoom_dadj_edit_prevs_box">
+                           <div class="prev_section">
+                              <div class="zoom_dadj_edit_prev prev"></div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="zoom_slider"></div>
+
+                  </div>
                </div>
 
                <!--Visual-->
@@ -73,30 +84,22 @@
                <div class="rows_section section">
                   <div class="row_playback_box box">
                      <div class="row_item_section section">
-                        <button class="row_playback_item row_item">
-                           1
-                        </button>
+                        <button class="row_playback_item row_item"></button>
                      </div>
                   </div>
                   <div class="row_vol_edit_box box">
                      <div class="row_item_section section">
-                        <button class="row_vol_edit_item row_item">
-                           1
-                        </button>
+                        <button class="row_vol_edit_item row_item"></button>
                      </div>
                   </div>
                   <div class="row_freq_edit_box box">
                      <div class="row_item_section section">
-                        <button class="row_freq_edit_item row_item">
-                           1
-                        </button>
+                        <button class="row_freq_edit_item row_item"></button>
                      </div>
                   </div>
                   <div class="row_dadj_edit_box box">
                      <div class="row_item_section section">
-                        <button class="row_dadj_edit_item row_item">
-                           1
-                        </button>
+                        <button class="row_dadj_edit_item row_item"></button>
                      </div>
                   </div>
                </div>
@@ -180,10 +183,10 @@
 
    
 
-   <script src="JS/View/Layout_manager.js"></script>
-   <script src="JS/View/Rows_manager.js"></script>
-   <script src="JS/View/Keyboard_manager.js"></script>
-   <script src="JS/View/Zoom_manager.js"></script>
+   <script src="JS/View/View_layout.js"></script>
+   <script src="JS/View/View_rows.js"></script>
+   <script src="JS/View/View_keyboard.js"></script>
+   <script src="JS/View/View_zoom.js"></script>
 
    <script src="JS/View/Elements/Row.js"></script>
    
@@ -196,6 +199,7 @@
    <script src="JS/Model/Model_selection.js"></script>
    <script src="JS/Model/Model_rows.js"></script>
    <script src="JS/Model/Model_keyboard.js"></script>
+   <script src="JS/Model/Model_zoom.js"></script>
 
    <script src="JS/Model/Model.js"></script>
 
@@ -205,6 +209,7 @@
    <script src="JS/Controller/Controller_rows.js"></script>
    <script src="JS/Controller/Controller_layout.js"></script>
    <script src="JS/Controller/Controller_keyboard.js"></script>
+   <script src="JS/Controller/Controller_zoom.js"></script>
 
    <script src="JS/Controller/Controller.js"></script>
 

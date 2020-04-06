@@ -128,6 +128,7 @@ button:hover{
 	width: 100%;
 	height: 100%;
 	padding: var(--padding);
+	border-radius: var(--border-radius);
 }
 
 
@@ -190,18 +191,28 @@ button:hover{
             height: 50%;
          }
 
+      /*Zoom*/
       .zoom_section{
          height: 5%;
          width: 100%;
       }
+      .zoom_box{
+         padding: 1px;
+         background-color: rgb(97, 97, 97);
+      }
          .zoom_prevs{
             width: 100%;
             height: 100%;
+            padding: 2px;
          }
             .prev{
                height: 100%;
-               width: 1%;/**/
+               width: 100%;
                border-radius: 3px;
+            }
+            .prev_section{
+               padding: 1px;
+               height: 100%;
             }
             .zoom_playback_prevs_box,
             .zoom_vol_edit_prevs_box,
@@ -239,7 +250,6 @@ button:hover{
             }
 
 
-
             .zoom_slider{
                height: 100%;
                position: relative;
@@ -248,9 +258,11 @@ button:hover{
                width: 40%;/**/
                border-radius: 5px;
                background-color: rgba(196, 196, 196, 0.205);
-               border: solid 2px rgb(231, 231, 231);
+               border: solid 2px rgb(216, 216, 216);
             }
 
+
+      /*Rows*/
       .rows_section{
          height: 10%;
          width: 100%;
@@ -324,6 +336,8 @@ button:hover{
                background-color: rgb(173, 0, 0);
             }
 
+
+      /*Controls*/
       .controls_section{
          height: 65%;
          width: 100%;

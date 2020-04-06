@@ -1,4 +1,4 @@
-class Rows_manager {
+class View_rows {
    constructor(view){
       
       this.v = view;

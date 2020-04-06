@@ -1,7 +1,6 @@
 class Controller_rows {
    constructor(controller){
       this.c = controller;
-
    }
 
 
@@ -43,7 +42,7 @@ class Controller_rows {
    }
    on_vol_edit_click = (track) => {
       
-      this.c.model.set_vol_edit_track(track, this.c.selection_mode_answer(this.c.model.vol_edit_tracks_backup[i]));
+      this.c.model.set_vol_edit_track(track, !this.c.model.vol_edit_tracks_backup[track]);
       this.c.view.update_vol_edit_tracks(this.c.model.vol_edit_tracks);
    }
 
@@ -64,7 +63,7 @@ class Controller_rows {
    }
    on_freq_edit_click = (track) => {
       
-      this.c.model.set_freq_edit_track(track, this.c.selection_mode_answer(this.c.model.freq_edit_tracks_backup[i]));
+      this.c.model.set_freq_edit_track(track, !this.c.model.freq_edit_tracks_backup[track]);
       this.c.view.update_freq_edit_tracks(this.c.model.freq_edit_tracks);
    }
 
@@ -85,7 +84,7 @@ class Controller_rows {
    }
    on_dadj_edit_click = (track) => {
       
-      this.c.model.set_dadj_edit_track(track, this.c.selection_mode_answer(this.c.model.dadj_edit_tracks_backup[i]));
+      this.c.model.set_dadj_edit_track(track, !this.c.model.dadj_edit_tracks_backup[track]);
       this.c.view.update_dadj_edit_tracks(this.c.model.dadj_edit_tracks);
    }
 

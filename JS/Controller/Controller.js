@@ -6,6 +6,7 @@ class Controller {
       this.layout = new Controller_layout(this);
       this.rows = new Controller_rows(this);
       this.keyboard = new Controller_keyboard(this);
+      this.zoom = new Controller_zoom(this);
 
 
       //Tabs
@@ -38,7 +39,9 @@ class Controller {
       this.view.bind_shift_release(this.keyboard.on_shift_release);
 
       //Mouse
-      
+      this.view.bind_zoom_center_edit(this.zoom.on_zoom_center_edit);
+      this.view.bind_zoom_center_up(this.zoom.on_zoom_center_up);
+      this.view.bind_zoom_center_down(this.zoom.on_zoom_center_down);
 
       this.update_view();
    }
@@ -59,6 +62,11 @@ class Controller {
 
 
 
+
+   update_zoom(){
+      this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track);
+   }
+
    update_view(){
       this.view.update_layout(this.model.layout);
       this.view.update_custom_selection(this.model.custom_selection);
@@ -68,7 +76,8 @@ class Controller {
       this.view.update_freq_edit_tracks(this.model.freq_edit_tracks);
       this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
 
-      this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track)
+      this.update_zoom();
+
       //
 
    }

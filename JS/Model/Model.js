@@ -1,10 +1,11 @@
 class Model {
    constructor(){
 
-      this._layout = new Model_layout(this);
-      this._selection = new Model_selection(this);
-      this._rows = new Model_rows(this);
-      this._keyboard = new Model_keyboard(this);
+      this._layout = new Model_layout();
+      this._selection = new Model_selection();
+      this._rows = new Model_rows();
+      this._keyboard = new Model_keyboard();
+      this._zoom = new Model_zoom();
 
    }
 
@@ -87,16 +88,36 @@ class Model {
 
    //Zoom
    get first_visible_track(){
-      return this._layout.first_visible_track;
+      return this._zoom.first_visible_track;
    }
    set first_visible_track(value){
-      return this._layout.first_visible_track = value;
+      this._zoom.first_visible_track = value;
    }
    get last_visible_track(){
-      return this._layout.last_visible_track;
+      return this._zoom.last_visible_track;
    }
    set last_visible_track(value){
-      return this._layout.last_visible_track = value;
+      this._zoom.last_visible_track = value;
+   }
+
+   get zoom_center_relative_increment(){
+      return this._zoom.center_relative_increment;
+   }
+   set zoom_center_relative_increment(value){
+      this._zoom.center_relative_increment = value;
+   }
+   get zoom_width_increment(){
+      return this._zoom.width_increment;
+   }
+   set zoom_width_increment(value){
+      this._zoom.width_increment = value;
+   }
+
+   get min_visible_tracks(){
+      return this._zoom.min_visible_tracks;
+   }
+   set min_visible_tracks(value){
+      this._zoom.min_visible_tracks = value;
    }
    
 

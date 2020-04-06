@@ -18,6 +18,4 @@ class Model_selection {
       this._custom_selection = value;
    }
 
-
-   
 }

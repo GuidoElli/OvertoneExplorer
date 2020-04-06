@@ -1,4 +1,4 @@
-class Layout_manager {
+class View_layout {
    constructor(view){
 
       this.v = view;

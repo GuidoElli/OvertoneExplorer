@@ -1,15 +1,20 @@
 class View {
    constructor(){
-      this.layout_manager = new Layout_manager(this);
-      this.rows_manager = new Rows_manager(this);
-      this.keyboard_manager = new Keyboard_manager(this);
-      this.zoom_manager = new Zoom_manager(this);
 
+      //Managers
+      this.layout = new View_layout(this);
+      this.rows = new View_rows(this);
+      this.keyboard = new View_keyboard(this);
+      this.zoom = new View_zoom(this);
+
+
+      //Tabs
       this.on_sound_tab_button_click = null;
       this.on_vol_tab_button_click = null;
       this.on_freq_tab_button_click = null;
       this.on_dadj_tab_button_click = null;
 
+      //Rows
       this.on_playback_change_enter = null;
       this.on_playback_change = null;
       this.on_playback_click = null;
@@ -30,6 +35,11 @@ class View {
       this.on_ctrl_release = null;
       this.on_shift_press = null;
       this.on_shift_release = null;
+
+      //Zoom
+      this.on_zoom_center_edit = null;
+      this.on_zoom_center_up = null;
+      this.on_zoom_center_down = null;
 
    }
 
@@ -110,6 +120,17 @@ class View {
       this.on_shift_release = f;
    }
 
+   //Zoom
+   bind_zoom_center_edit = (f) => {
+      this.on_zoom_center_edit = f;
+   }
+   bind_zoom_center_up = (f) => {
+      this.on_zoom_center_up = f;
+   }
+   bind_zoom_center_down = (f) => {
+      this.on_zoom_center_down = f;
+   }
+
 
 
 
@@ -117,33 +138,33 @@ class View {
    //UPDATE
 
    update_layout(layout){
-      this.layout_manager.set_layout(layout);
-      this.zoom_manager.update_layout(layout);
+      this.layout.set_layout(layout);
+      this.zoom.update_layout(layout);
    }
    update_custom_selection(value){
-      this.layout_manager.set_custom_selection(value);
+      this.layout.set_custom_selection(value);
    }
 
    update_playback_tracks(values){
-      this.rows_manager.update_playback_tracks(values);
-      this.zoom_manager.update_playback_tracks(values);
+      this.rows.update_playback_tracks(values);
+      this.zoom.update_playback_tracks(values);
    }
    update_vol_edit_tracks(values){
-      this.rows_manager.update_vol_edit_tracks(values);
-      this.zoom_manager.update_vol_edit_tracks(values);
+      this.rows.update_vol_edit_tracks(values);
+      this.zoom.update_vol_edit_tracks(values);
    }
    update_freq_edit_tracks(values){
-      this.rows_manager.update_freq_edit_tracks(values);
-      this.zoom_manager.update_freq_edit_tracks(values);
+      this.rows.update_freq_edit_tracks(values);
+      this.zoom.update_freq_edit_tracks(values);
    }
    update_dadj_edit_tracks(values){
-      this.rows_manager.update_dadj_edit_tracks(values);
-      this.zoom_manager.update_dadj_edit_tracks(values);
+      this.rows.update_dadj_edit_tracks(values);
+      this.zoom.update_dadj_edit_tracks(values);
    }
 
    update_zoom(first, last){
-      this.rows_manager.update_zoom(first, last);
-      this.zoom_manager.update_zoom(first, last);
+      this.rows.update_zoom(first, last);
+      this.zoom.update_zoom(first, last);
    }
 
 }

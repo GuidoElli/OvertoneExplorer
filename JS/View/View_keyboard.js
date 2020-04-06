@@ -1,4 +1,4 @@
-class Keyboard_manager {
+class View_keyboard {
    constructor(view){
 
       this.v = view;
