@@ -20,13 +20,8 @@ class View_vol_visual {
       this.sections = $(".visual_vol_item_section");
       for(let i = 0; i < TOTAL_TRACKS; i++){
          this.sections[i].addEventListener("mousewheel", (e) => {
-            if(e.wheelDelta > 0){
-               this.v.on_zoom_width_down(i);
-            }else{
-               this.v.on_zoom_width_up(i);
-            }
+            this.v.on_visual_wheel(i, e.wheelDelta > 0);
          })
-
       }
 
       this.vv_main_bars = $(".vv_main_bar");

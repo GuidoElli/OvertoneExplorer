@@ -1,6 +1,7 @@
 class Controller_keyboard {
-   constructor(controller){
+   constructor(controller, model){
       this.c = controller;
+      this.m = model;
       this.ctrl_pressed = false;
       this.shift_pressed = false;
    }
@@ -8,11 +9,11 @@ class Controller_keyboard {
 
    update_selection_mode(){
       if(this.ctrl_pressed){
-         this.c.model.selection_mode = SELECTION_MODE.REMOVE;
+         this.m.selection_mode = SELECTION_MODE.REMOVE;
       }else if(this.shift_pressed){
-         this.c.model.selection_mode = SELECTION_MODE.TOGGLE;
+         this.m.selection_mode = SELECTION_MODE.TOGGLE;
       }else{
-         this.c.model.selection_mode = SELECTION_MODE.ADD;
+         this.m.selection_mode = SELECTION_MODE.ADD;
       }
    }
 

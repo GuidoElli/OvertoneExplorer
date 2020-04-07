@@ -52,6 +52,9 @@ class View_zoom {
          clone_dadj_edit.style.width = 100/TOTAL_TRACKS + "%";
       }
 
+
+
+
       this.zoom_playback_prevs = $(".zoom_playback_prev");
       this.zoom_vol_edit_prevs = $(".zoom_vol_edit_prev");
       this.zoom_freq_edit_prevs = $(".zoom_freq_edit_prev");
@@ -59,6 +62,9 @@ class View_zoom {
 
       this.zoom_slider = $(".zoom_slider")[0];
 
+
+
+      //MOUSE
 
       this.old_mouse_x = null;
       this.new_mouse_x = null;
@@ -71,13 +77,7 @@ class View_zoom {
          var right = this.container.getBoundingClientRect().right;
          var track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
 
-         if(track < 0){
-            this.v.on_zoom_center_edit(0);
-         }else if(track >= TOTAL_TRACKS){
-            this.v.on_zoom_center_edit(TOTAL_TRACKS - 1);
-         }else{
-            this.v.on_zoom_center_edit(track);
-         }
+         this.v.on_zoom_slider_set(track);
       })
 
       document.addEventListener("mousemove", (e) => {
@@ -87,13 +87,7 @@ class View_zoom {
             var right = this.container.getBoundingClientRect().right;
             var track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
    
-            if(track < 0){
-               this.v.on_zoom_center_edit(0);
-            }else if(track >= TOTAL_TRACKS){
-               this.v.on_zoom_center_edit(TOTAL_TRACKS - 1);
-            }else{
-               this.v.on_zoom_center_edit(track);
-            }
+            this.v.on_zoom_slider_set(track);
          }
       })
 
@@ -104,11 +98,27 @@ class View_zoom {
       })
 
       this.container.addEventListener("mousewheel", (e) => {
-         if(e.wheelDelta < 0){
-            this.v.on_zoom_center_up();
-         }else{
-            this.v.on_zoom_center_down();
-         }
+         this.v.on_zoom_slider_wheel(e.wheelDelta > 0);
+      })
+
+
+
+      this.zoom_plus_button = $(".zoom_plus_button")[0];
+      this.zoom_minus_button = $(".zoom_minus_button")[0];
+      this.zoom_left_button = $(".zoom_left_button")[0];
+      this.zoom_right_button = $(".zoom_right_button")[0];
+
+      this.zoom_plus_button.addEventListener("click", () => {
+         this.v.on_zoom_plus_button_click();
+      })
+      this.zoom_minus_button.addEventListener("click", () => {
+         this.v.on_zoom_minus_button_click();
+      })
+      this.zoom_left_button.addEventListener("click", () => {
+         this.v.on_zoom_left_button_click();
+      })
+      this.zoom_right_button.addEventListener("click", () => {
+         this.v.on_zoom_right_button_click();
       })
       
    }

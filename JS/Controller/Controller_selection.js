@@ -1,6 +1,7 @@
 class Controller_selection {
-   constructor(controller){
+   constructor(controller, model){
       this.c = controller;
+      this.m = model;
    }
 
    

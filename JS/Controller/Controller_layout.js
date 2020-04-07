@@ -1,35 +1,36 @@
 class Controller_layout {
-   constructor(controller){
+   constructor(controller, model){
       this.c = controller;
+      this.m = model;
    }
 
    on_sound_tab_button_click = () => {
-      this.c.model.layout = LAYOUT.SOUND;
-      this.c.model.custom_selection = false;
+      this.m.layout = LAYOUT.SOUND;
+      this.m.custom_selection = false;
 
-      this.c.view.update_layout(this.c.model.layout);
-      this.c.view.update_custom_selection(this.c.model.custom_selection);
+      this.c.update_layout();
+      this.c.update_custom_selection();
    }
    on_vol_tab_button_click = () => {
-      this.c.model.layout = LAYOUT.VOL;
-      this.c.model.custom_selection = false;
+      this.m.layout = LAYOUT.VOL;
+      this.m.custom_selection = false;
 
-      this.c.view.update_layout(this.c.model.layout);
-      this.c.view.update_custom_selection(this.c.model.custom_selection);
+      this.c.update_layout();
+      this.c.update_custom_selection();
    }
    on_freq_tab_button_click = () => {
-      this.c.model.layout = LAYOUT.FREQ;
-      this.c.model.custom_selection = false;
+      this.m.layout = LAYOUT.FREQ;
+      this.m.custom_selection = false;
 
-      this.c.view.update_layout(this.c.model.layout);
-      this.c.view.update_custom_selection(this.c.model.custom_selection);
+      this.c.update_layout();
+      this.c.update_custom_selection();
    }
    on_dadj_tab_button_click = () => {
-      this.c.model.layout = LAYOUT.DADJ;
-      this.c.model.custom_selection = false;
+      this.m.layout = LAYOUT.DADJ;
+      this.m.custom_selection = false;
 
-      this.c.view.update_layout(this.c.model.layout);
-      this.c.view.update_custom_selection(this.c.model.custom_selection);
+      this.c.update_layout();
+      this.c.update_custom_selection();
    }
 
 

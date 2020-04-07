@@ -15,13 +15,13 @@ class View_layout {
          this.v.on_sound_tab_button_click();
       })
       this.vol_tab_button.addEventListener("click", () => {
-         this.v.on_vol_edit_tab_button_click();
+         this.v.on_vol_tab_button_click();
       })
       this.freq_tab_button.addEventListener("click", () => {
-         this.v.on_freq_edit_tab_button_click();
+         this.v.on_freq_tab_button_click();
       })
       this.dadj_tab_button.addEventListener("click", () => {
-         this.v.on_dadj_edit_tab_button_click();
+         this.v.on_dadj_tab_button_click();
       })
 
       
