@@ -101,6 +101,12 @@ class Row {
          }else{
             this.sections[i].classList.toggle("hidden", false);
             this.sections[i].style.width = 100 / (last - first + 1) + "%";
+
+            if(last - first + 1 > MAX_TRACKS_TO_SHOW_BUTTON_LABELS){
+               this.buttons[i].innerHTML = "";
+            }else{
+               this.buttons[i].innerHTML = i;
+            }
          }
       }
    }

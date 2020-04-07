@@ -106,11 +106,11 @@ class Model {
    set zoom_center_relative_increment(value){
       this._zoom.center_relative_increment = value;
    }
-   get zoom_width_increment(){
-      return this._zoom.width_increment;
+   get zoom_width_relative_increment(){
+      return this._zoom.width_relative_increment;
    }
-   set zoom_width_increment(value){
-      this._zoom.width_increment = value;
+   set zoom_width_relative_increment(value){
+      this._zoom.width_relative_increment = value;
    }
 
    get min_visible_tracks(){

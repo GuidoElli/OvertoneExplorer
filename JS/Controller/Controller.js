@@ -42,6 +42,9 @@ class Controller {
       this.view.bind_zoom_center_edit(this.zoom.on_zoom_center_edit);
       this.view.bind_zoom_center_up(this.zoom.on_zoom_center_up);
       this.view.bind_zoom_center_down(this.zoom.on_zoom_center_down);
+      
+      this.view.bind_zoom_width_up(this.zoom.on_zoom_width_up);
+      this.view.bind_zoom_width_down(this.zoom.on_zoom_width_down);
 
       this.update_view();
    }

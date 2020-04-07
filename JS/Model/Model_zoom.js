@@ -1,10 +1,10 @@
 class Model_zoom {
    constructor(){
       this._first_visible_track = 10;
-      this._last_visible_track = 23;
+      this._last_visible_track = 19;
 
       this._center_relative_increment = 0.1;
-      this._width_increment = 4;
+      this._width_relative_increment = 0.2;
 
       this._min_visible_tracks = 10;
    }
@@ -28,11 +28,11 @@ class Model_zoom {
    set center_relative_increment(value){
       return this._center_relative_increment = value;
    }
-   get width_increment(){
-      return this._width_increment;
+   get width_relative_increment(){
+      return this._width_relative_increment;
    }
-   set width_increment(value){
-      return this._width_increment = value;
+   set width_relative_increment(value){
+      return this._width_relative_increment = value;
    }
 
    get min_visible_tracks(){

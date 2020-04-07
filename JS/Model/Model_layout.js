@@ -1,6 +1,6 @@
 class Model_layout {
    constructor(){
-      this._layout = LAYOUT.SOUND;
+      this._layout = LAYOUT.VOL;
    }
 
    get layout(){

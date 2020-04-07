@@ -6,6 +6,7 @@ class View {
       this.rows = new View_rows(this);
       this.keyboard = new View_keyboard(this);
       this.zoom = new View_zoom(this);
+      this.vol_visual = new View_vol_visual(this);
 
 
       //Tabs
@@ -131,6 +132,13 @@ class View {
       this.on_zoom_center_down = f;
    }
 
+   bind_zoom_width_up = (f) => {
+      this.on_zoom_width_up = f;
+   }
+   bind_zoom_width_down = (f) => {
+      this.on_zoom_width_down = f;
+   }
+
 
 
 
@@ -165,6 +173,7 @@ class View {
    update_zoom(first, last){
       this.rows.update_zoom(first, last);
       this.zoom.update_zoom(first, last);
+      this.vol_visual.update_zoom(first, last);
    }
 
 }
