@@ -81,7 +81,7 @@
 
 	/*Font*/
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 13px;
 	letter-spacing: 0px;
 	word-spacing: 0px;
 	color: var(--greyscale-14);
@@ -101,7 +101,9 @@ button, select, option{
 }
 button{
 	background-color: var(--greyscale-7);
-	color: var(--greyscale-14);
+   color: var(--greyscale-14);
+   height: 100%;
+   width: 100%;
 }
 button:hover{
 	background-color: var(--greyscale-8);
@@ -113,9 +115,9 @@ button:hover{
 .hidden{
    display:none;
 }
-
-
-
+.unclickable{
+   color: rgb(163, 163, 163);
+}
 
 
 .box{
@@ -128,10 +130,29 @@ button:hover{
 	width: 100%;
 	height: 100%;
 	padding: var(--padding);
-	border-radius: var(--border-radius);
+   border-radius: var(--border-radius);
 }
-
-
+   .section_label{
+      height: 15%;
+      width: 100%;
+      text-align: center;
+   }
+   .section_content{
+      height: 85%;
+      width: 100%;
+      background-color: #414141;
+      border-radius: var(--border-radius);;
+   }
+.param_label{
+   height: 15%;
+   width: 100%;
+   text-align: center;
+}
+.param_content{
+   height: 85%;
+   width: 100%;
+   padding: 3px;
+}
 
 
 .app_section{
@@ -146,34 +167,15 @@ button:hover{
 	padding: var(--padding);
 	background-color: var(--greyscale-3);
 }
-	.top_bar_section{
-		height: 8%;
-		width: 100%;
-	}
-	.top_bar_box{
-		background-color: var(--greyscale-5);
+   .top_bar_section{
+      height: 8%;
+      width: 100%;
    }
-      .top_bar_box button{
-         width: 100%;
-         height: 100%;
-      }
-		.sound_tab_button_section{
-			width: 15%;
-         border-radius: 10px;
-      }
-      .vol_tab_button_section{
-			width: 15%;
-			border-radius: 10px;
-      }
-      .freq_tab_button_section{
-			width: 15%;
-			border-radius: 10px;
-      }
-      .dadj_tab_button_section{
-			width: 15%;
-			border-radius: 10px;
-      }
+   .top_bar_box{
+      background-color: var(--greyscale-5);
+   }
 
+   
    .main_section{
       height: 92%;
       width: 85%;
@@ -188,183 +190,12 @@ button:hover{
          padding: 2px;
          background-color: rgb(97, 97, 97);
       }
-         .zoom_prevs{
-            width: 100%;
-            height: 100%;
-            padding: 1px;
-         }
-            .prev{
-               height: 100%;
-               width: 100%;
-               border-radius: 3px;
-            }
-            .prev_section{
-               padding: 1px;
-               height: 100%;
-            }
-            .zoom_playback_prevs_box,
-            .zoom_vol_edit_prevs_box,
-            .zoom_freq_edit_prevs_box,
-            .zoom_dadj_edit_prevs_box {
-               width: 100%;
-            }
-
-            .zoom_playback_prev{
-               background-color: rgb(196, 176, 0);
-            }
-            .zoom_playback_prev.active{
-               background-color: rgb(255, 230, 0);
-            }
-
-            .zoom_vol_edit_prev{
-               background-color: rgb(155, 0, 0);
-            }
-            .zoom_vol_edit_prev.active{
-               background-color: rgb(255, 0, 0);
-            }
-
-            .zoom_freq_edit_prev{
-               background-color: rgb(5, 138, 0);
-            }
-            .zoom_freq_edit_prev.active{
-               background-color: rgb(9, 255, 0);
-            }
-
-            .zoom_dadj_edit_prev{
-               background-color: rgb(108, 0, 134);
-            }
-            .zoom_dadj_edit_prev.active{
-               background-color: rgb(195, 0, 255);
-            }
-
-
-            .zoom_slider{
-               height: 100%;
-               position: relative;
-               top: -100%;
-               left: 0%;/**/
-               width: 40%;/**/
-               border-radius: 5px;
-               background-color: rgba(196, 196, 196, 0.205);
-               border: solid 2px rgb(216, 216, 216);
-            }
-
-
-      /*Visual*/
-      .visual_section{
-         height: 40%;
-         width: 100%;
-      }
-      .visual_box{
-         width: 100%;
-         height: 100%;
-         background-color: rgb(29, 29, 29);
-      }
-         .visual_vol_box{
-            height: 50%;/**/
-            padding: 2px;
-         }
-            .visual_vol_item_section{
-               width: 7%;
-               height: 100%;
-               padding: 0px;
-            }
-            .visual_vol_item_box{
-               width: 100%;
-               height: 100%;
-               background-color: rgb(66, 66, 66);
-            }
-               .vv_main_bar{
-                  width: 60%;
-                  height: 70%;
-                  background-color: rgb(206, 206, 206);
-                  border-radius: 3px;
-                  left: 50%;
-                  top: 30%;
-                  transform: translate(-50%, 0);
-               }
             
-         .visual_freq_box{
-            height: 50%;/**/
-         }
-
       /*Rows*/
       .rows_section{
          height: 10%;
          width: 100%;
       }
-      .row_item_section{
-         padding: 2px;
-      }
-      .rows_section .row_item{
-         height: 100%;
-         width: 100%;
-      }
-         .row_playback_box{
-            height: 25%;
-            background-color: rgb(26, 68, 78);
-         }
-            .row_playback_item{
-               background-color: rgb(199, 199, 199);
-            }
-            .row_playback_item.active{
-               background-color: rgb(158, 0, 0);
-            }
-            .row_playback_item:hover{
-               background-color: rgb(124, 124, 124);
-            }
-            .row_playback_item.active:hover{
-               background-color: rgb(173, 0, 0);
-            }
-         .row_vol_edit_box{
-            height: 25%;
-            background-color: rgb(84, 129, 11);
-         }
-            .row_vol_edit_item{
-               background-color: rgb(199, 199, 199);
-            }
-            .row_vol_edit_item.active{
-               background-color: rgb(158, 0, 0);
-            }
-            .row_vol_edit_item:hover{
-               background-color: rgb(124, 124, 124);
-            }
-            .row_vol_edit_item.active:hover{
-               background-color: rgb(173, 0, 0);
-            }
-         .row_freq_edit_box{
-            height: 25%;
-            background-color: rgb(37, 36, 126);
-         }
-            .row_freq_edit_item{
-               background-color: rgb(199, 199, 199);
-            }
-            .row_freq_edit_item.active{
-               background-color: rgb(158, 0, 0);
-            }
-            .row_freq_edit_item:hover{
-               background-color: rgb(124, 124, 124);
-            }
-            .row_freq_edit_item.active:hover{
-               background-color: rgb(173, 0, 0);
-            }
-         .row_dadj_edit_box{
-            height: 25%;
-            background-color: rgb(95, 9, 9);
-         }
-            .row_dadj_edit_item{
-               background-color: rgb(199, 199, 199);
-            }
-            .row_dadj_edit_item.active{
-               background-color: rgb(158, 0, 0);
-            }
-            .row_dadj_edit_item:hover{
-               background-color: rgb(124, 124, 124);
-            }
-            .row_dadj_edit_item.active:hover{
-               background-color: rgb(173, 0, 0);
-            }
-
 
       /*Controls*/
       .controls_section{
@@ -372,22 +203,7 @@ button:hover{
          width: 100%;
       }
 
-         .sound_box{
-            background-color: rgb(17, 114, 138);
-         }
-         .vol_edit_box{
-            background-color: rgb(119, 56, 56);
-         }
-         .freq_edit_box{
-            background-color: rgb(122, 106, 106);
-         }
-         .dadj_edit_box{
-            background-color: rgb(199, 146, 39);
-         }
-         .selection_box{
-            background-color: rgb(71, 171, 28);
-         }
-
+         
 
 
    .right_bar_section{
@@ -395,43 +211,4 @@ button:hover{
       width: 15%;
       padding-left: 0px;
    }
-      .zoom_controls_section{
-         width: 100%;
-         height: 5%;
-      }
-         .zoom_controls_box{
-            background-color: rgb(95, 95, 95);
-         }
-         .zoom_controls_box .section{
-            height: 100%;
-            width: 25%;
-            padding: 2px;
-         }
-         .zoom_controls_box button{
-            width: 100%;
-            height: 100%;
-            background-color: rgb(165, 165, 165);
-         }
-
-      .scale_section{
-         width: 100%;
-         height: 20%;
-      }
-         .scale_box{
-            background-color: rgb(148, 63, 148);
-         }
-      
-      .row_all_section{
-         width: 100%;
-         height: 10%;
-      }
-         .row_all_box{
-            background-color: rgb(107, 90, 90);
-         }
-      .help_window_section{
-         width: 100%;
-         height: 65%;
-      }
-         .help_window_box{
-            background-color: rgb(63, 135, 148);
-         }
+   

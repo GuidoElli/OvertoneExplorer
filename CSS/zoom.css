@@ -1,0 +1,62 @@
+
+   .zoom_prevs{
+      width: 100%;
+      height: 100%;
+      padding: 1px;
+   }
+      .prev{
+         height: 100%;
+         width: 100%;
+         border-radius: 3px;
+      }
+      .prev_section{
+         padding: 1px;
+         height: 100%;
+      }
+      .zoom_playback_prevs_box,
+      .zoom_vol_edit_prevs_box,
+      .zoom_freq_edit_prevs_box,
+      .zoom_dadj_edit_prevs_box {
+         width: 100%;
+      }
+
+      .zoom_playback_prev{
+         background-color: rgb(196, 176, 0);
+      }
+      .zoom_playback_prev.active{
+         background-color: rgb(255, 230, 0);
+      }
+
+      .zoom_vol_edit_prev{
+         background-color: rgb(155, 0, 0);
+      }
+      .zoom_vol_edit_prev.active{
+         background-color: rgb(255, 0, 0);
+      }
+
+      .zoom_freq_edit_prev{
+         background-color: rgb(5, 138, 0);
+      }
+      .zoom_freq_edit_prev.active{
+         background-color: rgb(9, 255, 0);
+      }
+
+      .zoom_dadj_edit_prev{
+         background-color: rgb(108, 0, 134);
+      }
+      .zoom_dadj_edit_prev.active{
+         background-color: rgb(195, 0, 255);
+      }
+
+
+      .zoom_slider{
+         height: 100%;
+         position: relative;
+         top: -100%;
+         left: 0%;/**/
+         width: 40%;/**/
+         border-radius: 5px;
+         background-color: rgba(196, 196, 196, 0.205);
+         border: solid 2px rgb(216, 216, 216);
+      }
+

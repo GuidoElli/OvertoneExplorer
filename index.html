@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Harmonic Synth</title>
+		<title>ACTAM Project</title>
 		
 		<script src="https://www.w3.org/TR/2018/CR-webaudio-20180918/"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/main.css">
+		<link rel="stylesheet" type="text/css" href="CSS/elements.css">
+		<link rel="stylesheet" type="text/css" href="CSS/top_bar.css">
+		<link rel="stylesheet" type="text/css" href="CSS/right_bar.css">
+		<link rel="stylesheet" type="text/css" href="CSS/visual.css">
+		<link rel="stylesheet" type="text/css" href="CSS/zoom.css">
+		<link rel="stylesheet" type="text/css" href="CSS/rows.css">
+		<link rel="stylesheet" type="text/css" href="CSS/sound.css">
+		<link rel="stylesheet" type="text/css" href="CSS/vol_edit.css">
+		<link rel="stylesheet" type="text/css" href="CSS/freq_edit.css">
+		<link rel="stylesheet" type="text/css" href="CSS/dadj_edit.css">
+		<link rel="stylesheet" type="text/css" href="CSS/selection.css">
 	</head>
 	<body>
 
@@ -116,8 +127,184 @@
                      SOUND
                   </div>
                   <div class="vol_edit_box box">
-                     VOL
+                     <div class="ve_controls_section section">
+                        <div class="ve_controls_box box">
+
+                           <div class="ve_metrics_section section">
+                              <div class="ve_metrics_box box">
+
+                                 <div class="ve_metrics_section_label section_label">
+                                    Metrics
+                                 </div>
+
+                                 <div class="ve_metrics_section_content section_content">
+
+                                    <div class="ve_scale_section section">
+                                       <div class="ve_scale_param_label param_label">
+                                          Scale
+                                       </div>
+
+                                       <div class="ve_scale_param_content param_content">
+                                          <div class="ve_scale_choose_box choose_box box">
+                                             <button class="active ve_scale_choose_item choose_item">
+                                                Linear
+                                             </button>
+                                             <button class="ve_scale_choose_item choose_item">
+                                                Log (dB)
+                                             </button>
+                                          </div>
+                                       </div>
+
+                                    </div>
+   
+                                    <div class="ve_range_section section">
+
+                                       <div class="ve_range_param_label param_label">
+                                          Range
+                                       </div>
+
+                                       <div class="ve_range_param_content param_content">
+                                          <div class="ve_range_knob_section knob_section">
+                                             <canvas class="ve_range_knob knob"></canvas>
+                                          </div>
+                                       </div>
+
+                                    </div>
+
+                                 </div>
+
+
+                              </div>
+
+                           </div>
+
+                           <div class="ve_shape_section section">
+                              <div class="ve_shape_box box">
+
+                                 <div class="ve_shape_section_label section_label">
+                                    Shape
+                                 </div>
+
+                                 <div class="ve_shape_section_content section_content">
+
+                                    <div class="ve_shape_choose_section section">
+                                       <div class="ve_shape_param_label param_label">
+                                          Shape
+                                       </div>
+
+                                       <div class="ve_shape_param_content param_content">
+                                          <div class="ve_shape_choose_box choose_box box">
+                                             <button class="active ve_shape_choose_item choose_item">
+                                                Flat
+                                             </button>
+                                             <button class="ve_shape_choose_item choose_item">
+                                                Triangle
+                                             </button>
+                                             <button class="ve_shape_choose_item choose_item">
+                                                Curve
+                                             </button>
+                                          </div>
+                                       </div>
+                                    </div>
+   
+                                    <div class="ve_amount_knob_section section">
+                                       <div class="ve_amount_knob_param_label param_label">
+                                          Amount
+                                       </div>
+
+                                       <div class="ve_amount_knob_param_content param_content">
+                                          <div class="ve_amount_knob_canvas_section canvas_section">
+                                             <canvas class="ve_amount_knob knob"></canvas>
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                    <div class="ve_center_knob_section section">
+                                       <div class="ve_center_knob_param_label param_label">
+                                          Center
+                                       </div>
+                                          
+                                       <div class="ve_center_knob_param_content param_content">
+                                          <div class="ve_center_knob_canvas_section canvas_section">
+                                             <canvas class="ve_center_knob knob"></canvas>
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                    <div class="ve_width_knob_section section">
+                                       <div class="ve_width_knob_param_label param_label">
+                                          Width
+                                       </div>
+                                          
+                                       <div class="ve_width_knob_param_content param_content">
+                                          <div class="ve_width_knob_canvas_section canvas_section">
+                                             <canvas class="ve_width_knob knob"></canvas>
+                                          </div>
+                                       </div>
+                                    </div>
+
+                                 </div>
+
+                              </div>
+                           </div>
+
+                           <div class="ve_random_section section">
+                              <div class="ve_random_box box">
+
+                                 <div class="ve_random_section_label section_label">
+                                    Random
+                                 </div>
+
+                                 <div class="ve_random_section_content section_content">
+                                    
+                                    <div class="ve_random_left">
+                                    
+                                       <div class="ve_random_button_section section">
+                                          <button class="ve_random_button button">Random</button>
+                                       </div>
+      
+                                       <div class="ve_mirror_section section">
+                                          <button class="ve_mirror_button button">Mirror</button>
+                                       </div>
+
+                                    </div>
+
+                                    <div class="ve_random_right">
+
+                                       <div class="ve_randomize_button_section section">
+                                          <button class="ve_randomize_button button">Randomize</button>
+                                       </div>
+
+                                    </div>
+
+                                 </div>
+
+                              </div>
+                           </div>
+
+                           <div class="ve_save_section section">
+                              <div class="ve_apply_button_section section">
+                                 <button class="ve_apply_button">Apply</button>                                     
+                              </div>
+
+                              <div class="ve_reset_button_section section">
+                                 <button class="ve_reset_button">Reset</button>  
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+
+                     <div class="ve_visual_section section">
+                        <div class="ve_visual_box box">
+                           <div>
+
+                           </div>
+                        </div>
+                     </div>
                   </div>
+
+                  
                   <div class="freq_edit_box box">
                      freq
                   </div>
@@ -208,8 +395,10 @@
    <script src="JS/View/View_keyboard.js"></script>
    <script src="JS/View/View_zoom.js"></script>
    <script src="JS/View/View_vol_visual.js"></script>
+   <script src="JS/View/View_vol_edit.js"></script>
 
    <script src="JS/View/Elements/Row.js"></script>
+   <script src="JS/View/Elements/Knob.js"></script>
    
    <script src="JS/View/View.js"></script>
    

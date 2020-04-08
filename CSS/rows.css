@@ -1,0 +1,67 @@
+.row_item_section{
+   padding: 2px;
+}
+.rows_section .row_item{
+   height: 100%;
+   width: 100%;
+}
+   .row_playback_box{
+      height: 25%;
+   }
+      .row_playback_item{
+         background-color: rgb(199, 199, 199);
+      }
+      .row_playback_item.active{
+         background-color: rgb(158, 0, 0);
+      }
+      .row_playback_item:hover{
+         background-color: rgb(124, 124, 124);
+      }
+      .row_playback_item.active:hover{
+         background-color: rgb(173, 0, 0);
+      }
+   .row_vol_edit_box{
+      height: 25%;
+   }
+      .row_vol_edit_item{
+         background-color: rgb(199, 199, 199);
+      }
+      .row_vol_edit_item.active{
+         background-color: rgb(158, 0, 0);
+      }
+      .row_vol_edit_item:hover{
+         background-color: rgb(124, 124, 124);
+      }
+      .row_vol_edit_item.active:hover{
+         background-color: rgb(173, 0, 0);
+      }
+   .row_freq_edit_box{
+      height: 25%;
+   }
+      .row_freq_edit_item{
+         background-color: rgb(199, 199, 199);
+      }
+      .row_freq_edit_item.active{
+         background-color: rgb(158, 0, 0);
+      }
+      .row_freq_edit_item:hover{
+         background-color: rgb(124, 124, 124);
+      }
+      .row_freq_edit_item.active:hover{
+         background-color: rgb(173, 0, 0);
+      }
+   .row_dadj_edit_box{
+      height: 25%;
+   }
+      .row_dadj_edit_item{
+         background-color: rgb(199, 199, 199);
+      }
+      .row_dadj_edit_item.active{
+         background-color: rgb(158, 0, 0);
+      }
+      .row_dadj_edit_item:hover{
+         background-color: rgb(124, 124, 124);
+      }
+      .row_dadj_edit_item.active:hover{
+         background-color: rgb(173, 0, 0);
+      }

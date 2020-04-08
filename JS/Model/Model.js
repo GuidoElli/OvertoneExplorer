@@ -23,8 +23,8 @@ class Model {
       this.first_visible_track = 10;
       this.last_visible_track = 19;
 
-      this.zoom_center_relative_increment = 0.1;
-      this.zoom_width_relative_increment = 0.2;
+      this.zoom_center_relative_increment = 0.09;
+      this.zoom_width_relative_increment = 0.15;
 
       this.min_visible_tracks = 10;
 

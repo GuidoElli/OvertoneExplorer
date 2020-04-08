@@ -7,6 +7,7 @@ class View {
       this.keyboard = new View_keyboard(this);
       this.zoom = new View_zoom(this);
       this.vol_visual = new View_vol_visual(this);
+      this.vol_edit = new View_vol_edit(this);
 
 
 
