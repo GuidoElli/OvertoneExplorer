@@ -49,6 +49,17 @@ class View {
       this.on_zoom_left_button_click = null;
       this.on_zoom_right_button_click = null;
 
+
+      //Vol edit
+      this.on_ve_scale_change = null;
+      this.on_ve_range = null;
+      this.on_ve_ = null;
+      this.on_ve_ = null;
+      this.on_ve_ = null;
+      this.on_ve_ = null;
+      this.on_ve_ = null;
+      
+
    }
 
 

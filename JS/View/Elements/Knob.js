@@ -1,16 +1,17 @@
 class Knob{
-	constructor(canvas) {
+	constructor(canvas, min_value, max_value, default_value) {
 
 		this.canvas = canvas;
-      this.radius = null;
+		this.value = null;
       
-      this.min_value = null;
-      this.max_value = null;
-      this.central_value = null;
-      this.step = null;
-
-      this.value = null;
-
+      this.min_value = min_value ? min_value : 0;
+      this.max_value = max_value ? max_value : 1;
+		this.default_value = default_value ? default_value : min_value;
+		
+		//Customization
+		this.decimals = 0;
+		this.unit_of_measurement = "";
+		this.display_value = true;
 
 		//default parameters
 		this.total_angle = 270;
@@ -25,7 +26,7 @@ class Knob{
 		this.interval_color = "#ececec";
 	}
 
-	update_canvas() {
+	update() {
       var b = this.canvas.parentNode.getBoundingClientRect();
       var width = b.right - b.left;
       var height = b.bottom - b.top;
