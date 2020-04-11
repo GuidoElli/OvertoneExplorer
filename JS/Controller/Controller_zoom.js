@@ -13,22 +13,21 @@ class Controller_zoom {
 
       var first = this.m.first_visible_track;
       var last = this.m.last_visible_track;
-      if(!(last - first <= MIN_VISIBLE_TRACKS && is_zoom_in)){
+      if(!(last - first + 1 <= MIN_VISIBLE_TRACKS && is_zoom_in)){
          
-         var relative_increment = this.m.zoom_width_relative_increment;
-         var increment = Math.ceil((last - first + 1) * relative_increment);
+         var increment = Math.ceil((last - first + 1) * ZOOM_WIDTH_RELATIVE_INCREMENT);
    
          if(is_zoom_in){
             var new_diff = (last - first) - increment;
-            var increment = Math.ceil((last - first + 1) * (1 - 1 / (relative_increment + 1)));
+            var increment = Math.ceil((last - first + 1) * (1 - 1 / (ZOOM_WIDTH_RELATIVE_INCREMENT + 1)));
          }else{
             var new_diff = (last - first) + increment;
-            var increment = Math.ceil((last - first + 1) * relative_increment);
+            var increment = Math.ceil((last - first + 1) * ZOOM_WIDTH_RELATIVE_INCREMENT);
          }
    
          if(new_diff >= TOTAL_TRACKS){
             increment = TOTAL_TRACKS - (last - first + 1);
-         }else if(new_diff < MIN_VISIBLE_TRACKS){
+         }else if(new_diff + 1 < MIN_VISIBLE_TRACKS){
             increment = (last - first + 1) - MIN_VISIBLE_TRACKS;
          }
    
@@ -37,7 +36,7 @@ class Controller_zoom {
          var q = Math.floor((last - first + 1) / ngroups);
          var r = (last - first + 1) % ngroups;
          var cont = -1;
-         while(temp_track < track){
+         while(temp_track <= track){
             temp_track += q;
             temp_track += (r > cont) ? 1 : 0;
             cont++;
@@ -102,8 +101,7 @@ class Controller_zoom {
 
       var first = this.m.first_visible_track;
       var last = this.m.last_visible_track;
-      var relative_increment = this.m.zoom_center_relative_increment;
-      var increment = Math.ceil((last - first + 1) * relative_increment);
+      var increment = Math.ceil((last - first + 1) * ZOOM_CENTER_RELATIVE_INCREMENT);
       var center_track = Math.floor((last + first) / 2);
 
       if(is_wheel_up){

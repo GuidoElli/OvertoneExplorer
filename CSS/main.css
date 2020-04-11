@@ -103,7 +103,7 @@ button{
 	background-color: var(--greyscale-7);
    color: var(--greyscale-14);
    height: 100%;
-   width: 100%;
+	width: 100%;
 }
 button:hover{
 	background-color: var(--greyscale-8);
@@ -133,15 +133,14 @@ button:hover{
    border-radius: var(--border-radius);
 }
    .section_label{
-      height: 15%;
+      height: 0%;
       width: 100%;
       text-align: center;
    }
    .section_content{
-      height: 85%;
+      height: 100%;
       width: 100%;
-      background-color: #414141;
-      border-radius: var(--border-radius);;
+      border-radius: var(--border-radius);
    }
 .param_label{
    height: 15%;
@@ -165,10 +164,10 @@ button:hover{
 }
 .app_box{
 	padding: var(--padding);
-	background-color: var(--greyscale-3);
+	background-color: var(--greyscale-2);
 }
    .top_bar_section{
-      height: 8%;
+      height: 6%;
       width: 100%;
    }
    .top_bar_box{
@@ -177,29 +176,27 @@ button:hover{
 
    
    .main_section{
-      height: 92%;
+      height: 94%;
       width: 85%;
    }
 
-      /*Zoom*/
       .zoom_section{
-         height: 5%;
+         height: 6%;
          width: 100%;
-      }
-      .zoom_box{
-         padding: 2px;
-         background-color: rgb(97, 97, 97);
-      }
-            
-      /*Rows*/
+		}
+
+		.visual_section{
+			height: 40%;
+			width: 100%;
+		}
+		
       .rows_section{
          height: 10%;
          width: 100%;
       }
 
-      /*Controls*/
       .controls_section{
-         height: 45%;
+         height: 40%;
          width: 100%;
       }
 

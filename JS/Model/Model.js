@@ -27,20 +27,19 @@ class Model {
       this.first_visible_track = 0;
       this.last_visible_track = TOTAL_TRACKS-1;
 
-      this.zoom_center_relative_increment = 0.09;
-      this.zoom_width_relative_increment = 0.15;
 
       //Vol edit
       this.ve_scale = SCALE_TYPE.LIN;
 
       this.ve_shape = EDITOR_SHAPE.FLAT;
       this.ve_amount = 0; // in multiplying factor or dB
-      this.ve_width = 0; // 0 to 1
-      this.ve_center = 0; // 0 to 1
+      this.ve_center = 0.7; // 0 to 1
+      this.ve_width = 0.4; // 0 to 1
 
       this.ve_random = false;
       this.ve_mirror = false;
       this.ve_random_values = new Array(TOTAL_TRACKS);
+      this.randomize_ve_values();
 
 
 
@@ -49,6 +48,14 @@ class Model {
       this.notes = new Array();
       this.bass_notes = new Array();
 
+   }
+
+
+
+   randomize_ve_values = () => {
+      for(let i = 0; i < TOTAL_TRACKS; i++){
+         this.ve_random_values[i] = Math.random() * 2 - 1;
+      }
    }
 
 

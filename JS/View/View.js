@@ -52,13 +52,24 @@ class View {
 
       //Vol edit
       this.on_ve_scale_change = null;
-      this.on_ve_range = null;
-      this.on_ve_ = null;
-      this.on_ve_ = null;
-      this.on_ve_ = null;
-      this.on_ve_ = null;
-      this.on_ve_ = null;
+      this.on_ve_shape_change = null;
+
+      this.on_ve_amount_change = null;
+      this.on_ve_center_change = null;
+      this.on_ve_width_change = null;
+
+      this.on_ve_random_click = null;
+      this.on_ve_mirror_click = null;
+      this.on_ve_randomize_click = null;
       
+      this.on_ve_apply_click = null;
+      this.on_ve_reset_click = null;
+      
+
+
+      window.addEventListener("resize", () => {
+         this.update_canvases();
+      })
 
    }
 
@@ -97,4 +108,35 @@ class View {
       this.vol_visual.update_zoom(first, last);
    }
 
+
+   //Vol edit
+   update_ve_scale(scale){
+      this.vol_edit.update_scale(scale);
+   }
+   update_ve_shape(shape){
+      this.vol_edit.update_shape(shape);
+   }
+
+   update_ve_amount(amount){
+      this.vol_edit.update_amount(amount);
+   }
+   update_ve_center(center){
+      this.vol_edit.update_center(center);
+   }
+   update_ve_width(width){
+      this.vol_edit.update_width(width);
+   }
+
+   update_ve_random(random, mirror, random_values){
+      this.vol_edit.update_random(random);
+      this.vol_edit.update_mirror(mirror);
+   }
+
+
+
+
+
+   update_canvases(){
+      this.vol_edit.update_canvases();
+   }
 }

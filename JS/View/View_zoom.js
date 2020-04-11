@@ -126,7 +126,7 @@ class View_zoom {
 
 
    update_layout = (layout) => {
-
+/*
       this.zoom_playback_prevs_box.classList.toggle("hidden", true);
       this.zoom_vol_edit_prevs_box.classList.toggle("hidden", true);
       this.zoom_freq_edit_prevs_box.classList.toggle("hidden", true);
@@ -156,7 +156,7 @@ class View_zoom {
             this.zoom_dadj_edit_prevs_box.style.height = "50%";
             break;
       }
-
+*/
    }
 
 
