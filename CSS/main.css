@@ -135,7 +135,8 @@ button:hover{
    .section_label{
       height: 0%;
       width: 100%;
-      text-align: center;
+		text-align: center;
+		font-style: italic;
    }
    .section_content{
       height: 100%;
@@ -146,6 +147,7 @@ button:hover{
    height: 15%;
    width: 100%;
    text-align: center;
+	font-style: italic;
 }
 .param_content{
    height: 70%;

@@ -13,12 +13,15 @@ class Knob{
 		this.on_change = null;
 		
 		//default parameters
-		this.total_angle = 280;
-		this.background_color = "#858585";
-		this.light_lines_color = "#505050";
-		this.line_color = "#111111";
+		this.total_angle = 270;
+		this.background_color = "#707070";
+		this.inactive_color = "#505050";
+		this.light_lines_color = "#303030";
+		this.line_color = "#000000";
 		this.text_color = "#e2e2e2";
 		this.interval_color = "#ececec";
+		
+		this.canvas.style.background_color = this.background_color;
 
 
 		this.old_mouse_y = null;
@@ -26,6 +29,8 @@ class Knob{
 		this.old_value = null;
 		this.editing = false;
 		this.ctrl_pressed = false;
+
+		this.clickable = true;
 
 
 		document.addEventListener("keydown", (e) => {
@@ -41,10 +46,12 @@ class Knob{
 
 
 		canvas.addEventListener("mousedown", (e) => {
-			this.editing = true;
-			this.old_value = this.value;
-			this.old_mouse_y = e.pageY;
-			this.new_mouse_y = e.pageY;
+			if(this.clickable){
+				this.editing = true;
+				this.old_value = this.value;
+				this.old_mouse_y = e.pageY;
+				this.new_mouse_y = e.pageY;
+			}
 		})
 		document.addEventListener("mousemove", (e) => {
 			if(this.editing){
@@ -94,11 +101,10 @@ class Knob{
 		var h = this.canvas.height;
 		var w = this.canvas.width;
 		var ctx = this.canvas.getContext("2d");
-		var radius = dim / 2;
-		var external_circle_w = radius / 15;
+		var radius = dim / 2.1;
 		var pointer_w = radius / 10;
-		var interval_w = radius / 7;
-		var thin_lines_w = radius / 30;
+		var interval_w = radius / 3;
+		var external_circle_w = radius / 20;
 
 		
 		//useful variables
@@ -113,29 +119,29 @@ class Knob{
 		ctx.fillStyle = this.background_color;
 		ctx.lineWidth = 1;
 		ctx.beginPath();
-		ctx.arc(w / 2, h / 2, radius - external_circle_w / 2, 0, 2 * Math.PI);
+		ctx.arc(w / 2, h / 2, radius, 0, 2 * Math.PI);
 		ctx.closePath();
 		ctx.stroke();
 		ctx.fill();
 		
 		//interval
-		ctx.strokeStyle = this.interval_color;
+		ctx.strokeStyle = (this.clickable) ? this.interval_color : this.inactive_color;
 		ctx.lineJoin = "bevel";
 		ctx.beginPath();
 		ctx.lineWidth = interval_w;
 		if (this.central_value !== null) {
-			ctx.arc(w / 2, h / 2, radius - external_circle_w - interval_w / 2, Math.min(current_angle, 1.5 * Math.PI), Math.max(current_angle, 1.5 * Math.PI), false);
+			ctx.arc(w / 2, h / 2, radius - interval_w / 2, Math.min(current_angle, 1.5 * Math.PI), Math.max(current_angle, 1.5 * Math.PI), false);
 		}
 		else {
-			ctx.arc(w / 2, h / 2, radius - external_circle_w - interval_w / 2, min_angle, current_angle, false);
+			ctx.arc(w / 2, h / 2, radius - interval_w / 2, min_angle, current_angle, false);
 		}
 		ctx.stroke();
 		
 		//internal circle
 		ctx.strokeStyle = this.light_lines_color;
-		ctx.lineWidth = thin_lines_w;
+		ctx.lineWidth = external_circle_w / 3;
 		ctx.beginPath();
-		ctx.arc(w / 2, h / 2, radius - external_circle_w - interval_w - thin_lines_w / 2 - 1, 0, 2 * Math.PI, false);
+		ctx.arc(w / 2, h / 2, radius - interval_w, 0, 2 * Math.PI, false);
 		ctx.stroke();
 
 		//pointer
@@ -143,7 +149,7 @@ class Knob{
 		ctx.lineJoin = "round";
 		ctx.lineWidth = pointer_w;
 		ctx.beginPath();
-		ctx.arc(w / 2, h / 2, radius - external_circle_w - interval_w - pointer_w / 2 - 1, current_angle, current_angle, false);
+		ctx.arc(w / 2, h / 2, radius - interval_w - pointer_w / 2, current_angle, current_angle, false);
 		ctx.lineTo(w / 2, h / 2);
 		ctx.closePath();
 		ctx.stroke();
@@ -151,10 +157,10 @@ class Knob{
 		//central value point
 		if (this.central_value !== null) {
 			ctx.strokeStyle = this.light_lines_color;
-			ctx.lineWidth = thin_lines_w;
+			ctx.lineWidth = radius / 30;
 			ctx.beginPath();
-			ctx.moveTo(w / 2, h / 2 - radius + external_circle_w);
-			ctx.lineTo(w / 2, h / 2 - radius + external_circle_w + interval_w + 1);
+			ctx.moveTo(w / 2, h / 2 - radius);
+			ctx.lineTo(w / 2, h / 2 - radius + interval_w);
 			ctx.closePath();
 			ctx.stroke();
 		}
@@ -163,32 +169,14 @@ class Knob{
 		ctx.strokeStyle = this.line_color;
 		ctx.lineWidth = external_circle_w;
 		ctx.beginPath();
-		ctx.arc(w / 2, h / 2, radius - external_circle_w / 2 - 1, 0, 2 * Math.PI, false);
+		ctx.arc(w / 2, h / 2, radius - external_circle_w / 2, 0, 2 * Math.PI, false);
 		ctx.stroke();
-		ctx.lineWidth = external_circle_w + interval_w + thin_lines_w;
+		ctx.lineWidth = interval_w;
 		ctx.beginPath();
-		ctx.arc(w / 2, h / 2, radius - (external_circle_w + interval_w + thin_lines_w) / 2 - 1, max_angle, min_angle, false);
+		ctx.arc(w / 2, h / 2, radius - interval_w / 2, max_angle, min_angle, false);
 		ctx.stroke();
 		
    }
 
 
-////////////
-   get_value(){
-      var value_to_return = null;
-      if(this.value >= 0){
-         if(Math.abs((this.value*10000) % (this.step*10000)) < (this.step / 2 * 10000)){
-            value_to_return = this.step * Math.floor(this.value / this.step);
-         }else{
-            value_to_return = this.step * Math.ceil(this.value / this.step);
-         }
-      }else{
-         if(Math.abs((this.value*10000) % (this.step*10000)) < (this.step / 2 * 10000)){
-            value_to_return = this.step * Math.ceil(this.value / this.step);
-         }else{
-            value_to_return = this.step * Math.floor(this.value / this.step);
-         }
-      }
-      return value_to_return.toFixed(this.fixed_points);
-   }
 }
