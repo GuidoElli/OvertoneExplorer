@@ -54,7 +54,6 @@ class Controller {
 
 
       //Vol edit
-      view.on_ve_scale_change = this.vol_edit.on_ve_scale_change;
       view.on_ve_shape_change = this.vol_edit.on_ve_shape_change;
       
       view.on_ve_amount_change = this.vol_edit.on_ve_amount_change;
@@ -133,7 +132,6 @@ class Controller {
 
    //Vol edit ALL
    update_vol_edit(){
-      this.view.update_ve_scale(this.model.ve_scale);
       this.view.update_ve_shape(this.model.ve_shape);
       this.view.update_ve_random(this.model.ve_random, this.model.ve_mirror, this.model.ve_random_values);
       this.view.update_ve_amount(this.model.ve_amount);

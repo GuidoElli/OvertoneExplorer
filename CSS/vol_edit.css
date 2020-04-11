@@ -17,12 +17,18 @@
          .ve_scale_section{
             width: 100%;
          }
+            .ve_scale_param_content{
+               height: 85%;
+            }
             .ve_scale_choose_item{
                height: 50%;
             }
       .ve_shape_section{
          width: 45%;
       }
+         .ve_shape_param_content{
+            height: 85%;
+         }
       .ve_shape_box{
          background-color: rgb(73, 73, 73);
          padding: 4px;

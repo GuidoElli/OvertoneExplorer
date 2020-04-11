@@ -27,7 +27,7 @@
 .knob_section{
    width: 100%;
 	height: 100%;
-	padding: 4px;
+	padding: 20px;
 }
 .knob_section .knob{
    left: 50%;

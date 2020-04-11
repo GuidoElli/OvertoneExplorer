@@ -5,28 +5,6 @@ class Controller_vol_edit{
       this.m = model;
    }
 
-   on_ve_scale_change = (scale_type) => {
-      switch(this.m.ve_scale){
-         case SCALE_TYPE.LIN:
-            this.m.ve_amount = this.m.ve_amount / MAX_VE_AMOUNT_LIN;
-            break;
-         case SCALE_TYPE.LOG:
-            this.m.ve_amount = this.m.ve_amount / MAX_VE_AMOUNT_LOG;
-            break;
-      }
-      switch(scale_type){
-         case SCALE_TYPE.LIN:
-            this.m.ve_amount = this.m.ve_amount * MAX_VE_AMOUNT_LIN;
-            break;
-         case SCALE_TYPE.LOG:
-            this.m.ve_amount = this.m.ve_amount * MAX_VE_AMOUNT_LOG;
-            break;
-      }
-
-
-      this.m.ve_scale = scale_type;
-      this.c.update_vol_edit();
-   }
    on_ve_shape_change = (editor_shape) => {
       this.m.ve_shape = editor_shape;
       this.c.update_vol_edit();
@@ -50,8 +28,10 @@ class Controller_vol_edit{
       this.c.update_vol_edit();
    }
    on_ve_mirror_click = () => {
-      this.m.ve_mirror = !this.m.ve_mirror;
-      this.c.update_vol_edit();
+      if(this.m.ve_random){
+         this.m.ve_mirror = !this.m.ve_mirror;
+         this.c.update_vol_edit();
+      }
    }
    on_ve_randomize_click = () => {
       this.m.randomize_ve_values();

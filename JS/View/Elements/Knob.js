@@ -12,13 +12,8 @@ class Knob{
 		//Events
 		this.on_change = null;
 		
-		//Customization
-		this.decimals = 0;
-		this.unit_of_measurement = "";
-		this.display_value = true;
-
 		//default parameters
-		this.total_angle = 220;
+		this.total_angle = 280;
 		this.background_color = "#858585";
 		this.light_lines_color = "#505050";
 		this.line_color = "#111111";
@@ -30,17 +25,36 @@ class Knob{
 		this.new_mouse_y = null;
 		this.old_value = null;
 		this.editing = false;
+		this.ctrl_pressed = false;
+
+
+		document.addEventListener("keydown", (e) => {
+			if(e.key == "Control"){
+				this.ctrl_pressed = true;
+			}
+		}, true)
+		document.addEventListener("keyup", (e) => {
+			if(e.key == "Control"){
+				this.ctrl_pressed = false;
+			}
+		}, true)
+
 
 		canvas.addEventListener("mousedown", (e) => {
 			this.editing = true;
 			this.old_value = this.value;
 			this.old_mouse_y = e.pageY;
+			this.new_mouse_y = e.pageY;
 		})
 		document.addEventListener("mousemove", (e) => {
 			if(this.editing){
-				this.new_mouse_y = e.pageY;
+				this.new_mouse_y = (e.pageY) ? e.pageY : this.new_mouse_y;
 				var pixel_diff = this.old_mouse_y - this.new_mouse_y;
-				var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL;
+				if(this.ctrl_pressed){
+					var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL_FINE;
+				}else{
+					var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL;
+				}
 
 				var new_value = this.old_value + value_diff;
 

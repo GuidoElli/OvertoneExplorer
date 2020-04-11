@@ -51,7 +51,6 @@ class View {
 
 
       //Vol edit
-      this.on_ve_scale_change = null;
       this.on_ve_shape_change = null;
 
       this.on_ve_amount_change = null;
@@ -110,9 +109,6 @@ class View {
 
 
    //Vol edit
-   update_ve_scale(scale){
-      this.vol_edit.update_scale(scale);
-   }
    update_ve_shape(shape){
       this.vol_edit.update_shape(shape);
    }
@@ -128,8 +124,7 @@ class View {
    }
 
    update_ve_random(random, mirror, random_values){
-      this.vol_edit.update_random(random);
-      this.vol_edit.update_mirror(mirror);
+      this.vol_edit.update_random(random, mirror);
    }
 
 

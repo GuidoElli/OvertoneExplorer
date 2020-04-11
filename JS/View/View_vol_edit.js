@@ -3,14 +3,6 @@ class View_vol_edit {
       this.v = view;
 
 
-      this.ve_scale_choose_items = $(".ve_scale_choose_item");
-      this.ve_scale_choose_items[0].addEventListener("click", () => {
-         this.v.on_ve_scale_change(SCALE_TYPE.LIN);
-      })
-      this.ve_scale_choose_items[1].addEventListener("click", () => {
-         this.v.on_ve_scale_change(SCALE_TYPE.LOG);
-      })
-
 
       this.ve_shape_choose_items = $(".ve_shape_choose_item");
       this.ve_shape_choose_items[0].addEventListener("click", () => {
@@ -24,30 +16,28 @@ class View_vol_edit {
       })
 
       this.ve_amount_knob_canvas = $(".ve_amount_knob")[0];
-      this.ve_amount_knob = new Knob(this.ve_amount_knob_canvas, -MAX_VE_AMOUNT_LIN, MAX_VE_AMOUNT_LIN, 0, 0);
-      this.ve_amount_knob.display_value = true;
-      this.ve_amount_knob.decimals = 1;
-      this.ve_amount_knob.unit_of_measurement = "x";
+      this.ve_amount_knob = new Knob(this.ve_amount_knob_canvas, -MAX_VE_AMOUNT, MAX_VE_AMOUNT, 0, 0);
       this.ve_amount_knob.interval_color = "rgb(11, 112, 196)";
       this.ve_amount_knob.on_change = (pixel_diff) => {
          this.v.on_ve_amount_change(pixel_diff);
       }
+      this.ve_amount_value = $(".ve_amount_knob_param_value")[0];
 
       this.ve_center_knob_canvas = $(".ve_center_knob")[0];
-      this.ve_center_knob = new Knob(this.ve_center_knob_canvas, 0, 1, 0.5, 0.5);
-      this.ve_center_knob.display_value = false;
+      this.ve_center_knob = new Knob(this.ve_center_knob_canvas, 0, 1, null, null);
       this.ve_center_knob.interval_color = "rgb(11, 112, 196)";
       this.ve_center_knob.on_change = (pixel_diff) => {
          this.v.on_ve_center_change(pixel_diff);
       }
+      this.ve_center_value = $(".ve_center_knob_param_value")[0];
 
       this.ve_width_knob_canvas = $(".ve_width_knob")[0];
-      this.ve_width_knob = new Knob(this.ve_width_knob_canvas, 0, 1, 0.5, 0.5);
-      this.ve_width_knob.display_value = false;
+      this.ve_width_knob = new Knob(this.ve_width_knob_canvas, 0, 1, null, null);
       this.ve_width_knob.interval_color = "rgb(11, 112, 196)";
       this.ve_width_knob.on_change = (pixel_diff) => {
          this.v.on_ve_width_change(pixel_diff);
       }
+      this.ve_width_value = $(".ve_width_knob_param_value")[0];
 
       this.ve_random_button = $(".ve_random_button")[0];
       this.ve_random_button.addEventListener("click", () => {
@@ -75,32 +65,8 @@ class View_vol_edit {
          this.v.on_ve_reset_click();
       })
       
-
    }
 
-
-   update_scale = (scale_type) => {
-      switch(scale_type){
-         case SCALE_TYPE.LIN:
-            this.ve_scale_choose_items[0].classList.toggle("active", true);
-            this.ve_scale_choose_items[1].classList.toggle("active", false);
-
-            this.ve_amount_knob.max_value = MAX_VE_AMOUNT_LIN;
-            this.ve_amount_knob.min_value = -MAX_VE_AMOUNT_LIN;
-            this.ve_amount_knob.unit_of_measurement = "x";
-            break;
-
-         case SCALE_TYPE.LOG:
-            this.ve_scale_choose_items[0].classList.toggle("active", false);
-            this.ve_scale_choose_items[1].classList.toggle("active", true);
-
-            this.ve_amount_knob.max_value = MAX_VE_AMOUNT_LOG;
-            this.ve_amount_knob.min_value = -MAX_VE_AMOUNT_LOG;
-            this.ve_amount_knob.unit_of_measurement = "dB";
-            break;
-      }
-   }
-   
    update_shape = (editor_shape) => {
       switch(editor_shape){
          case EDITOR_SHAPE.FLAT:
@@ -126,21 +92,29 @@ class View_vol_edit {
    update_amount = (value) => {
       this.ve_amount_knob.value = value;
       this.ve_amount_knob.update();
+
+      var string_value = (value >= 0) ? "+ " : "- ";
+      string_value += Math.abs(value).toFixed(1);
+      string_value += " dB";
+
+      this.ve_amount_value.innerHTML = string_value;
    }
    update_center = (value) => {
       this.ve_center_knob.value = value;
       this.ve_center_knob.update();
+      this.ve_center_value.innerHTML = "Track " + Math.floor(value * TOTAL_TRACKS);
    }
    update_width = (value) => {
       this.ve_width_knob.value = value;
       this.ve_width_knob.update();
+      this.ve_width_value.innerHTML = Math.floor(value * 100) + " %";
    }
 
-   update_random = (value) => {
-      this.ve_random_button.classList.toggle("active", value);
-   }
-   update_mirror = (value) => {
-      this.ve_mirror_button.classList.toggle("active", value);
+   update_random = (random, mirror) => {
+      this.ve_random_button.classList.toggle("active", random);
+      this.ve_mirror_button.classList.toggle("active", (random && mirror));
+      this.ve_mirror_button.classList.toggle("unclickable", !random);
+      this.ve_randomize_button.classList.toggle("unclickable", !random);
    }
 
 
