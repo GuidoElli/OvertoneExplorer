@@ -29,10 +29,13 @@ class View_vol_visual {
    }
 
    ////////////////////
-   update_main_bars = (values) => {
+   update_main_bars = (base, ve, dadj) => {
       for(let i = 0; i < TOTAL_TRACKS; i++){
-         this.vv_main_bars[i].style.top = 60 + "%";
-         this.vv_main_bars[i].style.height = 70 + "%";
+         var tot = base[i] + ve[i] + dadj[i];
+         tot = (tot > 0) ? 0 : tot;
+         tot = (tot < MIN_DB_LINEAR_RANGE) ? MIN_DB_LINEAR_RANGE : tot;
+         this.vv_main_bars[i].style.top = (1 - Math.abs((MIN_DB_LINEAR_RANGE - tot) / MIN_DB_LINEAR_RANGE)) * 100 + "%";
+         this.vv_main_bars[i].style.height = Math.abs((MIN_DB_LINEAR_RANGE - tot) / MIN_DB_LINEAR_RANGE) * 100 + "%";
       }
    }
 

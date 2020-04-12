@@ -89,69 +89,27 @@ class Controller {
 
 
 
+   
+   //View ALL
+   update_view(){
 
-   //Layout
-   update_layout(){
       this.view.update_layout(this.model.layout);
-   }
-
-   //Selection
-   update_custom_selection(){
-      this.view.update_custom_selection(this.model.custom_selection);
-   }
-
-   //Rows
-   update_playback_tracks(){
-      this.view.update_playback_tracks(this.model.playback_tracks);
-   }
-   update_vol_edit_tracks(){
-      this.view.update_vol_edit_tracks(this.model.vol_edit_tracks);
-   }
-   update_freq_edit_tracks(){
-      this.view.update_freq_edit_tracks(this.model.freq_edit_tracks);
-   }
-   update_dadj_edit_tracks(){
-      this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
-   }
-
-   //Zoom
-   update_zoom(){
       this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track);
-   }
 
+      this.view.update_custom_selection(this.model.custom_selection);
 
+      this.view.update_playback_tracks(this.model.playback_tracks);
+      this.view.update_vol_edit_tracks(this.model.vol_edit_tracks);
+      this.view.update_freq_edit_tracks(this.model.freq_edit_tracks);
+      this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
 
-   //Rows ALL
-   update_rows(){
-      this.update_playback_tracks();
-      this.update_vol_edit_tracks();
-      this.update_freq_edit_tracks();
-      this.update_dadj_edit_tracks();
-   }
-
-
-   //Vol edit ALL
-   update_vol_edit(){
       this.view.update_ve_shape(this.model.ve_shape);
       this.view.update_ve_random(this.model.ve_random, this.model.ve_mirror, this.model.ve_random_values);
       this.view.update_ve_amount(this.model.ve_amount);
       this.view.update_ve_center(this.model.ve_center);
       this.view.update_ve_width(this.model.ve_width);
-   }
 
-
-   
-   //View ALL
-   update_view(){
-
-      this.update_layout();
-      this.update_zoom();
-
-      this.update_custom_selection();
-
-      this.update_rows();
-
-      this.update_vol_edit();
+      this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model.vols_dadj_amounts);
 
    }
 }

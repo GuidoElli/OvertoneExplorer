@@ -120,7 +120,7 @@ class View_vol_edit {
 	update_center = (value) => {
 		this.ve_center_knob.value = value;
 		this.ve_center_knob.update();
-		this.ve_center_value.innerHTML = "Track " + Math.floor(value * TOTAL_TRACKS);
+		this.ve_center_value.innerHTML = "Track " + Math.round(value * (TOTAL_TRACKS));
 	}
 	update_width = (value) => {
 		this.ve_width_knob.value = value;

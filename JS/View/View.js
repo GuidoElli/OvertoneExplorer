@@ -128,9 +128,11 @@ class View {
    }
 
 
+   update_vol_visual(base, ve, dadj){
+      this.vol_visual.update_main_bars(base, ve, dadj);
+   }
 
-
-
+   
    update_canvases(){
       this.vol_edit.update_canvases();
    }

@@ -64,7 +64,7 @@ class Controller_zoom {
          this.m.first_visible_track = new_first;
          this.m.last_visible_track = new_last;
          
-         this.c.update_zoom();
+         this.c.update_view();
       }
       
    }
@@ -87,7 +87,7 @@ class Controller_zoom {
       this.m.first_visible_track = first;
       this.m.last_visible_track = last;
       
-      this.c.update_zoom();
+      this.c.update_view();
    }
 
 
