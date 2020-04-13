@@ -15,10 +15,13 @@ const KNOB_MAX_PIXEL = 300;
 const KNOB_MAX_PIXEL_FINE = 4000;
 
 //Audio
-const MIN_DB_LINEAR_RANGE = -70;
-const MAX_DB_LINEAR_RANGE = -60;
-const MAX_LIN_LINEAR_RANGE = Math.pow(10, MAX_DB_LINEAR_RANGE/20);
+const MIN_DB = -70;
 
+
+
+
+var CTRL_DOWN = false;
+var SHIFT_DOWN = false;
 
 
 
@@ -54,10 +57,10 @@ function to_dB(lin_amount){
    ///
 }
 function to_lin(db_amount){
-   if(db_amount <= MIN_DB_LINEAR_RANGE){
+   if(db_amount <= MIN_DB){
       return 0;
-   }else if(db_amount > MIN_DB_LINEAR_RANGE && db_amount < MAX_DB_LINEAR_RANGE){
-      return MAX_LIN_LINEAR_RANGE * (db_amount - MIN_DB_LINEAR_RANGE) / (MAX_LIN_LINEAR_RANGE - MIN_DB_LINEAR_RANGE);
+   }else if(db_amount > 0){
+      return 1;
    }else{
       return Math.pow(10, db_amount/20);
    }

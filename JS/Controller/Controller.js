@@ -37,12 +37,6 @@ class Controller {
       view.on_dadj_edit_change = this.rows.on_dadj_edit_change;
       view.on_dadj_edit_click = this.rows.on_dadj_edit_click;
 
-      //keyboard
-      view.on_ctrl_press = this.keyboard.on_ctrl_press;
-      view.on_ctrl_release = this.keyboard.on_ctrl_release;
-      view.on_shift_press = this.keyboard.on_shift_press;
-      view.on_shift_release = this.keyboard.on_shift_release;
-
       //Zoom
       view.on_zoom_slider_set = this.zoom.on_zoom_slider_set;
       view.on_zoom_slider_wheel = this.zoom.on_zoom_slider_wheel;

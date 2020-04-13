@@ -35,11 +35,6 @@ class View {
       this.on_dadj_edit_change = null;
       this.on_dadj_edit_click = null;
 
-      this.on_ctrl_press = null;
-      this.on_ctrl_release = null;
-      this.on_shift_press = null;
-      this.on_shift_release = null;
-
       //Zoom
       this.on_zoom_slider_set = null;
       this.on_zoom_slider_wheel = null;

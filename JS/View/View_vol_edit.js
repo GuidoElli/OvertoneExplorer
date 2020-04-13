@@ -125,7 +125,7 @@ class View_vol_edit {
 	update_width = (value) => {
 		this.ve_width_knob.value = value;
 		this.ve_width_knob.update();
-		this.ve_width_value.innerHTML = Math.floor(value * 100) + " %";
+		this.ve_width_value.innerHTML = Math.round(value * 100) + " %";
 	}
 
 	update_random = (random, mirror) => {

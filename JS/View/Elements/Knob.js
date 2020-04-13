@@ -28,19 +28,17 @@ class Knob{
 		this.new_mouse_y = null;
 		this.old_value = null;
 		this.editing = false;
-		this.ctrl_pressed = false;
-
 		this.clickable = true;
 
 
 		document.addEventListener("keydown", (e) => {
 			if(e.key == "Control"){
-				this.ctrl_pressed = true;
+				CTRL_DOWN = true;
 			}
 		}, true)
 		document.addEventListener("keyup", (e) => {
 			if(e.key == "Control"){
-				this.ctrl_pressed = false;
+				CTRL_DOWN = false;
 			}
 		}, true)
 
@@ -57,7 +55,7 @@ class Knob{
 			if(this.editing){
 				this.new_mouse_y = (e.pageY) ? e.pageY : this.new_mouse_y;
 				var pixel_diff = this.old_mouse_y - this.new_mouse_y;
-				if(this.ctrl_pressed){
+				if(CTRL_DOWN){
 					var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL_FINE;
 				}else{
 					var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL;

@@ -2,47 +2,54 @@ class Controller_keyboard {
    constructor(controller, model){
       this.c = controller;
       this.m = model;
-      this.ctrl_pressed = false;
-      this.shift_pressed = false;
+
+      document.addEventListener("keydown", (e) => {
+         switch(e.key){
+            case 'Control':
+               CTRL_DOWN = true;
+               this.update_selection_mode();
+               this.c.update_view();
+               document.dispatchEvent(new Event("mousemove"));
+               break;
+            case 'Shift':
+               SHIFT_DOWN = true;
+               this.update_selection_mode();
+               this.c.update_view();
+               document.dispatchEvent(new Event("mousemove"));
+               break;
+         }
+      })
+
+      document.addEventListener("keyup", (e) => {
+         switch(e.key){
+            case 'Control':
+               CTRL_DOWN = false;
+               this.update_selection_mode();
+               this.c.update_view();
+               document.dispatchEvent(new Event("mousemove"));
+               break;
+            case 'Shift':
+               SHIFT_DOWN = false;
+               this.update_selection_mode();
+               this.c.update_view();
+               document.dispatchEvent(new Event("mousemove"));
+               break;
+         }
+      })
+
    }
 
 
    update_selection_mode(){
-      if(this.ctrl_pressed){
+      if(CTRL_DOWN){
          this.m.selection_mode = SELECTION_MODE.REMOVE;
-      }else if(this.shift_pressed){
+      }else if(SHIFT_DOWN){
          this.m.selection_mode = SELECTION_MODE.TOGGLE;
       }else{
          this.m.selection_mode = SELECTION_MODE.ADD;
       }
    }
 
-
-   on_ctrl_press = () => {
-      this.ctrl_pressed = true;
-      document.dispatchEvent(new Event("mousemove"));
-      this.update_selection_mode();
-      this.c.update_view();
-   }
-   on_ctrl_release = () => {
-      this.ctrl_pressed = false;
-      document.dispatchEvent(new Event("mousemove"));
-      this.update_selection_mode();
-      this.c.update_view();
-   }
-
-   on_shift_press = () => {
-      this.shift_pressed = true;
-      document.dispatchEvent(new Event("mousemove"));
-      this.update_selection_mode();
-      this.c.update_view();
-   }
-   on_shift_release = () => {
-      this.shift_pressed = false;
-      document.dispatchEvent(new Event("mousemove"));
-      this.update_selection_mode();
-      this.c.update_view();
-   }
 
 
 }

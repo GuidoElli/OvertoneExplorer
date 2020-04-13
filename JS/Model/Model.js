@@ -28,10 +28,6 @@ class Model {
       this._freq_edit_tracks_backup = null;
       this._dadj_edit_tracks_backup = null;
       
-      //Keyboard
-      this._ctrl_pressed = false;
-      this._shift_pressed = false;
-
       //Zoom
       this._first_visible_track = 0;
       this._last_visible_track = TOTAL_TRACKS-1;
@@ -215,21 +211,6 @@ class Model {
       this._dadj_edit_tracks_backup = this._dadj_edit_tracks.slice();
    }
 
-
-   //Keyboard
-   get ctrl_pressed(){
-      return this._ctrl_pressed;
-   }
-   set ctrl_pressed(value){
-      this._ctrl_pressed = value;
-   }
-
-   get shift_pressed(){
-      return this._shift_pressed;
-   }
-   set shift_pressed(value){
-      this._shift_pressed = value;
-   }
 
 
    //Zoom

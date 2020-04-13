@@ -33,9 +33,9 @@ class View_vol_visual {
       for(let i = 0; i < TOTAL_TRACKS; i++){
          var tot = base[i] + ve[i] + dadj[i];
          tot = (tot > 0) ? 0 : tot;
-         tot = (tot < MIN_DB_LINEAR_RANGE) ? MIN_DB_LINEAR_RANGE : tot;
-         this.vv_main_bars[i].style.top = (1 - Math.abs((MIN_DB_LINEAR_RANGE - tot) / MIN_DB_LINEAR_RANGE)) * 100 + "%";
-         this.vv_main_bars[i].style.height = Math.abs((MIN_DB_LINEAR_RANGE - tot) / MIN_DB_LINEAR_RANGE) * 100 + "%";
+         tot = (tot < MIN_DB) ? MIN_DB : tot;
+         this.vv_main_bars[i].style.top = (1 - Math.abs((MIN_DB - tot) / MIN_DB)) * 100 + "%";
+         this.vv_main_bars[i].style.height = Math.abs((MIN_DB - tot) / MIN_DB) * 100 + "%";
       }
    }
 
