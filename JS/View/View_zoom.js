@@ -82,7 +82,7 @@ class View_zoom {
 
       document.addEventListener("mousemove", (e) => {
          if(this.editing){
-            this.new_mouse_x = e.pageX;
+            this.new_mouse_x = (e.pageX) ? e.pageX : this.new_mouse_x;
             var left = this.container.getBoundingClientRect().left;
             var right = this.container.getBoundingClientRect().right;
             var track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
