@@ -68,6 +68,25 @@ class View_vol_edit {
 			this.v.on_ve_reset_click();
 		})
 
+
+
+		this.ve_visual_items_section = $(".ve_visual_items_section")[0];
+
+		//Cloning
+		var first_ve_visual_item = $(".ve_visual_item_section")[0];
+		var content = first_ve_visual_item.innerHTML;
+		this.ve_visual_items_section.innerHTML = "";
+		for (let i = 0; i < TOTAL_TRACKS; i++) {
+			var clone = first_ve_visual_item.cloneNode();
+			clone.innerHTML = content;
+			this.ve_visual_items_section.append(clone);
+			clone.style.width = 100 / TOTAL_TRACKS + "%";
+		}
+
+		this.ve_visual_shape_amounts = $(".ve_visual_shape_amount");
+		this.ve_visual_amounts = $(".ve_visual_amount");
+
+
 	}
 
 	update_shape = (editor_shape) => {
@@ -134,6 +153,30 @@ class View_vol_edit {
 		this.ve_mirror_button.classList.toggle("unclickable", !random);
 		this.ve_randomize_button.classList.toggle("unclickable", !random);
 	}
+
+
+
+	update_ve_visual= (shape_amounts, amounts) => {
+
+		for (let i = 0; i < TOTAL_TRACKS; i++){
+			this.ve_visual_shape_amounts[i].style.height = Math.abs(shape_amounts[i]) / 2 / MAX_VE_AMOUNT * 100 + "%";
+			this.ve_visual_amounts[i].style.height = Math.abs(amounts[i]) / 2 / MAX_VE_AMOUNT * 100 + "%";
+
+			if(shape_amounts[i] >= 0){
+				this.ve_visual_shape_amounts[i].style.bottom = "50%";
+				this.ve_visual_shape_amounts[i].style.top = "";
+				this.ve_visual_amounts[i].style.bottom = "50%";
+				this.ve_visual_amounts[i].style.top = "";
+			}else{
+				this.ve_visual_shape_amounts[i].style.top = "50%";
+				this.ve_visual_shape_amounts[i].style.bottom = "";
+				this.ve_visual_amounts[i].style.top = "50%";
+				this.ve_visual_amounts[i].style.bottom = "";
+			}
+
+		}
+	}
+
 
 
 

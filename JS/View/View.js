@@ -124,9 +124,13 @@ class View {
         this.vol_edit.update_random(random, mirror);
     }
 
+    update_ve_visual(shape_amounts, amounts) {
+        this.vol_edit.update_ve_visual(shape_amounts, amounts);
+    }
+
 
     update_vol_visual(base, ve, dadj) {
-        this.vol_visual.update_main_bars(base, ve, dadj);
+        this.vol_visual.update_values(base, ve, dadj);
     }
 
 
