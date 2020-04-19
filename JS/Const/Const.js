@@ -16,6 +16,8 @@ const KNOB_MAX_PIXEL_FINE = 4000;
 
 //Audio
 const MIN_DB = -70;
+const MAX_DB = 10;
+
 
 
 

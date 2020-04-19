@@ -124,8 +124,8 @@ class View {
         this.vol_edit.update_random(random, mirror);
     }
 
-    update_ve_visual(mirror, shape_amounts, amounts) {
-        this.vol_edit.update_ve_visual(mirror, shape_amounts, amounts);
+    update_ve_visual(random, mirror, shape_amounts, amounts) {
+        this.vol_edit.update_ve_visual(random, mirror, shape_amounts, amounts);
     }
 
 

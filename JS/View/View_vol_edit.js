@@ -156,14 +156,14 @@ class View_vol_edit {
 
 
 
-	update_ve_visual= (mirror, shape_amounts, amounts) => {
+	update_ve_visual= (random, mirror, shape_amounts, amounts) => {
 
 		for (let i = 0; i < TOTAL_TRACKS; i++){
 
 			var shape_h = Math.abs(shape_amounts[i]) / 2 / MAX_VE_AMOUNT;
 			var final_h = Math.abs(amounts[i]) / 2 / MAX_VE_AMOUNT
 
-			if(mirror){
+			if(random && mirror){
 				shape_h *= 2;
 
 				this.ve_visual_shape_amounts[i].style.bottom = (1 - shape_h) / 2 * 100 + "%";

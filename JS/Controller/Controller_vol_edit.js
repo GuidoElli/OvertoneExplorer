@@ -10,8 +10,8 @@ class Controller_vol_edit{
 			this.m.vols_base[i] += this.m.vols_ve_amounts[i];
 			if(this.m.vols_base[i] < MIN_DB){
 				this.m.vols_base[i] = MIN_DB;
-			}else if(this.m.vols_base[i] > 0){
-				this.m.vols_base[i] = 0;
+			}else if(this.m.vols_base[i] > MAX_DB){
+				this.m.vols_base[i] = MAX_DB;
 			}
 		}
 	}
