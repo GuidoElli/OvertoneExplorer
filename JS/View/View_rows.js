@@ -95,6 +95,7 @@ class View_rows {
             this.v.on_dadj_edit_click(value);
         }
 
+
     }
 
 

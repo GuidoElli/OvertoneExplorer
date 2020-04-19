@@ -14,7 +14,9 @@ class Model {
 		this._last_played_note_dadj_freqs = new Array(TOTAL_TRACKS).fill(0);
 
 		//Layout
-		this._layout = LAYOUT.VOL;
+		this._layout_left = LAYOUT_LEFT.HOME;
+		this._layout_right = LAYOUT_RIGHT.DEFAULT;
+		this._custom_selection = false;
 
 		//Selection
 		this._selection_mode = SELECTION_MODE.ADD;
@@ -199,12 +201,25 @@ class Model {
 
 
 	//Layout
-	get layout() {
-		return this._layout;
+	get layout_left() {
+		return this._layout_left;
+	}
+	set layout_left(value) {
+		this._layout_left = value;
 	}
 
-	set layout(value) {
-		this._layout = value;
+	get layout_right() {
+		return this._layout_right;
+	}
+	set layout_right(value) {
+		this._layout_right = value;
+	}
+
+	get custom_selection() {
+		return this._custom_selection;
+	}
+	set custom_selection(value) {
+		this._custom_selection = value;
 	}
 
 	//Selection
@@ -214,14 +229,6 @@ class Model {
 
 	set selection_mode(value) {
 		this._selection_mode = value;
-	}
-
-	get custom_selection() {
-		return this._custom_selection;
-	}
-
-	set custom_selection(value) {
-		this._custom_selection = value;
 	}
 
 

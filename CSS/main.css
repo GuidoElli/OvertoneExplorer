@@ -100,13 +100,9 @@ button, select, option{
 	border: none;
 }
 button{
-	background-color: var(--greyscale-7);
-   color: var(--greyscale-14);
+	background-color: inherit;
    height: 100%;
 	width: 100%;
-}
-button:hover{
-	background-color: var(--greyscale-8);
 }
 
 
@@ -133,10 +129,11 @@ button:hover{
    border-radius: var(--border-radius);
 }
    .section_label{
-      height: 0%;
+      height: 0;
       width: 100%;
 		text-align: center;
 		font-style: italic;
+	   color: #111111;
    }
    .section_content{
       height: 100%;
@@ -144,9 +141,9 @@ button:hover{
       border-radius: var(--border-radius);
    }
 .param_label{
-   height: 15%;
-   width: 100%;
-   text-align: center;
+    height: 15%;
+    width: 100%;
+    text-align: center;
 	font-style: italic;
 }
 .param_content{
@@ -173,46 +170,56 @@ button:hover{
 	padding: var(--padding);
 	background-color: var(--greyscale-2);
 }
-   .top_bar_section{
-      height: 6%;
-      width: 100%;
-   }
-   .top_bar_box{
-      background-color: var(--greyscale-5);
-   }
 
-   
+
+   .left_bar_section{
+	   width: 25%;
+   }
+   		.left_bar_top_section{
+			height: 10%;
+		}
+		.left_bar_top_box{
+			background-color: #1b1b1b;
+		}
+			.home_button_section{
+				width: 25%;
+			}
+				.home_button{
+					font-size: large;
+					background-color: #323232;
+				}
+				.home_button:hover{
+					background-color: #474747;
+				}
+			.left_bar_title_section{
+				width: 75%;
+				font-size: x-large;
+			}
+		.left_bar_content_section{
+			height: 90%;
+		}
+
+
    .main_section{
-      height: 94%;
-      width: 85%;
+      width: 65%;
    }
 
       .zoom_section{
-         height: 6%;
-         width: 100%;
+         height: 5%;
 		}
 
+		.rows_section{
+			height: 8%;
+		}
 		.visual_section{
-			height: 40%;
-			width: 100%;
+			height: 87%;
 		}
-		
-      .rows_section{
-         height: 10%;
-         width: 100%;
-      }
 
-      .controls_section{
-         height: 40%;
-         width: 100%;
-      }
 
-         
+
 
 
    .right_bar_section{
-      height: 92%;
-      width: 15%;
-      padding-left: 0px;
+      width: 10%;
    }
    

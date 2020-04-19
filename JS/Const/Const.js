@@ -32,21 +32,31 @@ const EDITOR_SHAPE = {
    CURVE: "curve",
    TRIANGLE: "triangle"
 }
-const SCALE_TYPE = {
-   LIN: "lin",
-   LOG: "log"
-}
 const SELECTION_MODE = {
    ADD: "add",
    REMOVE: "remove",
    TOGGLE: "toggle"
 }
-const LAYOUT = {
-   SOUND: "sound",
+const LAYOUT_LEFT = {
+   HOME: "home",
    VOL: "vol",
    FREQ: "freq",
-   DADJ: "dadj"
+   DADJ: "dadj",
+   SETTINGS: "settings",
+   SELECTION: "selection",
+   HELP: "help"
 }
+const LAYOUT_RIGHT = {
+   DEFAULT: "DEFAULT",
+   FREQ_ONLY: "FREQ_ONLY",
+   VOL_ONLY: "VOL_ONLY"
+}
+
+
+//functions for .every()
+const is_true = (elem) => {return elem};
+const is_false = (elem) => {return !elem};
+
 
 
 

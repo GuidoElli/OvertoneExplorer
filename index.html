@@ -22,7 +22,7 @@
 	<div class="app_box box">
 
 		<!--Top Bar-->
-		<div class="top_bar_section section">
+		<div class="top_bar_section section hidden">
 			<div class="top_bar_box box">
 
 				<!--Sound-->
@@ -45,9 +45,296 @@
 			</div>
 		</div>
 
+
+		<div class="left_bar_section section">
+			<div class="left_bar_box box">
+
+
+				<div class="left_bar_top_section section">
+					<div class="left_bar_top_box box">
+						<div class="home_button_section section">
+							<button class="home_button button">
+								Home
+							</button>
+						</div>
+						<button class="left_bar_title_section section">
+							Title
+						</button>
+					</div>
+				</div>
+
+
+				<div class="left_bar_content_section section">
+
+
+
+					<div class="home_box box">
+						<button class="vol_edit_button">Volume Editor</button>
+						<button class="freq_edit_button">Frequency Editor</button>
+						<button class="dadj_edit_button">DAdj Editor</button>
+						<button class="settings_button">Settings</button>
+						<button class="help_button">Help</button>
+					</div>
+
+
+
+					<div class="vol_edit_box box">
+
+
+						<div class="ve_shape_section section">
+							<div class="ve_shape_box box">
+
+								<div class="ve_shape_choose_section section">
+									<button class="ve_shape_param_label param_label">
+										Shape
+									</button>
+
+									<div class="ve_shape_param_content param_content">
+										<div class="ve_shape_choose_box choose_box box">
+											<button class="active ve_shape_choose_item choose_item">
+												Flat
+											</button>
+											<button class="ve_shape_choose_item choose_item">
+												Triangle
+											</button>
+											<button class="ve_shape_choose_item choose_item">
+												Curve
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="ve_amount_knob_section section">
+									<button class="ve_amount_knob_param_label param_label">
+										Amount
+									</button>
+
+									<div class="ve_amount_knob_param_content param_content">
+										<div class="ve_amount_knob_canvas_section knob_section">
+											<canvas class="ve_amount_knob knob"></canvas>
+										</div>
+									</div>
+
+									<button class="ve_amount_knob_param_value param_value">
+										+ 0.12 dB
+									</button>
+								</div>
+
+								<div class="ve_center_knob_section section">
+									<button class="ve_center_knob_param_label param_label">
+										Center
+									</button>
+
+									<div class="ve_center_knob_param_content param_content">
+										<div class="ve_center_knob_canvas_section knob_section">
+											<canvas class="ve_center_knob knob"></canvas>
+										</div>
+									</div>
+
+									<button class="ve_center_knob_param_value param_value">
+										+ 0.12 dB
+									</button>
+								</div>
+
+								<div class="ve_width_knob_section section">
+									<button class="ve_width_knob_param_label param_label">
+										Width
+									</button>
+
+									<div class="ve_width_knob_param_content param_content">
+										<div class="ve_width_knob_canvas_section knob_section">
+											<canvas class="ve_width_knob knob"></canvas>
+										</div>
+									</div>
+
+									<button class="ve_width_knob_param_value param_value">
+										+ 0.12 dB
+									</button>
+								</div>
+
+							</div>
+						</div>
+
+
+						<div class="ve_visual_section section">
+							<div class="ve_visual_box box">
+								<div class="ve_visual_items_section section">
+
+									<div class="ve_visual_item_section section">
+										<div class="ve_visual_item_box box">
+											<div class="ve_visual_shape_amount"></div>
+											<div class="ve_visual_amount"></div>
+										</div>
+									</div>
+
+								</div>
+								<div class="ve_visual_zero_line"></div>
+							</div>
+						</div>
+
+
+						<div class="ve_random_section section">
+							<div class="ve_random_box box">
+
+								<div class="ve_random_left">
+
+									<div class="ve_random_button_section section">
+										<button class="ve_random_button button">Random</button>
+									</div>
+
+									<div class="ve_mirror_section section">
+										<button class="ve_mirror_button button">Mirror</button>
+									</div>
+
+								</div>
+
+								<div class="ve_random_right">
+
+									<div class="ve_randomize_button_section section">
+										<button class="ve_randomize_button button">Randomize</button>
+									</div>
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="ve_save_section section">
+
+							<div class="ve_save_box box">
+								<div class="ve_reset_button_section section">
+									<button class="ve_reset_button">Reset</button>
+								</div>
+								<div class="ve_apply_button_section section">
+									<button class="ve_apply_button">Apply</button>
+								</div>
+
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<div class="freq_edit_box box">
+						freq
+					</div>
+
+
+					<div class="dadj_edit_box box">
+						dadj
+					</div>
+
+
+
+
+					<div class="settings_box box">
+						settings
+					</div>
+
+
+
+					<div class="selection_box box">
+						selection
+					</div>
+
+
+					<div class="help_box box">
+						help
+					</div>
+
+
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+
+		<!--Right bar-->
+		<div class="right_bar_section section">
+			<div class="right_bar_box box">
+
+				<!--Zoom Controls-->
+				<div class="zoom_controls_section section">
+					<div class="zoom_controls_box box">
+
+						<div class="zoom_minus_button_section section">
+							<button class="zoom_minus_button">-</button>
+						</div>
+						<div class="zoom_plus_button_section section">
+							<button class="zoom_plus_button">+</button>
+						</div>
+
+						<div class="zoom_left_button_section section">
+							<button class="zoom_left_button"><-</button>
+						</div>
+						<div class="zoom_right_button_section section">
+							<button class="zoom_right_button">-></button>
+						</div>
+
+					</div>
+				</div>
+
+				<!--Row all-->
+				<div class="row_side_section section">
+					<div class="row_side_box box">
+
+						<div class="row_custom_selection_section section">
+							<div class="row_custom_selection_box box">
+								<button class="custom_selection_button">Custom</button>
+							</div>
+						</div>
+						<div class="row_all_section section">
+							<div class="row_all_box box">
+								<div class="playback_all_button_section section">
+									<button class="playback_all_button">All</button>
+								</div>
+								<div class="vol_edit_all_button_section section">
+									<button class="vol_edit_all_button">All</button>
+								</div>
+								<div class="freq_edit_all_button_section section">
+									<button class="freq_edit_all_button">All</button>
+								</div>
+								<div class="dadj_edit_all_button_section section">
+									<button class="dadj_edit_all_button">All</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="visual_side_section section">
+
+					<!--vol scale-->
+					<div class="vol_visual_side_section section">
+						<div class="vol_visual_side_box box">
+							SCALE VOL
+						</div>
+					</div>
+
+					<!--freq scale-->
+					<div class="freq_visual_side_section section">
+						<div class="freq_visual_side_box box">
+							SCALE FREQ
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
 		<div class="main_section section">
 
 			<div class="main_box box">
+
+
 
 				<!--Zoom-->
 				<div class="zoom_section section">
@@ -81,22 +368,6 @@
 					</div>
 				</div>
 
-				<!--Visual-->
-				<div class="visual_section section">
-					<div class="visual_box box">
-						<div class="visual_vol_box box">
-							<div class="visual_vol_item_section section">
-								<div class="visual_vol_item_box box">
-									<div class="vv_main_bar"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="visual_freq_box box">
-						FREQ VISUAL
-					</div>
-				</div>
-
 				<!--Rows-->
 				<div class="rows_section section">
 					<div class="row_playback_box box">
@@ -121,248 +392,34 @@
 					</div>
 				</div>
 
-				<!--Controls-->
-				<div class="controls_section section">
-
-
-					<div class="sound_box box">
-						SOUND
-					</div>
-
-
-					<div class="vol_edit_box box">
-						<div class="ve_controls_section section">
-							<div class="ve_controls_box box">
-
-
-								<div class="ve_shape_section section">
-									<div class="ve_shape_box box">
-
-										<div class="ve_shape_section_label section_label">
-
-										</div>
-
-										<div class="ve_shape_section_content section_content">
-
-											<div class="ve_shape_choose_section section">
-												<div class="ve_shape_param_label param_label">
-													Shape
-												</div>
-
-												<div class="ve_shape_param_content param_content">
-													<div class="ve_shape_choose_box choose_box box">
-														<button class="active ve_shape_choose_item choose_item">
-															Flat
-														</button>
-														<button class="ve_shape_choose_item choose_item">
-															Triangle
-														</button>
-														<button class="ve_shape_choose_item choose_item">
-															Curve
-														</button>
-													</div>
-												</div>
-											</div>
-
-											<div class="ve_amount_knob_section section">
-												<div class="ve_amount_knob_param_label param_label">
-													Amount
-												</div>
-
-												<div class="ve_amount_knob_param_content param_content">
-													<div class="ve_amount_knob_canvas_section knob_section">
-														<canvas class="ve_amount_knob knob"></canvas>
-													</div>
-												</div>
-
-												<div class="ve_amount_knob_param_value param_value">
-													+ 0.12 dB
-												</div>
-											</div>
-
-											<div class="ve_center_knob_section section">
-												<div class="ve_center_knob_param_label param_label">
-													Center
-												</div>
-
-												<div class="ve_center_knob_param_content param_content">
-													<div class="ve_center_knob_canvas_section knob_section">
-														<canvas class="ve_center_knob knob"></canvas>
-													</div>
-												</div>
-
-												<div class="ve_center_knob_param_value param_value">
-													+ 0.12 dB
-												</div>
-											</div>
-
-											<div class="ve_width_knob_section section">
-												<div class="ve_width_knob_param_label param_label">
-													Width
-												</div>
-
-												<div class="ve_width_knob_param_content param_content">
-													<div class="ve_width_knob_canvas_section knob_section">
-														<canvas class="ve_width_knob knob"></canvas>
-													</div>
-												</div>
-
-												<div class="ve_width_knob_param_value param_value">
-													+ 0.12 dB
-												</div>
-											</div>
-
-										</div>
-
+				<!--Visual-->
+				<div class="visual_section section">
+					<div class="visual_box box">
+						<div class="visual_vol_section section">
+							<div class="visual_vol_box box">
+								<div class="visual_vol_item_section section">
+									<div class="visual_vol_item_box box">
+										<div class="vv_main_bar"></div>
 									</div>
 								</div>
-
-								<div class="ve_random_section section">
-									<div class="ve_random_box box">
-
-										<div class="ve_random_section_label section_label">
-
-										</div>
-
-										<div class="ve_random_section_content section_content">
-
-											<div class="ve_random_left">
-
-												<div class="ve_random_button_section section">
-													<button class="ve_random_button button">Random</button>
-												</div>
-
-												<div class="ve_mirror_section section">
-													<button class="ve_mirror_button button">Mirror</button>
-												</div>
-
-											</div>
-
-											<div class="ve_random_right">
-
-												<div class="ve_randomize_button_section section">
-													<button class="ve_randomize_button button">Randomize</button>
-												</div>
-
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-
-								<div class="ve_save_section section">
-
-									<div class="ve_save_box box">
-										<div class="ve_apply_button_section section">
-											<button class="ve_apply_button">Apply</button>
-										</div>
-
-										<div class="ve_reset_button_section section">
-											<button class="ve_reset_button">Reset</button>
-										</div>
-									</div>
-								</div>
-
 							</div>
 						</div>
-
-						<div class="ve_visual_section section">
-							<div class="ve_visual_box box">
-								<div class="ve_visual_items_section section">
-
-									<div class="ve_visual_item_section section">
-										<div class="ve_visual_item_box box">
-											<div class="ve_visual_shape_amount"></div>
-											<div class="ve_visual_amount"></div>
-										</div>
+						<div class="visual_freq_section section">
+							<div class="visual_freq_box box">
+								<div class="visual_freq_item_section section">
+									<div class="visual_freq_item_box box">
+										<div class="vf_main_bar"></div>
 									</div>
-
 								</div>
-								<div class="ve_visual_zero_line"></div>
 							</div>
 						</div>
 					</div>
-
-
-					<div class="freq_edit_box box">
-						freq
-					</div>
-
-
-					<div class="dadj_edit_box box">
-						dadj
-					</div>
-
-
-					<div class="selection_box box">
-						selection
-					</div>
-
-
 				</div>
 
 			</div>
 
 		</div>
 
-
-		<!--Right bar-->
-		<div class="right_bar_section section">
-
-			<!--Zoom Controls-->
-			<div class="zoom_controls_section section">
-				<div class="zoom_controls_box box">
-
-					<div class="zoom_minus_button_section section">
-						<button class="zoom_minus_button">-</button>
-					</div>
-					<div class="zoom_plus_button_section section">
-						<button class="zoom_plus_button">+</button>
-					</div>
-
-					<div class="zoom_left_button_section section">
-						<button class="zoom_left_button"><-</button>
-					</div>
-					<div class="zoom_right_button_section section">
-						<button class="zoom_right_button">-></button>
-					</div>
-
-				</div>
-			</div>
-
-			<!--Scale-->
-			<div class="scale_section section">
-				<div class="scale_box box">
-					SCALE
-				</div>
-			</div>
-
-			<!--Row all-->
-			<div class="row_all_section section">
-				<div class="row_all_box box">
-					ALL/CUSTOM
-				</div>
-			</div>
-
-			<!--Help window-->
-			<div class="help_window_section section">
-				<div class="help_window_sound_box help_window_box box">
-					HELP SOUND
-				</div>
-				<div class="help_window_freq_box help_window_box box">
-					HELP FREQ
-				</div>
-				<div class="help_window_vol_box help_window_box box">
-					HELP VOL
-				</div>
-				<div class="help_window_dadj_box help_window_box box">
-					HELP DADJ
-				</div>
-			</div>
-
-		</div>
 
 
 	</div>

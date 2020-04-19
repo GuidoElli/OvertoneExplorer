@@ -3,31 +3,44 @@ class View_layout {
 
       this.v = view;
 
-      this.current_layout = null;
+      this.layout_left = null;
+      this.layout_right= null;
 
-      //Tabs
-      this.sound_tab_button = $(".sound_tab_button")[0];
-      this.vol_tab_button = $(".vol_tab_button")[0];
-      this.freq_tab_button = $(".freq_tab_button")[0];
-      this.dadj_tab_button = $(".dadj_tab_button")[0];
+      this.title_field = $(".left_bar_title_section")[0];
+      this.home_button_section = $(".home_button_section")[0];
 
-      this.sound_tab_button.addEventListener("click", () => {
-         this.v.on_sound_tab_button_click();
+      this.home_button = $(".home_button")[0];
+      this.settings_button = $(".settings_button")[0];
+      this.vol_edit_button = $(".vol_edit_button")[0];
+      this.freq_edit_button = $(".freq_edit_button")[0];
+      this.dadj_edit_button = $(".dadj_edit_button")[0];
+      this.selection_button = $(".selection_button")[0];
+      this.help_button = $(".help_button")[0];
+
+
+      this.home_button.addEventListener("click", () => {
+         this.v.on_home_button_click();
       })
-      this.vol_tab_button.addEventListener("click", () => {
-         this.v.on_vol_tab_button_click();
+      this.settings_button.addEventListener("click", () => {
+         this.v.on_settings_button_click();
       })
-      this.freq_tab_button.addEventListener("click", () => {
-         this.v.on_freq_tab_button_click();
+      this.vol_edit_button.addEventListener("click", () => {
+         this.v.on_vol_edit_button_click();
       })
-      this.dadj_tab_button.addEventListener("click", () => {
-         this.v.on_dadj_tab_button_click();
+      this.freq_edit_button.addEventListener("click", () => {
+         this.v.on_freq_edit_button_click();
+      })
+      this.dadj_edit_button.addEventListener("click", () => {
+         this.v.on_dadj_edit_button_click();
+      })
+      this.help_button.addEventListener("click", () => {
+         this.v.on_help_button_click();
       })
 
       
       //Visual
-      this.visual_vol_box = $(".visual_vol_box")[0];
-      this.visual_freq_box = $(".visual_freq_box")[0];
+      this.visual_vol_section = $(".visual_vol_section")[0];
+      this.visual_freq_section = $(".visual_freq_section")[0];
 
       //Rows
       this.row_playback_box = $(".row_playback_box")[0];
@@ -38,123 +51,202 @@ class View_layout {
       //Zoom
       this.zoom_box = $(".zoom_box")[0];
 
-      //Controls
-      this.sound_box = $(".sound_box")[0];
+      //Boxes (left)
+      this.home_box = $(".home_box")[0];
       this.vol_edit_box = $(".vol_edit_box")[0];
       this.freq_edit_box = $(".freq_edit_box")[0];
       this.dadj_edit_box = $(".dadj_edit_box")[0];
-
+      this.settings_box = $(".settings_box")[0];
       this.selection_box = $(".selection_box")[0];
-
-      //Help windows
-      this.help_window_sound_box = $(".help_window_sound_box")[0];
-      this.help_window_freq_box = $(".help_window_freq_box")[0];
-      this.help_window_vol_box = $(".help_window_vol_box")[0];
-      this.help_window_dadj_box = $(".help_window_dadj_box")[0];
+      this.help_box = $(".help_box")[0];
 
 
+      //All buttons
+      this.playback_all_button = $(".playback_all_button")[0];
+      this.vol_edit_all_button = $(".vol_edit_all_button")[0];
+      this.freq_edit_all_button = $(".freq_edit_all_button")[0];
+      this.dadj_edit_all_button = $(".dadj_edit_all_button")[0];
 
 
-      
+      this.playback_all_button_section = $(".playback_all_button_section")[0];
+      this.vol_edit_all_button_section = $(".vol_edit_all_button_section")[0];
+      this.freq_edit_all_button_section = $(".freq_edit_all_button_section")[0];
+      this.dadj_edit_all_button_section = $(".dadj_edit_all_button_section")[0];
+
+
+      this.playback_all_button.addEventListener("click", () => {
+         this.v.on_playback_all_button_click();
+      })
+      this.vol_edit_all_button.addEventListener("click", () => {
+         this.v.on_vol_edit_all_button_click();
+      })
+      this.freq_edit_all_button.addEventListener("click", () => {
+         this.v.on_freq_edit_all_button_click();
+      })
+      this.dadj_edit_all_button.addEventListener("click", () => {
+         this.v.on_dadj_edit_all_button_click();
+      })
+
+
+
+
+      this.custom_selection_button = $(".custom_selection_button")[0];
+      this.custom_selection_button.addEventListener("click", () => {
+         this.v.on_custom_selection_button_click();
+      })
+
+
+      this.vol_visual_side_section = $(".vol_visual_side_section")[0];
+      this.freq_visual_side_section = $(".freq_visual_side_section")[0];
+
    }
 
-   set_layout(layout){
+   set_layout(layout_left, layout_right, custom_selection){
 
-      this.current_layout = layout;
-      
-      this.visual_vol_box.classList.toggle("hidden", true);
-      this.visual_freq_box.classList.toggle("hidden", true);
+      this.layout_left = layout_left;
+      this.layout_right = layout_right;
 
-      this.row_vol_edit_box.classList.toggle("hidden", true);
-      this.row_freq_edit_box.classList.toggle("hidden", true);
-      this.row_dadj_edit_box.classList.toggle("hidden", true);
+      this.home_button_section.classList.toggle("hidden", false);
+      this.home_button_section.style.width = "25%";
+      this.title_field.style.width = "75%";
 
-      this.sound_box.classList.toggle("hidden", true);
+      this.visual_vol_section.classList.toggle("hidden", true);
+      this.visual_freq_section.classList.toggle("hidden", true);
+      this.vol_visual_side_section.classList.toggle("hidden", true);
+      this.freq_visual_side_section.classList.toggle("hidden", true);
+
+      this.home_box.classList.toggle("hidden", true);
       this.vol_edit_box.classList.toggle("hidden", true);
       this.freq_edit_box.classList.toggle("hidden", true);
       this.dadj_edit_box.classList.toggle("hidden", true);
-
-      this.help_window_sound_box.classList.toggle("hidden", true);
-      this.help_window_vol_box.classList.toggle("hidden", true);
-      this.help_window_freq_box.classList.toggle("hidden", true);
-      this.help_window_dadj_box.classList.toggle("hidden", true);
+      this.settings_box.classList.toggle("hidden", true);
+      this.selection_box.classList.toggle("hidden", true);
+      this.help_box.classList.toggle("hidden", true);
 
 
-      switch(this.current_layout){
-         case LAYOUT.SOUND:
-            this.visual_vol_box.classList.toggle("hidden", false);
-            this.visual_freq_box.classList.toggle("hidden", false);
-            this.sound_box.classList.toggle("hidden", false);
-            this.help_window_sound_box.classList.toggle("hidden", false);
-            
-            this.visual_vol_box.style.height = "50%";
-            this.visual_freq_box.style.height = "50%";
-            this.row_playback_box.style.height = "100%";
-            break;
-         case LAYOUT.VOL:
-            this.visual_vol_box.classList.toggle("hidden", false);
-            this.row_vol_edit_box.classList.toggle("hidden", false);
-            this.vol_edit_box.classList.toggle("hidden", false);
-            this.help_window_vol_box.classList.toggle("hidden", false);
-            
-            this.visual_vol_box.style.height = "100%";
-            this.row_playback_box.style.height = "50%";
-            this.row_vol_edit_box.style.height = "50%";
-            break;
-         case LAYOUT.FREQ:
-            this.visual_freq_box.classList.toggle("hidden", false);
-            this.row_freq_edit_box.classList.toggle("hidden", false);
-            this.freq_edit_box.classList.toggle("hidden", false);
-            this.help_window_freq_box.classList.toggle("hidden", false);
-            
-            this.visual_freq_box.style.height = "100%";
-            this.row_playback_box.style.height = "50%";
-            this.row_freq_edit_box.style.height = "50%";
-            break;
-         case LAYOUT.DADJ:
-            this.visual_vol_box.classList.toggle("hidden", false);
-            this.visual_freq_box.classList.toggle("hidden", false);
-            this.row_dadj_edit_box.classList.toggle("hidden", false);
-            this.dadj_edit_box.classList.toggle("hidden", false);
-            this.help_window_dadj_box.classList.toggle("hidden", false);
-            
-            this.visual_vol_box.style.height = "50%";
-            this.visual_freq_box.style.height = "50%";
-            this.row_playback_box.style.height = "50%";
-            this.row_dadj_edit_box.style.height = "50%";
-            break;
-      }
 
-   }
-
-   set_custom_selection(state){
-      if(state){
-         this.sound_box.classList.toggle("hidden", true);
-         this.vol_edit_box.classList.toggle("hidden", true);
-         this.freq_edit_box.classList.toggle("hidden", true);
-         this.dadj_edit_box.classList.toggle("hidden", true);
+      if(custom_selection){
          this.selection_box.classList.toggle("hidden", false);
+         this.custom_selection_button.classList.toggle("active", true);
+         this.set_title("Custom Selection");
       }else{
-         this.selection_box.classList.toggle("hidden", true);
-         switch(this.current_layout){
-            case LAYOUT.SOUND:
-               this.sound_box.classList.toggle("hidden", false);
+
+         this.custom_selection_button.classList.toggle("active", false);
+
+         this.visual_vol_section.classList.toggle("hidden", true);
+         this.visual_freq_section.classList.toggle("hidden", true);
+
+         this.row_playback_box.style.height = "100%";
+         this.row_vol_edit_box.classList.toggle("hidden", true);
+         this.row_freq_edit_box.classList.toggle("hidden", true);
+         this.row_dadj_edit_box.classList.toggle("hidden", true);
+
+         this.playback_all_button_section.style.height = "100%";
+         this.vol_edit_all_button_section.classList.toggle("hidden", true);
+         this.freq_edit_all_button_section.classList.toggle("hidden", true);
+         this.dadj_edit_all_button_section.classList.toggle("hidden", true);
+
+         switch(this.layout_left){
+            case LAYOUT_LEFT.HOME:
+
+               this.home_button_section.classList.toggle("hidden", true);
+               this.title_field.style.width = "100%";
+
+               this.home_box.classList.toggle("hidden", false);
+               this.set_title("Home");
                break;
-            case LAYOUT.VOL:
+
+            case LAYOUT_LEFT.VOL:
                this.vol_edit_box.classList.toggle("hidden", false);
+               this.row_vol_edit_box.classList.toggle("hidden", false);
+
+               this.row_playback_box.style.height = "50%";
+               this.row_vol_edit_box.style.height = "50%";
+
+               this.playback_all_button_section.style.height = "50%";
+               this.vol_edit_all_button_section.style.height = "50%";
+               this.vol_edit_all_button_section.classList.toggle("hidden", false);
+
+               this.set_title("Volume Editor");
                break;
-            case LAYOUT.FREQ:
+
+            case LAYOUT_LEFT.FREQ:
                this.freq_edit_box.classList.toggle("hidden", false);
+               this.row_freq_edit_box.classList.toggle("hidden", false);
+
+               this.row_playback_box.style.height = "50%";
+               this.row_freq_edit_box.style.height = "50%";
+
+               this.playback_all_button_section.style.height = "50%";
+               this.freq_edit_all_button_section.style.height = "50%";
+               this.freq_edit_all_button_section.classList.toggle("hidden", false);
+
+               this.set_title("Frequency Editor");
                break;
-            case LAYOUT.DADJ:
+
+            case LAYOUT_LEFT.DADJ:
+               this.dadj_edit_box.classList.toggle("hidden", false);
                this.row_dadj_edit_box.classList.toggle("hidden", false);
+
+               this.row_playback_box.style.height = "50%";
+               this.row_dadj_edit_box.style.height = "50%";
+
+               this.playback_all_button_section.style.height = "50%";
+               this.dadj_edit_all_button_section.style.height = "50%";
+               this.dadj_edit_all_button_section.classList.toggle("hidden", false);
+
+               this.set_title("DADJ Editor");
+               break;
+
+            case LAYOUT_LEFT.SETTINGS:
+               this.settings_box.classList.toggle("hidden", false);
+               this.set_title("Settings");
+               break;
+
+            case LAYOUT_LEFT.HELP:
+               this.help_box.classList.toggle("hidden", false);
+               this.set_title("Help");
                break;
          }
       }
+
+
+
+
+      switch(this.layout_right){
+         case LAYOUT_RIGHT.DEFAULT:
+            this.visual_vol_section.classList.toggle("hidden", false);
+            this.visual_freq_section.classList.toggle("hidden", false);
+            this.vol_visual_side_section.classList.toggle("hidden", false);
+            this.freq_visual_side_section.classList.toggle("hidden", false);
+            this.visual_vol_section.style.height = "50%";
+            this.visual_freq_section.style.height = "50%";
+            this.vol_visual_side_section.style.height = "50%";
+            this.freq_visual_side_section.style.height = "50%";
+            break;
+
+         case LAYOUT_RIGHT.VOL_ONLY:
+            this.visual_vol_section.classList.toggle("hidden", false);
+            this.vol_visual_side_section.classList.toggle("hidden", false);
+            this.visual_vol_section.style.height = "100%";
+            this.vol_visual_side_section.style.height = "100%";
+            break;
+
+         case LAYOUT_RIGHT.FREQ_ONLY:
+            this.visual_freq_section.classList.toggle("hidden", false);
+            this.freq_visual_side_section.classList.toggle("hidden", false);
+            this.visual_freq_section.style.height = "100%";
+            this.freq_visual_side_section.style.height = "100%";
+            break;
+
+      }
+
    }
 
 
 
-
+   set_title = (title) => {
+      this.title_field.innerHTML = title;
+   }
 
 }

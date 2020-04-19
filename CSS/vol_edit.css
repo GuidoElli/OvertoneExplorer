@@ -1,56 +1,36 @@
 .vol_edit_box{
    background-color: rgb(56, 56, 56);
 }
-   .ve_controls_section{
-      height: 50%;
-   }
 
-
-
-      .ve_metrics_section{
-         width: 15%;
-      }
-      .ve_metrics_box{
-         background-color: rgb(73, 73, 73);
-         padding: 4px;
-      }
-         .ve_scale_section{
-            width: 100%;
-         }
-            .ve_scale_param_content{
-               height: 85%;
-            }
-            .ve_scale_choose_item{
-               height: 50%;
-            }
       .ve_shape_section{
-         width: 45%;
+         width: 100%;
+         height: 20%;
       }
-         .ve_shape_param_content{
-            height: 85%;
-         }
       .ve_shape_box{
          background-color: rgb(73, 73, 73);
          padding: 4px;
       }
+         .ve_shape_param_content{
+            height: 85%;
+         }
          .ve_shape_choose_section{
-            width: 25%;
+            width: 30%;
          }
             .ve_shape_choose_item{
                height: 33.3333333%;
             }
          .ve_amount_knob_section{
-            width: 25%;
+            width: 30%;
          }
          .ve_center_knob_section{
-            width: 25%;
+            width: 20%;
          }
          .ve_width_knob_section{
-            width: 25%;
+            width: 20%;
          }
 
       .ve_random_section{
-         width: 25%;
+         height: 20%;
       }
       .ve_random_box{
          background-color: rgb(73, 73, 73);
@@ -112,14 +92,14 @@
          }
 
       .ve_save_section{
-         width: 15%;
+         height: 15%;
       }
       .ve_save_box{
          background-color: rgb(73, 73, 73);
          padding: 4px;
       }
          .ve_apply_button_section{
-            height: 60%;
+            width: 60%;
             padding: 6px;
          }
             .ve_apply_button{
@@ -134,7 +114,7 @@
                background-color: rgb(10, 101, 175);
             }
          .ve_reset_button_section{
-            height: 40%;
+            width: 40%;
             padding: 6px;
          }
             .ve_reset_button{
@@ -150,8 +130,7 @@
             }
 
    .ve_visual_section{
-      width: 100%;
-      height: 50%;
+      height: 30%;
    }
    .ve_visual_box{
       background-color: rgb(27, 27, 27);

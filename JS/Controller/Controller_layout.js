@@ -4,28 +4,46 @@ class Controller_layout {
       this.m = model;
    }
 
-   on_sound_tab_button_click = () => {
-      this.m.layout = LAYOUT.SOUND;
-      this.m.custom_selection = false;
 
+   on_custom_selection_button_click = () => {
+      this.m.custom_selection = !this.m.custom_selection;
       this.c.update_view();
    }
-   on_vol_tab_button_click = () => {
-      this.m.layout = LAYOUT.VOL;
-      this.m.custom_selection = false;
 
+
+   on_home_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.HOME;
+      this.m.custom_selection = false;
+      this.m.layout_right = LAYOUT_RIGHT.DEFAULT;
       this.c.update_view();
    }
-   on_freq_tab_button_click = () => {
-      this.m.layout = LAYOUT.FREQ;
+   on_settings_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.SETTINGS;
       this.m.custom_selection = false;
-
+      this.m.layout_right = LAYOUT_RIGHT.DEFAULT;
       this.c.update_view();
    }
-   on_dadj_tab_button_click = () => {
-      this.m.layout = LAYOUT.DADJ;
+   on_vol_edit_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.VOL;
       this.m.custom_selection = false;
-
+      this.m.layout_right = LAYOUT_RIGHT.VOL_ONLY;
+      this.c.update_view();
+   }
+   on_freq_edit_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.FREQ;
+      this.m.custom_selection = false;
+      this.m.layout_right = LAYOUT_RIGHT.FREQ_ONLY;
+      this.c.update_view();
+   }
+   on_dadj_edit_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.DADJ;
+      this.m.custom_selection = false;
+      this.m.layout_right = LAYOUT_RIGHT.DEFAULT;
+      this.c.update_view();
+   }
+   on_help_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.HELP;
+      this.m.layout_right = LAYOUT_RIGHT.DEFAULT;
       this.c.update_view();
    }
 

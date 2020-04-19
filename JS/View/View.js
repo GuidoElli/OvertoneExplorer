@@ -10,11 +10,14 @@ class View {
         this.vol_edit = new View_vol_edit(this);
 
 
-        //Tabs
-        this.on_sound_tab_button_click = null;
-        this.on_vol_tab_button_click = null;
-        this.on_freq_tab_button_click = null;
-        this.on_dadj_tab_button_click = null;
+        //Layout
+        this.on_home_button_click = null;
+        this.on_settings_button_click = null;
+        this.on_vol_edit_button_click = null;
+        this.on_freq_edit_button_click = null;
+        this.on_dadj_edit_button_click = null;
+        this.on_selection_button_click = null;
+        this.on_help_button_click = null;
 
         //Rows
         this.on_playback_change_enter = null;
@@ -32,6 +35,14 @@ class View {
         this.on_dadj_edit_change_enter = null;
         this.on_dadj_edit_change = null;
         this.on_dadj_edit_click = null;
+
+
+        this.on_playback_all_button_click = null;
+        this.on_vol_edit_all_button_click = null;
+        this.on_freq_edit_all_button_click = null;
+        this.on_dadj_edit_all_button_click = null;
+
+        this.on_custom_selection_button_click = null;
 
         //Zoom
         this.on_zoom_slider_set = null;
@@ -67,14 +78,10 @@ class View {
 
     //UPDATE
 
-    update_layout(layout) {
-        this.layout.set_layout(layout);
-        this.zoom.update_layout(layout);
+    update_layout(layout_left, layout_right, custom_selection) {
+        this.layout.set_layout(layout_left, layout_right, custom_selection);
     }
 
-    update_custom_selection(value) {
-        this.layout.set_custom_selection(value);
-    }
 
     update_playback_tracks(values) {
         this.rows.update_playback_tracks(values);

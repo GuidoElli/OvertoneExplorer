@@ -5,6 +5,60 @@ class Controller_rows {
    }
 
 
+
+
+
+   on_playback_all_button_click = () => {
+      if(this.m.playback_tracks.every(is_true)){
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_playback_track(i, false);
+         }
+      }else{
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_playback_track(i, this.c.selection_answer(this.m.playback_tracks[i]));
+         }
+      }
+      this.c.update_view();
+   }
+   on_vol_edit_all_button_click = () => {
+      if(this.m.vol_edit_tracks.every(is_true)){
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_vol_edit_track(i, false);
+         }
+      }else{
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_vol_edit_track(i, this.c.selection_answer(this.m.vol_edit_tracks[i]));
+         }
+      }
+      this.c.update_view();
+   }
+   on_freq_edit_all_button_click = () => {
+      if(this.m.freq_edit_tracks.every(is_true)){
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_freq_edit_track(i, false);
+         }
+      }else{
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_freq_edit_track(i, this.c.selection_answer(this.m.freq_edit_tracks[i]));
+         }
+      }
+      this.c.update_view();
+   }
+   on_dadj_edit_all_button_click = () => {
+      if(this.m.dadj_edit_tracks.every(is_true)){
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_dadj_edit_track(i, false);
+         }
+      }else{
+         for (let i = 0; i < TOTAL_TRACKS; i++) {
+            this.m.set_dadj_edit_track(i, this.c.selection_answer(this.m.dadj_edit_tracks[i]));
+         }
+      }
+      this.c.update_view();
+   }
+
+
+
    on_playback_change_enter = () => {
       this.m.backup_playback_tracks();
    }

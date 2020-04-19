@@ -1,4 +1,8 @@
 
-.sound_box{
+.home_box{
    background-color: rgb(146, 146, 146);
 }
+   .home_box button{
+      height: 20%;
+      background-color: #6d6d6d;
+   }

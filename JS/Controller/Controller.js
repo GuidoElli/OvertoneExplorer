@@ -14,11 +14,13 @@ class Controller {
 
 
 
-		//Tabs
-		view.on_sound_tab_button_click = this.layout.on_sound_tab_button_click;
-		view.on_vol_tab_button_click = this.layout.on_vol_tab_button_click;
-		view.on_freq_tab_button_click = this.layout.on_freq_tab_button_click;
-		view.on_dadj_tab_button_click = this.layout.on_dadj_tab_button_click;
+
+		view.on_home_button_click = this.layout.on_home_button_click;
+		view.on_settings_button_click = this.layout.on_settings_button_click;
+		view.on_help_button_click = this.layout.on_help_button_click;
+		view.on_vol_edit_button_click = this.layout.on_vol_edit_button_click;
+		view.on_freq_edit_button_click = this.layout.on_freq_edit_button_click;
+		view.on_dadj_edit_button_click = this.layout.on_dadj_edit_button_click;
 
 		//Rows
 		view.on_playback_change_enter = this.rows.on_playback_change_enter;
@@ -36,6 +38,14 @@ class Controller {
 		view.on_dadj_edit_change_enter = this.rows.on_dadj_edit_change_enter;
 		view.on_dadj_edit_change = this.rows.on_dadj_edit_change;
 		view.on_dadj_edit_click = this.rows.on_dadj_edit_click;
+
+
+		view.on_playback_all_button_click = this.rows.on_playback_all_button_click;
+		view.on_vol_edit_all_button_click = this.rows.on_vol_edit_all_button_click;
+		view.on_freq_edit_all_button_click = this.rows.on_freq_edit_all_button_click;
+		view.on_dadj_edit_all_button_click = this.rows.on_dadj_edit_all_button_click;
+
+		view.on_custom_selection_button_click = this.layout.on_custom_selection_button_click;
 
 		//Zoom
 		view.on_zoom_slider_set = this.zoom.on_zoom_slider_set;
@@ -87,10 +97,8 @@ class Controller {
 	//View ALL
 	update_view(){
 
-		this.view.update_layout(this.model.layout);
+		this.view.update_layout(this.model.layout_left, this.model.layout_right, this.model.custom_selection);
 		this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track);
-
-		this.view.update_custom_selection(this.model.custom_selection);
 
 		this.view.update_playback_tracks(this.model.playback_tracks);
 		this.view.update_vol_edit_tracks(this.model.vol_edit_tracks);
