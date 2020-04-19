@@ -102,7 +102,7 @@ class Controller {
 		this.view.update_ve_amount(this.model.ve_amount);
 		this.view.update_ve_center(this.model.ve_center);
 		this.view.update_ve_width(this.model.ve_width);
-		this.view.update_ve_visual(this.model.vols_ve_shape_amounts, this.model.vols_ve_amounts);
+		this.view.update_ve_visual(this.model.ve_mirror, this.model.vols_ve_shape_amounts, this.model.vols_ve_amounts);
 
 
 		this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);

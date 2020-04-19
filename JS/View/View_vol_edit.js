@@ -156,23 +156,42 @@ class View_vol_edit {
 
 
 
-	update_ve_visual= (shape_amounts, amounts) => {
+	update_ve_visual= (mirror, shape_amounts, amounts) => {
 
 		for (let i = 0; i < TOTAL_TRACKS; i++){
-			this.ve_visual_shape_amounts[i].style.height = Math.abs(shape_amounts[i]) / 2 / MAX_VE_AMOUNT * 100 + "%";
-			this.ve_visual_amounts[i].style.height = Math.abs(amounts[i]) / 2 / MAX_VE_AMOUNT * 100 + "%";
 
-			if(shape_amounts[i] >= 0){
-				this.ve_visual_shape_amounts[i].style.bottom = "50%";
+			var shape_h = Math.abs(shape_amounts[i]) / 2 / MAX_VE_AMOUNT;
+			var final_h = Math.abs(amounts[i]) / 2 / MAX_VE_AMOUNT
+
+			if(mirror){
+				shape_h *= 2;
+
+				this.ve_visual_shape_amounts[i].style.bottom = (1 - shape_h) / 2 * 100 + "%";
 				this.ve_visual_shape_amounts[i].style.top = "";
-				this.ve_visual_amounts[i].style.bottom = "50%";
-				this.ve_visual_amounts[i].style.top = "";
+
+				if(amounts[i] >= 0){
+					this.ve_visual_amounts[i].style.bottom = "50%";
+					this.ve_visual_amounts[i].style.top = "";
+				}else{
+					this.ve_visual_amounts[i].style.top = "50%";
+					this.ve_visual_amounts[i].style.bottom = "";
+				}
 			}else{
-				this.ve_visual_shape_amounts[i].style.top = "50%";
-				this.ve_visual_shape_amounts[i].style.bottom = "";
-				this.ve_visual_amounts[i].style.top = "50%";
-				this.ve_visual_amounts[i].style.bottom = "";
+				if(shape_amounts[i] >= 0){
+					this.ve_visual_shape_amounts[i].style.bottom = "50%";
+					this.ve_visual_shape_amounts[i].style.top = "";
+					this.ve_visual_amounts[i].style.bottom = "50%";
+					this.ve_visual_amounts[i].style.top = "";
+				}else{
+					this.ve_visual_shape_amounts[i].style.top = "50%";
+					this.ve_visual_shape_amounts[i].style.bottom = "";
+					this.ve_visual_amounts[i].style.top = "50%";
+					this.ve_visual_amounts[i].style.bottom = "";
+				}
 			}
+
+			this.ve_visual_shape_amounts[i].style.height = shape_h * 100 + "%";
+			this.ve_visual_amounts[i].style.height = final_h * 100 + "%";
 
 		}
 	}
