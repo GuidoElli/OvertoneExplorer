@@ -146,9 +146,12 @@
          .ve_visual_shape_amount{
             width: 100%;
             height: 100%;/**/
-            background-color: rgb(6, 35, 114);
+            background-color: rgb(3, 20, 61);
             border-radius: 3px;
             position: absolute;
+         }
+         .ve_visual_shape_amount.active{
+            background-color: rgb(6, 35, 114);
          }
          .ve_visual_amount{
             width: 100%;

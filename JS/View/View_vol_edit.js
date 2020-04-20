@@ -131,6 +131,7 @@ class View_vol_edit {
 		this.ve_amount_knob.update();
 
 		var string_value = (value >= 0) ? "+ " : "- ";
+		string_value = (value === 0) ? "" : string_value;
 		string_value += Math.abs(value).toFixed(2);
 		string_value += " dB";
 
@@ -156,12 +157,21 @@ class View_vol_edit {
 
 
 
-	update_ve_visual= (random, mirror, shape_amounts, amounts) => {
+	update_ve_visual= (random, mirror, shape_amounts, amounts, vol_edit_tracks) => {
 
 		for (let i = 0; i < TOTAL_TRACKS; i++){
 
-			var shape_h = Math.abs(shape_amounts[i]) / 2 / MAX_VE_AMOUNT;
-			var final_h = Math.abs(amounts[i]) / 2 / MAX_VE_AMOUNT
+			this.ve_visual_shape_amounts[i].classList.toggle("active", vol_edit_tracks[i]);
+
+			var shape_h;
+			var final_h;
+
+			shape_h = Math.abs(shape_amounts[i]) / 2 / MAX_VE_AMOUNT;
+			if(vol_edit_tracks[i]){
+				final_h = Math.abs(amounts[i]) / 2 / MAX_VE_AMOUNT;
+			}else{
+				final_h = 0;
+			}
 
 			if(random && mirror){
 				shape_h *= 2;

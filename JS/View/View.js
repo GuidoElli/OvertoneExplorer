@@ -7,7 +7,9 @@ class View {
         this.keyboard = new View_keyboard(this);
         this.zoom = new View_zoom(this);
         this.vol_visual = new View_vol_visual(this);
+        this.freq_visual = new View_freq_visual(this);
         this.vol_edit = new View_vol_edit(this);
+        this.freq_edit = new View_freq_edit(this);
 
 
         //Layout
@@ -107,6 +109,7 @@ class View {
         this.rows.update_zoom(first, last);
         this.zoom.update_zoom(first, last);
         this.vol_visual.update_zoom(first, last);
+        this.freq_visual.update_zoom(first, last);
     }
 
 
@@ -127,17 +130,52 @@ class View {
         this.vol_edit.update_width(width);
     }
 
-    update_ve_random(random, mirror, random_values) {
+    update_ve_random(random, mirror) {
         this.vol_edit.update_random(random, mirror);
     }
 
-    update_ve_visual(random, mirror, shape_amounts, amounts) {
-        this.vol_edit.update_ve_visual(random, mirror, shape_amounts, amounts);
+    update_ve_visual(random, mirror, shape_amounts, amounts, vol_edit_tracks) {
+        this.vol_edit.update_ve_visual(random, mirror, shape_amounts, amounts, vol_edit_tracks);
     }
+
+
+
+
+
+    //Freq edit
+    update_fe_shape(shape) {
+        this.freq_edit.update_shape(shape);
+    }
+
+    update_fe_amount(amount) {
+        this.freq_edit.update_amount(amount);
+    }
+
+    update_fe_center(center) {
+        this.freq_edit.update_center(center);
+    }
+
+    update_fe_width(width) {
+        this.freq_edit.update_width(width);
+    }
+
+    update_fe_random(random, mirror) {
+        this.freq_edit.update_random(random, mirror);
+    }
+
+    update_fe_visual(random, mirror, shape_amounts, amounts, freq_edit_tracks) {
+        this.freq_edit.update_fe_visual(random, mirror, shape_amounts, amounts, freq_edit_tracks);
+    }
+
+
 
 
     update_vol_visual(base, ve, dadj) {
         this.vol_visual.update_values(base, ve, dadj);
+    }
+
+    update_freq_visual(base, ve, dadj) {
+        this.freq_visual.update_values(base, ve, dadj);
     }
 
 

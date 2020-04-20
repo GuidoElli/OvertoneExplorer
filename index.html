@@ -21,30 +21,6 @@
 <div class="app_section section">
 	<div class="app_box box">
 
-		<!--Top Bar-->
-		<div class="top_bar_section section hidden">
-			<div class="top_bar_box box">
-
-				<!--Sound-->
-				<div class="sound_tab_button_section section">
-					<button class="sound_tab_button button">Sound</button>
-				</div>
-				<!--Vol-->
-				<div class="vol_tab_button_section section">
-					<button class="vol_tab_button button">Volume</button>
-				</div>
-				<!--Freq-->
-				<div class="freq_tab_button_section section">
-					<button class="freq_tab_button button">Frequency</button>
-				</div>
-				<!--Dadj-->
-				<div class="dadj_tab_button_section section">
-					<button class="dadj_tab_button button">Diatonic Adjustment</button>
-				</div>
-
-			</div>
-		</div>
-
 
 		<div class="left_bar_section section">
 			<div class="left_bar_box box">
@@ -219,7 +195,141 @@
 
 
 					<div class="freq_edit_box box">
-						freq
+
+						<div class="fe_shape_section section">
+							<div class="fe_shape_box box">
+
+								<div class="fe_shape_choose_section section">
+									<button class="fe_shape_param_label param_label">
+										Shape
+									</button>
+
+									<div class="fe_shape_param_content param_content">
+										<div class="fe_shape_choose_box choose_box box">
+											<button class="active fe_shape_choose_item choose_item">
+												Flat
+											</button>
+											<button class="fe_shape_choose_item choose_item">
+												Triangle
+											</button>
+											<button class="fe_shape_choose_item choose_item">
+												Curve
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="fe_amount_knob_section section">
+									<button class="fe_amount_knob_param_label param_label">
+										Amount
+									</button>
+
+									<div class="fe_amount_knob_param_content param_content">
+										<div class="fe_amount_knob_canvas_section knob_section">
+											<canvas class="fe_amount_knob knob"></canvas>
+										</div>
+									</div>
+
+									<button class="fe_amount_knob_param_value param_value">
+										+ 0.12 dB
+									</button>
+								</div>
+
+								<div class="fe_center_knob_section section">
+									<button class="fe_center_knob_param_label param_label">
+										Center
+									</button>
+
+									<div class="fe_center_knob_param_content param_content">
+										<div class="fe_center_knob_canvas_section knob_section">
+											<canvas class="fe_center_knob knob"></canvas>
+										</div>
+									</div>
+
+									<button class="fe_center_knob_param_value param_value">
+										+ 0.12 dB
+									</button>
+								</div>
+
+								<div class="fe_width_knob_section section">
+									<button class="fe_width_knob_param_label param_label">
+										Width
+									</button>
+
+									<div class="fe_width_knob_param_content param_content">
+										<div class="fe_width_knob_canvas_section knob_section">
+											<canvas class="fe_width_knob knob"></canvas>
+										</div>
+									</div>
+
+									<button class="fe_width_knob_param_value param_value">
+										+ 0.12 dB
+									</button>
+								</div>
+
+							</div>
+						</div>
+
+
+						<div class="fe_visual_section section">
+							<div class="fe_visual_box box">
+								<div class="fe_visual_items_section section">
+
+									<div class="fe_visual_item_section section">
+										<div class="fe_visual_item_box box">
+											<div class="fe_visual_shape_amount"></div>
+											<div class="fe_visual_amount"></div>
+										</div>
+									</div>
+
+								</div>
+								<div class="fe_visual_zero_line"></div>
+							</div>
+						</div>
+
+
+						<div class="fe_random_section section">
+							<div class="fe_random_box box">
+
+								<div class="fe_random_left">
+
+									<div class="fe_random_button_section section">
+										<button class="fe_random_button button">Random</button>
+									</div>
+
+									<div class="fe_mirror_section section">
+										<button class="fe_mirror_button button">Mirror</button>
+									</div>
+
+								</div>
+
+								<div class="fe_random_right">
+
+									<div class="fe_randomize_button_section section">
+										<button class="fe_randomize_button button">Randomize</button>
+									</div>
+
+								</div>
+
+
+							</div>
+						</div>
+
+
+						<div class="fe_save_section section">
+
+							<div class="fe_save_box box">
+								<div class="fe_reset_button_section section">
+									<button class="fe_reset_button">Reset</button>
+								</div>
+								<div class="fe_apply_button_section section">
+									<button class="fe_apply_button">Apply</button>
+								</div>
+
+							</div>
+						</div>
+
+
 					</div>
 
 
@@ -440,7 +550,9 @@
 <script src="JS/View/View_keyboard.js"></script>
 <script src="JS/View/View_zoom.js"></script>
 <script src="JS/View/View_vol_visual.js"></script>
+<script src="JS/View/View_freq_visual.js"></script>
 <script src="JS/View/View_vol_edit.js"></script>
+<script src="JS/View/View_freq_edit.js"></script>
 
 <script src="JS/View/Elements/Row.js"></script>
 <script src="JS/View/Elements/Knob.js"></script>
@@ -456,6 +568,7 @@
 <script src="JS/Controller/Controller_keyboard.js"></script>
 <script src="JS/Controller/Controller_zoom.js"></script>
 <script src="JS/Controller/Controller_vol_edit.js"></script>
+<script src="JS/Controller/Controller_freq_edit.js"></script>
 
 <script src="JS/Controller/Controller.js"></script>
 

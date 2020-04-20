@@ -41,7 +41,7 @@ class Model {
 		//Vol edit
 
 		this._ve_shape = EDITOR_SHAPE.FLAT;
-		this._ve_amount = 0; // in multiplying factor or dB
+		this._ve_amount = 0; // in dB
 		this._ve_center = 0.7; // 0 to 1
 		this._ve_width = 0.4; // 0 to 1
 
@@ -164,7 +164,7 @@ class Model {
 			}
 
 			//Final values (with random and mirror settings)
-			if (this._vol_edit_tracks[i]) {
+			if (this._freq_edit_tracks[i]) {
 				if (this._fe_random) {
 					if (this._fe_mirror) {
 						this._freqs_fe_amounts[i] = this._freqs_fe_shape_amounts[i] * this._fe_random_values[i];
@@ -275,6 +275,7 @@ class Model {
 	}
 	set_freq_edit_track = (track, value) => {
 		this._freq_edit_tracks[track] = value;
+		this.compute_freqs_fe_amounts();
 	}
 	set_dadj_edit_track = (track, value) => {
 		this._dadj_edit_tracks[track] = value;

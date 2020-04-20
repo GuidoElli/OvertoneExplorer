@@ -10,6 +10,7 @@ class Controller {
 		this.keyboard = new Controller_keyboard(this, model);
 		this.zoom = new Controller_zoom(this, model);
 		this.vol_edit = new Controller_vol_edit(this, model);
+		this.freq_edit = new Controller_freq_edit(this, model);
 
 
 
@@ -72,6 +73,21 @@ class Controller {
 		view.on_ve_reset_click = this.vol_edit.on_ve_reset_click;
 
 
+		//Freq edit
+		view.on_fe_shape_change = this.freq_edit.on_fe_shape_change;
+
+		view.on_fe_amount_change = this.freq_edit.on_fe_amount_change;
+		view.on_fe_center_change = this.freq_edit.on_fe_center_change;
+		view.on_fe_width_change = this.freq_edit.on_fe_width_change;
+
+		view.on_fe_random_click = this.freq_edit.on_fe_random_click;
+		view.on_fe_mirror_click = this.freq_edit.on_fe_mirror_click;
+		view.on_fe_randomize_click = this.freq_edit.on_fe_randomize_click;
+
+		view.on_fe_apply_click = this.freq_edit.on_fe_apply_click;
+		view.on_fe_reset_click = this.freq_edit.on_fe_reset_click;
+
+
 
 
 
@@ -106,14 +122,23 @@ class Controller {
 		this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
 
 		this.view.update_ve_shape(this.model.ve_shape);
-		this.view.update_ve_random(this.model.ve_random, this.model.ve_mirror, this.model.ve_random_values);
+		this.view.update_ve_random(this.model.ve_random, this.model.ve_mirror);
 		this.view.update_ve_amount(this.model.ve_amount);
 		this.view.update_ve_center(this.model.ve_center);
 		this.view.update_ve_width(this.model.ve_width);
-		this.view.update_ve_visual(this.model.ve_random, this.model.ve_mirror, this.model.vols_ve_shape_amounts, this.model.vols_ve_amounts);
+		this.view.update_ve_visual(this.model.ve_random, this.model.ve_mirror, this.model.vols_ve_shape_amounts, this.model.vols_ve_amounts, this.model.vol_edit_tracks);
+
+
+		this.view.update_fe_shape(this.model.fe_shape);
+		this.view.update_fe_random(this.model.fe_random, this.model.fe_mirror);
+		this.view.update_fe_amount(this.model.fe_amount);
+		this.view.update_fe_center(this.model.fe_center);
+		this.view.update_fe_width(this.model.fe_width);
+		this.view.update_fe_visual(this.model.fe_random, this.model.fe_mirror, this.model.freqs_fe_shape_amounts, this.model.freqs_fe_amounts, this.model.freq_edit_tracks);
 
 
 		this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);
+		this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_dadj_freqs);
 
 	}
 }

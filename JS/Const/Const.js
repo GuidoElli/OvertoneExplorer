@@ -3,22 +3,25 @@ const MAX_FREQUENCY = 20000;
 
 const TOTAL_TRACKS = 80;
 const MIN_VISIBLE_TRACKS = 7;
-const MAX_TRACKS_TO_SHOW_BUTTON_LABELS = 50;
+const MAX_TRACKS_TO_SHOW_BUTTON_LABELS = 30;
 
 //Zoom
 const ZOOM_CENTER_RELATIVE_INCREMENT = 0.05;
 const ZOOM_WIDTH_RELATIVE_INCREMENT = 0.12;
 
 //Knobs
-const MAX_VE_AMOUNT = 50;
 const KNOB_MAX_PIXEL = 300;
 const KNOB_MAX_PIXEL_FINE = 4000;
 
+//editors
+const MAX_VE_AMOUNT = 50;
+const MAX_FE_AMOUNT = 100;
+
 //Audio
-const MIN_DB = -70;
 const MAX_DB = 10;
+const MIN_DB = -70;
 
-
+const MAX_MIN_CENTS = 200;
 
 
 
@@ -63,17 +66,4 @@ const is_false = (elem) => {return !elem};
 
 function midi_to_freq(midi_note){
    return 10; ///////--------------------
-}
-
-function to_dB(lin_amount){
-   ///
-}
-function to_lin(db_amount){
-   if(db_amount <= MIN_DB){
-      return 0;
-   }else if(db_amount > 0){
-      return 1;
-   }else{
-      return Math.pow(10, db_amount/20);
-   }
 }
