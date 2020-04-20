@@ -10,6 +10,7 @@ class View {
         this.freq_visual = new View_freq_visual(this);
         this.vol_edit = new View_vol_edit(this);
         this.freq_edit = new View_freq_edit(this);
+        this.dadj_edit = new View_dadj_edit(this);
 
 
         //Layout
@@ -71,6 +72,30 @@ class View {
         this.on_ve_reset_click = null;
 
 
+        //Vol edit
+        this.on_fe_shape_change = null;
+
+        this.on_fe_amount_change = null;
+        this.on_fe_center_change = null;
+        this.on_fe_width_change = null;
+
+        this.on_fe_random_click = null;
+        this.on_fe_mirror_click = null;
+        this.on_fe_randomize_click = null;
+
+        this.on_fe_apply_click = null;
+        this.on_fe_reset_click = null;
+
+
+        //Dadj
+        this.on_dadj_freq_range_change = null;
+        this.on_dadj_freq_coeff_change = null;
+        this.on_dadj_vol_range_change = null;
+        this.on_dadj_vol_coeff_change = null;
+        this.on_dadj_freq_coeff_change = null;
+
+
+
         window.addEventListener("resize", () => {
             this.update_canvases();
         })
@@ -83,6 +108,14 @@ class View {
     update_layout(layout_left, layout_right, custom_selection) {
         this.layout.set_layout(layout_left, layout_right, custom_selection);
     }
+
+    update_zoom(first, last) {
+        this.rows.update_zoom(first, last);
+        this.zoom.update_zoom(first, last);
+        this.vol_visual.update_zoom(first, last);
+        this.freq_visual.update_zoom(first, last);
+    }
+
 
 
     update_playback_tracks(values) {
@@ -105,67 +138,36 @@ class View {
         this.zoom.update_dadj_edit_tracks(values);
     }
 
-    update_zoom(first, last) {
-        this.rows.update_zoom(first, last);
-        this.zoom.update_zoom(first, last);
-        this.vol_visual.update_zoom(first, last);
-        this.freq_visual.update_zoom(first, last);
-    }
-
 
     //Vol edit
-    update_ve_shape(shape) {
+    update_vol_edit(shape, amount, center, width, random, mirror, shape_amounts, amounts, vol_edit_tracks) {
         this.vol_edit.update_shape(shape);
-    }
-
-    update_ve_amount(amount) {
         this.vol_edit.update_amount(amount);
-    }
-
-    update_ve_center(center) {
         this.vol_edit.update_center(center);
-    }
-
-    update_ve_width(width) {
         this.vol_edit.update_width(width);
-    }
-
-    update_ve_random(random, mirror) {
         this.vol_edit.update_random(random, mirror);
-    }
-
-    update_ve_visual(random, mirror, shape_amounts, amounts, vol_edit_tracks) {
         this.vol_edit.update_ve_visual(random, mirror, shape_amounts, amounts, vol_edit_tracks);
     }
 
 
-
-
-
-    //Freq edit
-    update_fe_shape(shape) {
+    update_freq_edit(shape, amount, center, width, random, mirror, shape_amounts, amounts, freq_edit_tracks) {
         this.freq_edit.update_shape(shape);
-    }
-
-    update_fe_amount(amount) {
         this.freq_edit.update_amount(amount);
-    }
-
-    update_fe_center(center) {
         this.freq_edit.update_center(center);
-    }
-
-    update_fe_width(width) {
         this.freq_edit.update_width(width);
-    }
-
-    update_fe_random(random, mirror) {
         this.freq_edit.update_random(random, mirror);
-    }
-
-    update_fe_visual(random, mirror, shape_amounts, amounts, freq_edit_tracks) {
         this.freq_edit.update_fe_visual(random, mirror, shape_amounts, amounts, freq_edit_tracks);
     }
+
+
+    update_dadj(freq_range, freq_coeff, vol_range, vol_coeff, vol_amount){
+        this.dadj_edit.update_freq_range(freq_range);
+        this.dadj_edit.update_freq_coeff(freq_coeff);
+        this.dadj_edit.update_vol_range(vol_range);
+        this.dadj_edit.update_vol_coeff(vol_coeff);
+        this.dadj_edit.update_vol_amount(vol_amount);
+    }
+
 
 
 
@@ -181,5 +183,7 @@ class View {
 
     update_canvases() {
         this.vol_edit.update_canvases();
+        this.freq_edit.update_canvases();
+        this.dadj_edit.update_canvases();
     }
 }

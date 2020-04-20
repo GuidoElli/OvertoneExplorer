@@ -1,4 +1,45 @@
 
 .dadj_edit_box{
-   background-color: rgb(199, 146, 39);
+   background-color: rgb(123, 123, 123);
 }
+
+   .dadj_freq_section{
+      height: 50%;
+   }
+   .dadj_freq_box{
+   }
+      .dadj_freq_graph_section{
+         height: 70%;
+         background-color: rgb(23, 23, 23);
+      }
+      .dadj_freq_controls_section{
+         height: 30%;
+      }
+         .dadj_freq_range_knob_section{
+            width: 50%;
+         }
+         .dadj_freq_coeff_knob_section{
+            width: 50%;
+         }
+
+   .dadj_vol_section{
+      height: 50%;
+   }
+   .dadj_vol_box{
+   }
+      .dadj_vol_graph_section{
+         height: 70%;
+         background-color: rgb(23, 23, 23);
+      }
+      .dadj_vol_controls_section{
+         height: 30%;
+      }
+         .dadj_vol_range_knob_section{
+            width: 33.33333%;
+         }
+         .dadj_vol_coeff_knob_section{
+            width: 33.33333%;
+         }
+         .dadj_vol_amount_knob_section{
+            width: 33.33333%;
+         }

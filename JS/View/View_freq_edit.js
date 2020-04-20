@@ -18,8 +18,8 @@ class View_freq_edit {
 		this.fe_amount_knob_canvas = $(".fe_amount_knob")[0];
 		this.fe_amount_knob = new Knob(this.fe_amount_knob_canvas, -MAX_FE_AMOUNT, MAX_FE_AMOUNT, 0, 0);
 		this.fe_amount_knob.interval_color = "rgb(11, 112, 196)";
-		this.fe_amount_knob.on_change = (pixel_diff) => {
-			this.v.on_fe_amount_change(pixel_diff);
+		this.fe_amount_knob.on_change = (value) => {
+			this.v.on_fe_amount_change(value);
 		}
 		this.fe_amount_value = $(".fe_amount_knob_param_value")[0];
 		this.fe_amount_label = $(".fe_amount_knob_param_label")[0];
@@ -27,8 +27,8 @@ class View_freq_edit {
 		this.fe_center_knob_canvas = $(".fe_center_knob")[0];
 		this.fe_center_knob = new Knob(this.fe_center_knob_canvas, 0, 1, null, null);
 		this.fe_center_knob.interval_color = "rgb(11, 112, 196)";
-		this.fe_center_knob.on_change = (pixel_diff) => {
-			this.v.on_fe_center_change(pixel_diff);
+		this.fe_center_knob.on_change = (value) => {
+			this.v.on_fe_center_change(value);
 		}
 		this.fe_center_value = $(".fe_center_knob_param_value")[0];
 		this.fe_center_label = $(".fe_center_knob_param_label")[0];
@@ -36,8 +36,8 @@ class View_freq_edit {
 		this.fe_width_knob_canvas = $(".fe_width_knob")[0];
 		this.fe_width_knob = new Knob(this.fe_width_knob_canvas, 0, 1, null, null);
 		this.fe_width_knob.interval_color = "rgb(11, 112, 196)";
-		this.fe_width_knob.on_change = (pixel_diff) => {
-			this.v.on_fe_width_change(pixel_diff);
+		this.fe_width_knob.on_change = (value) => {
+			this.v.on_fe_width_change(value);
 		}
 		this.fe_width_value = $(".fe_width_knob_param_value")[0];
 		this.fe_width_label = $(".fe_width_knob_param_label")[0];
@@ -132,8 +132,8 @@ class View_freq_edit {
 
 		var string_value = (value >= 0) ? "+ " : "- ";
 		string_value = (value === 0) ? "" : string_value;
-		string_value += Math.abs(value).toFixed(2);
-		string_value += " cents";
+		string_value += Math.abs(value).toFixed(1);
+		string_value += " Cents";
 
 		this.fe_amount_value.innerHTML = string_value;
 	}

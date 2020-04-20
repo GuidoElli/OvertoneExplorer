@@ -334,7 +334,120 @@
 
 
 					<div class="dadj_edit_box box">
-						dadj
+
+						<div class="dadj_freq_section section">
+							<div class="dadj_freq_box box">
+
+								<div class="dadj_freq_graph_section graph_section section">
+									<canvas class="dadj_freq_graph graph">
+
+									</canvas>
+								</div>
+
+								<div class="dadj_freq_controls_section section">
+
+									<div class="dadj_freq_range_knob_section section">
+										<button class="dadj_freq_range_knob_param_label param_label">
+											Range
+										</button>
+
+										<div class="dadj_freq_range_knob_param_content param_content">
+											<div class="dadj_freq_range_knob_canvas_section knob_section">
+												<canvas class="dadj_freq_range_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="dadj_freq_range_knob_param_value param_value">
+											+- 50 cents
+										</button>
+									</div>
+
+									<div class="dadj_freq_coeff_knob_section section">
+										<button class="dadj_freq_coeff_knob_param_label param_label">
+											Coeff
+										</button>
+
+										<div class="dadj_freq_coeff_knob_param_content param_content">
+											<div class="dadj_freq_coeff_knob_canvas_section knob_section">
+												<canvas class="dadj_freq_coeff_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="dadj_freq_coeff_knob_param_value param_value">
+											+ 0.45
+										</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+						<div class="dadj_vol_section section">
+							<div class="dadj_vol_box box">
+
+								<div class="dadj_vol_graph_section section">
+									<div class="dadj_vol_graph graph">
+
+
+
+									</div>
+								</div>
+
+								<div class="dadj_vol_controls_section section">
+
+									<div class="dadj_vol_range_knob_section section">
+										<button class="dadj_vol_range_knob_param_label param_label">
+											Range
+										</button>
+
+										<div class="dadj_vol_range_knob_param_content param_content">
+											<div class="dadj_vol_range_knob_canvas_section knob_section">
+												<canvas class="dadj_vol_range_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="dadj_vol_range_knob_param_value param_value">
+											+- 0.45 Cents
+										</button>
+									</div>
+
+									<div class="dadj_vol_coeff_knob_section section">
+										<button class="dadj_vol_coeff_knob_param_label param_label">
+											Coeff
+										</button>
+
+										<div class="dadj_vol_coeff_knob_param_content param_content">
+											<div class="dadj_vol_coeff_knob_canvas_section knob_section">
+												<canvas class="dadj_vol_coeff_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="dadj_vol_coeff_knob_param_value param_value">
+											+ 0.45
+										</button>
+									</div>
+
+									<div class="dadj_vol_amount_knob_section section">
+										<button class="dadj_vol_amount_knob_param_label param_label">
+											Amount
+										</button>
+
+										<div class="dadj_vol_amount_knob_param_content param_content">
+											<div class="dadj_vol_amount_knob_canvas_section knob_section">
+												<canvas class="dadj_vol_amount_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="dadj_vol_amount_knob_param_value param_value">
+											+ 2.67 dB
+										</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 
@@ -553,6 +666,7 @@
 <script src="JS/View/View_freq_visual.js"></script>
 <script src="JS/View/View_vol_edit.js"></script>
 <script src="JS/View/View_freq_edit.js"></script>
+<script src="JS/View/View_dadj_edit.js"></script>
 
 <script src="JS/View/Elements/Row.js"></script>
 <script src="JS/View/Elements/Knob.js"></script>
@@ -561,6 +675,7 @@
 
 
 <script src="JS/Model/Model.js"></script>
+<script src="JS/Model/Note.js"></script>
 
 
 <script src="JS/Controller/Controller_rows.js"></script>
@@ -569,6 +684,7 @@
 <script src="JS/Controller/Controller_zoom.js"></script>
 <script src="JS/Controller/Controller_vol_edit.js"></script>
 <script src="JS/Controller/Controller_freq_edit.js"></script>
+<script src="JS/Controller/Controller_dadj_edit.js"></script>
 
 <script src="JS/Controller/Controller.js"></script>
 

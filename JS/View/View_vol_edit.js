@@ -18,8 +18,8 @@ class View_vol_edit {
 		this.ve_amount_knob_canvas = $(".ve_amount_knob")[0];
 		this.ve_amount_knob = new Knob(this.ve_amount_knob_canvas, -MAX_VE_AMOUNT, MAX_VE_AMOUNT, 0, 0);
 		this.ve_amount_knob.interval_color = "rgb(11, 112, 196)";
-		this.ve_amount_knob.on_change = (pixel_diff) => {
-			this.v.on_ve_amount_change(pixel_diff);
+		this.ve_amount_knob.on_change = (value) => {
+			this.v.on_ve_amount_change(value);
 		}
 		this.ve_amount_value = $(".ve_amount_knob_param_value")[0];
 		this.ve_amount_label = $(".ve_amount_knob_param_label")[0];
@@ -27,8 +27,8 @@ class View_vol_edit {
 		this.ve_center_knob_canvas = $(".ve_center_knob")[0];
 		this.ve_center_knob = new Knob(this.ve_center_knob_canvas, 0, 1, null, null);
 		this.ve_center_knob.interval_color = "rgb(11, 112, 196)";
-		this.ve_center_knob.on_change = (pixel_diff) => {
-			this.v.on_ve_center_change(pixel_diff);
+		this.ve_center_knob.on_change = (value) => {
+			this.v.on_ve_center_change(value);
 		}
 		this.ve_center_value = $(".ve_center_knob_param_value")[0];
 		this.ve_center_label = $(".ve_center_knob_param_label")[0];
@@ -36,8 +36,8 @@ class View_vol_edit {
 		this.ve_width_knob_canvas = $(".ve_width_knob")[0];
 		this.ve_width_knob = new Knob(this.ve_width_knob_canvas, 0, 1, null, null);
 		this.ve_width_knob.interval_color = "rgb(11, 112, 196)";
-		this.ve_width_knob.on_change = (pixel_diff) => {
-			this.v.on_ve_width_change(pixel_diff);
+		this.ve_width_knob.on_change = (value) => {
+			this.v.on_ve_width_change(value);
 		}
 		this.ve_width_value = $(".ve_width_knob_param_value")[0];
 		this.ve_width_label = $(".ve_width_knob_param_label")[0];

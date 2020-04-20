@@ -1,7 +1,7 @@
 class Note {
-	constructor(note, vols, freqs) {
-		this.note = note;
-		this.vols = vols;
-		this.freqs = freqs;
+	constructor(midi_note) {
+		this.midi_note = midi_note;
+		this.vols = null;
+		this.freqs = null;
 	}
 }

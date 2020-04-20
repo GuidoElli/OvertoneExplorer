@@ -14,7 +14,7 @@ class Model {
 		this._last_played_note_dadj_freqs = new Array(TOTAL_TRACKS).fill(0);
 
 		//Layout
-		this._layout_left = LAYOUT_LEFT.HOME;
+		this._layout_left = LAYOUT_LEFT.DADJ;
 		this._layout_right = LAYOUT_RIGHT.DEFAULT;
 		this._custom_selection = false;
 
@@ -39,7 +39,6 @@ class Model {
 
 
 		//Vol edit
-
 		this._ve_shape = EDITOR_SHAPE.FLAT;
 		this._ve_amount = 0; // in dB
 		this._ve_center = 0.7; // 0 to 1
@@ -51,9 +50,8 @@ class Model {
 		this.randomize_ve_values();
 
 		//Freq edit
-
 		this._fe_shape = EDITOR_SHAPE.FLAT;
-		this._fe_amount = 0; // in multiplying factor or dB
+		this._fe_amount = 0; // in Cents
 		this._fe_center = 0.7; // 0 to 1
 		this._fe_width = 0.4; // 0 to 1
 
@@ -63,9 +61,28 @@ class Model {
 		this.randomize_fe_values();
 
 
+
+		//Dadj
+		this._dadj_freq_range = 0;
+		this._dadj_freq_coeff = 0;
+		this._dadj_vol_range = 0;
+		this._dadj_vol_coeff = 0;
+		this._dadj_vol_amount = 0;
+
+
+
 		//Midi
 		this._notes = [];
-		this._bass_notes = [];
+		this._bass_notes = [12];
+		this._bass_ovts = [];
+
+		this._a4_tuning = 440;
+
+
+		this.process_bass_ovts();
+		this.add_note(37);
+		this.process_notes();
+
 
 	}
 
@@ -378,7 +395,7 @@ class Model {
 
 
 
-	//Vol edit
+	//Freq edit
 	get fe_shape() {
 		return this._fe_shape;
 	}
@@ -443,6 +460,147 @@ class Model {
 
 
 
+	//Dadj
+
+	get dadj_freq_range() {
+		return this._dadj_freq_range;
+	}
+	get dadj_freq_coeff() {
+		return this._dadj_freq_coeff;
+	}
+	get dadj_vol_range() {
+		return this._dadj_vol_range;
+	}
+	get dadj_vol_coeff() {
+		return this._dadj_vol_coeff;
+	}
+	get dadj_vol_amount() {
+		return this._dadj_vol_amount;
+	}
+
+	set dadj_freq_range(value) {
+		this._dadj_freq_range = value;
+	}
+	set dadj_freq_coeff(value) {
+		this._dadj_freq_coeff = value;
+	}
+	set dadj_vol_range(value) {
+		this._dadj_vol_range = value;
+	}
+	set dadj_vol_coeff(value) {
+		this._dadj_vol_coeff = value;
+	}
+	set dadj_vol_amount(value) {
+		this._dadj_vol_amount = value;
+	}
+
+
+
+	process_bass_ovts(){
+		let bass_ovts = [];
+
+		for(let i = 0; i < this.bass_notes.length; i++){
+			let f0 = this.midi_to_freq(this.bass_notes[i]);
+			let f_temp = f0;
+			while(f_temp < MAX_FREQUENCY){
+				bass_ovts.push(f_temp);
+				f_temp += f0;
+			}
+		}
+		bass_ovts.sort(function(a, b){return a - b});
+		this._bass_ovts = bass_ovts;
+	}
+
+
+	process_notes(){
+		for(let i = 0; i < this.notes.length; i++){
+			this.process_note(this.notes[i]);
+		}
+	}
+
+	process_note(note){
+		let f0 = this.midi_to_freq(note.midi_note);
+
+		let freqs = [];
+		let vols = [];
+
+		for(let i = 0; i < TOTAL_TRACKS; i++){
+			let v;
+			let f;
+
+			//freq edit
+			f = f0 * (i+1);
+			let cents_diff = this.freqs_base[i];
+			if(this.freq_edit_tracks[i]){
+				cents_diff += this.freqs_fe_amounts[i];
+			}
+			cents_diff = (cents_diff > MAX_MIN_CENTS) ? MAX_MIN_CENTS : cents_diff;
+			cents_diff = (cents_diff < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : cents_diff;
+			f *= Math.pow(2, cents_diff / 1200);
+
+
+			//vol edit
+			let vol_db = this.vols_base[i]
+			if(this.vol_edit_tracks[i]){
+				vol_db += this.vols_ve_amounts[i];
+			}
+			vol_db = (vol_db > MAX_DB) ? MAX_DB : vol_db;
+			vol_db = (vol_db < MIN_DB) ? MIN_DB : vol_db;
+			v = this.to_lin(vol_db);
+
+
+			//dadj
+
+			//find nearest bass ovt
+			let closest = this._bass_ovts.reduce((a, b) => {
+				return Math.abs(b - f) < Math.abs(a - f) ? b : a;
+			});
+
+			this._last_played_note_dadj_freqs[i] = 1200 * Math.log2(closest / f);
+
+			/////////
+			f = closest;
+
+			vols.push(v);
+			freqs.push(f);
+
+		}
+
+
+		note.freqs = freqs;
+		note.vols = vols;
+
+	}
+
+
+	to_lin(db){
+		if(db === MIN_DB){
+			return 0;
+		}else{
+			return Math.pow(10, db / 20);
+		}
+	}
+
+	midi_to_freq(midi_note){
+		return this.a4_tuning * Math.pow(2, (midi_note - 69) / 12);
+	}
+
+	add_note(midi_note){
+		let note = new Note(midi_note);
+		this.process_note(note);
+		this.notes.push(note);
+	}
+
+	add_bass_note(midi_note){
+		if(!this.bass_notes.find(midi_note)){
+			this.bass_notes.push(midi_note);
+			this.process_bass_ovts();
+			this.process_notes();
+		}
+	}
+
+
+
 
 	get notes() {
 		return this._notes;
@@ -459,4 +617,13 @@ class Model {
 	set bass_notes(value) {
 		this._bass_notes = value;
 	}
+
+	get a4_tuning() {
+		return this._a4_tuning;
+	}
+
+	set a4_tuning(value) {
+		this._a4_tuning = value;
+	}
+
 }

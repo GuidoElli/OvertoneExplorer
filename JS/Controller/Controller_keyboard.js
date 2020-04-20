@@ -4,19 +4,21 @@ class Controller_keyboard {
       this.m = model;
 
       document.addEventListener("keydown", (e) => {
-         switch(e.key){
-            case 'Control':
-               CTRL_DOWN = true;
-               this.update_selection_mode();
-               this.c.update_view();
-               document.dispatchEvent(new Event("mousemove"));
-               break;
-            case 'Shift':
-               SHIFT_DOWN = true;
-               this.update_selection_mode();
-               this.c.update_view();
-               document.dispatchEvent(new Event("mousemove"));
-               break;
+         if(!e.repeat){
+            switch(e.key){
+               case 'Control':
+                  CTRL_DOWN = true;
+                  this.update_selection_mode();
+                  this.c.update_view();
+                  document.dispatchEvent(new Event("mousemove"));
+                  break;
+               case 'Shift':
+                  SHIFT_DOWN = true;
+                  this.update_selection_mode();
+                  this.c.update_view();
+                  document.dispatchEvent(new Event("mousemove"));
+                  break;
+            }
          }
       })
 

@@ -17,11 +17,17 @@ const KNOB_MAX_PIXEL_FINE = 4000;
 const MAX_VE_AMOUNT = 50;
 const MAX_FE_AMOUNT = 100;
 
+//dadj
+const MAX_DADJ_FREQ_RANGE = 200; //cents
+const MAX_DADJ_VOL_RANGE = 200; //cents
+const MAX_MIN_DADJ_VOL_AMOUNT = 30; //dB
+
+
 //Audio
 const MAX_DB = 10;
 const MIN_DB = -70;
 
-const MAX_MIN_CENTS = 200;
+const MAX_MIN_CENTS = 50;
 
 
 
@@ -61,9 +67,3 @@ const is_true = (elem) => {return elem};
 const is_false = (elem) => {return !elem};
 
 
-
-
-
-function midi_to_freq(midi_note){
-   return 10; ///////--------------------
-}
