@@ -73,16 +73,16 @@ class Model {
 
 		//Midi
 		this._notes = [];
-		this._bass_notes = [12];
+		this._bass_notes = [];
 		this._bass_ovts = [];
 
 		this._a4_tuning = 440;
 
-
+/*
 		this.process_bass_ovts();
 		this.add_note(37);
 		this.process_notes();
-
+*/
 
 	}
 
@@ -504,7 +504,8 @@ class Model {
 			let f_temp = f0;
 			while(f_temp < MAX_FREQUENCY){
 				bass_ovts.push(f_temp);
-				f_temp += f0;
+				//f_temp += f0;
+				f_temp *= 2;
 			}
 		}
 		bass_ovts.sort(function(a, b){return a - b});
@@ -552,14 +553,18 @@ class Model {
 			//dadj
 
 			//find nearest bass ovt
-			let closest = this._bass_ovts.reduce((a, b) => {
-				return Math.abs(b - f) < Math.abs(a - f) ? b : a;
-			});
+			if(this.bass_notes.length > 0){
+				let closest = this._bass_ovts.reduce((a, b) => {
+					return Math.abs(b - f) < Math.abs(a - f) ? b : a;
+				})
 
-			this._last_played_note_dadj_freqs[i] = 1200 * Math.log2(closest / f);
+				if(Math.abs(1200 * Math.log2(f/closest)) < MAX_MIN_CENTS){
+					this._last_played_note_dadj_freqs[i] = 1200 * Math.log2(closest / f)
+					f = closest;
+				}
+			}
 
 			/////////
-			f = closest;
 
 			vols.push(v);
 			freqs.push(f);
@@ -585,17 +590,42 @@ class Model {
 		return this.a4_tuning * Math.pow(2, (midi_note - 69) / 12);
 	}
 
+	note_find(midi_note){
+		for(let i = 0; i < this.notes.length; i++){
+			if(this.notes[i].midi_note === midi_note){
+				return this.notes[i];
+			}
+		}
+		return null;
+	}
+
 	add_note(midi_note){
-		let note = new Note(midi_note);
-		this.process_note(note);
-		this.notes.push(note);
+		if(!this.note_find(midi_note)){
+			let note = new Note(midi_note);
+			this.process_note(note);
+			this.notes.push(note);
+		}
 	}
 
 	add_bass_note(midi_note){
-		if(!this.bass_notes.find(midi_note)){
+		if(!this.bass_notes.includes(midi_note)){
 			this.bass_notes.push(midi_note);
 			this.process_bass_ovts();
 			this.process_notes();
+		}
+	}
+
+
+	remove_note(midi_note){
+		let n = this.note_find(midi_note);
+		if(n){
+			this.notes.splice(this.notes.indexOf(n), 1);
+		}
+	}
+
+	remove_bass_note(midi_note){
+		if(this.bass_notes.includes(midi_note)){
+			this.bass_notes.splice(this.bass_notes.indexOf(midi_note), 1);
 		}
 	}
 
@@ -609,6 +639,7 @@ class Model {
 	set notes(value) {
 		this._notes = value;
 	}
+
 
 	get bass_notes() {
 		return this._bass_notes;
