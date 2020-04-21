@@ -2,7 +2,7 @@ class Model {
 	constructor() {
 
 		//Vols
-		this._vols_base = new Array(TOTAL_TRACKS).fill(0);
+		this._vols_base = new Array(TOTAL_TRACKS).fill(-30);
 		this._vols_ve_shape_amounts = new Array(TOTAL_TRACKS).fill(0);
 		this._vols_ve_amounts = new Array(TOTAL_TRACKS).fill(0);
 		this._last_played_note_dadj_vols = new Array(TOTAL_TRACKS).fill(0);
@@ -47,7 +47,6 @@ class Model {
 		this._ve_random = false;
 		this._ve_mirror = false;
 		this._ve_random_values = new Array(TOTAL_TRACKS);
-		this.randomize_ve_values();
 
 		//Freq edit
 		this._fe_shape = EDITOR_SHAPE.FLAT;
@@ -58,7 +57,6 @@ class Model {
 		this._fe_random = false;
 		this._fe_mirror = false;
 		this._fe_random_values = new Array(TOTAL_TRACKS);
-		this.randomize_fe_values();
 
 
 
@@ -78,11 +76,10 @@ class Model {
 
 		this._a4_tuning = 440;
 
-/*
-		this.process_bass_ovts();
-		this.add_note(37);
-		this.process_notes();
-*/
+
+		this.randomize_fe_values();
+		this.randomize_fe_values();
+
 
 	}
 
@@ -125,16 +122,6 @@ class Model {
 			}
 
 		}
-
-	}
-
-	compute_dadj_amounts(){
-
-		//TODO compute ovt of bass notes
-
-		//TODO for each note in notes compute vols and freqs
-
-		//TODO for the last played note compute dadj amounts
 
 	}
 
@@ -196,6 +183,7 @@ class Model {
 			}
 
 		}
+		this.process_notes();
 
 	}
 
@@ -480,18 +468,23 @@ class Model {
 
 	set dadj_freq_range(value) {
 		this._dadj_freq_range = value;
+		this.process_notes();
 	}
 	set dadj_freq_coeff(value) {
 		this._dadj_freq_coeff = value;
+		this.process_notes();
 	}
 	set dadj_vol_range(value) {
 		this._dadj_vol_range = value;
+		this.process_notes();
 	}
 	set dadj_vol_coeff(value) {
 		this._dadj_vol_coeff = value;
+		this.process_notes();
 	}
 	set dadj_vol_amount(value) {
 		this._dadj_vol_amount = value;
+		this.process_notes();
 	}
 
 
@@ -499,8 +492,8 @@ class Model {
 	process_bass_ovts(){
 		let bass_ovts = [];
 
-		for(let i = 0; i < this.bass_notes.length; i++){
-			let f0 = this.midi_to_freq(this.bass_notes[i]);
+		for(let i = 0; i < this._bass_notes.length; i++){
+			let f0 = this.midi_to_freq(this._bass_notes[i]);
 			let f_temp = f0;
 			while(f_temp < MAX_FREQUENCY){
 				bass_ovts.push(f_temp);
@@ -514,8 +507,26 @@ class Model {
 
 
 	process_notes(){
-		for(let i = 0; i < this.notes.length; i++){
-			this.process_note(this.notes[i]);
+		if(this._notes.length === 0 || this._bass_notes.length === 0){
+			this._last_played_note_dadj_freqs.fill(0);
+			this._last_played_note_dadj_vols.fill(0);
+		}
+		for(let i = 0; i < this._notes.length; i++){
+			this.process_note(this._notes[i]);
+		}
+	}
+
+	nearest_ovts(freq){
+		if(freq < this._bass_ovts[0]){
+			return [-1000000, this._bass_ovts[0]];
+		}else if(freq > this._bass_ovts[this._bass_ovts.length - 1]){
+			return [this._bass_ovts[this._bass_ovts.length - 1], 1000000];
+		}else{
+			for(let i = 0; i < this._bass_ovts.length; i++){
+				if(this._bass_ovts[i] <= freq && this._bass_ovts[i+1] > freq){
+					return [this._bass_ovts[i], this._bass_ovts[i+1]];
+				}
+			}
 		}
 	}
 
@@ -531,40 +542,96 @@ class Model {
 
 			//freq edit
 			f = f0 * (i+1);
-			let cents_diff = this.freqs_base[i];
+			let cents_diff_1 = this.freqs_base[i];
 			if(this.freq_edit_tracks[i]){
-				cents_diff += this.freqs_fe_amounts[i];
+				cents_diff_1 += this.freqs_fe_amounts[i];
 			}
-			cents_diff = (cents_diff > MAX_MIN_CENTS) ? MAX_MIN_CENTS : cents_diff;
-			cents_diff = (cents_diff < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : cents_diff;
-			f *= Math.pow(2, cents_diff / 1200);
+			cents_diff_1 = (cents_diff_1 > MAX_MIN_CENTS) ? MAX_MIN_CENTS : cents_diff_1;
+			cents_diff_1 = (cents_diff_1 < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : cents_diff_1;
+			f *= Math.pow(2, cents_diff_1 / 1200);
 
 
 			//vol edit
-			let vol_db = this.vols_base[i]
+			v = this.vols_base[i]
 			if(this.vol_edit_tracks[i]){
-				vol_db += this.vols_ve_amounts[i];
+				v+= this.vols_ve_amounts[i];
 			}
-			vol_db = (vol_db > MAX_DB) ? MAX_DB : vol_db;
-			vol_db = (vol_db < MIN_DB) ? MIN_DB : vol_db;
-			v = this.to_lin(vol_db);
+			v = (v> MAX_DB) ? MAX_DB : v;
+			v = (v< MIN_DB) ? MIN_DB : v;
 
 
 			//dadj
+			if(this._bass_notes.length > 0){
 
-			//find nearest bass ovt
-			if(this.bass_notes.length > 0){
-				let closest = this._bass_ovts.reduce((a, b) => {
-					return Math.abs(b - f) < Math.abs(a - f) ? b : a;
-				})
+				//find nearest bass ovt
 
-				if(Math.abs(1200 * Math.log2(f/closest)) < MAX_MIN_CENTS){
-					this._last_played_note_dadj_freqs[i] = 1200 * Math.log2(closest / f)
-					f = closest;
+				let nearest_2 = this.nearest_ovts(f);
+				let cents_diff_1 = 1200 * Math.log2(f / nearest_2[0]);
+				let cents_diff_2 = 1200 * Math.log2(f / nearest_2[1]);
+				let min_cents_diff;
+				if(Math.abs(cents_diff_1) <= Math.abs(cents_diff_2)){
+					min_cents_diff = cents_diff_1;
+				}else{
+					min_cents_diff = cents_diff_2;
 				}
+
+				//Some parameters
+				let a = 10;
+				let b = 1.5;
+
+				//Freq
+				let cents_to_add = 0;
+				if(Math.abs(min_cents_diff) < this._dadj_freq_range){
+					let x_01 = Math.abs(min_cents_diff / this._dadj_freq_range);
+					let exp;
+					if(this._dadj_freq_coeff >= 0){
+						exp = a * Math.pow(Math.abs(this._dadj_freq_coeff), b) + 1;
+					}else{
+						exp = 1 / (a * Math.pow(Math.abs(this._dadj_freq_coeff), b) + 1);
+					}
+					let y_01 = Math.sign(min_cents_diff) * (Math.pow(x_01, exp) - x_01);
+					cents_to_add = y_01 * this._dadj_freq_range;
+
+					if(this.dadj_freq_coeff < 0){
+						let avg = (cents_diff_1 - cents_diff_2) / 2;
+						if(min_cents_diff >= 0){
+							cents_to_add = Math.min(cents_to_add, avg - cents_diff_1);
+						}else{
+							cents_to_add = Math.max(cents_to_add, -avg - cents_diff_2);
+						}
+					}
+
+					f *= Math.pow(2, cents_to_add / 1200);
+					this._last_played_note_dadj_freqs[i] = cents_to_add;
+				}else{
+					this._last_played_note_dadj_freqs[i] = 0;
+				}
+
+
+				//Vol
+				cents_diff_1 += cents_to_add;
+				if(Math.abs(cents_diff_1) < this.dadj_vol_range){
+					let x_01 = Math.abs(cents_diff_1 / this.dadj_vol_range);
+					let exp;
+					if(this._dadj_vol_coeff >= 0){
+						exp = 1 / (a * Math.pow(Math.abs(this._dadj_vol_coeff), b) + 1);
+					}else{
+						exp = a * Math.pow(Math.abs(this._dadj_vol_coeff), b) + 1;
+					}
+					let y_01 = Math.pow(1 - x_01, exp);
+					let y_db = this._dadj_vol_amount * y_01;
+
+					this._last_played_note_dadj_vols[i] = y_db;
+				}else{
+					this._last_played_note_dadj_vols[i] = 0;
+				}
+
 			}
 
-			/////////
+
+			//controllo malori min max e conversione db lin
+
+
 
 			vols.push(v);
 			freqs.push(f);
@@ -591,9 +658,9 @@ class Model {
 	}
 
 	note_find(midi_note){
-		for(let i = 0; i < this.notes.length; i++){
-			if(this.notes[i].midi_note === midi_note){
-				return this.notes[i];
+		for(let i = 0; i < this._notes.length; i++){
+			if(this._notes[i].midi_note === midi_note){
+				return this._notes[i];
 			}
 		}
 		return null;
@@ -602,14 +669,14 @@ class Model {
 	add_note(midi_note){
 		if(!this.note_find(midi_note)){
 			let note = new Note(midi_note);
-			this.process_note(note);
-			this.notes.push(note);
+			this._notes.push(note);
+			this.process_notes();
 		}
 	}
 
 	add_bass_note(midi_note){
-		if(!this.bass_notes.includes(midi_note)){
-			this.bass_notes.push(midi_note);
+		if(!this._bass_notes.includes(midi_note)){
+			this._bass_notes.push(midi_note);
 			this.process_bass_ovts();
 			this.process_notes();
 		}
@@ -619,13 +686,16 @@ class Model {
 	remove_note(midi_note){
 		let n = this.note_find(midi_note);
 		if(n){
-			this.notes.splice(this.notes.indexOf(n), 1);
+			this._notes.splice(this._notes.indexOf(n), 1);
+			this.process_notes();
 		}
 	}
 
 	remove_bass_note(midi_note){
 		if(this.bass_notes.includes(midi_note)){
 			this.bass_notes.splice(this.bass_notes.indexOf(midi_note), 1);
+			this.process_bass_ovts();
+			this.process_notes();
 		}
 	}
 

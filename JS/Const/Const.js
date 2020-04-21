@@ -18,8 +18,8 @@ const MAX_VE_AMOUNT = 50;
 const MAX_FE_AMOUNT = 100;
 
 //dadj
-const MAX_DADJ_FREQ_RANGE = 200; //cents
-const MAX_DADJ_VOL_RANGE = 200; //cents
+const MAX_DADJ_FREQ_RANGE = 70; //cents
+const MAX_DADJ_VOL_RANGE = 100; //cents
 const MAX_MIN_DADJ_VOL_AMOUNT = 30; //dB
 
 
@@ -27,7 +27,7 @@ const MAX_MIN_DADJ_VOL_AMOUNT = 30; //dB
 const MAX_DB = 10;
 const MIN_DB = -70;
 
-const MAX_MIN_CENTS = 50;
+const MAX_MIN_CENTS = 100;
 
 
 
