@@ -19,34 +19,41 @@ class Controller_freq_edit{
 
 	on_fe_shape_change = (editor_shape) => {
 		this.m.fe_shape = editor_shape;
+		this.c.update_audio();
 		this.c.update_view();
 	}
 
 	on_fe_amount_change = (amount) => {
 		this.m.fe_amount = amount;
+		this.c.update_audio();
 		this.c.update_view();
 	}
 	on_fe_center_change = (center) => {
 		this.m.fe_center = center;
+		this.c.update_audio();
 		this.c.update_view();
 	}
 	on_fe_width_change = (width) => {
 		this.m.fe_width = width;
+		this.c.update_audio();
 		this.c.update_view();
 	}
 
 	on_fe_random_click = () => {
 		this.m.fe_random = !this.m.fe_random;
+		this.c.update_audio();
 		this.c.update_view();
 	}
 	on_fe_mirror_click = () => {
 		if(this.m.fe_random){
 			this.m.fe_mirror = !this.m.fe_mirror;
+			this.c.update_audio();
 			this.c.update_view();
 		}
 	}
 	on_fe_randomize_click = () => {
 		this.m.randomize_fe_values();
+		this.c.update_audio();
 		this.c.update_view();
 	}
 
@@ -56,6 +63,7 @@ class Controller_freq_edit{
 	}
 	on_fe_reset_click = () => {
 		this.c.freq_edit.on_fe_amount_change(0);
+		this.c.update_audio();
 		this.c.update_view();
 	}
 

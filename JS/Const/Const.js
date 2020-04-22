@@ -15,17 +15,17 @@ const KNOB_MAX_PIXEL_FINE = 4000;
 
 //editors
 const MAX_VE_AMOUNT = 50;
-const MAX_FE_AMOUNT = 100;
+const MAX_FE_AMOUNT = 200;
 
 //dadj
-const MAX_DADJ_FREQ_RANGE = 70; //cents
-const MAX_DADJ_VOL_RANGE = 100; //cents
-const MAX_MIN_DADJ_VOL_AMOUNT = 30; //dB
+const MAX_DADJ_FREQ_RANGE = 200; //cents
+const MAX_DADJ_VOL_RANGE = 200; //cents
+const MAX_MIN_DADJ_VOL_AMOUNT = 50; //dB
 
 
 //Audio
-const MAX_DB = 10;
-const MIN_DB = -70;
+const MAX_DB = 0;
+const MIN_DB = -80;
 
 const MAX_MIN_CENTS = 100;
 

@@ -2,7 +2,7 @@ class Controller_keyboard {
 
    first_keyboard_bass_note = 12;
    keyboard_bass_notes = ['q', '2', 'w', '3', 'e', 'r', '5', 't', '6', 'y', '7', 'u', 'i', '9', 'o', '0', 'p'];
-   first_keyboard_note = 12;
+   first_keyboard_note = 48;
    keyboard_notes = ['<', 'a', 'z', 's', 'x', 'c', 'f', 'v', 'g', 'b', 'h', 'n', 'm', 'k', ',', 'l', '.', 'ò', '-'];
 
    hold_down = false;
@@ -32,21 +32,18 @@ class Controller_keyboard {
                   break;
                case 'Backspace':
                   while(this.m.bass_notes.length > 0){
-                     this.m.remove_bass_note(this.m.bass_notes[0]);
+                     this.c.remove_bass_note(this.m.bass_notes[0]);
                   }
                   while(this.m.notes.length > 0){
-                     this.m.remove_note(this.m.notes[0].midi_note);
+                     this.c.remove_note(this.m.notes[0].midi_note);
                   }
-                  this.c.update_view();
                   break;
             }
 
             if(this.keyboard_bass_notes.includes(e.key)){
-               this.m.add_bass_note(this.first_keyboard_bass_note + this.keyboard_bass_notes.indexOf(e.key));
-               this.c.update_view();
+               this.c.add_bass_note(this.first_keyboard_bass_note + this.keyboard_bass_notes.indexOf(e.key));
             }else if(this.keyboard_notes.includes(e.key)){
-               this.m.add_note(this.first_keyboard_note + this.keyboard_notes.indexOf(e.key));
-               this.c.update_view();
+               this.c.add_note(this.first_keyboard_note + this.keyboard_notes.indexOf(e.key));
             }
          }
       })
@@ -70,11 +67,9 @@ class Controller_keyboard {
                break;
          }
          if(this.keyboard_bass_notes.includes(e.key) && !this.hold_down){
-            this.m.remove_bass_note(this.first_keyboard_bass_note + this.keyboard_bass_notes.indexOf(e.key));
-            this.c.update_view();
+            this.c.remove_bass_note(this.first_keyboard_bass_note + this.keyboard_bass_notes.indexOf(e.key));
          }else if(this.keyboard_notes.includes(e.key) && !this.hold_down){
-            this.m.remove_note(this.first_keyboard_note + this.keyboard_notes.indexOf(e.key));
-            this.c.update_view();
+            this.c.remove_note(this.first_keyboard_note + this.keyboard_notes.indexOf(e.key));
          }
       })
 

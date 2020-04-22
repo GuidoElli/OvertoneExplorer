@@ -46,7 +46,7 @@ class Model {
 
 		this._ve_random = false;
 		this._ve_mirror = false;
-		this._ve_random_values = new Array(TOTAL_TRACKS);
+		this._ve_random_values = new Array(TOTAL_TRACKS).fill(1);
 
 		//Freq edit
 		this._fe_shape = EDITOR_SHAPE.FLAT;
@@ -56,7 +56,7 @@ class Model {
 
 		this._fe_random = false;
 		this._fe_mirror = false;
-		this._fe_random_values = new Array(TOTAL_TRACKS);
+		this._fe_random_values = new Array(TOTAL_TRACKS).fill(1);
 
 
 
@@ -77,7 +77,18 @@ class Model {
 		this._a4_tuning = 440;
 
 
-		this.randomize_fe_values();
+
+		//output
+		this._out_attack = 0.1;
+		this._out_decay_time = 0;
+		this._out_decay_vol = 1;
+		this._out_release= 0.9;
+
+		this._out_master = 1;
+
+
+
+		this.randomize_ve_values();
 		this.randomize_fe_values();
 
 
@@ -183,7 +194,6 @@ class Model {
 			}
 
 		}
-		this.process_notes();
 
 	}
 
@@ -285,6 +295,7 @@ class Model {
 	set_dadj_edit_track = (track, value) => {
 		this._dadj_edit_tracks[track] = value;
 	}
+
 
 	backup_playback_tracks = () => {
 		this._playback_tracks_backup = this._playback_tracks.slice();
@@ -468,23 +479,18 @@ class Model {
 
 	set dadj_freq_range(value) {
 		this._dadj_freq_range = value;
-		this.process_notes();
 	}
 	set dadj_freq_coeff(value) {
 		this._dadj_freq_coeff = value;
-		this.process_notes();
 	}
 	set dadj_vol_range(value) {
 		this._dadj_vol_range = value;
-		this.process_notes();
 	}
 	set dadj_vol_coeff(value) {
 		this._dadj_vol_coeff = value;
-		this.process_notes();
 	}
 	set dadj_vol_amount(value) {
 		this._dadj_vol_amount = value;
-		this.process_notes();
 	}
 
 
@@ -519,7 +525,7 @@ class Model {
 	nearest_ovts(freq){
 		if(freq < this._bass_ovts[0]){
 			return [-1000000, this._bass_ovts[0]];
-		}else if(freq > this._bass_ovts[this._bass_ovts.length - 1]){
+		}else if(freq >= this._bass_ovts[this._bass_ovts.length - 1]){
 			return [this._bass_ovts[this._bass_ovts.length - 1], 1000000];
 		}else{
 			for(let i = 0; i < this._bass_ovts.length; i++){
@@ -552,7 +558,7 @@ class Model {
 
 
 			//vol edit
-			v = this.vols_base[i]
+			v = this.vols_base[i];
 			if(this.vol_edit_tracks[i]){
 				v+= this.vols_ve_amounts[i];
 			}
@@ -561,7 +567,7 @@ class Model {
 
 
 			//dadj
-			if(this._bass_notes.length > 0){
+			if(this._bass_notes.length > 0 && this.dadj_edit_tracks[i]){
 
 				//find nearest bass ovt
 
@@ -622,6 +628,7 @@ class Model {
 					let y_db = this._dadj_vol_amount * y_01;
 
 					this._last_played_note_dadj_vols[i] = y_db;
+					v += y_db;
 				}else{
 					this._last_played_note_dadj_vols[i] = 0;
 				}
@@ -629,11 +636,11 @@ class Model {
 			}
 
 
-			//controllo malori min max e conversione db lin
-
-
-
-			vols.push(v);
+			if(this.playback_tracks[i]){
+				vols.push(v);
+			}else{
+				vols.push(MIN_DB);
+			}
 			freqs.push(f);
 
 		}
@@ -667,11 +674,14 @@ class Model {
 	}
 
 	add_note(midi_note){
-		if(!this.note_find(midi_note)){
+		let n = this.note_find(midi_note);
+		if(!n){
 			let note = new Note(midi_note);
 			this._notes.push(note);
 			this.process_notes();
+			return note;
 		}
+		return n;
 	}
 
 	add_bass_note(midi_note){
@@ -692,8 +702,8 @@ class Model {
 	}
 
 	remove_bass_note(midi_note){
-		if(this.bass_notes.includes(midi_note)){
-			this.bass_notes.splice(this.bass_notes.indexOf(midi_note), 1);
+		if(this._bass_notes.includes(midi_note)){
+			this._bass_notes.splice(this._bass_notes.indexOf(midi_note), 1);
 			this.process_bass_ovts();
 			this.process_notes();
 		}
@@ -725,6 +735,39 @@ class Model {
 
 	set a4_tuning(value) {
 		this._a4_tuning = value;
+	}
+
+
+	get out_attack(){
+		return this._out_attack;
+	}
+	get out_decay_time(){
+		return this._out_decay_time;
+	}
+	get out_decay_vol(){
+		return this._out_decay_vol;
+	}
+	get out_release(){
+		return this._out_release;
+	}
+	get out_master(){
+		return this._out_master;
+	}
+
+	set out_attack(value) {
+		this._out_attack = value;
+	}
+	set out_decay_time(value) {
+		this._out_decay_time = value;
+	}
+	set out_decay_vol(value) {
+		this._out_decay_vol = value;
+	}
+	set out_release(value) {
+		this._out_release = value;
+	}
+	set out_master(value) {
+		this._out_master = value;
 	}
 
 }

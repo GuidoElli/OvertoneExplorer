@@ -12,6 +12,7 @@ class Controller {
 		this.vol_edit = new Controller_vol_edit(this, model);
 		this.freq_edit = new Controller_freq_edit(this, model);
 		this.dadj_edit = new Controller_dadj_edit(this, model);
+		this.audio = new Controller_audio(this, model);
 
 
 
@@ -118,9 +119,39 @@ class Controller {
 
 
 
+	add_note(midi_note){
+		let n = this.model.add_note(midi_note);
+		if(n){
+			this.audio.play_note(n);
+			this.update_view();
+		}
+	}
+	remove_note(midi_note){
+		this.model.remove_note(midi_note);
+		this.audio.release_note(midi_note);
+		this.update_view();
+	}
+
+	add_bass_note(midi_note){
+		this.model.add_bass_note(midi_note);
+		this.update_audio();
+		this.update_view();
+	}
+	remove_bass_note(midi_note){
+		this.model.remove_bass_note(midi_note);
+		this.update_audio();
+		this.update_view();
+	}
+
+
+	update_audio(){
+		this.model.process_notes();
+		this.audio.update();
+	}
 
 	//View ALL
 	update_view(){
+
 
 		this.view.update_layout(this.model.layout_left, this.model.layout_right, this.model.custom_selection);
 		this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track);
