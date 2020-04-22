@@ -50,9 +50,9 @@ class Controller_audio{
 		if(g){
 			g.stop(this.m.out_release);
 			this.generators.splice(this.generators.indexOf(g), 1);
-			setInterval(()=>{
+			setInterval(() => {
 				g.disconnect();
-			}, this.m.out_release * 5)
+			}, this.m.out_release * 1000)
 		}
 	}
 

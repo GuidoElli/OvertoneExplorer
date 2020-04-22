@@ -5,11 +5,6 @@ class Controller_layout {
    }
 
 
-   on_custom_selection_button_click = () => {
-      this.m.custom_selection = !this.m.custom_selection;
-      this.c.update_view();
-   }
-
 
    on_home_button_click = () => {
       this.m.layout_left = LAYOUT_LEFT.HOME;

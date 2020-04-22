@@ -1,7 +1,7 @@
 //constants and parameters
 const MAX_FREQUENCY = 20000;
 
-const TOTAL_TRACKS = 80;
+const TOTAL_TRACKS = 130;
 const MIN_VISIBLE_TRACKS = 7;
 const MAX_TRACKS_TO_SHOW_BUTTON_LABELS = 30;
 
@@ -14,26 +14,24 @@ const KNOB_MAX_PIXEL = 300;
 const KNOB_MAX_PIXEL_FINE = 4000;
 
 //editors
-const MAX_VE_AMOUNT = 50;
-const MAX_FE_AMOUNT = 200;
+const MAX_VE_AMOUNT = 100;
+const MAX_FE_AMOUNT = 400;
 
 //dadj
-const MAX_DADJ_FREQ_RANGE = 200; //cents
-const MAX_DADJ_VOL_RANGE = 200; //cents
-const MAX_MIN_DADJ_VOL_AMOUNT = 50; //dB
+const MAX_DADJ_FREQ_RANGE = 800; //cents
+const MAX_DADJ_VOL_RANGE = 800; //cents
+const MAX_MIN_DADJ_VOL_AMOUNT = 40; //dB
 
 
 //Audio
 const MAX_DB = 0;
 const MIN_DB = -80;
 
-const MAX_MIN_CENTS = 100;
+const MAX_MIN_CENTS = 800;
 
 
-
-var CTRL_DOWN = false;
-var SHIFT_DOWN = false;
-
+let CTRL_DOWN = false;
+let SHIFT_DOWN = false;
 
 
 const EDITOR_SHAPE = {
@@ -59,6 +57,13 @@ const LAYOUT_RIGHT = {
    DEFAULT: "DEFAULT",
    FREQ_ONLY: "FREQ_ONLY",
    VOL_ONLY: "VOL_ONLY"
+}
+const GROUPS = {
+   EVEN: "EVEN",
+   ODD: "ODD",
+   OCTAVES: "OCTAVES",
+   FIFTHS: "FIFTHS",
+   RANDOM: "RANDOM"
 }
 
 

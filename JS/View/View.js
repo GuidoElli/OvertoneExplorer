@@ -4,7 +4,7 @@ class View {
         //View
         this.layout = new View_layout(this);
         this.rows = new View_rows(this);
-        this.keyboard = new View_keyboard(this);
+        this.selection = new View_selection(this);
         this.zoom = new View_zoom(this);
         this.vol_visual = new View_vol_visual(this);
         this.freq_visual = new View_freq_visual(this);
@@ -46,6 +46,11 @@ class View {
         this.on_dadj_edit_all_button_click = null;
 
         this.on_custom_selection_button_click = null;
+
+
+        //Selection
+        this.on_selection_mode_change = null;
+        this.on_selection_group_click = null;
 
         //Zoom
         this.on_zoom_slider_set = null;
@@ -166,6 +171,13 @@ class View {
         this.dadj_edit.update_vol_range(vol_range);
         this.dadj_edit.update_vol_coeff(vol_coeff);
         this.dadj_edit.update_vol_amount(vol_amount);
+    }
+
+
+
+    update_selection(mode, selected_group){
+        this.selection.update_selection_mode(mode);
+        this.selection.update_selected_group(selected_group);
     }
 
 

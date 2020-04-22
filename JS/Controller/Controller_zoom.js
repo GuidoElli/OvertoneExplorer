@@ -11,18 +11,19 @@ class Controller_zoom {
 
    set_zoom = (track, is_zoom_in) => {
 
-      var first = this.m.first_visible_track;
-      var last = this.m.last_visible_track;
+      let first = this.m.first_visible_track;
+      let last = this.m.last_visible_track;
       if(!(last - first + 1 <= MIN_VISIBLE_TRACKS && is_zoom_in)){
          
-         var increment = Math.ceil((last - first + 1) * ZOOM_WIDTH_RELATIVE_INCREMENT);
-   
+         let increment = Math.ceil((last - first + 1) * ZOOM_WIDTH_RELATIVE_INCREMENT);
+         let new_diff;
+
          if(is_zoom_in){
-            var new_diff = (last - first) - increment;
-            var increment = Math.ceil((last - first + 1) * (1 - 1 / (ZOOM_WIDTH_RELATIVE_INCREMENT + 1)));
+            new_diff = (last - first) - increment;
+            increment = Math.ceil((last - first + 1) * (1 - 1 / (ZOOM_WIDTH_RELATIVE_INCREMENT + 1)));
          }else{
-            var new_diff = (last - first) + increment;
-            var increment = Math.ceil((last - first + 1) * ZOOM_WIDTH_RELATIVE_INCREMENT);
+            new_diff = (last - first) + increment;
+            increment = Math.ceil((last - first + 1) * ZOOM_WIDTH_RELATIVE_INCREMENT);
          }
    
          if(new_diff >= TOTAL_TRACKS){
@@ -30,28 +31,30 @@ class Controller_zoom {
          }else if(new_diff + 1 < MIN_VISIBLE_TRACKS){
             increment = (last - first + 1) - MIN_VISIBLE_TRACKS;
          }
-   
-         var temp_track = first - 1;
-         var ngroups = increment + 1;
-         var q = Math.floor((last - first + 1) / ngroups);
-         var r = (last - first + 1) % ngroups;
-         var cont = -1;
+
+         let temp_track = first - 1;
+         let ngroups = increment + 1;
+         let q = Math.floor((last - first + 1) / ngroups);
+         let r = (last - first + 1) % ngroups;
+         let cont = -1;
          while(temp_track <= track){
             temp_track += q;
             temp_track += (r > cont) ? 1 : 0;
             cont++;
          }
-         
-   
+
+
+         let new_first;
+         let new_last;
          if(is_zoom_in){
-            var new_first = first + cont;
-            var new_last = last - (increment - cont);
+            new_first = first + cont;
+            new_last = last - (increment - cont);
          }else{
-            var new_first = first - cont;
-            var new_last = last + (increment - cont);
+            new_first = first - cont;
+            new_last = last + (increment - cont);
          }
-   
-         var diff = new_last - new_first;
+
+         let diff = new_last - new_first;
    
          if(new_first < 0){
             new_first = 0;
@@ -71,9 +74,9 @@ class Controller_zoom {
 
 
    set_center = (center_track) => {
-      var diff = this.m.last_visible_track - this.m.first_visible_track;
-      var first = center_track - Math.floor(diff/2);
-      var last = center_track + Math.ceil(diff/2);
+      let diff = this.m.last_visible_track - this.m.first_visible_track;
+      let first = center_track - Math.floor(diff/2);
+      let last = center_track + Math.ceil(diff/2);
 
 
       if(first < 0){
@@ -99,10 +102,10 @@ class Controller_zoom {
 
    on_zoom_slider_wheel = (is_wheel_up) => {
 
-      var first = this.m.first_visible_track;
-      var last = this.m.last_visible_track;
-      var increment = Math.ceil((last - first + 1) * ZOOM_CENTER_RELATIVE_INCREMENT);
-      var center_track = Math.floor((last + first) / 2);
+      let first = this.m.first_visible_track;
+      let last = this.m.last_visible_track;
+      let increment = Math.ceil((last - first + 1) * ZOOM_CENTER_RELATIVE_INCREMENT);
+      let center_track = Math.floor((last + first) / 2);
 
       if(is_wheel_up){
          this.set_center(center_track - increment);

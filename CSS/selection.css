@@ -1,4 +1,47 @@
 
 .selection_box{
-   background-color: rgb(71, 171, 28);
+   background-color: rgb(59, 59, 59);
 }
+   .sel_mode_section{
+      height: 20%;
+   }
+   .sel_mode_box{
+      background-color: rgb(75, 75, 75);
+   }
+      .sel_mode_add_button_section,
+      .sel_mode_remove_button_section,
+      .sel_mode_toggle_button_section{
+         width: 33.33333%;
+         padding: 7px;
+      }
+      .sel_mode_add_button,
+      .sel_mode_remove_button,
+      .sel_mode_toggle_button{
+         background-color: #323232;
+      }
+      .sel_mode_add_button.active,
+      .sel_mode_remove_button.active,
+      .sel_mode_toggle_button.active{
+         background-color: #8d8d8d;
+      }
+
+   .sel_groups_section{
+      height: 50%;
+   }
+   .sel_groups_box{
+      background-color: #909090;
+   }
+      .sel_groups_section_content{
+         overflow: auto;
+      }
+      .sel_groups_item_section{
+         width: 50%;
+         height: 60%;
+         padding: 5px;
+      }
+      .sel_groups_item{
+         background-color: #323232;
+      }
+      .sel_groups_item.active{
+         background-color: #8d8d8d;
+      }

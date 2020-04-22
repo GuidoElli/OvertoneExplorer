@@ -2,11 +2,10 @@ class Controller_keyboard {
 
    first_keyboard_bass_note = 12;
    keyboard_bass_notes = ['q', '2', 'w', '3', 'e', 'r', '5', 't', '6', 'y', '7', 'u', 'i', '9', 'o', '0', 'p'];
-   first_keyboard_note = 48;
-   keyboard_notes = ['<', 'a', 'z', 's', 'x', 'c', 'f', 'v', 'g', 'b', 'h', 'n', 'm', 'k', ',', 'l', '.', 'ò', '-'];
+   first_keyboard_note = 36;
+   keyboard_notes = ['<', 'a', 'z', 's', 'x', 'c', 'f', 'v', 'g', 'b', 'h', 'n', 'm', 'k', ',', 'l', '.', '-', 'à'];
 
    hold_down = false;
-
 
    constructor(controller, model){
       this.c = controller;

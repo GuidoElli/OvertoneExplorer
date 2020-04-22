@@ -129,14 +129,14 @@ button{
    border-radius: var(--border-radius);
 }
    .section_label{
-      height: 0;
+      height: 20%;
       width: 100%;
 		text-align: center;
 		font-style: italic;
 	   color: #111111;
    }
    .section_content{
-      height: 100%;
+      height: 80%;
       width: 100%;
       border-radius: var(--border-radius);
    }

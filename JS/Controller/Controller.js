@@ -8,6 +8,7 @@ class Controller {
 		this.layout = new Controller_layout(this, model);
 		this.rows = new Controller_rows(this, model);
 		this.keyboard = new Controller_keyboard(this, model);
+		this.selection = new Controller_selection(this, model);
 		this.zoom = new Controller_zoom(this, model);
 		this.vol_edit = new Controller_vol_edit(this, model);
 		this.freq_edit = new Controller_freq_edit(this, model);
@@ -48,7 +49,10 @@ class Controller {
 		view.on_freq_edit_all_button_click = this.rows.on_freq_edit_all_button_click;
 		view.on_dadj_edit_all_button_click = this.rows.on_dadj_edit_all_button_click;
 
-		view.on_custom_selection_button_click = this.layout.on_custom_selection_button_click;
+		//selection
+		view.on_custom_selection_button_click = this.selection.on_custom_selection_button_click;
+		view.on_selection_mode_change = this.selection.on_selection_mode_change;
+		view.on_selection_group_click = this.selection.on_selection_group_click;
 
 		//Zoom
 		view.on_zoom_slider_set = this.zoom.on_zoom_slider_set;
@@ -162,6 +166,7 @@ class Controller {
 		this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
 
 
+		this.view.update_selection(this.model.selection_mode, this.model.selected_group);
 
 		this.view.update_vol_edit(
 			this.model.ve_shape,

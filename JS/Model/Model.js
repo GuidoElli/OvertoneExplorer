@@ -2,7 +2,7 @@ class Model {
 	constructor() {
 
 		//Vols
-		this._vols_base = new Array(TOTAL_TRACKS).fill(-30);
+		this._vols_base = new Array(TOTAL_TRACKS).fill(-40);
 		this._vols_ve_shape_amounts = new Array(TOTAL_TRACKS).fill(0);
 		this._vols_ve_amounts = new Array(TOTAL_TRACKS).fill(0);
 		this._last_played_note_dadj_vols = new Array(TOTAL_TRACKS).fill(0);
@@ -20,13 +20,13 @@ class Model {
 
 		//Selection
 		this._selection_mode = SELECTION_MODE.ADD;
-		this._custom_selection = false;
+		this._selected_group = null;
 
 		//Rows
-		this._playback_tracks = new Array(TOTAL_TRACKS).fill(false);
-		this._vol_edit_tracks = new Array(TOTAL_TRACKS).fill(false);
-		this._freq_edit_tracks = new Array(TOTAL_TRACKS).fill(false);
-		this._dadj_edit_tracks = new Array(TOTAL_TRACKS).fill(false);
+		this._playback_tracks = new Array(TOTAL_TRACKS).fill(true);
+		this._vol_edit_tracks = new Array(TOTAL_TRACKS).fill(true);
+		this._freq_edit_tracks = new Array(TOTAL_TRACKS).fill(true);
+		this._dadj_edit_tracks = new Array(TOTAL_TRACKS).fill(true);
 
 		this._playback_tracks_backup = null;
 		this._vol_edit_tracks_backup = null;
@@ -82,9 +82,11 @@ class Model {
 		this._out_attack = 0.1;
 		this._out_decay_time = 0;
 		this._out_decay_vol = 1;
-		this._out_release= 0.9;
+		this._out_release= 0.3;
 
 		this._out_master = 1;
+
+
 
 
 
@@ -230,6 +232,7 @@ class Model {
 		this._layout_right = value;
 	}
 
+
 	get custom_selection() {
 		return this._custom_selection;
 	}
@@ -241,9 +244,15 @@ class Model {
 	get selection_mode() {
 		return this._selection_mode;
 	}
-
 	set selection_mode(value) {
 		this._selection_mode = value;
+	}
+
+	get selected_group(){
+		return this._selected_group;
+	}
+	set selected_group(value) {
+		this._selected_group = value;
 	}
 
 
@@ -769,5 +778,6 @@ class Model {
 	set out_master(value) {
 		this._out_master = value;
 	}
+
 
 }

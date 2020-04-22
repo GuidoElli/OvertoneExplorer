@@ -17,18 +17,22 @@ class Audio_generator{
 			o.connect(g).connect(this.merger);
 			o.start();
 		}
-		this.update_freqs(freqs);
-		this.update_vols(vols);
+		for(let i = 0; i < this.oscillators.length; i++){
+			this.vols[i].gain.value = vols[i];
+		}
+		for(let i = 0; i < this.oscillators.length; i++){
+			this.oscillators[i].frequency.value = freqs[i];
+		}
 	}
 
 	update_vols(values){
 		for(let i = 0; i < this.oscillators.length; i++){
-			this.vols[i].gain.value = values[i];
+			this.vols[i].gain.linearRampToValueAtTime(values[i], this.ctx.currentTime + 0.04);
 		}
 	}
 	update_freqs(values){
 		for(let i = 0; i < this.oscillators.length; i++){
-			this.oscillators[i].frequency.value = values[i];
+			this.oscillators[i].frequency.linearRampToValueAtTime(values[i], this.ctx.currentTime + 0.04);
 		}
 	}
 
