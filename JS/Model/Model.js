@@ -502,8 +502,6 @@ class Model {
 		this._dadj_vol_amount = value;
 	}
 
-
-
 	process_bass_ovts(){
 		let bass_ovts = [];
 
@@ -519,7 +517,6 @@ class Model {
 		bass_ovts.sort(function(a, b){return a - b});
 		this._bass_ovts = bass_ovts;
 	}
-
 
 	process_notes(){
 		if(this._notes.length === 0 || this._bass_notes.length === 0){
@@ -565,7 +562,6 @@ class Model {
 			cents_diff_1 = (cents_diff_1 < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : cents_diff_1;
 			f *= Math.pow(2, cents_diff_1 / 1200);
 
-
 			//vol edit
 			v = this.vols_base[i];
 			if(this.vol_edit_tracks[i]){
@@ -579,7 +575,6 @@ class Model {
 			if(this._bass_notes.length > 0 && this.dadj_edit_tracks[i]){
 
 				//find nearest bass ovt
-
 				let nearest_2 = this.nearest_ovts(f);
 				let cents_diff_1 = 1200 * Math.log2(f / nearest_2[0]);
 				let cents_diff_2 = 1200 * Math.log2(f / nearest_2[1]);
@@ -624,9 +619,9 @@ class Model {
 
 
 				//Vol
-				cents_diff_1 += cents_to_add;
-				if(Math.abs(cents_diff_1) < this.dadj_vol_range){
-					let x_01 = Math.abs(cents_diff_1 / this.dadj_vol_range);
+				min_cents_diff += cents_to_add;
+				if(Math.abs(min_cents_diff) < this.dadj_vol_range){
+					let x_01 = Math.abs(min_cents_diff / this.dadj_vol_range);
 					let exp;
 					if(this._dadj_vol_coeff >= 0){
 						exp = 1 / (a * Math.pow(Math.abs(this._dadj_vol_coeff), b) + 1);

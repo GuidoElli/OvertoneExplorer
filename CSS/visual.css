@@ -14,20 +14,39 @@
          padding: 0;
       }
       .visual_vol_item_box{
-         width: 85%;
+         width: 90%;
          height: 100%;
          background-color: rgb(39, 39, 39);
          transform: translate(7.5%, 0%);
       }
-         .vv_main_bar{
+         .vv_main_bar_section{
             width: 60%;
-            height: 70%;/**/
-            background-color: rgb(206, 206, 206);
-            border-radius: 3px;
-            left: 50%;
-            top: 30%;/**/
-            transform: translate(-50%, 0);
+            height: 100%;
          }
+            .vv_main_bar{
+               width: 95%;
+               height: 70%;/**/
+               background-color: rgb(206, 206, 206);
+               border-radius: 3px;
+               left: 50%;
+               top: 30%;/**/
+               transform: translate(-50%, 0);
+            }
+         .vv_side_bar_section{
+            width: 20%;
+            height: 100%;
+         }
+            .vv_ve_side_bar{
+               background-color: #1800ff;
+               width: 95%;
+               position: absolute;
+            }
+            .vv_dadj_side_bar{
+               background-color: #ee0000;
+               width: 95%;
+               position: absolute;
+            }
+
       
    .visual_freq_box{
       padding: 2px;
@@ -43,12 +62,30 @@
          background-color: rgb(39, 39, 39);
          transform: translate(7.5%, 0%);
       }
-         .vf_main_bar{
+         .vf_main_bar_section{
             width: 60%;
-            height: 70%;/**/
-            background-color: rgb(206, 206, 206);
-            border-radius: 3px;
-            left: 50%;
-            top: 30%;/**/
-            transform: translate(-50%, 0);
+            height: 100%;
          }
+            .vf_main_bar{
+               width: 95%;
+               height: 70%;/**/
+               background-color: rgb(206, 206, 206);
+               border-radius: 3px;
+               left: 50%;
+               top: 30%;/**/
+               transform: translate(-50%, 0);
+            }
+         .vf_side_bar_section{
+            width: 20%;
+            height: 100%;
+         }
+            .vf_fe_side_bar{
+               background-color: #269200;
+               width: 95%;
+               position: absolute;
+            }
+            .vf_dadj_side_bar{
+               background-color: #ee0000;
+               width: 95%;
+               position: absolute;
+            }
