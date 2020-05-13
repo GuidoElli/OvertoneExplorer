@@ -173,30 +173,25 @@ class View_vol_edit {
 				final_h = 0;
 			}
 
+			this.ve_visual_shape_amounts[i].style.top = "";
+			this.ve_visual_shape_amounts[i].style.bottom = "";
+			this.ve_visual_amounts[i].style.top = "";
+			this.ve_visual_amounts[i].style.bottom = "";
 			if(random && mirror){
 				shape_h *= 2;
-
 				this.ve_visual_shape_amounts[i].style.bottom = (1 - shape_h) / 2 * 100 + "%";
-				this.ve_visual_shape_amounts[i].style.top = "";
-
 				if(amounts[i] >= 0){
 					this.ve_visual_amounts[i].style.bottom = "50%";
-					this.ve_visual_amounts[i].style.top = "";
 				}else{
 					this.ve_visual_amounts[i].style.top = "50%";
-					this.ve_visual_amounts[i].style.bottom = "";
 				}
 			}else{
 				if(shape_amounts[i] >= 0){
 					this.ve_visual_shape_amounts[i].style.bottom = "50%";
-					this.ve_visual_shape_amounts[i].style.top = "";
 					this.ve_visual_amounts[i].style.bottom = "50%";
-					this.ve_visual_amounts[i].style.top = "";
 				}else{
 					this.ve_visual_shape_amounts[i].style.top = "50%";
-					this.ve_visual_shape_amounts[i].style.bottom = "";
 					this.ve_visual_amounts[i].style.top = "50%";
-					this.ve_visual_amounts[i].style.bottom = "";
 				}
 			}
 
