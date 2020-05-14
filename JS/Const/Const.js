@@ -1,7 +1,7 @@
 //constants and parameters
 const MAX_FREQUENCY = 20000;
 
-const TOTAL_TRACKS = 130;
+const TOTAL_TRACKS = 80;
 const MIN_VISIBLE_TRACKS = 7;
 const MAX_TRACKS_TO_SHOW_BUTTON_LABELS = 30;
 

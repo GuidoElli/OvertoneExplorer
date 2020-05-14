@@ -506,11 +506,9 @@ class Model {
 		let bass_ovts = [];
 
 		for(let i = 0; i < this._bass_notes.length; i++){
-			let f0 = this.midi_to_freq(this._bass_notes[i]);
-			let f_temp = f0;
+			let f_temp = this.midi_to_freq(this._bass_notes[i]);
 			while(f_temp < MAX_FREQUENCY){
 				bass_ovts.push(f_temp);
-				//f_temp += f0;
 				f_temp *= 2;
 			}
 		}
@@ -585,19 +583,15 @@ class Model {
 					min_cents_diff = cents_diff_2;
 				}
 
-				//Some parameters
-				let a = 10;
-				let b = 1.5;
-
 				//Freq
 				let cents_to_add = 0;
 				if(Math.abs(min_cents_diff) < this._dadj_freq_range){
 					let x_01 = Math.abs(min_cents_diff / this._dadj_freq_range);
 					let exp;
 					if(this._dadj_freq_coeff >= 0){
-						exp = a * Math.pow(Math.abs(this._dadj_freq_coeff), b) + 1;
+						exp = 1 / (1 - this._dadj_freq_coeff + 0.0001)
 					}else{
-						exp = 1 / (a * Math.pow(Math.abs(this._dadj_freq_coeff), b) + 1);
+						exp = 1 + this._dadj_freq_coeff + 0.0001;
 					}
 					let y_01 = Math.sign(min_cents_diff) * (Math.pow(x_01, exp) - x_01);
 					cents_to_add = y_01 * this._dadj_freq_range;
@@ -624,9 +618,9 @@ class Model {
 					let x_01 = Math.abs(min_cents_diff / this.dadj_vol_range);
 					let exp;
 					if(this._dadj_vol_coeff >= 0){
-						exp = 1 / (a * Math.pow(Math.abs(this._dadj_vol_coeff), b) + 1);
+						exp = 1 / (1 - this._dadj_vol_coeff + 0.0001)
 					}else{
-						exp = a * Math.pow(Math.abs(this._dadj_vol_coeff), b) + 1;
+						exp = 1 + this._dadj_vol_coeff + 0.0001;
 					}
 					let y_01 = Math.pow(1 - x_01, exp);
 					let y_db = this._dadj_vol_amount * y_01;
