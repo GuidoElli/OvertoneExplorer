@@ -23,26 +23,23 @@ class Knob{
 		
 		this.canvas.style.background_color = this.background_color;
 
-
 		this.old_mouse_y = null;
 		this.new_mouse_y = null;
 		this.old_value = null;
 		this.editing = false;
 		this.clickable = true;
 
-
 		document.addEventListener("keydown", (e) => {
-			if(e.key == "Control"){
+			if(e.key === "Control"){
 				CTRL_DOWN = true;
 			}
 		}, true)
 		document.addEventListener("keyup", (e) => {
-			if(e.key == "Control"){
+			if(e.key === "Control"){
 				CTRL_DOWN = false;
 			}
 		}, true)
-
-
+		
 		canvas.addEventListener("mousedown", (e) => {
 			if(this.clickable){
 				this.editing = true;
@@ -51,17 +48,19 @@ class Knob{
 				this.new_mouse_y = e.pageY;
 			}
 		})
+
 		document.addEventListener("mousemove", (e) => {
 			if(this.editing){
 				this.new_mouse_y = (e.pageY) ? e.pageY : this.new_mouse_y;
-				var pixel_diff = this.old_mouse_y - this.new_mouse_y;
+				let pixel_diff = this.old_mouse_y - this.new_mouse_y;
+				let value_diff;
 				if(CTRL_DOWN){
-					var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL_FINE;
+					value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL_FINE;
 				}else{
-					var value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL;
+					value_diff = pixel_diff * (this.max_value - this.min_value) / KNOB_MAX_PIXEL;
 				}
 
-				var new_value = this.old_value + value_diff;
+				let new_value = this.old_value + value_diff;
 
 				if(new_value < this.min_value){
 					new_value = this.min_value;
@@ -72,13 +71,14 @@ class Knob{
 				this.on_change(new_value);
 			}
 		})
-		document.addEventListener("mouseup", (e) => {
+
+		document.addEventListener("mouseup", () => {
 			if(this.editing){
 				this.editing = false;
 			}
 		})
 
-		canvas.addEventListener("dblclick", (e) => {
+		canvas.addEventListener("dblclick", () => {
 			if(this.default_value !== null){
 				this.editing = false;
 				this.on_change(this.default_value);
@@ -86,29 +86,34 @@ class Knob{
 		})
 	}
 
-	update() {
-      var b = this.canvas.parentNode.getBoundingClientRect();
-      var width = b.right - b.left;
-		var height = b.bottom - b.top;
-		
-		var dim = Math.min(height,width);
+	resize(){
+		let b = this.canvas.parentNode.getBoundingClientRect();
+		let width = b.right - b.left;
+		let height = b.bottom - b.top;
 
-      this.canvas.width = dim;
+		let dim = Math.min(height,width);
+
+		this.canvas.width = dim;
 		this.canvas.height = dim;
 
-		var h = this.canvas.height;
-		var w = this.canvas.width;
-		var ctx = this.canvas.getContext("2d");
-		var radius = dim / 2.1;
-		var pointer_w = radius / 10;
-		var interval_w = radius / 3;
-		var external_circle_w = radius / 20;
+	}
+
+	update() {
+      this.resize();
+
+		let h = this.canvas.height;
+		let w = this.canvas.width;
+		let ctx = this.canvas.getContext("2d");
+		let radius = w / 2.1;
+		let pointer_w = radius / 10;
+		let interval_w = radius / 3;
+		let external_circle_w = radius / 20;
 
 		
 		//useful variables
-		var min_angle = (90 + (360 - this.total_angle) / 2) / 360 * 2 * Math.PI;
-		var max_angle = (90 - (360 - this.total_angle) / 2) / 360 * 2 * Math.PI;
-		var current_angle = min_angle + (this.value - this.min_value) / (this.max_value - this.min_value) * this.total_angle / 360 * 2 * Math.PI;
+		let min_angle = (90 + (360 - this.total_angle) / 2) / 360 * 2 * Math.PI;
+		let max_angle = (90 - (360 - this.total_angle) / 2) / 360 * 2 * Math.PI;
+		let current_angle = min_angle + (this.value - this.min_value) / (this.max_value - this.min_value) * this.total_angle / 360 * 2 * Math.PI;
 		
 		
 		ctx.clearRect(0, 0, w, h);
@@ -175,6 +180,4 @@ class Knob{
 		ctx.stroke();
 		
    }
-
-
 }

@@ -709,6 +709,7 @@ class Model {
 
 
 
+	// Getters and setters
 
 	get notes() {
 		return this._notes;

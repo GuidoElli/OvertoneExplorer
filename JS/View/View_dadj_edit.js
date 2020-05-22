@@ -4,10 +4,14 @@ class View_dadj_edit {
 
 
 
+		this.dadj_freq_graph_canvas = $(".dadj_freq_graph")[0];
+		this.dadj_vol_graph_canvas = $(".dadj_vol_graph")[0];
+		this.dadj_vol_graph = new Dadj_vol_graph(this.dadj_vol_graph_canvas);
+		this.dadj_freq_graph = new Dadj_freq_graph(this.dadj_freq_graph_canvas);
 
 		this.dadj_freq_range_canvas = $(".dadj_freq_range_knob")[0];
 		this.dadj_freq_range_knob = new Knob(this.dadj_freq_range_canvas, 0, MAX_DADJ_FREQ_RANGE, null, null);
-		this.dadj_freq_range_knob.interval_color = "rgb(11, 112, 196)";
+		this.dadj_freq_range_knob.interval_color = "rgb(11,112,196)";
 		this.dadj_freq_range_knob.on_change = (value) => {
 			this.v.on_dadj_freq_range_change(value);
 		}
@@ -17,7 +21,7 @@ class View_dadj_edit {
 
 		this.dadj_freq_coeff_canvas = $(".dadj_freq_coeff_knob")[0];
 		this.dadj_freq_coeff_knob = new Knob(this.dadj_freq_coeff_canvas, -1, 1, 0, 0);
-		this.dadj_freq_coeff_knob.interval_color = "rgb(11, 112, 196)";
+		this.dadj_freq_coeff_knob.interval_color = "rgb(11,112,196)";
 		this.dadj_freq_coeff_knob.on_change = (value) => {
 			this.v.on_dadj_freq_coeff_change(value);
 		}
@@ -61,6 +65,9 @@ class View_dadj_edit {
 
 
 	update_freq_range = (value) => {
+		this.dadj_freq_graph.range = value;
+		this.dadj_freq_graph.update();
+
 		this.dadj_freq_range_knob.value = value;
 		this.dadj_freq_range_knob.update();
 
@@ -68,6 +75,9 @@ class View_dadj_edit {
 	}
 
 	update_freq_coeff = (value) => {
+		this.dadj_freq_graph.coeff = value;
+		this.dadj_freq_graph.update();
+
 		this.dadj_freq_coeff_knob.value = value;
 		this.dadj_freq_coeff_knob.update();
 
