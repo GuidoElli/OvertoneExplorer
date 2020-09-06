@@ -35,17 +35,44 @@ class Dadj_freq_graph {
 		ctx.fillRect(0, 0, w, h);
 
 		//axis x
-		ctx.strokeStyle = "#666666";
-		ctx.lineWidth = 1.5;
+		ctx.strokeStyle = "#bbbbbb";
+		ctx.lineWidth = 1;
 		ctx.beginPath();
 		ctx.moveTo(0, h/2);
 		ctx.lineTo(w, h/2);
 		ctx.stroke();
+		//arrow
+		ctx.beginPath();
+		ctx.moveTo(w, h/2);
+		ctx.lineTo(w-10, h/2-10);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(w, h/2);
+		ctx.lineTo(w-10, h/2+10);
+		ctx.stroke();
+
 
 		//axis y
 		ctx.beginPath();
 		ctx.moveTo(w/2, 0);
 		ctx.lineTo(w/2, w);
+		ctx.stroke();
+		//arrow
+		ctx.beginPath();
+		ctx.moveTo(w/2, 0);
+		ctx.lineTo(w/2-10, 10);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(w/2, 0);
+		ctx.lineTo(w/2+10, 10);
+		ctx.stroke();
+
+		//base line
+		ctx.strokeStyle = "grey";
+		ctx.lineWidth = 0.5;
+		ctx.beginPath();
+		ctx.moveTo(w, 0);
+		ctx.lineTo(0, h);
 		ctx.stroke();
 
 		//function
@@ -53,7 +80,7 @@ class Dadj_freq_graph {
 		let pixel_range_x = w / (2 * (ext + 1)) / MAX_DADJ_FREQ_RANGE * this.range;
 		let pixel_range_y = h / (2 * (ext + 1)) / MAX_DADJ_FREQ_RANGE * this.range;
 		ctx.strokeStyle = "red";
-		ctx.lineWidth = 2;
+		ctx.lineWidth = 2.5;
 		ctx.beginPath();
 		ctx.moveTo(0, h);
 		for(let x = 0; x < w; x++){
@@ -80,5 +107,35 @@ class Dadj_freq_graph {
 			}
 		}
 		ctx.stroke();
+
+		//ranges
+		//left
+		ctx.strokeStyle = "grey";
+		ctx.lineWidth = 0.5;
+		ctx.beginPath();
+		ctx.moveTo(w/2 - pixel_range_x, h/2);
+		ctx.lineTo(w/2 - pixel_range_x, h * (1 - (w/2 - pixel_range_x)/w));
+		ctx.lineTo(w/2, h * (1 - (w/2 - pixel_range_x)/w));
+		ctx.stroke();
+		//right
+		ctx.beginPath();
+		ctx.moveTo(w/2 + pixel_range_x, h/2);
+		ctx.lineTo(w/2 + pixel_range_x, h * (1 - (w/2 + pixel_range_x)/w));
+		ctx.lineTo(w/2, h * (1 - (w/2 + pixel_range_x)/w));
+		ctx.stroke();
+
+		//texts
+		//range numbers
+		ctx.font='12px sans-serif';
+		ctx.fillStyle = "grey";
+		ctx.textAlign = "right";
+		ctx.fillText("- " + this.range.toFixed(1) + " Cents", Math.min(w/2 - 10, w/2 - pixel_range_x + 70), h/2 - 5);
+		ctx.textAlign = "left";
+		ctx.fillText("+ " + this.range.toFixed(1) + " Cents", Math.max(w/2 + 10, w/2 + pixel_range_x - 70), h/2 + 13);
+		//axis label
+		ctx.textAlign = "right";
+		ctx.fillText("f-Out", w/2-15, 20);
+		ctx.fillText("f-In", w-4, h/2+25);
+
 	}
 }
