@@ -1,4 +1,4 @@
-class Audio_generator_old{
+class Audio_generator{
 	constructor(audioCTX, midi_note, freqs, vols){
 		this.midi_note = midi_note;
 		this.ctx = audioCTX;
