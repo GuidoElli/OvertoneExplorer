@@ -22,6 +22,9 @@ class View_freq_visual {
 			this.sections[i].addEventListener("mousewheel", (e) => {
 				this.v.on_visual_wheel(i, e.wheelDelta > 0);
 			})
+			this.sections[i].addEventListener("mousedown", (e) => {
+				this.v.on_freq_visual_mousedown(i, e.pageY);
+			})
 		}
 
 		this.vf_main_bars = $(".vf_main_bar");

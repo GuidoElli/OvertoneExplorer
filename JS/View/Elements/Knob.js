@@ -31,8 +31,10 @@ class Knob{
 
 		document.addEventListener("keydown", (e) => {
 			if(e.key === "Control"){
-				this.old_value = this.value;
-				this.old_mouse_y = this.new_mouse_y;
+				if(this.editing){
+					this.old_value = this.value;
+					this.old_mouse_y = this.new_mouse_y;
+				}
 			}
 		}, true)
 		document.addEventListener("keyup", (e) => {

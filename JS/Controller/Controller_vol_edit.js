@@ -3,6 +3,56 @@ class Controller_vol_edit{
 	constructor(controller, model){
 		this.c = controller;
 		this.m = model;
+
+		this.editing_single_track = false;
+		this.editing_track = 0;
+		this.old_vol = null;
+		this.new_vol = null;
+		this.old_mouse_y = null;
+		this.new_mouse_y = null;
+
+		document.addEventListener("mousemove", (e) => {
+			if(this.editing_single_track){
+				this.new_mouse_y = (e.pageY) ? e.pageY : this.new_mouse_y;
+				let pixel_diff = this.old_mouse_y - this.new_mouse_y;
+				let value_diff;
+				if(CTRL_DOWN){
+					value_diff = pixel_diff * (MAX_DB - MIN_DB) / KNOB_MAX_PIXEL_FINE;
+				}else{
+					value_diff = pixel_diff * (MAX_DB - MIN_DB) / KNOB_MAX_PIXEL;
+				}
+				this.new_vol = this.old_vol + value_diff;
+				if(this.new_vol < MIN_DB){
+					this.new_vol = MIN_DB;
+				}else if(this.new_vol > MAX_DB){
+					this.new_vol = MAX_DB;
+				}
+				this.m.set_vol(this.editing_track, this.new_vol);
+				this.c.update_audio();
+				this.c.update_view();
+			}
+		})
+
+		document.addEventListener("mouseup", (e) => {
+			this.editing_single_track = false;
+		})
+
+		document.addEventListener("keydown", (e) => {
+			if(e.key === "Control"){
+				if(this.editing_single_track){
+					this.old_vol = this.new_vol;
+					this.old_mouse_y = this.new_mouse_y;
+				}
+			}
+		}, true)
+		document.addEventListener("keyup", (e) => {
+			if(e.key === "Control"){
+				if(this.editing_single_track){
+					this.old_vol = this.new_vol;
+					this.old_mouse_y = this.new_mouse_y;
+				}
+			}
+		}, true)
 	}
 
 	apply_ve(){
@@ -16,6 +66,12 @@ class Controller_vol_edit{
 		}
 	}
 
+	on_vol_visual_mousedown = (track, mouse_y) => {
+		this.editing_single_track = true;
+		this.editing_track = track;
+		this.old_mouse_y = mouse_y;
+		this.old_vol = this.m.vols_base[track];
+	}
 
 	on_ve_shape_change = (editor_shape) => {
 		this.m.ve_shape = editor_shape;

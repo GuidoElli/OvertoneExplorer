@@ -63,6 +63,8 @@ class View {
 
 
         //Vol edit
+        this.on_vol_visual_mousedown = null;
+
         this.on_ve_shape_change = null;
 
         this.on_ve_amount_change = null;
@@ -77,7 +79,9 @@ class View {
         this.on_ve_reset_click = null;
 
 
-        //Vol edit
+        //Freq edit
+        this.on_freq_visual_mousedown = null;
+
         this.on_fe_shape_change = null;
 
         this.on_fe_amount_change = null;

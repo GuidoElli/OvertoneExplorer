@@ -148,6 +148,10 @@ class Model {
 		this._vols_base = values;
 	}
 
+	set_vol(track, vol){
+		this._vols_base[track] = vol;
+	}
+
 	get vols_ve_shape_amounts() {
 		return this._vols_ve_shape_amounts;
 	}
@@ -205,6 +209,10 @@ class Model {
 
 	set freqs_base(values) {
 		this._freqs_base = values;
+	}
+
+	set_freq(track, freq){
+		this._freqs_base[track] = freq;
 	}
 
 	get freqs_fe_shape_amounts() {
@@ -647,15 +655,6 @@ class Model {
 		note.freqs = freqs;
 		note.vols = vols;
 
-	}
-
-
-	to_lin(db){
-		if(db === MIN_DB){
-			return 0;
-		}else{
-			return Math.pow(10, db / 20);
-		}
 	}
 
 	midi_to_freq(midi_note){

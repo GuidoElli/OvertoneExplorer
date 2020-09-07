@@ -65,6 +65,9 @@ class Controller {
 
 
 		//Vol edit
+
+		view.on_vol_visual_mousedown = this.vol_edit.on_vol_visual_mousedown;
+
 		view.on_ve_shape_change = this.vol_edit.on_ve_shape_change;
 
 		view.on_ve_amount_change = this.vol_edit.on_ve_amount_change;
@@ -80,6 +83,8 @@ class Controller {
 
 
 		//Freq edit
+		view.on_freq_visual_mousedown = this.freq_edit.on_freq_visual_mousedown;
+
 		view.on_fe_shape_change = this.freq_edit.on_fe_shape_change;
 
 		view.on_fe_amount_change = this.freq_edit.on_fe_amount_change;

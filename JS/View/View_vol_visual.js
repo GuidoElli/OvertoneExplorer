@@ -21,6 +21,9 @@ class View_vol_visual {
 			this.sections[i].addEventListener("mousewheel", (e) => {
 				this.v.on_visual_wheel(i, e.wheelDelta > 0);
 			})
+			this.sections[i].addEventListener("mousedown", (e) => {
+				this.v.on_vol_visual_mousedown(i, e.pageY);
+			})
 		}
 
 		this.vv_main_bars = $(".vv_main_bar");
