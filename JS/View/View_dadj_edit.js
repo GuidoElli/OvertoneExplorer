@@ -5,8 +5,6 @@ class View_dadj_edit {
 
 
 		this.dadj_freq_graph_canvas = $(".dadj_freq_graph")[0];
-		this.dadj_vol_graph_canvas = $(".dadj_vol_graph")[0];
-		this.dadj_vol_graph = new Dadj_vol_graph(this.dadj_vol_graph_canvas);
 		this.dadj_freq_graph = new Dadj_freq_graph(this.dadj_freq_graph_canvas);
 
 		this.dadj_freq_range_canvas = $(".dadj_freq_range_knob")[0];
@@ -30,6 +28,8 @@ class View_dadj_edit {
 
 
 
+		this.dadj_vol_graph_canvas = $(".dadj_vol_graph")[0];
+		this.dadj_vol_graph = new Dadj_vol_graph(this.dadj_vol_graph_canvas);
 
 		this.dadj_vol_range_canvas = $(".dadj_vol_range_knob")[0];
 		this.dadj_vol_range_knob = new Knob(this.dadj_vol_range_canvas, 0, MAX_DADJ_VOL_RANGE, null, null);
@@ -83,7 +83,7 @@ class View_dadj_edit {
 
 		var string_value = (value >= 0) ? "+ " : "- ";
 		string_value = (value === 0) ? "" : string_value;
-		string_value += Math.abs(value).toFixed(2);
+		string_value += Math.abs(value).toFixed(3);
 
 		this.dadj_freq_coeff_value.innerHTML = string_value;
 	}
@@ -91,6 +91,9 @@ class View_dadj_edit {
 
 
 	update_vol_range = (value) => {
+		this.dadj_vol_graph.range = value;
+		this.dadj_vol_graph.update();
+
 		this.dadj_vol_range_knob.value = value;
 		this.dadj_vol_range_knob.update();
 
@@ -98,17 +101,23 @@ class View_dadj_edit {
 	}
 
 	update_vol_coeff = (value) => {
+		this.dadj_vol_graph.coeff = value;
+		this.dadj_vol_graph.update();
+
 		this.dadj_vol_coeff_knob.value = value;
 		this.dadj_vol_coeff_knob.update();
 
 		var string_value = (value >= 0) ? "+ " : "- ";
 		string_value = (value === 0) ? "" : string_value;
-		string_value += Math.abs(value).toFixed(2);
+		string_value += Math.abs(value).toFixed(3);
 
 		this.dadj_vol_coeff_value.innerHTML = string_value;
 	}
 
 	update_vol_amount = (value) => {
+		this.dadj_vol_graph.amount = value;
+		this.dadj_vol_graph.update();
+
 		this.dadj_vol_amount_knob.value = value;
 		this.dadj_vol_amount_knob.update();
 
@@ -127,8 +136,10 @@ class View_dadj_edit {
 	update_canvases = () => {
 		this.dadj_freq_range_knob.update();
 		this.dadj_freq_coeff_knob.update();
+		this.dadj_freq_graph.update();
 		this.dadj_vol_range_knob.update();
 		this.dadj_vol_coeff_knob.update();
 		this.dadj_vol_amount_knob.update();
+		this.dadj_vol_graph.update();
 	}
 }

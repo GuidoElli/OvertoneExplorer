@@ -7,7 +7,7 @@ class Dadj_freq_graph {
 
 		this.background_color = "#111111";
 
-		this.update(500, -0.9);
+		this.update();
 	}
 
 
@@ -134,8 +134,8 @@ class Dadj_freq_graph {
 		ctx.fillText("+ " + this.range.toFixed(1) + " Cents", Math.max(w/2 + 10, w/2 + pixel_range_x - 70), h/2 + 13);
 		//axis label
 		ctx.textAlign = "right";
-		ctx.fillText("f-Out", w/2-15, 20);
-		ctx.fillText("f-In", w-4, h/2+25);
+		ctx.fillText("Out", w/2-15, 20);
+		ctx.fillText("In", w-4, h/2+25);
 
 	}
 }

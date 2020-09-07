@@ -31,12 +31,16 @@ class Knob{
 
 		document.addEventListener("keydown", (e) => {
 			if(e.key === "Control"){
-				CTRL_DOWN = true;
+				this.old_value = this.value;
+				this.old_mouse_y = this.new_mouse_y;
 			}
 		}, true)
 		document.addEventListener("keyup", (e) => {
 			if(e.key === "Control"){
-				CTRL_DOWN = false;
+				if(this.editing){
+					this.old_value = this.value;
+					this.old_mouse_y = this.new_mouse_y;
+				}
 			}
 		}, true)
 		
