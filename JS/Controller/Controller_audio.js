@@ -5,6 +5,7 @@ class Controller_audio{
 		this.m = model;
 
 
+
 		this.ctx = new AudioContext();
 		this.merger = this.ctx.createChannelMerger();
 		this.master_gain = this.ctx.createGain();
@@ -19,7 +20,7 @@ class Controller_audio{
 		this.generators = [];
 
 		this.update();
-		this.ctx.resume().then(r => {let a=0});
+		this.ctx.resume().then(() => {});
 
 	}
 
