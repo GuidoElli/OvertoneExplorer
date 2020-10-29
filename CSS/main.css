@@ -90,7 +90,7 @@
 	position: relative;
 }
 body{
-	margin: 0px;
+	margin: 0;
 	background: var(--greyscale-0);
 }
 
