@@ -10,60 +10,60 @@
       height: 25%;
    }
       .row_playback_item{
-         background-color: rgb(66, 66, 66);
+         background-color: var(--greyscale-3);
       }
       .row_playback_item.active{
-         background-color: rgb(192, 192, 192);
+         background-color: var(--greyscale-10);
       }
       .row_playback_item:hover{
-         background-color: rgb(88, 88, 88);
+         background-color: var(--greyscale-4);
       }
       .row_playback_item.active:hover{
-         background-color: rgb(179, 179, 179);
+         background-color: var(--greyscale-9);
       }
    .row_vol_edit_box{
       height: 25%;
    }
       .row_vol_edit_item{
-         background-color: rgb(16, 46, 92);
+         background-color: var(--blue-1);
       }
       .row_vol_edit_item.active{
-         background-color: rgb(11, 112, 196);
+         background-color: var(--blue-4);
       }
       .row_vol_edit_item:hover{
-         background-color: rgb(18, 60, 109);
+         background-color: var(--blue-2);
       }
       .row_vol_edit_item.active:hover{
-         background-color: rgb(19, 100, 165);
+         background-color: var(--blue-3);
       }
    .row_freq_edit_box{
       height: 25%;
    }
       .row_freq_edit_item{
-         background-color: rgb(16, 92, 29);
+         background-color: var(--green-1);
       }
       .row_freq_edit_item.active{
-         background-color: rgb(4, 205, 38);
+         background-color: var(--green-4);
       }
       .row_freq_edit_item:hover{
-         background-color: rgb(18, 109, 33);
+         background-color: var(--green-2);
       }
       .row_freq_edit_item.active:hover{
-         background-color: rgb(6, 184, 35);
+         background-color: var(--green-3);
       }
    .row_dadj_edit_box{
       height: 25%;
    }
       .row_dadj_edit_item{
-         background-color: rgb(92, 34, 16);
+         background-color: var(--red-1);
       }
       .row_dadj_edit_item.active{
-         background-color: rgb(205, 51, 4);
+         background-color: var(--red-4);
       }
       .row_dadj_edit_item:hover{
-         background-color: rgb(109, 36, 18);
+         background-color: var(--red-2);
       }
       .row_dadj_edit_item.active:hover{
-         background-color: rgb(184, 42, 6);
+         background-color: var(--red-3);
       }
       

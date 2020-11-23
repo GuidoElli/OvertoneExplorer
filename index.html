@@ -6,12 +6,10 @@
 
 	<link rel="stylesheet" type="text/css" href="CSS/main.css">
 	<link rel="stylesheet" type="text/css" href="CSS/elements.css">
-	<link rel="stylesheet" type="text/css" href="CSS/top_bar.css">
 	<link rel="stylesheet" type="text/css" href="CSS/right_bar.css">
 	<link rel="stylesheet" type="text/css" href="CSS/visual.css">
 	<link rel="stylesheet" type="text/css" href="CSS/zoom.css">
 	<link rel="stylesheet" type="text/css" href="CSS/rows.css">
-	<link rel="stylesheet" type="text/css" href="CSS/sound.css">
 	<link rel="stylesheet" type="text/css" href="CSS/vol_edit.css">
 	<link rel="stylesheet" type="text/css" href="CSS/freq_edit.css">
 	<link rel="stylesheet" type="text/css" href="CSS/dadj_edit.css">
@@ -550,17 +548,25 @@
 					<div class="zoom_controls_box box">
 
 						<div class="zoom_minus_button_section section">
-							<button class="zoom_minus_button">-</button>
+							<button class="zoom_minus_button">
+								<img src="IMG/minus.png">
+							</button>
 						</div>
 						<div class="zoom_plus_button_section section">
-							<button class="zoom_plus_button">+</button>
+							<button class="zoom_plus_button">
+								<img src="IMG/plus.png">
+							</button>
 						</div>
 
 						<div class="zoom_left_button_section section">
-							<button class="zoom_left_button"><-</button>
+							<button class="zoom_left_button">
+								<img src="IMG/arrow%20left.png">
+							</button>
 						</div>
 						<div class="zoom_right_button_section section">
-							<button class="zoom_right_button">-></button>
+							<button class="zoom_right_button">
+								<img src="IMG/arrow%20right.png">
+							</button>
 						</div>
 
 					</div>
@@ -599,14 +605,14 @@
 					<!--vol scale-->
 					<div class="vol_visual_side_section section">
 						<div class="vol_visual_side_box box">
-							SCALE VOL
+							<canvas class="vol_scale_canvas"></canvas>
 						</div>
 					</div>
 
 					<!--freq scale-->
 					<div class="freq_visual_side_section section">
 						<div class="freq_visual_side_box box">
-							SCALE FREQ
+							<canvas class="freq_scale_canvas"></canvas>
 						</div>
 					</div>
 
@@ -732,6 +738,7 @@
 
 
 <script src="https://www.w3.org/TR/2018/CR-webaudio-20180918/"></script>
+<script src="http://www.w3.org/TR/2015/WD-webmidi-20150317/"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script src="JS/Const/Const.js"></script>
@@ -751,6 +758,8 @@
 <script src="JS/View/Elements/Knob.js"></script>
 <script src="JS/View/Elements/Dadj_freq_graph.js"></script>
 <script src="JS/View/Elements/Dadj_vol_graph.js"></script>
+<script src="JS/View/Elements/Vol_scale.js"></script>
+<script src="JS/View/Elements/Freq_scale.js"></script>
 
 <script src="JS/View/View.js"></script>
 
@@ -762,6 +771,7 @@
 <script src="JS/Controller/Controller_rows.js"></script>
 <script src="JS/Controller/Controller_layout.js"></script>
 <script src="JS/Controller/Controller_keyboard.js"></script>
+<script src="JS/Controller/Controller_midi.js"></script>
 <script src="JS/Controller/Controller_selection.js"></script>
 <script src="JS/Controller/Controller_zoom.js"></script>
 <script src="JS/Controller/Controller_vol_edit.js"></script>

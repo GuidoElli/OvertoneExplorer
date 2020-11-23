@@ -25,11 +25,18 @@ class View_freq_visual {
 			this.sections[i].addEventListener("mousedown", (e) => {
 				this.v.on_freq_visual_mousedown(i, e.pageY);
 			})
+			this.sections[i].addEventListener("dblclick", (e) => {
+				this.v.on_freq_visual_doubleclick(i);
+			})
 		}
 
 		this.vf_main_bars = $(".vf_main_bar");
 		this.vf_fe_side_bars = $(".vf_fe_side_bar");
 		this.vf_dadj_side_bars = $(".vf_dadj_side_bar");
+
+
+		this.freq_scale_canvas = $(".freq_scale_canvas")[0];
+		this.freq_scale = new Freq_scale(this.freq_scale_canvas);
 
 	}
 

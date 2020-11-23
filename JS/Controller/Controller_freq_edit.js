@@ -73,6 +73,9 @@ class Controller_freq_edit{
 		this.old_mouse_y = mouse_y;
 		this.old_freq = this.m.freqs_base[track];
 	}
+	on_freq_visual_doubleclick = (track) => {
+		this.m.set_freq(track, 0);
+	}
 
 	on_fe_shape_change = (editor_shape) => {
 		this.m.fe_shape = editor_shape;

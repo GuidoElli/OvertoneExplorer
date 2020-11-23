@@ -3,7 +3,7 @@ class Controller {
 		this.model = model;
 		this.view = view;
 
-		this.update_view_fps = 60;
+		this.update_view_fps = 24;
 		this.last_time_update = 1000;
 		this.changed = true;
 
@@ -11,6 +11,7 @@ class Controller {
 		this.layout = new Controller_layout(this, model);
 		this.rows = new Controller_rows(this, model);
 		this.keyboard = new Controller_keyboard(this, model);
+		this.midi = new Controller_midi(this, model);
 		this.selection = new Controller_selection(this, model);
 		this.zoom = new Controller_zoom(this, model);
 		this.vol_edit = new Controller_vol_edit(this, model);
@@ -87,6 +88,7 @@ class Controller {
 
 		//Freq edit
 		view.on_freq_visual_mousedown = this.freq_edit.on_freq_visual_mousedown;
+		view.on_freq_visual_doubleclick = this.freq_edit.on_freq_visual_doubleclick;
 
 		view.on_fe_shape_change = this.freq_edit.on_fe_shape_change;
 
@@ -213,9 +215,10 @@ class Controller {
 				this.model.dadj_vol_amount
 			);
 
-
 			this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);
 			this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_dadj_freqs);
+
+			this.view.update_canvases();
 
 			this.last_time_update = current_time;
 			this.changed = false;

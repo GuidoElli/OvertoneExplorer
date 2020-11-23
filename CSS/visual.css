@@ -18,6 +18,8 @@
          height: 100%;
          background-color: rgb(39, 39, 39);
          transform: translate(7.5%, 0%);
+         padding-bottom: 7px;
+         padding-top: 7px;
       }
          .vv_main_bar_section{
             width: 60%;
@@ -61,6 +63,8 @@
          height: 100%;
          background-color: rgb(39, 39, 39);
          transform: translate(7.5%, 0%);
+         padding-bottom: 7px;
+         padding-top: 7px;
       }
          .vf_main_bar_section{
             width: 60%;

@@ -1,6 +1,6 @@
 
 .dadj_edit_box{
-   background-color: rgb(123, 123, 123);
+   background-color: var(--greyscale-4);
 }
 
    .dadj_freq_section{
@@ -13,6 +13,8 @@
       }
          .dadj_freq_graph{
             border-radius: var(--border-radius);
+            border: solid 3px;
+            border-color: var(--greyscale-1);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
@@ -37,6 +39,8 @@
       }
          .dadj_vol_graph{
             border-radius: var(--border-radius);
+            border: solid 3px;
+            border-color: var(--greyscale-1);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);

@@ -3,7 +3,7 @@
    padding: 2px;
    background-color: rgb(14, 14, 14);
 }
-      
+
    .zoom_prevs{
       width: 100%;
       height: 100%;
@@ -27,31 +27,31 @@
       }
 
       .zoom_playback_prev{
-         background-color: rgb(66, 66, 66);
+         background-color: var(--greyscale-3);
       }
       .zoom_playback_prev.active{
-         background-color: rgb(192, 192, 192);
+         background-color: var(--greyscale-8);
       }
 
       .zoom_vol_edit_prev{
-         background-color: rgb(16, 46, 92);
+         background-color: var(--blue-1);
       }
       .zoom_vol_edit_prev.active{
-         background-color: rgb(11, 112, 196);
+         background-color: var(--blue-3);
       }
 
       .zoom_freq_edit_prev{
-         background-color: rgb(16, 92, 29);
+         background-color: var(--green-1);
       }
       .zoom_freq_edit_prev.active{
-         background-color: rgb(4, 205, 38);
+         background-color: var(--green-3);
       }
 
       .zoom_dadj_edit_prev{
-         background-color: rgb(92, 34, 16);
+         background-color: var(--red-1);
       }
       .zoom_dadj_edit_prev.active{
-         background-color: rgb(205, 51, 4);
+         background-color: var(--red-3);
       }
 
 
@@ -60,6 +60,6 @@
          position: relative;
          top: -100%;
          border-radius: 5px;
-         border: solid 1px rgb(231, 231, 231);
+         border: solid 2px rgb(231, 231, 231);
       }
 

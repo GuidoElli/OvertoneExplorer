@@ -1,4 +1,3 @@
-
 .freq_edit_box{
    background-color: rgb(56, 56, 56);
 }
@@ -41,16 +40,16 @@
       height: 100%;
    }
    .fe_random_left button{
-      background-color: rgb(16, 46, 92);
+      background-color: var(--green-1);
    }
    .fe_random_left button.active{
-      background-color: rgb(11, 112, 196);
+      background-color: var(--green-4);
    }
    .fe_random_left button:hover{
-      background-color: rgb(14, 53, 97);
+      background-color: var(--green-2);
    }
    .fe_random_left button.active:hover{
-      background-color: rgb(22, 122, 204);
+      background-color: var(--green-3);
    }
 
    .fe_random_right{
@@ -67,28 +66,25 @@
       height: 50%;
    }
    .fe_random_button{
-      background-color: rgb(116, 116, 116);
+      background-color: var(--green-1);
    }
    .fe_random_button.active{
-      background-color: rgb(196, 196, 196);
+      background-color: var(--green-4);
    }
    .fe_mirror_section{
       height: 50%;
    }
    .fe_mirror_button{
-      background-color: rgb(16, 46, 92);
+      background-color: var(--green-1);
    }
    .fe_mirror_button.active{
-      background-color: rgb(11, 112, 196);
+      background-color: var(--green-4);
    }
    .fe_randomize_button{
-      background-color: rgb(16, 46, 92);
+      background-color: var(--green-1);
    }
    .fe_randomize_button:hover{
-      background-color: rgb(14, 53, 97);
-   }
-   .fe_randomize_button:active{
-      background-color: rgb(14, 70, 116);
+      background-color: var(--green-2);
    }
 
    .fe_save_section{
@@ -103,30 +99,30 @@
       padding: 6px;
    }
    .fe_apply_button{
-      background-color: rgb(11, 112, 196);
+      background-color: var(--green-2);
       height: 100%;
       width: 100%;
    }
    .fe_apply_button:hover{
-      background-color: rgb(10, 119, 207);
+      background-color: var(--green-3);
    }
    .fe_apply_button:active{
-      background-color: rgb(10, 101, 175);
+      background-color: var(--green-4);
    }
    .fe_reset_button_section{
       width: 40%;
       padding: 6px;
    }
    .fe_reset_button{
-      background-color: rgb(16, 46, 92);
+      background-color: var(--green-1);
       height: 100%;
       width: 100%;
    }
    .fe_reset_button:hover{
-      background-color: rgb(14, 53, 97);
+      background-color: var(--green-2);
    }
    .fe_reset_button:active{
-      background-color: rgb(14, 70, 116);
+      background-color: var(--green-3);
    }
 
    .fe_visual_section{
@@ -146,17 +142,17 @@
    .fe_visual_shape_amount{
       width: 100%;
       height: 100%;/**/
-      background-color: rgb(3, 20, 61);
+      background-color: var(--green-1);
       border-radius: 3px;
       position: absolute;
    }
    .fe_visual_shape_amount.active{
-      background-color: rgb(6, 35, 114);
+      background-color: var(--green-2);
    }
    .fe_visual_amount{
       width: 100%;
       height: 100%;/**/
-      background-color: rgb(22, 90, 255);
+      background-color: var(--green-3);
       border-radius: 3px;
       position: absolute;
    }

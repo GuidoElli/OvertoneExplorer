@@ -9,7 +9,7 @@ class View_dadj_edit {
 
 		this.dadj_freq_range_canvas = $(".dadj_freq_range_knob")[0];
 		this.dadj_freq_range_knob = new Knob(this.dadj_freq_range_canvas, 0, MAX_DADJ_FREQ_RANGE, null, null);
-		this.dadj_freq_range_knob.interval_color = "rgb(11,112,196)";
+		this.dadj_freq_range_knob.interval_color = "#bf0000";
 		this.dadj_freq_range_knob.on_change = (value) => {
 			this.v.on_dadj_freq_range_change(value);
 		}
@@ -19,7 +19,7 @@ class View_dadj_edit {
 
 		this.dadj_freq_coeff_canvas = $(".dadj_freq_coeff_knob")[0];
 		this.dadj_freq_coeff_knob = new Knob(this.dadj_freq_coeff_canvas, -1, 1, 0, 0);
-		this.dadj_freq_coeff_knob.interval_color = "rgb(11,112,196)";
+		this.dadj_freq_coeff_knob.interval_color = "#bf0000";
 		this.dadj_freq_coeff_knob.on_change = (value) => {
 			this.v.on_dadj_freq_coeff_change(value);
 		}
@@ -33,7 +33,7 @@ class View_dadj_edit {
 
 		this.dadj_vol_range_canvas = $(".dadj_vol_range_knob")[0];
 		this.dadj_vol_range_knob = new Knob(this.dadj_vol_range_canvas, 0, MAX_DADJ_VOL_RANGE, null, null);
-		this.dadj_vol_range_knob.interval_color = "rgb(11, 112, 196)";
+		this.dadj_vol_range_knob.interval_color = "#bf0000";
 		this.dadj_vol_range_knob.on_change = (value) => {
 			this.v.on_dadj_vol_range_change(value);
 		}
@@ -43,7 +43,7 @@ class View_dadj_edit {
 
 		this.dadj_vol_coeff_canvas = $(".dadj_vol_coeff_knob")[0];
 		this.dadj_vol_coeff_knob = new Knob(this.dadj_vol_coeff_canvas, -1, 1, 0, 0);
-		this.dadj_vol_coeff_knob.interval_color = "rgb(11, 112, 196)";
+		this.dadj_vol_coeff_knob.interval_color = "#bf0000";
 		this.dadj_vol_coeff_knob.on_change = (value) => {
 			this.v.on_dadj_vol_coeff_change(value);
 		}
@@ -53,7 +53,7 @@ class View_dadj_edit {
 
 		this.dadj_vol_amount_canvas = $(".dadj_vol_amount_knob")[0];
 		this.dadj_vol_amount_knob = new Knob(this.dadj_vol_amount_canvas, -MAX_MIN_DADJ_VOL_AMOUNT, MAX_MIN_DADJ_VOL_AMOUNT, 0, 0);
-		this.dadj_vol_amount_knob.interval_color = "rgb(11, 112, 196)";
+		this.dadj_vol_amount_knob.interval_color = "#bf0000";
 		this.dadj_vol_amount_knob.on_change = (value) => {
 			this.v.on_dadj_vol_amount_change(value);
 		}

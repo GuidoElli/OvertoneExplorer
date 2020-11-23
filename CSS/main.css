@@ -38,38 +38,20 @@
 	--editor-settings-height: 40%;
 
 	/*Colors*/
-	--solo-color-inactive: rgb(100, 20, 20);
-	--solo-color-inactive-hover: rgb(117, 22, 22);
-	--solo-color-active: rgb(218, 0, 0);
-	--solo-color-active-hover: rgb(182, 7, 7);
+	--green-1: #0d3e00;
+	--green-2: #0d5b00;
+	--green-3: #1ba000;
+	--green-4: #21dd00;
 
-	--mute-color-inactive: rgb(88, 88, 23);
-	--mute-color-inactive-hover: rgb(100, 100, 26);
-	--mute-color-active: rgb(231, 231, 17);
-	--mute-color-active-hover: rgb(202, 202, 15);
-	--mute-color-blocked: rgb(133, 133, 19);
-	--mute-color-blocked-hover: rgb(129, 129, 16);
+	--red-1: #410000;
+	--red-2: #730000;
+	--red-3: #bf0000;
+	--red-4: #ff0000;
 
-	--select-color-inactive: var(--greyscale-6);
-	--select-color-inactive-hover: var(--greyscale-6-5);
-	--select-color-active: var(--greyscale-9);
-	--select-color-active-hover: var(--greyscale-8-5);
-
-	--editor-color-inactive: rgb(16, 92, 29);
-	--editor-color-inactive-hover: rgb(18, 109, 33);
-	--editor-color-active: rgb(4, 205, 38);
-	--editor-color-active-hover: rgb(6, 184, 35);;
-
-	--editor_color_item_dark: rgb(1, 75, 15);
-	--editor_color_item_light: rgb(0, 228, 38);
-
-	--color_es_type_choose_item_active: rgb(17, 187, 45);
-	--color_es_type_choose_item_hover: var(--greyscale-6);
-
-	--color-scrollbar-thumb: var(--greyscale-6);
-	--color-scrollbar-thumb-hover: var(--greyscale-7);
-
-	--color-group-button-active: rgb(255, 145, 0);
+	--blue-1: #00173e;
+	--blue-2: #002562;
+	--blue-3: #0044ba;
+	--blue-4: #005cf3;
 }
 
 
@@ -112,7 +94,7 @@ button{
    display:none;
 }
 .unclickable{
-   color: rgb(128, 128, 128);
+   color: rgb(117, 117, 117) !important;
 }
 
 
@@ -133,7 +115,7 @@ button{
       width: 100%;
 		text-align: center;
 		font-style: italic;
-	   color: #111111;
+	   color: #cccccc;
    }
    .section_content{
       height: 80%;
@@ -165,7 +147,8 @@ button{
 	width: 90vw;
 	left: 50%;
 	top: 100%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%);
+	font-size: 200px;
 }
 
 
@@ -192,6 +175,10 @@ button{
 		.left_bar_top_box{
 			background-color: #1b1b1b;
 		}
+			.home_box button{
+				height: 20%;
+				background-color: #6d6d6d;
+			}
 			.home_button_section{
 				width: 25%;
 			}
@@ -216,14 +203,14 @@ button{
    }
 
       .zoom_section{
-         height: 5%;
+         height: 6%;
 		}
 
 		.rows_section{
-			height: 8%;
+			height: 11%;
 		}
 		.visual_section{
-			height: 87%;
+			height: 83%;
 		}
 
 

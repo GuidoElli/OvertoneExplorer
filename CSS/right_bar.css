@@ -2,7 +2,7 @@
 
    .zoom_controls_section{
       width: 100%;
-      height: 5%;
+      height: 6%;
    }
       .zoom_controls_box{
          background-color: rgb(95, 95, 95);
@@ -17,9 +17,20 @@
          height: 100%;
          background-color: rgb(165, 165, 165);
       }
+      .zoom_controls_box button:hover{
+         background-color: rgb(190, 190, 190);
+      }
+      .zoom_controls_box button img{
+         position: relative;
+         height: 80%;
+         width: 80%;
+         left: 40%;
+         top: 40%;
+         transform: translate(-40%, -40%);
+      }
 
    .row_side_section{
-      height: 8%;
+      height: 11%;
       padding: 0;
    }
       .row_custom_selection_section{
@@ -40,11 +51,13 @@
          }
 
    .visual_side_section{
-      height: 87%;
+      height: 83%;
    }
-      .vol_visual_side_section{
-         height: 25%;/**/
+      .vol_visual_side_box{
+         margin-top: 2px;
+         height: 99%;
       }
-      .freq_visual_side_section{
-         height: 25%;/**/
+      .freq_visual_side_box{
+         margin-top: 2px;
+         height: 99%;
       }

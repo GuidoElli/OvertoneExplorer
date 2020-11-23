@@ -12,28 +12,28 @@
 	background-color: inherit;
 }
 .vol_edit_box .choose_item:hover{
-	background-color: rgb(18, 60, 109);
+	background-color: var(--blue-2);
 }
 .vol_edit_box .choose_item.active{
-	background-color: rgb(11, 112, 196);
+	background-color: var(--blue-3);
 }
 .vol_edit_box .choose_box{
 	padding: 0;
-	background-color: rgb(16, 46, 92);
+	background-color: var(--blue-1);
 }
 
 .freq_edit_box .choose_item{
 	background-color: inherit;
 }
 .freq_edit_box .choose_item:hover{
-	background-color: rgb(18, 60, 109);
+	background-color: var(--green-2);
 }
 .freq_edit_box .choose_item.active{
-	background-color: rgb(11, 112, 196);
+	background-color: var(--green-3);
 }
 .freq_edit_box .choose_box{
 	padding: 0;
-	background-color: rgb(16, 46, 92);
+	background-color: var(--green-1);
 }
 
 /*Knobs*/

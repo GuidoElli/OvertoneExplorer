@@ -72,7 +72,7 @@ class Dadj_vol_graph {
 		let ext = 0.1;
 		let pixel_range_x = w / (2 * (ext + 1)) / MAX_DADJ_FREQ_RANGE * this.range;
 		let pixel_range_y = h / (2 * (ext + 1)) / MAX_MIN_DADJ_VOL_AMOUNT * this.amount;
-		ctx.strokeStyle = "red";
+		ctx.strokeStyle = "#bf0000";
 		ctx.lineWidth = 2.5;
 		ctx.beginPath();
 		ctx.moveTo(0, h/2);

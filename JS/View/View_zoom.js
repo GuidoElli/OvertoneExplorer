@@ -11,42 +11,43 @@ class View_zoom {
 
 
       //Cloning
+      let content
 
-      var first_zoom_playback_prev = $(".zoom_playback_prevs_box .prev_section")[0];
-      var content = first_zoom_playback_prev.innerHTML;
+      let first_zoom_playback_prev = $(".zoom_playback_prevs_box .prev_section")[0];
+      content = first_zoom_playback_prev.innerHTML;
       this.zoom_playback_prevs_box.innerHTML = "";
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         var clone_playback = first_zoom_playback_prev.cloneNode();
+         let clone_playback = first_zoom_playback_prev.cloneNode();
          clone_playback.innerHTML = content;
          this.zoom_playback_prevs_box.append(clone_playback);
          clone_playback.style.width = 100 / TOTAL_TRACKS + "%";
       }
 
-      var first_zoom_vol_edit_prev = $(".zoom_vol_edit_prevs_box .prev_section")[0];
-      var content = first_zoom_vol_edit_prev.innerHTML;
+      let first_zoom_vol_edit_prev = $(".zoom_vol_edit_prevs_box .prev_section")[0];
+      content = first_zoom_vol_edit_prev.innerHTML;
       this.zoom_vol_edit_prevs_box.innerHTML = "";
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         var clone_vol_edit = first_zoom_vol_edit_prev.cloneNode();
+         let clone_vol_edit = first_zoom_vol_edit_prev.cloneNode();
          clone_vol_edit.innerHTML = content;
          this.zoom_vol_edit_prevs_box.append(clone_vol_edit);
          clone_vol_edit.style.width = 100 / TOTAL_TRACKS + "%";
       }
 
-      var first_zoom_freq_edit_prev = $(".zoom_freq_edit_prevs_box .prev_section")[0];
-      var content = first_zoom_freq_edit_prev.innerHTML;
+      let first_zoom_freq_edit_prev = $(".zoom_freq_edit_prevs_box .prev_section")[0];
+      content = first_zoom_freq_edit_prev.innerHTML;
       this.zoom_freq_edit_prevs_box.innerHTML = "";
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         var clone_freq_edit = first_zoom_freq_edit_prev.cloneNode();
+         let clone_freq_edit = first_zoom_freq_edit_prev.cloneNode();
          clone_freq_edit.innerHTML = content;
          this.zoom_freq_edit_prevs_box.append(clone_freq_edit);
          clone_freq_edit.style.width = 100 / TOTAL_TRACKS + "%";
       }
 
-      var first_zoom_dadj_edit_prev = $(".zoom_dadj_edit_prevs_box .prev_section")[0];
-      var content = first_zoom_dadj_edit_prev.innerHTML;
+      let first_zoom_dadj_edit_prev = $(".zoom_dadj_edit_prevs_box .prev_section")[0];
+      content = first_zoom_dadj_edit_prev.innerHTML;
       this.zoom_dadj_edit_prevs_box.innerHTML = "";
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         var clone_dadj_edit = first_zoom_dadj_edit_prev.cloneNode();
+         let clone_dadj_edit = first_zoom_dadj_edit_prev.cloneNode();
          clone_dadj_edit.innerHTML = content;
          this.zoom_dadj_edit_prevs_box.append(clone_dadj_edit);
          clone_dadj_edit.style.width = 100 / TOTAL_TRACKS + "%";
@@ -70,9 +71,9 @@ class View_zoom {
          this.editing = true;
          this.old_mouse_x = e.pageX;
          this.new_mouse_x = e.pageX;
-         var left = this.container.getBoundingClientRect().left;
-         var right = this.container.getBoundingClientRect().right;
-         var track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
+         let left = this.container.getBoundingClientRect().left;
+         let right = this.container.getBoundingClientRect().right;
+         let track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
 
          this.v.on_zoom_slider_set(track);
       })
@@ -80,9 +81,9 @@ class View_zoom {
       document.addEventListener("mousemove", (e) => {
          if (this.editing) {
             this.new_mouse_x = (e.pageX) ? e.pageX : this.new_mouse_x;
-            var left = this.container.getBoundingClientRect().left;
-            var right = this.container.getBoundingClientRect().right;
-            var track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
+            let left = this.container.getBoundingClientRect().left;
+            let right = this.container.getBoundingClientRect().right;
+            let track = Math.floor(TOTAL_TRACKS * (this.new_mouse_x - left) / (right - left));
 
             this.v.on_zoom_slider_set(track);
          }
@@ -120,40 +121,6 @@ class View_zoom {
    }
 
 
-   update_layout = (layout) => {
-      /*
-            this.zoom_playback_prevs_box.classList.toggle("hidden", true);
-            this.zoom_vol_edit_prevs_box.classList.toggle("hidden", true);
-            this.zoom_freq_edit_prevs_box.classList.toggle("hidden", true);
-            this.zoom_dadj_edit_prevs_box.classList.toggle("hidden", true);
-
-            switch(layout){
-               case LAYOUT.SOUND:
-                  this.zoom_playback_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_playback_prevs_box.style.height = "100%";
-                  break;
-               case LAYOUT.VOL:
-                  this.zoom_playback_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_vol_edit_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_playback_prevs_box.style.height = "50%";
-                  this.zoom_vol_edit_prevs_box.style.height = "50%";
-                  break;
-               case LAYOUT.FREQ:
-                  this.zoom_playback_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_freq_edit_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_playback_prevs_box.style.height = "50%";
-                  this.zoom_freq_edit_prevs_box.style.height = "50%";
-                  break;
-               case LAYOUT.DADJ:
-                  this.zoom_playback_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_dadj_edit_prevs_box.classList.toggle("hidden", false);
-                  this.zoom_playback_prevs_box.style.height = "50%";
-                  this.zoom_dadj_edit_prevs_box.style.height = "50%";
-                  break;
-            }
-      */
-   }
-
 
    update_playback_tracks = (values) => {
       for (let i = 0; i < TOTAL_TRACKS; i++) {
@@ -179,8 +146,8 @@ class View_zoom {
 
    update_zoom(first, last){
 
-      var width = 100 * (last-first+1) / TOTAL_TRACKS + "%";
-      var left = 100 * (first) / TOTAL_TRACKS + "%";
+      let width = 100 * (last-first+1) / TOTAL_TRACKS + "%";
+      let left = 100 * (first) / TOTAL_TRACKS + "%";
 
       this.zoom_slider.style.width = width;
       this.zoom_slider.style.left = left;

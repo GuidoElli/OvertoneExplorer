@@ -7,6 +7,9 @@ class Controller_layout {
 
 
    on_home_button_click = () => {
+      if(this.m.custom_selection){
+         this.m.selected_group = null;
+      }
       this.m.layout_left = LAYOUT_LEFT.HOME;
       this.m.custom_selection = false;
       this.m.layout_right = LAYOUT_RIGHT.DEFAULT;

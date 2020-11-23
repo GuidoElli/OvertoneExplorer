@@ -17,7 +17,7 @@ class View_freq_edit {
 
 		this.fe_amount_knob_canvas = $(".fe_amount_knob")[0];
 		this.fe_amount_knob = new Knob(this.fe_amount_knob_canvas, -MAX_FE_AMOUNT, MAX_FE_AMOUNT, 0, 0);
-		this.fe_amount_knob.interval_color = "rgb(11, 112, 196)";
+		this.fe_amount_knob.interval_color = "#178D00";
 		this.fe_amount_knob.on_change = (value) => {
 			this.v.on_fe_amount_change(value);
 		}
@@ -26,7 +26,7 @@ class View_freq_edit {
 
 		this.fe_center_knob_canvas = $(".fe_center_knob")[0];
 		this.fe_center_knob = new Knob(this.fe_center_knob_canvas, 0, 1, null, null);
-		this.fe_center_knob.interval_color = "rgb(11, 112, 196)";
+		this.fe_center_knob.interval_color = "#178D00";
 		this.fe_center_knob.on_change = (value) => {
 			this.v.on_fe_center_change(value);
 		}
@@ -35,7 +35,7 @@ class View_freq_edit {
 
 		this.fe_width_knob_canvas = $(".fe_width_knob")[0];
 		this.fe_width_knob = new Knob(this.fe_width_knob_canvas, 0, 1, null, null);
-		this.fe_width_knob.interval_color = "rgb(11, 112, 196)";
+		this.fe_width_knob.interval_color = "#178D00";
 		this.fe_width_knob.on_change = (value) => {
 			this.v.on_fe_width_change(value);
 		}

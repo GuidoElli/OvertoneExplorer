@@ -39,9 +39,9 @@ class Controller_keyboard {
                   break;
             }
 
-            if(this.keyboard_bass_notes.includes(e.key)){
+            if(this.keyboard_bass_notes.includes(e.key) && !e.ctrlKey){
                this.c.add_bass_note(this.first_keyboard_bass_note + this.keyboard_bass_notes.indexOf(e.key));
-            }else if(this.keyboard_notes.includes(e.key)){
+            }else if(this.keyboard_notes.includes(e.key) && !e.ctrlKey){
                this.c.add_note(this.first_keyboard_note + this.keyboard_notes.indexOf(e.key));
             }
          }

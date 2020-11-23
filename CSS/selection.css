@@ -3,16 +3,16 @@
    background-color: rgb(59, 59, 59);
 }
    .sel_mode_section{
-      height: 20%;
+      height: 30%;
    }
    .sel_mode_box{
-      background-color: rgb(75, 75, 75);
+      background-color: #4e4e4e;
    }
       .sel_mode_add_button_section,
       .sel_mode_remove_button_section,
       .sel_mode_toggle_button_section{
          width: 33.33333%;
-         padding: 7px;
+         padding: 10px;
       }
       .sel_mode_add_button,
       .sel_mode_remove_button,
@@ -26,17 +26,17 @@
       }
 
    .sel_groups_section{
-      height: 50%;
+      height: 70%;
    }
    .sel_groups_box{
-      background-color: #909090;
+      background-color: #4e4e4e;
    }
       .sel_groups_section_content{
          overflow: auto;
       }
       .sel_groups_item_section{
          width: 50%;
-         height: 60%;
+         height: 20%;
          padding: 5px;
       }
       .sel_groups_item{

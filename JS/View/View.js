@@ -81,6 +81,7 @@ class View {
 
         //Freq edit
         this.on_freq_visual_mousedown = null;
+        this.on_freq_visual_doubleclick = null;
 
         this.on_fe_shape_change = null;
 
@@ -201,5 +202,7 @@ class View {
         this.vol_edit.update_canvases();
         this.freq_edit.update_canvases();
         this.dadj_edit.update_canvases();
+        this.vol_visual.vol_scale.update();
+        this.freq_visual.freq_scale.update();
     }
 }

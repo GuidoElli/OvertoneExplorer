@@ -30,6 +30,10 @@ class View_vol_visual {
 		this.vv_ve_side_bars = $(".vv_ve_side_bar");
 		this.vv_dadj_side_bars = $(".vv_dadj_side_bar");
 
+
+		this.vol_scale_canvas = $(".vol_scale_canvas")[0];
+		this.vol_scale = new Vol_scale(this.vol_scale_canvas);
+
 	}
 
 	update_values = (base, ve, dadj) => {

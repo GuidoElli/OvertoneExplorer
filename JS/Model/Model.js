@@ -206,23 +206,18 @@ class Model {
 	get freqs_base() {
 		return this._freqs_base;
 	}
-
 	set freqs_base(values) {
 		this._freqs_base = values;
 	}
-
 	set_freq(track, freq){
 		this._freqs_base[track] = freq;
 	}
-
 	get freqs_fe_shape_amounts() {
 		return this._freqs_fe_shape_amounts;
 	}
-
 	get freqs_fe_amounts() {
 		return this._freqs_fe_amounts;
 	}
-
 
 
 	//Layout
@@ -232,14 +227,12 @@ class Model {
 	set layout_left(value) {
 		this._layout_left = value;
 	}
-
 	get layout_right() {
 		return this._layout_right;
 	}
 	set layout_right(value) {
 		this._layout_right = value;
 	}
-
 
 	get custom_selection() {
 		return this._custom_selection;
@@ -265,39 +258,30 @@ class Model {
 
 
 	//Rows
-
 	get playback_tracks() {
 		return this._playback_tracks;
 	}
-
 	get vol_edit_tracks() {
 		return this._vol_edit_tracks;
 	}
-
 	get freq_edit_tracks() {
 		return this._freq_edit_tracks;
 	}
-
 	get dadj_edit_tracks() {
 		return this._dadj_edit_tracks;
 	}
-
 	get playback_tracks_backup() {
 		return this._playback_tracks_backup;
 	}
-
 	get vol_edit_tracks_backup() {
 		return this._vol_edit_tracks_backup;
 	}
-
 	get freq_edit_tracks_backup() {
 		return this._freq_edit_tracks_backup;
 	}
-
 	get dadj_edit_tracks_backup() {
 		return this._dadj_edit_tracks_backup;
 	}
-
 	set_playback_track = (track, value) => {
 		this._playback_tracks[track] = value;
 	}
@@ -332,15 +316,12 @@ class Model {
 	get first_visible_track() {
 		return this._first_visible_track;
 	}
-
 	set first_visible_track(value) {
 		this._first_visible_track = value;
 	}
-
 	get last_visible_track() {
 		return this._last_visible_track;
 	}
-
 	set last_visible_track(value) {
 		this._last_visible_track = value;
 	}
@@ -350,57 +331,45 @@ class Model {
 	get ve_shape() {
 		return this._ve_shape;
 	}
-
 	set ve_shape(value) {
 		this._ve_shape = value;
 		this.compute_vols_ve_amounts();
 	}
-
 	get ve_amount() {
 		return this._ve_amount;
 	}
-
 	set ve_amount(value) {
 		this._ve_amount = value;
 		this.compute_vols_ve_amounts();
 	}
-
 	get ve_center() {
 		return this._ve_center;
 	}
-
 	set ve_center(value) {
 		this._ve_center = value;
 		this.compute_vols_ve_amounts();
 	}
-
 	get ve_width() {
 		return this._ve_width;
 	}
-
 	set ve_width(value) {
 		this._ve_width = value;
 		this.compute_vols_ve_amounts();
 	}
-
 	get ve_random() {
 		return this._ve_random;
 	}
-
 	set ve_random(value) {
 		this._ve_random = value;
 		this.compute_vols_ve_amounts();
 	}
-
 	get ve_mirror() {
 		return this._ve_mirror;
 	}
-
 	set ve_mirror(value) {
 		this._ve_mirror = value;
 		this.compute_vols_ve_amounts();
 	}
-
 	randomize_ve_values = () => {
 		for (let i = 0; i < TOTAL_TRACKS; i++) {
 			this._ve_random_values[i] = Math.random() * 2 - 1;
@@ -409,63 +378,49 @@ class Model {
 	}
 
 
-
-
 	//Freq edit
 	get fe_shape() {
 		return this._fe_shape;
 	}
-
 	set fe_shape(value) {
 		this._fe_shape = value;
 		this.compute_freqs_fe_amounts();
 	}
-
 	get fe_amount() {
 		return this._fe_amount;
 	}
-
 	set fe_amount(value) {
 		this._fe_amount = value;
 		this.compute_freqs_fe_amounts();
 	}
-
 	get fe_center() {
 		return this._fe_center;
 	}
-
 	set fe_center(value) {
 		this._fe_center = value;
 		this.compute_freqs_fe_amounts();
 	}
-
 	get fe_width() {
 		return this._fe_width;
 	}
-
 	set fe_width(value) {
 		this._fe_width = value;
 		this.compute_freqs_fe_amounts();
 	}
-
 	get fe_random() {
 		return this._fe_random;
 	}
-
 	set fe_random(value) {
 		this._fe_random = value;
 		this.compute_freqs_fe_amounts();
 	}
-
 	get fe_mirror() {
 		return this._fe_mirror;
 	}
-
 	set fe_mirror(value) {
 		this._fe_mirror = value;
 		this.compute_freqs_fe_amounts();
 	}
-
 	randomize_fe_values = () => {
 		for (let i = 0; i < TOTAL_TRACKS; i++) {
 			this._fe_random_values[i] = Math.random() * 2 - 1;
@@ -474,10 +429,7 @@ class Model {
 	}
 
 
-
-
 	//Dadj
-
 	get dadj_freq_range() {
 		return this._dadj_freq_range;
 	}
@@ -493,7 +445,6 @@ class Model {
 	get dadj_vol_amount() {
 		return this._dadj_vol_amount;
 	}
-
 	set dadj_freq_range(value) {
 		this._dadj_freq_range = value;
 	}
@@ -509,7 +460,6 @@ class Model {
 	set dadj_vol_amount(value) {
 		this._dadj_vol_amount = value;
 	}
-
 	process_bass_ovts(){
 		let bass_ovts = [];
 
@@ -523,7 +473,6 @@ class Model {
 		bass_ovts.sort(function(a, b){return a - b});
 		this._bass_ovts = bass_ovts;
 	}
-
 	process_notes(){
 		if(this._notes.length === 0 || this._bass_notes.length === 0){
 			this._last_played_note_dadj_freqs.fill(0);
@@ -533,7 +482,6 @@ class Model {
 			this.process_note(this._notes[i]);
 		}
 	}
-
 	nearest_ovts(freq){
 		if(freq < this._bass_ovts[0]){
 			return [-1000000, this._bass_ovts[0]];
@@ -547,7 +495,6 @@ class Model {
 			}
 		}
 	}
-
 	process_note(note){
 		let f0 = this.midi_to_freq(note.midi_note);
 
@@ -656,11 +603,9 @@ class Model {
 		note.vols = vols;
 
 	}
-
 	midi_to_freq(midi_note){
 		return this.a4_tuning * Math.pow(2, (midi_note - 69) / 12);
 	}
-
 	note_find(midi_note){
 		for(let i = 0; i < this._notes.length; i++){
 			if(this._notes[i].midi_note === midi_note){
@@ -669,7 +614,6 @@ class Model {
 		}
 		return null;
 	}
-
 	add_note(midi_note){
 		let n = this.note_find(midi_note);
 		if(!n){
@@ -680,7 +624,6 @@ class Model {
 		}
 		return n;
 	}
-
 	add_bass_note(midi_note){
 		if(!this._bass_notes.includes(midi_note)){
 			this._bass_notes.push(midi_note);
@@ -688,8 +631,6 @@ class Model {
 			this.process_notes();
 		}
 	}
-
-
 	remove_note(midi_note){
 		let n = this.note_find(midi_note);
 		if(n){
@@ -697,7 +638,6 @@ class Model {
 			this.process_notes();
 		}
 	}
-
 	remove_bass_note(midi_note){
 		if(this._bass_notes.includes(midi_note)){
 			this._bass_notes.splice(this._bass_notes.indexOf(midi_note), 1);
@@ -707,35 +647,25 @@ class Model {
 	}
 
 
-
 	// Getters and setters
-
 	get notes() {
 		return this._notes;
 	}
-
 	set notes(value) {
 		this._notes = value;
 	}
-
-
 	get bass_notes() {
 		return this._bass_notes;
 	}
-
 	set bass_notes(value) {
 		this._bass_notes = value;
 	}
-
 	get a4_tuning() {
 		return this._a4_tuning;
 	}
-
 	set a4_tuning(value) {
 		this._a4_tuning = value;
 	}
-
-
 	get out_attack(){
 		return this._out_attack;
 	}
@@ -751,7 +681,6 @@ class Model {
 	get out_master(){
 		return this._out_master;
 	}
-
 	set out_attack(value) {
 		this._out_attack = value;
 	}
