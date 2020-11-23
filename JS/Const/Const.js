@@ -67,8 +67,8 @@ const GROUPS = {
 }
 
 
+
 //functions for .every()
 const is_true = (elem) => {return elem};
 const is_false = (elem) => {return !elem};
-
 

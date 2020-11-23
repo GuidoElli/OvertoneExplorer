@@ -158,6 +158,17 @@ button{
 }
 
 
+
+
+.start_button{
+	height: 90vh;
+	width: 90vw;
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%, -50%);
+}
+
+
 .app_section{
 	position: absolute;
 	left: 50vw;

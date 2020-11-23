@@ -3,6 +3,9 @@ class Controller {
 		this.model = model;
 		this.view = view;
 
+		this.update_view_fps = 60;
+		this.last_time_update = 1000;
+		this.changed = true;
 
 		//Controller
 		this.layout = new Controller_layout(this, model);
@@ -109,8 +112,9 @@ class Controller {
 
 
 
-
-		this.update_view();
+		setInterval(() => {
+			this.update_view();
+		}, 1000/this.update_view_fps);
 	}
 
 
@@ -161,55 +165,63 @@ class Controller {
 	//View ALL
 	update_view(){
 
+		let current_time = (new Date()).getTime();
+		if(this.last_time_update + 1000/this.update_view_fps < current_time && this.changed){
 
-		this.view.update_layout(this.model.layout_left, this.model.layout_right, this.model.custom_selection);
-		this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track);
+			this.view.update_layout(this.model.layout_left, this.model.layout_right, this.model.custom_selection);
+			this.view.update_zoom(this.model.first_visible_track, this.model.last_visible_track);
 
-		this.view.update_playback_tracks(this.model.playback_tracks);
-		this.view.update_vol_edit_tracks(this.model.vol_edit_tracks);
-		this.view.update_freq_edit_tracks(this.model.freq_edit_tracks);
-		this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
-
-
-		this.view.update_selection(this.model.selection_mode, this.model.selected_group);
-
-		this.view.update_vol_edit(
-			this.model.ve_shape,
-			this.model.ve_amount,
-			this.model.ve_center,
-			this.model.ve_width,
-			this.model.ve_random,
-			this.model.ve_mirror,
-			this.model.vols_ve_shape_amounts,
-			this.model.vols_ve_amounts,
-			this.model.vol_edit_tracks
-		);
-
-		this.view.update_freq_edit(
-			this.model.fe_shape,
-			this.model.fe_amount,
-			this.model.fe_center,
-			this.model.fe_width,
-			this.model.fe_random,
-			this.model.fe_mirror,
-			this.model.freqs_fe_shape_amounts,
-			this.model.freqs_fe_amounts,
-			this.model.freq_edit_tracks
-		);
+			this.view.update_playback_tracks(this.model.playback_tracks);
+			this.view.update_vol_edit_tracks(this.model.vol_edit_tracks);
+			this.view.update_freq_edit_tracks(this.model.freq_edit_tracks);
+			this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
 
 
+			this.view.update_selection(this.model.selection_mode, this.model.selected_group);
 
-		this.view.update_dadj(
-			this.model.dadj_freq_range,
-			this.model.dadj_freq_coeff,
-			this.model.dadj_vol_range,
-			this.model.dadj_vol_coeff,
-			this.model.dadj_vol_amount
-		);
+			this.view.update_vol_edit(
+				this.model.ve_shape,
+				this.model.ve_amount,
+				this.model.ve_center,
+				this.model.ve_width,
+				this.model.ve_random,
+				this.model.ve_mirror,
+				this.model.vols_ve_shape_amounts,
+				this.model.vols_ve_amounts,
+				this.model.vol_edit_tracks
+			);
+
+			this.view.update_freq_edit(
+				this.model.fe_shape,
+				this.model.fe_amount,
+				this.model.fe_center,
+				this.model.fe_width,
+				this.model.fe_random,
+				this.model.fe_mirror,
+				this.model.freqs_fe_shape_amounts,
+				this.model.freqs_fe_amounts,
+				this.model.freq_edit_tracks
+			);
 
 
-		this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);
-		this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_dadj_freqs);
+
+			this.view.update_dadj(
+				this.model.dadj_freq_range,
+				this.model.dadj_freq_coeff,
+				this.model.dadj_vol_range,
+				this.model.dadj_vol_coeff,
+				this.model.dadj_vol_amount
+			);
+
+
+			this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);
+			this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_dadj_freqs);
+
+			this.last_time_update = current_time;
+			this.changed = false;
+		}else{
+			this.changed = true;
+		}
 
 	}
 }
