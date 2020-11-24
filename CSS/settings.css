@@ -1,0 +1,42 @@
+.settings_box{
+   overflow: auto;
+}
+
+.settings_env_section{
+   height: 30%;
+}
+   .settings_env_box{
+      padding: 10px;
+      background-color: var(--greyscale-5);
+   }
+      .settings_env_attack_knob_section{
+         width: 25%;
+      }
+      .settings_env_decay_time_knob_section{
+         width: 25%;
+      }
+      .settings_env_decay_vol_knob_section{
+         width: 25%;
+      }
+      .settings_env_release_knob_section {
+         width: 25%;
+      }
+.settings_midi_section{
+   height: 40%;
+}
+   .settings_midi_box{
+      padding: 10px;
+      background-color: var(--greyscale-5);
+   }
+      .settings_midi_split_note_section{
+         width: 100%;
+         height: 50%;
+      }
+      .settings_midi_octave_shift_section{
+         width: 30%;
+         height: 50%;
+      }
+      .settings_midi_a4_tuning_section{
+         width: 70%;
+         height: 50%;
+      }

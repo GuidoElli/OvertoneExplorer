@@ -16,26 +16,26 @@
       .visual_vol_item_box{
          width: 90%;
          height: 100%;
-         background-color: rgb(39, 39, 39);
+         background-color: var(--blue-1);
          transform: translate(7.5%, 0%);
          padding-bottom: 7px;
          padding-top: 7px;
       }
          .vv_main_bar_section{
-            width: 60%;
+            width: 50%;
             height: 100%;
          }
             .vv_main_bar{
                width: 95%;
                height: 70%;/**/
-               background-color: rgb(206, 206, 206);
+               background-color: var(--greyscale-13);
                border-radius: 3px;
                left: 50%;
                top: 30%;/**/
                transform: translate(-50%, 0);
             }
          .vv_side_bar_section{
-            width: 20%;
+            width: 25%;
             height: 100%;
          }
             .vv_ve_side_bar{
@@ -53,6 +53,13 @@
    .visual_freq_box{
       padding: 2px;
    }
+   .visual_freq_zero_line{
+      bottom: 50%;
+      width: 99.2%;
+      left: 0.4%;
+      height: 1px;
+      background-color: var(--greyscale-10);
+   }
       .visual_freq_item_section{
          width: 7%;
          height: 100%;
@@ -61,26 +68,26 @@
       .visual_freq_item_box{
          width: 90%;
          height: 100%;
-         background-color: rgb(39, 39, 39);
+         background-color: var(--green-1);
          transform: translate(7.5%, 0%);
          padding-bottom: 7px;
          padding-top: 7px;
       }
          .vf_main_bar_section{
-            width: 60%;
+            width: 50%;
             height: 100%;
          }
             .vf_main_bar{
                width: 95%;
                height: 70%;/**/
-               background-color: rgb(206, 206, 206);
+               background-color: var(--greyscale-13);
                border-radius: 3px;
                left: 50%;
                top: 30%;/**/
                transform: translate(-50%, 0);
             }
          .vf_side_bar_section{
-            width: 20%;
+            width: 25%;
             height: 100%;
          }
             .vf_fe_side_bar{

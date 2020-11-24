@@ -75,6 +75,8 @@ class Model {
 		this._bass_ovts = [];
 
 		this._a4_tuning = 440;
+		this._split_note = 60;
+		this._octave_shift = 0;
 
 
 
@@ -665,6 +667,18 @@ class Model {
 	}
 	set a4_tuning(value) {
 		this._a4_tuning = value;
+	}
+	get split_note() {
+		return this._split_note;
+	}
+	set split_note(value) {
+		this._split_note = value;
+	}
+	get octave_shift() {
+		return this._octave_shift;
+	}
+	set octave_shift(value) {
+		this._octave_shift = value;
 	}
 	get out_attack(){
 		return this._out_attack;

@@ -1,7 +1,5 @@
 class Controller_midi {
 
-   split_midi_note = 72;
-   octave_shift = 0;
 
    constructor(controller, model) {
       this.c = controller;
@@ -34,18 +32,18 @@ class Controller_midi {
       switch (command) {
          case 144: // noteOn
             if (velocity > 0) {
-               if(note >= this.split_midi_note){
-                  this.c.add_bass_note(note + 12*this.octave_shift);
+               if(note >= this.m.split_note){
+                  this.c.add_bass_note(note + 12*this.m.octave_shift);
                }else{
-                  this.c.add_note(note + 12*this.octave_shift);
+                  this.c.add_note(note + 12*this.m.octave_shift);
                }
             }
             break;
          case 128: // noteOff
-            if(note >= this.split_midi_note){
-               this.c.remove_bass_note(note + 12*this.octave_shift);
+            if(note >= this.m.split_note){
+               this.c.remove_bass_note(note + 12*this.m.octave_shift);
             }else{
-               this.c.remove_note(note + 12*this.octave_shift);
+               this.c.remove_note(note + 12*this.m.octave_shift);
             }
             break;
 

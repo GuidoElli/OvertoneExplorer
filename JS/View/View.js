@@ -11,6 +11,7 @@ class View {
         this.vol_edit = new View_vol_edit(this);
         this.freq_edit = new View_freq_edit(this);
         this.dadj_edit = new View_dadj_edit(this);
+        this.settings = new View_settings(this);
 
 
         //Layout
@@ -105,6 +106,15 @@ class View {
         this.on_dadj_freq_coeff_change = null;
 
 
+        //settings
+        this.on_settings_env_attack_change = null;
+        this.on_settings_env_decay_time_change = null;
+        this.on_settings_env_decay_vol_change = null;
+        this.on_settings_env_release_change = null;
+
+        this.on_settings_midi_split_note_change = null;
+        this.on_settings_midi_octave_shift_change = null;
+        this.on_settings_midi_a4_tuning_change = null;
 
         window.addEventListener("resize", () => {
             this.update_canvases();
@@ -197,6 +207,17 @@ class View {
         this.freq_visual.update_values(base, ve, dadj);
     }
 
+    update_settings_env(attack, decay_time, decay_vol, release){
+        this.settings.update_env_attack(attack);
+        this.settings.update_env_decay_time(decay_time);
+        this.settings.update_env_decay_vol(decay_vol);
+        this.settings.update_env_release(release);
+    }
+    update_settings_midi(split_note, octave_shift, a4_tuning){
+        this.settings.update_midi_split_note(split_note);
+        this.settings.update_midi_octave_shift(octave_shift);
+        this.settings.update_midi_a4_tuning(a4_tuning);
+    }
 
     update_canvases() {
         this.vol_edit.update_canvases();

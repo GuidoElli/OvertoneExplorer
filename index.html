@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="CSS/elements.css">
 	<link rel="stylesheet" type="text/css" href="CSS/right_bar.css">
 	<link rel="stylesheet" type="text/css" href="CSS/visual.css">
+	<link rel="stylesheet" type="text/css" href="CSS/settings.css">
 	<link rel="stylesheet" type="text/css" href="CSS/zoom.css">
 	<link rel="stylesheet" type="text/css" href="CSS/rows.css">
 	<link rel="stylesheet" type="text/css" href="CSS/vol_edit.css">
@@ -18,7 +19,7 @@
 <body>
 
 <div class="start_screen" style="display: block">
-	<button class="start_button">Start</button>
+	<button class="start_button">START</button>
 </div>
 
 <div class="app_section section" style="display: none">
@@ -451,7 +452,137 @@
 
 
 					<div class="settings_box box">
-						settings
+
+						<div class="settings_env_section section">
+							<div class="settings_env_box box">
+								<div class="settings_env_section_label section_label">Envelope</div>
+								<div class="settings_env_section_content section_content">
+
+
+									<div class="settings_env_attack_knob_section section">
+										<button class="settings_env_attack_knob_param_label param_label">
+											Attack
+										</button>
+
+										<div class="settings_env_attack_knob_param_content param_content">
+											<div class="settings_env_attack_knob_canvas_section knob_section">
+												<canvas class="settings_env_attack_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="settings_env_attack_knob_param_value param_value">
+											0
+										</button>
+									</div>
+
+									<div class="settings_env_decay_time_knob_section section">
+										<button class="settings_env_decay_time_knob_param_label param_label">
+											Decay Time
+										</button>
+
+										<div class="settings_env_decay_time_knob_param_content param_content">
+											<div class="settings_env_decay_time_knob_canvas_section knob_section">
+												<canvas class="settings_env_decay_time_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="settings_env_decay_time_knob_param_value param_value">
+											0
+										</button>
+									</div>
+
+									<div class="settings_env_decay_vol_knob_section section">
+										<button class="settings_env_decay_vol_knob_param_label param_label">
+											Decay Vol
+										</button>
+
+										<div class="settings_env_decay_time_knob_param_content param_content">
+											<div class="settings_env_decay_vol_knob_canvas_section knob_section">
+												<canvas class="settings_env_decay_vol_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="settings_env_decay_vol_knob_param_value param_value">
+											0
+										</button>
+									</div>
+
+									<div class="settings_env_release_knob_section section">
+										<button class="settings_env_release_knob_param_label param_label">
+											Release
+										</button>
+
+										<div class="settings_env_release_knob_param_content param_content">
+											<div class="settings_env_release_knob_canvas_section knob_section">
+												<canvas class="settings_env_release_knob knob"></canvas>
+											</div>
+										</div>
+
+										<button class="settings_env_release_knob_param_value param_value">
+											0
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="settings_midi_section section">
+							<div class="settings_midi_box box">
+								<div class="settings_midi_section_label section_label">MIDI</div>
+								<div class="settings_midi_section_content section_content">
+
+									<div class="settings_midi_split_note_section section">
+										<button class="settings_midi_split_note_param_label param_label">
+											Split Note
+										</button>
+
+										<div class="settings_midi_split_note_param_content param_content">
+											<div class="settings_midi_split_note_slider_section slider_section">
+												<input type="range" min="21" max="108" value="60" class="settings_midi_split_note_slider slider">
+											</div>
+										</div>
+
+										<button class="settings_midi_split_note_param_value param_value">
+											0
+										</button>
+									</div>
+
+									<div class="settings_midi_octave_shift_section section">
+										<button class="settings_midi_octave_shift_param_label param_label">
+											Octave Shift
+										</button>
+
+										<div class="settings_midi_octave_shift_param_content param_content">
+											<div class="settings_midi_octave_shift_slider_section slider_section">
+												<input type="range" min="-4" max="4" value="0" class="settings_midi_octave_shift_slider slider">
+											</div>
+										</div>
+
+										<button class="settings_midi_octave_shift_param_value param_value">
+											0
+										</button>
+									</div>
+
+
+									<div class="settings_midi_a4_tuning_section section">
+										<button class="settings_midi_a4_tuning_param_label param_label">
+											Octave Shift
+										</button>
+
+										<div class="settings_midi_a4_tuning_param_content param_content">
+											<div class="settings_midi_a4_tuning_slider_section slider_section">
+												<input type="range" min="400" max="480" value="440" class="settings_midi_a4_tuning_slider slider">
+											</div>
+										</div>
+
+										<button class="settings_midi_a4_tuning_param_value param_value">
+											0
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 
@@ -720,6 +851,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="visual_freq_zero_line"></div>
 						</div>
 					</div>
 				</div>
@@ -753,6 +885,7 @@
 <script src="JS/View/View_vol_edit.js"></script>
 <script src="JS/View/View_freq_edit.js"></script>
 <script src="JS/View/View_dadj_edit.js"></script>
+<script src="JS/View/View_settings.js"></script>
 
 <script src="JS/View/Elements/Row.js"></script>
 <script src="JS/View/Elements/Knob.js"></script>
@@ -779,6 +912,7 @@
 <script src="JS/Controller/Controller_dadj_edit.js"></script>
 <script src="JS/Controller/Controller_audio.js"></script>
 <script src="JS/Controller/Audio_generator.js"></script>
+<script src="JS/Controller/Controller_settings.js"></script>
 
 <script src="JS/Controller/Controller.js"></script>
 

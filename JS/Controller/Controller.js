@@ -18,6 +18,7 @@ class Controller {
 		this.freq_edit = new Controller_freq_edit(this, model);
 		this.dadj_edit = new Controller_dadj_edit(this, model);
 		this.audio = new Controller_audio(this, model);
+		this.settings = new Controller_settings(this, model);
 
 
 
@@ -111,6 +112,16 @@ class Controller {
 		view.on_dadj_vol_coeff_change = this.dadj_edit.on_dadj_vol_coeff_change;
 		view.on_dadj_vol_amount_change = this.dadj_edit.on_dadj_vol_amount_change;
 
+
+		//settings
+		view.on_settings_env_attack_change = this.settings.on_settings_env_attack_change;
+		view.on_settings_env_decay_time_change = this.settings.on_settings_env_decay_time_change;
+		view.on_settings_env_decay_vol_change = this.settings.on_settings_env_decay_vol_change;
+		view.on_settings_env_release_change = this.settings.on_settings_env_release_change;
+
+		view.on_settings_midi_split_note_change = this.settings.on_settings_midi_split_note_change;
+		view.on_settings_midi_octave_shift_change = this.settings.on_settings_midi_octave_shift_change;
+		view.on_settings_midi_a4_tuning_change = this.settings.on_settings_midi_a4_tuning_change;
 
 
 
@@ -217,6 +228,9 @@ class Controller {
 
 			this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);
 			this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_dadj_freqs);
+
+			this.view.update_settings_env(this.model.out_attack, this.model.out_decay_time, this.model.out_decay_vol, this.model.out_release)
+			this.view.update_settings_midi(this.model.split_note, this.model.octave_shift, this.model.a4_tuning);
 
 			this.view.update_canvases();
 

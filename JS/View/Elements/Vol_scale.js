@@ -1,7 +1,7 @@
 class Vol_scale {
 	constructor(canvas) {
 		this.canvas = canvas;
-		this.step_px_max = 40;
+		this.step_px_min = 25;
 		this.update();
 	}
 
@@ -28,29 +28,53 @@ class Vol_scale {
 		let offset = 5;
 		let line_width = 7;
 		ctx.strokeStyle = "#bbbbbb";
-		ctx.lineWidth = 0.9;
+		ctx.lineWidth = 0.6;
 		//vertical line
 		ctx.beginPath();
 		ctx.moveTo(w-offset, offset);
 		ctx.lineTo(w-offset, h-offset);
 		ctx.stroke();
 		//steps
-		let n_val = Math.floor((h-2*offset) / this.step_px_max);
-		let step_px = (h-offset*2) / n_val;
-		for(let i = 0; i <= n_val; i++){
-			ctx.beginPath();
-			ctx.moveTo(w-offset-line_width, offset + i*step_px);
-			ctx.lineTo(w-offset, offset + i*step_px);
-			ctx.stroke();
+		let step_db = 1;
+		let step_px = step_db/(MAX_DB-MIN_DB)*(h-2*offset);
+		while(true){
+			if(step_px >= this.step_px_min){
+				break;
+			}
+			step_db *= 2;
+			step_px *= 2;
+			if(step_px >= this.step_px_min){
+				break;
+			}
+			step_db *= 2.5;
+			step_px *= 2.5;
+			if(step_px >= this.step_px_min){
+				break;
+			}
+			step_db *= 2;
+			step_px *= 2;
+			if(step_px >= this.step_px_min){
+				break;
+			}
 		}
 
-		//values
+		let current_db = MAX_DB;
+		let current_px = offset;
+
 		ctx.textAlign = "right";
 		ctx.font = "13px serif";
 		ctx.lineWidth = 0.4;
-		for(let i = 0; i <= n_val; i++){
-			let val = MAX_DB - (MAX_DB-MIN_DB)/n_val * i;
-			ctx.strokeText(val.toFixed(0) + "dB", w-offset-line_width-offset, offset + i*step_px + 8*(1 - i/n_val));
+
+		while(current_db >= MIN_DB){
+			ctx.beginPath();
+			ctx.moveTo(w-offset-line_width, current_px);
+			ctx.lineTo(w-offset, current_px);
+			ctx.stroke();
+
+			ctx.strokeText(current_db.toFixed(0) + " dB", w-offset-line_width-offset, current_px + 7*(1 - (MAX_DB-current_db)/(MAX_DB-MIN_DB)));
+
+			current_db -= step_db;
+			current_px += step_px;
 		}
 
 	}
