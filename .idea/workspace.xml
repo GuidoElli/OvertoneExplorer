@@ -26,27 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5300ad08-4c76-4f71-88a4-3b33d17bf6d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/IMG/gear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/fileSaver.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/dadj_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/dadj_edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/freq_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/freq_edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/right_bar.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/right_bar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/visual.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/visual.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/vol_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/vol_edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/zoom.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/zoom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Const/Const.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Const/Const.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Controller/Controller_freq_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Controller/Controller_freq_edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Controller/Controller_vol_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Controller/Controller_vol_edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Model/Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Model/Model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/View/Elements/Knob.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/Elements/Knob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/View/Elements/Row.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/Elements/Row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/View/View_freq_visual.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/View_freq_visual.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/View/View_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/View_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/View/View_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/View_settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/View/View_vol_visual.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/View_vol_visual.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +112,7 @@
       <workItem from="1606146819171" duration="1220000" />
       <workItem from="1606148391585" duration="21776000" />
       <workItem from="1606216188124" duration="1403000" />
-      <workItem from="1606217602021" duration="31922000" />
+      <workItem from="1606217602021" duration="32205000" />
     </task>
     <task id="LOCAL-00001" summary="Added side bars on visuals">
       <created>1589401007932</created>
@@ -406,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606237572345</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="almost finished">
+      <created>1606257606377</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1606257606377</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,10 +498,10 @@
     </state>
     <state width="498" height="398" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1606232992872" />
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1604009600821" />
-    <state x="320" y="128" key="Vcs.Push.Dialog.v2" timestamp="1606237574504">
+    <state x="320" y="128" key="Vcs.Push.Dialog.v2" timestamp="1606257610650">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="320" y="128" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1606237574504" />
+    <state x="320" y="128" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1606257610650" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604520167002" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604421041047">
       <screen x="0" y="0" width="1536" height="824" />
