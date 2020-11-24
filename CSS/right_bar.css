@@ -5,7 +5,7 @@
       height: 6%;
    }
       .zoom_controls_box{
-         background-color: rgb(74, 74, 74);
+         background-color: rgb(55, 55, 55);
       }
       .zoom_controls_box .section{
          height: 100%;
@@ -15,11 +15,11 @@
       .zoom_controls_box button{
          width: 100%;
          height: 100%;
-         background-color: rgb(114, 114, 114);
+         background-color: rgb(102, 102, 102);
          padding: 5px;
       }
       .zoom_controls_box button:hover{
-         background-color: rgb(143, 143, 143);
+         background-color: rgb(121, 121, 121);
       }
       .zoom_controls_box button img{
          position: relative;
@@ -34,7 +34,7 @@
       padding: 0;
    }
       .row_custom_selection_section{
-         width: 50%;
+         width: 30%;
       }
          .custom_selection_button{
             background-color: #515151;
@@ -45,25 +45,64 @@
          .custom_selection_button.active{
             background-color: #b0b0b0;
          }
+            .custom_selection_button img{
+               width: 100%;
+               height: auto;
+            }
       .row_all_section{
-         width: 50%;
+         width: 70%;
          padding: 0;
       }
          .row_all_box button{
-            background-color: #515151;
+            font-size: 12px;
          }
-         .row_all_box button:hover{
-            background-color: #6b6b6b;
-         }
+            .playback_all_button{
+               background-color: #666666;
+            }
+            .playback_all_button:hover{
+               background-color: #797979;
+            }
+            .vol_edit_all_button{
+               background-color: var(--blue-2);
+            }
+            .vol_edit_all_button:hover{
+               background-color: var(--blue-3);
+            }
+            .freq_edit_all_button{
+               background-color: var(--green-2);
+            }
+            .freq_edit_all_button:hover{
+               background-color: var(--green-3);
+            }
+            .dadj_edit_all_button{
+               background-color: var(--red-2);
+            }
+            .dadj_edit_all_button:hover{
+               background-color: var(--red-3);
+            }
 
    .visual_side_section{
       height: 83%;
    }
+      .vol_visual_label{
+         height: 10%;
+         width: 100%;
+         text-align: right;
+         color: #d0d0d0;
+         font-size: 12px;
+      }
       .vol_visual_side_box{
-         margin-top: 2px;
-         height: 99%;
+         top: 0.5%;
+         height: 89%;
+      }
+      .freq_visual_label{
+         height: 10%;
+         width: 100%;
+         text-align: right;
+         color: #d0d0d0;
+         font-size: 12px;
       }
       .freq_visual_side_box{
-         margin-top: 2px;
-         height: 99%;
+         top: 0.5%;
+         height: 89%;
       }

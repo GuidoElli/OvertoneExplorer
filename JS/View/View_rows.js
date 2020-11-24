@@ -3,18 +3,18 @@ class View_rows {
 
         this.v = view;
 
-        var first_playback_row_item_section;
+        let first_playback_row_item_section;
         first_playback_row_item_section = $(".row_playback_box .row_item_section")[0];
         $(".row_playback_box").empty();
         for (let i = 0; i < TOTAL_TRACKS; i++) {
-            var clone = first_playback_row_item_section.cloneNode();
+            let clone = first_playback_row_item_section.cloneNode();
             clone.append(first_playback_row_item_section.firstElementChild.cloneNode());
             clone.firstElementChild.innerHTML = i;
             $(".row_playback_box").append(clone);
         }
-        var row = $(".row_playback_box")[0];
-        var sections = $(".row_playback_box .row_item_section");
-        var buttons = $(".row_playback_item");
+        let row = $(".row_playback_box")[0];
+        let sections = $(".row_playback_box .row_item_section");
+        let buttons = $(".row_playback_item");
         this.playback_row = new Row(row, sections, buttons);
         this.playback_row.on_change_enter = () => {
             this.v.on_playback_change_enter();
@@ -27,17 +27,17 @@ class View_rows {
         }
 
 
-        var first_vol_edit_row_item_section = $(".row_vol_edit_box .row_item_section")[0];
+        let first_vol_edit_row_item_section = $(".row_vol_edit_box .row_item_section")[0];
         $(".row_vol_edit_box").empty();
         for (let i = 0; i < TOTAL_TRACKS; i++) {
-            var clone = first_vol_edit_row_item_section.cloneNode();
+            let clone = first_vol_edit_row_item_section.cloneNode();
             clone.append(first_vol_edit_row_item_section.firstElementChild.cloneNode());
             clone.firstElementChild.innerHTML = i;
             $(".row_vol_edit_box").append(clone);
         }
-        var row = $(".row_vol_edit_box")[0];
-        var sections = $(".row_vol_edit_box .row_item_section");
-        var buttons = $(".row_vol_edit_item");
+        row = $(".row_vol_edit_box")[0];
+        sections = $(".row_vol_edit_box .row_item_section");
+        buttons = $(".row_vol_edit_item");
         this.vol_edit_row = new Row(row, sections, buttons);
         this.vol_edit_row.on_change_enter = () => {
             this.v.on_vol_edit_change_enter();
@@ -50,17 +50,17 @@ class View_rows {
         }
 
 
-        var first_freq_edit_row_item_section = $(".row_freq_edit_box .row_item_section")[0];
+        let first_freq_edit_row_item_section = $(".row_freq_edit_box .row_item_section")[0];
         $(".row_freq_edit_box").empty();
         for (let i = 0; i < TOTAL_TRACKS; i++) {
-            var clone = first_freq_edit_row_item_section.cloneNode();
+            let clone = first_freq_edit_row_item_section.cloneNode();
             clone.append(first_freq_edit_row_item_section.firstElementChild.cloneNode());
             clone.firstElementChild.innerHTML = i;
             $(".row_freq_edit_box").append(clone);
         }
-        var row = $(".row_freq_edit_box")[0];
-        var sections = $(".row_freq_edit_box .row_item_section");
-        var buttons = $(".row_freq_edit_item");
+        row = $(".row_freq_edit_box")[0];
+        sections = $(".row_freq_edit_box .row_item_section");
+        buttons = $(".row_freq_edit_item");
         this.freq_edit_row = new Row(row, sections, buttons);
         this.freq_edit_row.on_change_enter = () => {
             this.v.on_freq_edit_change_enter();
@@ -73,17 +73,17 @@ class View_rows {
         }
 
 
-        var first_dadj_edit_row_item_section = $(".row_dadj_edit_box .row_item_section")[0];
+        let first_dadj_edit_row_item_section = $(".row_dadj_edit_box .row_item_section")[0];
         $(".row_dadj_edit_box").empty();
         for (let i = 0; i < TOTAL_TRACKS; i++) {
-            var clone = first_dadj_edit_row_item_section.cloneNode();
+            let clone = first_dadj_edit_row_item_section.cloneNode();
             clone.append(first_dadj_edit_row_item_section.firstElementChild.cloneNode());
             clone.firstElementChild.innerHTML = i;
             $(".row_dadj_edit_box").append(clone);
         }
-        var row = $(".row_dadj_edit_box")[0];
-        var sections = $(".row_dadj_edit_box .row_item_section");
-        var buttons = $(".row_dadj_edit_item");
+        row = $(".row_dadj_edit_box")[0];
+        sections = $(".row_dadj_edit_box .row_item_section");
+        buttons = $(".row_dadj_edit_item");
         this.dadj_edit_row = new Row(row, sections, buttons);
         this.dadj_edit_row.on_change_enter = () => {
             this.v.on_dadj_edit_change_enter();

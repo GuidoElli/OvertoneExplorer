@@ -39,17 +39,17 @@
 
 	/*Colors*/
 	--green-1: #0c2f00;
-	--green-2: #0d5b00;
+	--green-2: #0d7200;
 	--green-3: #189400;
 	--green-4: #21dd00;
 
 	--red-1: #410000;
-	--red-2: #730000;
-	--red-3: #bf0000;
-	--red-4: #ff0000;
+	--red-2: #7e0000;
+	--red-3: #ab0000;
+	--red-4: #c40000;
 
 	--blue-1: #00173e;
-	--blue-2: #002562;
+	--blue-2: #002b75;
 	--blue-3: #0044ba;
 	--blue-4: #005cf3;
 }
@@ -85,6 +85,33 @@ button{
 	background-color: inherit;
    height: 100%;
 	width: 100%;
+	cursor: pointer;
+}
+
+.fake_button, .param_label, .param_value{
+	cursor: default !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #434343;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #737373;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #868686;
 }
 
 
@@ -151,19 +178,20 @@ button{
 	background: #5b5b5b;
 	outline: none;
 	border-radius: 50px;
+	border: solid 3px black;
 }
 .slider::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	background: #cbcbcb;
 	cursor: pointer;
 	border-radius: 50px;
 }
 .slider::-moz-range-thumb {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	background: #cbcbcb;
 	cursor: pointer;
 	border-radius: 50px;

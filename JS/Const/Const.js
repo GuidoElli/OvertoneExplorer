@@ -6,9 +6,9 @@ const MIN_DB = -70;
 let MAX_MIN_CENTS = 400;
 
 //General
-const TOTAL_TRACKS = 70;
+const TOTAL_TRACKS = 80;
 const MIN_VISIBLE_TRACKS = 7;
-const MAX_TRACKS_TO_SHOW_BUTTON_LABELS = 30;
+const MAX_TRACKS_TO_SHOW_LABELS = 25;
 
 //Zoom
 const ZOOM_CENTER_RELATIVE_INCREMENT = 0.05;
@@ -74,3 +74,10 @@ const GROUPS = {
 const is_true = (elem) => {return elem};
 const is_false = (elem) => {return !elem};
 
+
+const CHROMATIC = [ 'C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B' ]
+function midi_to_note_name(midi){
+   let note = CHROMATIC[midi%12];
+   let octave = Math.floor(midi/12)-1;
+   return note+octave;
+}

@@ -3,7 +3,7 @@
 }
    .fe_shape_section{
       width: 100%;
-      height: 20%;
+      height: 25%;
    }
    .fe_shape_box{
       background-color: rgb(73, 73, 73);
@@ -126,7 +126,7 @@
    }
 
    .fe_visual_section{
-      height: 30%;
+      height: 40%;
    }
    .fe_visual_box{
       background-color: rgb(27, 27, 27);

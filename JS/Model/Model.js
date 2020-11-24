@@ -648,6 +648,17 @@ class Model {
 		}
 	}
 
+	set_all_freq_to_zero(){
+		for(let i = 0; i < TOTAL_TRACKS; i++){
+			this.set_freq(i, 0);
+		}
+	}
+	set_all_vol_to_default(){
+		for(let i = 0; i < TOTAL_TRACKS; i++){
+			this.set_vol(i, -40);
+		}
+	}
+
 
 	// Getters and setters
 	get notes() {

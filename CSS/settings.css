@@ -4,7 +4,7 @@
 }
 
 .settings_env_section{
-   height: 40%;
+   height: 50%;
 }
    .settings_env_box{
       padding: 10px;
@@ -31,7 +31,7 @@
    }
 
       .settings_midi_box .param_label{
-         height: 15%;
+         height: 10%;
       }
       .settings_midi_box .param_content{
          height: 55%;

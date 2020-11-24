@@ -33,7 +33,7 @@ class View_freq_visual {
 		this.vf_main_bars = $(".vf_main_bar");
 		this.vf_fe_side_bars = $(".vf_fe_side_bar");
 		this.vf_dadj_side_bars = $(".vf_dadj_side_bar");
-
+		this.vf_values = $(".visual_freq_value_box");
 
 		this.freq_scale_canvas = $(".freq_scale_canvas")[0];
 		this.freq_scale = new Freq_scale(this.freq_scale_canvas);
@@ -52,6 +52,14 @@ class View_freq_visual {
 				this.vf_main_bars[i].style.top = 50 - Math.abs(tot/MAX_MIN_CENTS/2*100) + "%";
 			}else{
 				this.vf_main_bars[i].style.top = "50%";
+			}
+
+			if(this.last_visible_item - this.first_visible_item + 1 > MAX_TRACKS_TO_SHOW_LABELS){
+				this.vf_values[i].innerHTML = "";
+			}else{
+				let str = (tot>0) ? "+" : "";
+				str += tot.toFixed(0);
+				this.vf_values[i].innerHTML = str;
 			}
 
 			//fe side bar

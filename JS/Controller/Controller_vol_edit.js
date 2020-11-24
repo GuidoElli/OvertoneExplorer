@@ -38,7 +38,7 @@ class Controller_vol_edit{
 		})
 
 		document.addEventListener("keydown", (e) => {
-			if(e.key === "Control"){
+			if(e.key === "Control" && !e.repeat){
 				if(this.editing_single_track){
 					this.old_vol = this.new_vol;
 					this.old_mouse_y = this.new_mouse_y;
@@ -70,6 +70,7 @@ class Controller_vol_edit{
 		this.editing_single_track = true;
 		this.editing_track = track;
 		this.old_mouse_y = mouse_y;
+		this.new_mouse_y = mouse_y;
 		this.old_vol = this.m.vols_base[track];
 	}
 
@@ -115,10 +116,13 @@ class Controller_vol_edit{
 
 	on_ve_apply_click = () => {
 		this.apply_ve();
-		this.on_ve_reset_click();
+		this.c.vol_edit.on_ve_amount_change(0);
+		this.c.update_audio();
+		this.c.update_view();
 	}
 	on_ve_reset_click = () => {
 		this.c.vol_edit.on_ve_amount_change(0);
+		this.m.set_all_vol_to_default();
 		this.c.update_audio();
 		this.c.update_view();
 	}

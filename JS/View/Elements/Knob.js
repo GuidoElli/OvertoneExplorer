@@ -30,7 +30,7 @@ class Knob{
 		this.clickable = true;
 
 		document.addEventListener("keydown", (e) => {
-			if(e.key === "Control"){
+			if(e.key === "Control" && !e.repeat){
 				if(this.editing){
 					this.old_value = this.value;
 					this.old_mouse_y = this.new_mouse_y;

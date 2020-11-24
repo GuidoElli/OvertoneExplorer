@@ -1,25 +1,32 @@
 
 .dadj_edit_box{
    background-color: rgb(47, 47, 47);
+   overflow: auto;
 }
 
    .dadj_freq_section{
-      height: 50%;
+      height: 80%;
    }
    .dadj_freq_box{
+      background-color: rgb(59, 59, 59);
    }
+      .dadj_freq_label{
+         height: 15%;
+         width: 100%;
+         font-size: 19px;
+         text-align: center;
+      }
       .dadj_freq_graph_section{
-         height: 70%;
+         height: 55%;
       }
          .dadj_freq_graph{
             border-radius: var(--border-radius);
-            border: solid 3px;
-            border-color: var(--greyscale-1);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
          }
       .dadj_freq_controls_section{
+         padding: 10px;
          height: 30%;
       }
          .dadj_freq_range_knob_section{
@@ -30,23 +37,29 @@
          }
 
    .dadj_vol_section{
-      height: 50%;
+      height: 80%;
    }
    .dadj_vol_box{
+      background-color: rgb(59, 59, 59);
    }
+      .dadj_vol_label{
+         height: 15%;
+         width: 100%;
+         font-size: 19px;
+         text-align: center;
+      }
       .dadj_vol_graph_section{
-         height: 70%;
+         height: 55%;
       }
          .dadj_vol_graph{
             border-radius: var(--border-radius);
-            border: solid 3px;
-            border-color: var(--greyscale-1);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
          }
       .dadj_vol_controls_section{
          height: 30%;
+         padding: 10px;
       }
          .dadj_vol_range_knob_section{
             width: 33.33333%;

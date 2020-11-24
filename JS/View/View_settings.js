@@ -80,13 +80,13 @@ class View_settings {
 	}
 
 	update_midi_split_note = (value) => {
-		this.settings_midi_split_note_value.innerHTML = value;
+		this.settings_midi_split_note_value.innerHTML = midi_to_note_name(value);
 	}
 	update_midi_octave_shift = (value) => {
-		this.settings_midi_octave_shift_value.innerHTML = value;
+		this.settings_midi_octave_shift_value.innerHTML = (value<=0) ? value : ("+"+value);
 	}
 	update_midi_a4_tuning = (value) => {
-		this.settings_midi_a4_tuning_value.innerHTML = value;
+		this.settings_midi_a4_tuning_value.innerHTML = value + "Hz";
 	}
 
 

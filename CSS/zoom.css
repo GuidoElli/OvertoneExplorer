@@ -2,6 +2,7 @@
 .zoom_box{
    padding: 2px;
    background-color: rgb(14, 14, 14);
+   border-radius: 5px;
 }
 
    .zoom_prevs{

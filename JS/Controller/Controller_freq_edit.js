@@ -39,7 +39,7 @@ class Controller_freq_edit{
 		})
 
 		document.addEventListener("keydown", (e) => {
-			if(e.key === "Control"){
+			if(e.key === "Control" && !e.repeat){
 				if(this.editing_single_track){
 					this.old_freq = this.new_freq;
 					this.old_mouse_y = this.new_mouse_y;
@@ -119,10 +119,13 @@ class Controller_freq_edit{
 
 	on_fe_apply_click = () => {
 		this.apply_fe();
-		this.on_fe_reset_click();
+		this.c.freq_edit.on_fe_amount_change(0);
+		this.c.update_audio();
+		this.c.update_view();
 	}
 	on_fe_reset_click = () => {
 		this.c.freq_edit.on_fe_amount_change(0);
+		this.m.set_all_freq_to_zero();
 		this.c.update_audio();
 		this.c.update_view();
 	}

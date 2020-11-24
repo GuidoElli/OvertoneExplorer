@@ -29,7 +29,7 @@ class View_vol_visual {
 		this.vv_main_bars = $(".vv_main_bar");
 		this.vv_ve_side_bars = $(".vv_ve_side_bar");
 		this.vv_dadj_side_bars = $(".vv_dadj_side_bar");
-
+		this.vv_values = $(".visual_vol_value_box");
 
 		this.vol_scale_canvas = $(".vol_scale_canvas")[0];
 		this.vol_scale = new Vol_scale(this.vol_scale_canvas);
@@ -45,6 +45,12 @@ class View_vol_visual {
 			tot = (tot < MIN_DB) ? MIN_DB : tot;
 			this.vv_main_bars[i].style.top = Math.abs((MAX_DB - tot) / (MAX_DB - MIN_DB)) * 100 + "%";
 			this.vv_main_bars[i].style.height = Math.abs((MIN_DB - tot) / (MAX_DB - MIN_DB)) * 100 + "%";
+
+			if(this.last_visible_item - this.first_visible_item + 1 > MAX_TRACKS_TO_SHOW_LABELS){
+				this.vv_values[i].innerHTML = "";
+			}else{
+				this.vv_values[i].innerHTML = tot.toFixed(1);
+			}
 
 			//ve side bar
 			this.vv_ve_side_bars[i].style.top = "";
@@ -88,6 +94,7 @@ class View_vol_visual {
 	}
 
 	update_zoom(first, last) {
+
 		this.first_visible_item = first;
 		this.last_visible_item = last;
 		for (let i = 0; i < TOTAL_TRACKS; i++) {

@@ -4,7 +4,7 @@
 
       .ve_shape_section{
          width: 100%;
-         height: 20%;
+         height: 25%;
       }
       .ve_shape_box{
          background-color: rgb(73, 73, 73);
@@ -127,7 +127,7 @@
             }
 
    .ve_visual_section{
-      height: 30%;
+      height: 40%;
    }
    .ve_visual_box{
       background-color: rgb(27, 27, 27);
