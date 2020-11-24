@@ -4,7 +4,7 @@ class View_settings {
 
 		this.settings_env_attack_canvas = $(".settings_env_attack_knob")[0];
 		this.settings_env_attack_knob = new Knob(this.settings_env_attack_canvas, 0, 3, null, null);
-		this.settings_env_attack_knob.interval_color = "#004cd0";
+		this.settings_env_attack_knob.interval_color = "#cacaca";
 		this.settings_env_attack_knob.on_change = (value) => {
 			this.v.on_settings_env_attack_change(value);
 		}
@@ -13,7 +13,7 @@ class View_settings {
 
 		this.settings_env_decay_time_canvas = $(".settings_env_decay_time_knob")[0];
 		this.settings_env_decay_time_knob = new Knob(this.settings_env_decay_time_canvas, 0, 3, null, null);
-		this.settings_env_decay_time_knob.interval_color = "#004cd0";
+		this.settings_env_decay_time_knob.interval_color = "#cacaca";
 		this.settings_env_decay_time_knob.on_change = (value) => {
 			this.v.on_settings_env_decay_time_change(value);
 		}
@@ -21,8 +21,8 @@ class View_settings {
 
 
 		this.settings_env_decay_vol_canvas = $(".settings_env_decay_vol_knob")[0];
-		this.settings_env_decay_vol_knob = new Knob(this.settings_env_decay_vol_canvas, 0, 3, null, null);
-		this.settings_env_decay_vol_knob.interval_color = "#004cd0";
+		this.settings_env_decay_vol_knob = new Knob(this.settings_env_decay_vol_canvas, 0, 1, null, null);
+		this.settings_env_decay_vol_knob.interval_color = "#cacaca";
 		this.settings_env_decay_vol_knob.on_change = (value) => {
 			this.v.on_settings_env_decay_vol_change(value);
 		}
@@ -31,7 +31,7 @@ class View_settings {
 
 		this.settings_env_release_canvas = $(".settings_env_release_knob")[0];
 		this.settings_env_release_knob = new Knob(this.settings_env_release_canvas, 0, 3, null, null);
-		this.settings_env_release_knob.interval_color = "#004cd0";
+		this.settings_env_release_knob.interval_color = "#cacaca";
 		this.settings_env_release_knob.on_change = (value) => {
 			this.v.on_settings_env_release_change(value);
 		}
@@ -40,19 +40,19 @@ class View_settings {
 
 
 		this.settings_midi_split_note_slider = $(".settings_midi_split_note_slider")[0];
-		this.settings_midi_split_note_slider.addEventListener("change", (e) => {
+		this.settings_midi_split_note_slider.addEventListener("change", () => {
 			this.v.on_settings_midi_split_note_change(this.settings_midi_split_note_slider.value);
 		})
 		this.settings_midi_split_note_value = $(".settings_midi_split_note_param_value")[0];
 
 		this.settings_midi_octave_shift_slider = $(".settings_midi_octave_shift_slider")[0];
-		this.settings_midi_octave_shift_slider.addEventListener("change", (value) => {
+		this.settings_midi_octave_shift_slider.addEventListener("change", () => {
 			this.v.on_settings_midi_octave_shift_change(this.settings_midi_octave_shift_slider.value);
 		})
 		this.settings_midi_octave_shift_value = $(".settings_midi_octave_shift_param_value")[0];
 
 		this.settings_midi_a4_tuning_slider = $(".settings_midi_a4_tuning_slider")[0];
-		this.settings_midi_a4_tuning_slider.addEventListener("change", (value) => {
+		this.settings_midi_a4_tuning_slider.addEventListener("change", () => {
 			this.v.on_settings_midi_a4_tuning_change(this.settings_midi_a4_tuning_slider.value);
 		})
 		this.settings_midi_a4_tuning_value = $(".settings_midi_a4_tuning_param_value")[0];

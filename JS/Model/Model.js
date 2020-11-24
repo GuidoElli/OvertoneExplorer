@@ -14,7 +14,7 @@ class Model {
 		this._last_played_note_dadj_freqs = new Array(TOTAL_TRACKS).fill(0);
 
 		//Layout
-		this._layout_left = LAYOUT_LEFT.DADJ;
+		this._layout_left = LAYOUT_LEFT.HOME;
 		this._layout_right = LAYOUT_RIGHT.DEFAULT;
 		this._custom_selection = false;
 
@@ -82,8 +82,8 @@ class Model {
 
 		//output
 		this._out_attack = 0.1;
-		this._out_decay_time = 0;
-		this._out_decay_vol = 1;
+		this._out_decay_time = 0.3;
+		this._out_decay_vol = 0.7;
 		this._out_release= 0.3;
 
 		this._out_master = 1;

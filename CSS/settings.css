@@ -3,11 +3,11 @@
 }
 
 .settings_env_section{
-   height: 30%;
+   height: 40%;
 }
    .settings_env_box{
       padding: 10px;
-      background-color: var(--greyscale-5);
+      background-color: var(--greyscale-3);
    }
       .settings_env_attack_knob_section{
          width: 25%;
@@ -22,12 +22,23 @@
          width: 25%;
       }
 .settings_midi_section{
-   height: 40%;
+   height: 50%;
 }
    .settings_midi_box{
       padding: 10px;
-      background-color: var(--greyscale-5);
+      background-color: var(--greyscale-3);
    }
+
+      .settings_midi_box .param_label{
+         height: 15%;
+      }
+      .settings_midi_box .param_content{
+         height: 55%;
+      }
+      .settings_midi_box .param_value{
+         height: 15%;
+      }
+
       .settings_midi_split_note_section{
          width: 100%;
          height: 50%;
