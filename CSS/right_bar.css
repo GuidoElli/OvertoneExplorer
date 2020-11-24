@@ -5,7 +5,7 @@
       height: 6%;
    }
       .zoom_controls_box{
-         background-color: rgb(95, 95, 95);
+         background-color: rgb(74, 74, 74);
       }
       .zoom_controls_box .section{
          height: 100%;
@@ -15,11 +15,11 @@
       .zoom_controls_box button{
          width: 100%;
          height: 100%;
-         background-color: rgb(165, 165, 165);
+         background-color: rgb(114, 114, 114);
          padding: 5px;
       }
       .zoom_controls_box button:hover{
-         background-color: rgb(190, 190, 190);
+         background-color: rgb(143, 143, 143);
       }
       .zoom_controls_box button img{
          position: relative;
@@ -37,17 +37,23 @@
          width: 50%;
       }
          .custom_selection_button{
-            background-color: #6d6d6d;
+            background-color: #515151;
+         }
+         .custom_selection_button:hover{
+            background-color: #626262;
          }
          .custom_selection_button.active{
-            background-color: #a5a5a5;
+            background-color: #b0b0b0;
          }
       .row_all_section{
          width: 50%;
          padding: 0;
       }
          .row_all_box button{
-            background-color: #6d6d6d;
+            background-color: #515151;
+         }
+         .row_all_box button:hover{
+            background-color: #6b6b6b;
          }
 
    .visual_side_section{

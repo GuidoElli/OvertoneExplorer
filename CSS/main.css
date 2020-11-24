@@ -6,7 +6,7 @@
 	--greyscale-1: #111111;
 	--greyscale-1-5: #1b1b1b;
 	--greyscale-2: #222222;
-	--greyscale-3: #333333;
+	--greyscale-3: #414141;
 	--greyscale-4: #444444;
 	--greyscale-5: #555555;
 	--greyscale-6: #666666;
@@ -207,6 +207,9 @@ button{
 		.left_bar_top_box{
 			background-color: #1b1b1b;
 		}
+			.home_box{
+				background-color: rgb(47, 47, 47);
+			}
 			.home_box button{
 				position: absolute;
 				left: 50%;

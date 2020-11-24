@@ -4,7 +4,7 @@ class View_settings {
 
 		this.settings_env_attack_canvas = $(".settings_env_attack_knob")[0];
 		this.settings_env_attack_knob = new Knob(this.settings_env_attack_canvas, 0, 3, null, null);
-		this.settings_env_attack_knob.interval_color = "#cacaca";
+		this.settings_env_attack_knob.interval_color = "#dedede";
 		this.settings_env_attack_knob.on_change = (value) => {
 			this.v.on_settings_env_attack_change(value);
 		}
@@ -13,7 +13,7 @@ class View_settings {
 
 		this.settings_env_decay_time_canvas = $(".settings_env_decay_time_knob")[0];
 		this.settings_env_decay_time_knob = new Knob(this.settings_env_decay_time_canvas, 0, 3, null, null);
-		this.settings_env_decay_time_knob.interval_color = "#cacaca";
+		this.settings_env_decay_time_knob.interval_color = "#dedede";
 		this.settings_env_decay_time_knob.on_change = (value) => {
 			this.v.on_settings_env_decay_time_change(value);
 		}
@@ -22,7 +22,7 @@ class View_settings {
 
 		this.settings_env_decay_vol_canvas = $(".settings_env_decay_vol_knob")[0];
 		this.settings_env_decay_vol_knob = new Knob(this.settings_env_decay_vol_canvas, 0, 1, null, null);
-		this.settings_env_decay_vol_knob.interval_color = "#cacaca";
+		this.settings_env_decay_vol_knob.interval_color = "#dedede";
 		this.settings_env_decay_vol_knob.on_change = (value) => {
 			this.v.on_settings_env_decay_vol_change(value);
 		}
@@ -31,7 +31,7 @@ class View_settings {
 
 		this.settings_env_release_canvas = $(".settings_env_release_knob")[0];
 		this.settings_env_release_knob = new Knob(this.settings_env_release_canvas, 0, 3, null, null);
-		this.settings_env_release_knob.interval_color = "#cacaca";
+		this.settings_env_release_knob.interval_color = "#dedede";
 		this.settings_env_release_knob.on_change = (value) => {
 			this.v.on_settings_env_release_change(value);
 		}

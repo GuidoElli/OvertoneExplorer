@@ -1,12 +1,12 @@
 
 .selection_box{
-   background-color: rgb(59, 59, 59);
+   background-color: rgb(47, 47, 47);
 }
    .sel_mode_section{
       height: 30%;
    }
    .sel_mode_box{
-      background-color: #4e4e4e;
+      background-color: #3c3c3c;
    }
       .sel_mode_add_button_section,
       .sel_mode_remove_button_section,
@@ -17,7 +17,13 @@
       .sel_mode_add_button,
       .sel_mode_remove_button,
       .sel_mode_toggle_button{
-         background-color: #323232;
+         background-color: #4c4c4c;
+         font-size: 15px;
+      }
+      .sel_mode_add_button:hover,
+      .sel_mode_remove_button:hover,
+      .sel_mode_toggle_button:hover{
+         background-color: #565656;
       }
       .sel_mode_add_button.active,
       .sel_mode_remove_button.active,
@@ -29,7 +35,7 @@
       height: 70%;
    }
    .sel_groups_box{
-      background-color: #4e4e4e;
+      background-color: #3c3c3c;
    }
       .sel_groups_section_content{
          overflow: auto;
@@ -40,7 +46,11 @@
          padding: 5px;
       }
       .sel_groups_item{
-         background-color: #323232;
+         background-color: #4c4c4c;
+         font-size: 15px;
+      }
+      .sel_groups_item:hover{
+         background-color: #565656;
       }
       .sel_groups_item.active{
          background-color: #8d8d8d;

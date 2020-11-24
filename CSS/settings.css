@@ -1,5 +1,6 @@
 .settings_box{
    overflow: auto;
+   background-color: rgb(47, 47, 47);
 }
 
 .settings_env_section{

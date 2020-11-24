@@ -27,11 +27,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5300ad08-4c76-4f71-88a4-3b33d17bf6d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/dadj_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/dadj_edit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/freq_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/freq_edit.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/right_bar.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/right_bar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/selection.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/selection.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/Model/Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Model/Model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/vol_edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/vol_edit.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS/View/View_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/View/View_settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +118,7 @@
       <workItem from="1606146819171" duration="1220000" />
       <workItem from="1606148391585" duration="21776000" />
       <workItem from="1606216188124" duration="1403000" />
-      <workItem from="1606217602021" duration="16852000" />
+      <workItem from="1606217602021" duration="17720000" />
     </task>
     <task id="LOCAL-00001" summary="Added side bars on visuals">
       <created>1589401007932</created>
@@ -376,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606234293720</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="corrections">
+      <created>1606236709522</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1606236709522</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,11 +436,11 @@
     <MESSAGE value="now can jump up from sides" />
     <MESSAGE value="better colors" />
     <MESSAGE value="added coins" />
-    <MESSAGE value="corrections" />
     <MESSAGE value="a" />
     <MESSAGE value="added dynamic scales, colors corrected, implemented MIDI, bug fix" />
     <MESSAGE value="added some settings (envelope, midi split note, octave shift and a4 tuning)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some settings (envelope, midi split note, octave shift and a4 tuning)" />
+    <MESSAGE value="corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections" />
   </component>
   <component name="WindowStateProjectService">
     <state x="438" y="60" key="#CSS" timestamp="1606224275177">
@@ -479,10 +489,10 @@
     </state>
     <state width="498" height="398" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1606232992872" />
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1604009600821" />
-    <state x="320" y="128" key="Vcs.Push.Dialog.v2" timestamp="1606235037832">
+    <state x="320" y="128" key="Vcs.Push.Dialog.v2" timestamp="1606236712379">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="320" y="128" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1606235037832" />
+    <state x="320" y="128" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1606236712379" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604520167002" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604421041047">
       <screen x="0" y="0" width="1536" height="824" />
