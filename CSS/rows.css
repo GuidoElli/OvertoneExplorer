@@ -13,14 +13,14 @@
          background-color: var(--greyscale-3);
       }
       .row_playback_item.active{
-         background-color: var(--greyscale-10);
+         background-color: var(--greyscale-11);
          color: black;
       }
       .row_playback_item:hover{
          background-color: var(--greyscale-4);
       }
       .row_playback_item.active:hover{
-         background-color: var(--greyscale-9);
+         background-color: var(--greyscale-10);
       }
    .row_vol_edit_box{
       height: 25%;

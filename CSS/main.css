@@ -236,7 +236,7 @@ h4, h4 *{
 }
 .app_box{
 	padding: var(--padding);
-	background-color: var(--greyscale-2);
+	background-color: #222222;
 }
 
 
@@ -250,7 +250,7 @@ h4, h4 *{
 			background-color: #1b1b1b;
 		}
 			.home_box{
-				background-color: rgb(47, 47, 47);
+				background-color: rgb(43, 43, 43);
 			}
 			.home_box button{
 				position: absolute;
@@ -299,7 +299,9 @@ h4, h4 *{
 				}.help_button:hover{
 					 background-color: var(--greyscale-7);
 				 }
+
 				 .help_box{
+					 background-color: #2d2d2d;
 					 padding: 10%;
 					 overflow: scroll;
 				 }

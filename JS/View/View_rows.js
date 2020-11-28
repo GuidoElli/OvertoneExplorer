@@ -16,6 +16,7 @@ class View_rows {
         let sections = $(".row_playback_box .row_item_section");
         let buttons = $(".row_playback_item");
         this.playback_row = new Row(row, sections, buttons);
+        this.playback_row.show_track_number = true;
         this.playback_row.on_change_enter = () => {
             this.v.on_playback_change_enter();
         }

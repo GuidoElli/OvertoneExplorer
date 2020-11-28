@@ -1,5 +1,7 @@
 class Row {
    constructor(row, sections, buttons){
+
+      this.show_track_number = false;
       
       this.on_change_enter = null;
       this.on_change = null;
@@ -105,7 +107,7 @@ class Row {
 
             if(last - first + 1 > MAX_TRACKS_TO_SHOW_LABELS){
                this.buttons[i].innerHTML = "";
-            }else{
+            }else if(this.show_track_number){
                this.buttons[i].innerHTML = i;
             }
          }

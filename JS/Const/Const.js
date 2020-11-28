@@ -6,7 +6,7 @@ const MIN_DB = -70;
 let MAX_MIN_CENTS = 400;
 
 //General
-const TOTAL_TRACKS = 80;
+const TOTAL_TRACKS = 60;
 const MIN_VISIBLE_TRACKS = 7;
 const MAX_TRACKS_TO_SHOW_LABELS = 25;
 
