@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>ACTAM Project</title>
+	<title>Overtone Explorer</title>
 
 
 	<link rel="stylesheet" type="text/css" href="CSS/main.css">
@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="CSS/rows.css">
 	<link rel="stylesheet" type="text/css" href="CSS/vol_edit.css">
 	<link rel="stylesheet" type="text/css" href="CSS/freq_edit.css">
-	<link rel="stylesheet" type="text/css" href="CSS/dadj_edit.css">
+	<link rel="stylesheet" type="text/css" href="CSS/chroma_edit.css">
 	<link rel="stylesheet" type="text/css" href="CSS/selection.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
 					<div class="left_bar_top_box box">
 						<div class="home_button_section section">
 							<button class="home_button button">
-								Home
+								<img src="IMG/home.png">
 							</button>
 						</div>
 						<button class="left_bar_title_section section fake_button">
@@ -49,9 +49,9 @@
 
 
 					<div class="home_box box">
-						<button class="vol_edit_button">Volume Editor</button>
+						<button class="vol_edit_button">Amplitude Editor</button>
 						<button class="freq_edit_button">Frequency Editor</button>
-						<button class="dadj_edit_button">DAdj Editor</button>
+						<button class="chroma_edit_button">Chroma Editor</button>
 						<button class="settings_button">Settings</button>
 						<button class="help_button">Help</button>
 					</div>
@@ -337,67 +337,67 @@
 					</div>
 
 
-					<div class="dadj_edit_box box">
+					<div class="chroma_edit_box box">
 
 
 
-						<div class="dadj_vol_section section">
-							<div class="dadj_vol_box box">
+						<div class="chroma_vol_section section">
+							<div class="chroma_vol_box box">
 
-								<button class="dadj_vol_label fake_button">
-									Volume Adjustment
+								<button class="chroma_vol_label fake_button">
+									Chroma Amplitude
 								</button>
 
-								<div class="dadj_vol_graph_section section">
-									<canvas class="dadj_vol_graph graph"></canvas>
+								<div class="chroma_vol_graph_section section">
+									<canvas class="chroma_vol_graph graph"></canvas>
 								</div>
 
-								<div class="dadj_vol_controls_section section">
+								<div class="chroma_vol_controls_section section">
 
-									<div class="dadj_vol_range_knob_section section">
-										<button class="dadj_vol_range_knob_param_label param_label">
+									<div class="chroma_vol_range_knob_section section">
+										<button class="chroma_vol_range_knob_param_label param_label">
 											Range
 										</button>
 
-										<div class="dadj_vol_range_knob_param_content param_content">
-											<div class="dadj_vol_range_knob_canvas_section knob_section">
-												<canvas class="dadj_vol_range_knob knob"></canvas>
+										<div class="chroma_vol_range_knob_param_content param_content">
+											<div class="chroma_vol_range_knob_canvas_section knob_section">
+												<canvas class="chroma_vol_range_knob knob"></canvas>
 											</div>
 										</div>
 
-										<button class="dadj_vol_range_knob_param_value param_value">
-											+- 0.45 Cents
+										<button class="chroma_vol_range_knob_param_value param_value">
+											+- 0.45 cents
 										</button>
 									</div>
 
-									<div class="dadj_vol_coeff_knob_section section">
-										<button class="dadj_vol_coeff_knob_param_label param_label">
-											Coeff
+									<div class="chroma_vol_coeff_knob_section section">
+										<button class="chroma_vol_coeff_knob_param_label param_label">
+											Coefficient
 										</button>
 
-										<div class="dadj_vol_coeff_knob_param_content param_content">
-											<div class="dadj_vol_coeff_knob_canvas_section knob_section">
-												<canvas class="dadj_vol_coeff_knob knob"></canvas>
+										<div class="chroma_vol_coeff_knob_param_content param_content">
+											<div class="chroma_vol_coeff_knob_canvas_section knob_section">
+												<canvas class="chroma_vol_coeff_knob knob"></canvas>
 											</div>
 										</div>
 
-										<button class="dadj_vol_coeff_knob_param_value param_value">
+										<button class="chroma_vol_coeff_knob_param_value param_value">
 											+ 0.45
 										</button>
 									</div>
 
-									<div class="dadj_vol_amount_knob_section section">
-										<button class="dadj_vol_amount_knob_param_label param_label">
+									<div class="chroma_vol_amount_knob_section section">
+										<button class="chroma_vol_amount_knob_param_label param_label">
 											Amount
 										</button>
 
-										<div class="dadj_vol_amount_knob_param_content param_content">
-											<div class="dadj_vol_amount_knob_canvas_section knob_section">
-												<canvas class="dadj_vol_amount_knob knob"></canvas>
+										<div class="chroma_vol_amount_knob_param_content param_content">
+											<div class="chroma_vol_amount_knob_canvas_section knob_section">
+												<canvas class="chroma_vol_amount_knob knob"></canvas>
 											</div>
 										</div>
 
-										<button class="dadj_vol_amount_knob_param_value param_value">
+										<button class="chroma_vol_amount_knob_param_value param_value">
 											+ 2.67 dB
 										</button>
 									</div>
@@ -408,47 +408,47 @@
 
 
 
-						<div class="dadj_freq_section section">
-							<div class="dadj_freq_box box">
+						<div class="chroma_freq_section section">
+							<div class="chroma_freq_box box">
 
-								<button class="dadj_freq_label fake_button">
-									Frequency Adjustment
+								<button class="chroma_freq_label fake_button">
+									Chroma Frequency
 								</button>
 
-								<div class="dadj_freq_graph_section graph_section section">
-									<canvas class="dadj_freq_graph graph"></canvas>
+								<div class="chroma_freq_graph_section graph_section section">
+									<canvas class="chroma_freq_graph graph"></canvas>
 								</div>
 
-								<div class="dadj_freq_controls_section section">
+								<div class="chroma_freq_controls_section section">
 
-									<div class="dadj_freq_range_knob_section section">
-										<button class="dadj_freq_range_knob_param_label param_label">
+									<div class="chroma_freq_range_knob_section section">
+										<button class="chroma_freq_range_knob_param_label param_label">
 											Range
 										</button>
 
-										<div class="dadj_freq_range_knob_param_content param_content">
-											<div class="dadj_freq_range_knob_canvas_section knob_section">
-												<canvas class="dadj_freq_range_knob knob"></canvas>
+										<div class="chroma_freq_range_knob_param_content param_content">
+											<div class="chroma_freq_range_knob_canvas_section knob_section">
+												<canvas class="chroma_freq_range_knob knob"></canvas>
 											</div>
 										</div>
 
-										<button class="dadj_freq_range_knob_param_value param_value">
+										<button class="chroma_freq_range_knob_param_value param_value">
 											+- 50 cents
 										</button>
 									</div>
 
-									<div class="dadj_freq_coeff_knob_section section">
-										<button class="dadj_freq_coeff_knob_param_label param_label">
-											Coeff
+									<div class="chroma_freq_coeff_knob_section section">
+										<button class="chroma_freq_coeff_knob_param_label param_label">
+											Coefficient
 										</button>
 
-										<div class="dadj_freq_coeff_knob_param_content param_content">
-											<div class="dadj_freq_coeff_knob_canvas_section knob_section">
-												<canvas class="dadj_freq_coeff_knob knob"></canvas>
+										<div class="chroma_freq_coeff_knob_param_content param_content">
+											<div class="chroma_freq_coeff_knob_canvas_section knob_section">
+												<canvas class="chroma_freq_coeff_knob knob"></canvas>
 											</div>
 										</div>
 
-										<button class="dadj_freq_coeff_knob_param_value param_value">
+										<button class="chroma_freq_coeff_knob_param_value param_value">
 
 										</button>
 									</div>
@@ -669,7 +669,77 @@
 
 
 					<div class="help_box box">
-						help
+
+
+						<h1 style="text-align: center;">Overtone Explorer</h1>
+						<p>A harmonic sound can be synthesized by a sum of several sinusoidal signals: one at a funfamental frequency and the others at its exact multiples (theese are called "overtones" or "harmonics"). Overtones are important as they change the timbre: this software allows you to create different sounds, just controlling its overtones, in terms of amplitude and frequency.</p>
+						<p>&nbsp;</p>
+						<h2>Keyboard</h2>
+						<p>If you have a midi keyboard, just connect it to you PC. Otherwise, you can play notes using your PC keyboard.</p>
+						<p>&nbsp;</p>
+						<h2>Visualizer</h2>
+						<p>In the right part of the screen, the vertical items represent the overtones (here called tracks). Track 0 (in the left) is the fundamental, track 1 is the first harmonic, and so on.</p>
+						<p>The section coloured in blue is related to the amplitude (measured in dB). You can drag the mouse and change this value for every track.</p>
+						<p>The green section is about frequency. If they are all set to 0, it does not mean they have zero frequency, but that they are at exact multiples of the fundamental. The interval between the exact multiple and the actual frequency is measured in&nbsp;cents in semitone (eg. "+100" means 1 semitone above).&nbsp;You can drag the mouse on the tracks and change this interval.</p>
+						<p>You can zoom in using the controls at the top or the mouse wheel. When you zoom in you can see the track numbers, as well as amplitude and frequency values.</p>
+						<p>&nbsp;</p>
+						<h2>Track selection</h2>
+						<p>There are some buttons above each track:</p>
+						<ul>
+							<li>Play&nbsp;buttons (coloured in grey)</li>
+							<li>Edit&nbsp;buttons (visible only in editors)</li>
+						</ul>
+						<p>For selection,&nbsp;edit and play buttons behave the same, so we will see just the play ones.</p>
+						<p>If you click on Play (All)&nbsp;you can toggle playback to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time.</p>
+						<p>Clicking on the gear button, some options are available.</p>
+						<p>The selection mode changes the behaviour of the buttons:</p>
+						<ul>
+							<li>ADD:&nbsp;default, add elements (removes if all selected)</li>
+							<li>REMOVE:&nbsp;[hold CTRL] remove elements</li>
+							<li>TOGGLE:&nbsp;[hold SHIFT] toggle elements</li>
+						</ul>
+						<p>The groups&nbsp;are predefined groups of tracks (for example the ones with even/odd track number). While a group is selected you can toggle selection just to the tracks that belong to the group.</p>
+						<p>Note: if a single play button is clicked, it will always toggle from the previous value. Instead, selection mode and groups options work with the Play (All) button or by selecting multiple tracks dragging the mouse.</p>
+						<p>&nbsp;</p>
+						<h2>Amplitude&nbsp;Editor</h2>
+						<p>In this section you can change the amplitude of the tracks, adding or subtracting a specific amount.</p>
+						<p>You can choose the tracks you want to edit by using the edit buttons above the tracks, the same as for playback.</p>
+						<p>You can give a shape to the tracks, choosing between:</p>
+						<ul>
+							<li>FLAT:&nbsp;all tracks with the same amount</li>
+							<li>TRIANGLE:&nbsp;a sort of bandpass filter. Use the&nbsp;center&nbsp;and&nbsp;width knobs to control the triangle's position and shape</li>
+							<li>CURVE:&nbsp;same as triangle, but with a gaussian shape</li>
+						</ul>
+						<p>Under the shape section you can visualize what is happening in an intuitive way.</p>
+						<p>When the random&nbsp;option is on, every amount is scaled by a random factor in range (0, 1). The mirror option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on randomize.</p>
+						<p>After clicking Apply, changes are saves and you can do other editings. To set all amplitudes to default, click Reset.</p>
+						<p>&nbsp;</p>
+						<h2>Frequency Editor</h2>
+						<p>This has the exact same structure as the amplitude editor: here, instead, you are changing the frequencies.</p>
+						<p>&nbsp;</p>
+						<h2>Chroma Editor</h2>
+						<p>The Chroma editor allows to change amplitudes and frequencies in a particular way.</p>
+						<p>On a MIDI keyboard, you should play both keys below and above a "split note" (that you can choose in settings). Keys below the split note are the "actual notes" you are playing, while keys above the split note (we will call them "overtone notes") change the overtones' amplitude and frequency of the actual notes.</p>
+						<p>On the PC keyboard, actual notes are in the lower half of the keyboard (from "Z" to "."), while overtone notes are in the upper part (from "A" to "L").</p>
+						<p>How does it work? First, for each track (overtone) of the actual note, it computes the interval (in cents) from its frequency to the closest overtone note frequency.</p>
+						<p>Example: track 20 has frequency 886Hz, which is a little bit more than an A, but we are playing a G on the overtone notes. So, the closest G to 886Hzis about&nbsp;784Hz. The interval, in this case, would be around 211 cents.</p>
+						<p>This interval is the input of both Chroma editors (on the x axis in both graphs).</p>
+						<p>&nbsp;</p>
+						<h4>Chroma Amplitude:</h4>
+						<p>The y axis of the graph represents the amount in dB to add or subtract from the current amplitude.</p>
+						<p>The maximum amplitude can be set using the Amount knob: positive amount values enhance frequencies closer to the overtone notes, while negative values attenuate them.</p>
+						<p>Use the Range knob to expand or shrink the maximum interval in cents. The Coefficient knob changes the shape of the function.</p>
+						<h4>Chroma Frequency:</h4>
+						<p>Here, the y axis represents the new (modified) frequency of a track.</p>
+						<p>The Range knob, as before, expands or shrinks the maximum interval and the Coefficient knob changes the shape of the function. Positive coefficient values make the frequencies approach the overtone notes, negative ones do the opposite, making the interval larger.</p>
+						<p>Note: the computation of frequency happens before the amplitude, so, the input of Chroma amplitude is the output of Chroma frequency. In other words, we first compute the new frequency, then we use it to compute the new amplitude.</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<h2>Settings</h2>
+						<p>In the envelope section you can choose ADSR parameters for the output of sound.</p>
+						<p>In the MIDI section you can select the split note, the octave shift and the frequency of the A4 note.</p>
+						<p>&nbsp;</p>
+
 					</div>
 
 
@@ -736,8 +806,8 @@
 								<div class="freq_edit_all_button_section section">
 									<button class="freq_edit_all_button">Edit (All)</button>
 								</div>
-								<div class="dadj_edit_all_button_section section">
-									<button class="dadj_edit_all_button">Edit (All)</button>
+								<div class="chroma_edit_all_button_section section">
+									<button class="chroma_edit_all_button">Edit (All)</button>
 								</div>
 							</div>
 						</div>
@@ -748,7 +818,7 @@
 
 					<!--vol scale-->
 					<div class="vol_visual_side_section section">
-						<button class="vol_visual_label fake_button">Volume [dB]</button>
+						<button class="vol_visual_label fake_button">Amplitude [dB]</button>
 						<div class="vol_visual_side_box box">
 							<canvas class="vol_scale_canvas"></canvas>
 						</div>
@@ -756,7 +826,7 @@
 
 					<!--freq scale-->
 					<div class="freq_visual_side_section section">
-						<button class="freq_visual_label fake_button">Frequency [Cents]</button>
+						<button class="freq_visual_label fake_button">Frequency [cents]</button>
 						<div class="freq_visual_side_box box">
 							<canvas class="freq_scale_canvas"></canvas>
 						</div>
@@ -794,9 +864,9 @@
 									<div class="zoom_freq_edit_prev prev"></div>
 								</div>
 							</div>
-							<div class="zoom_dadj_edit_prevs_box">
+							<div class="zoom_chroma_edit_prevs_box">
 								<div class="prev_section">
-									<div class="zoom_dadj_edit_prev prev"></div>
+									<div class="zoom_chroma_edit_prev prev"></div>
 								</div>
 							</div>
 						</div>
@@ -823,9 +893,9 @@
 							<button class="row_freq_edit_item row_item"></button>
 						</div>
 					</div>
-					<div class="row_dadj_edit_box box">
+					<div class="row_chroma_edit_box box">
 						<div class="row_item_section section">
-							<button class="row_dadj_edit_item row_item"></button>
+							<button class="row_chroma_edit_item row_item"></button>
 						</div>
 					</div>
 				</div>
@@ -836,7 +906,7 @@
 						<div class="visual_vol_section section">
 							<div class="visual_vol_box box">
 								<div class="visual_vol_item_section section">
-									<button class="visual_vol_value_box box"></button>
+									<button class="visual_vol_value_box box fake_button"></button>
 									<div class="visual_vol_item_box box">
 										<div class="vv_side_bar_section">
 											<div class="vv_ve_side_bar"></div>
@@ -845,7 +915,7 @@
 											<div class="vv_main_bar"></div>
 										</div>
 										<div class="vv_side_bar_section">
-											<div class="vv_dadj_side_bar"></div>
+											<div class="vv_chroma_side_bar"></div>
 										</div>
 									</div>
 								</div>
@@ -854,7 +924,7 @@
 						<div class="visual_freq_section section">
 							<div class="visual_freq_box box">
 								<div class="visual_freq_item_section section">
-									<button class="visual_freq_value_box box"></button>
+									<button class="visual_freq_value_box box fake_button"></button>
 									<div class="visual_freq_item_box box">
 										<div class="vf_side_bar_section">
 											<div class="vf_fe_side_bar"></div>
@@ -863,7 +933,7 @@
 											<div class="vf_main_bar"></div>
 										</div>
 										<div class="vf_side_bar_section">
-											<div class="vf_dadj_side_bar"></div>
+											<div class="vf_chroma_side_bar"></div>
 										</div>
 									</div>
 								</div>
@@ -902,13 +972,13 @@
 <script src="JS/View/View_freq_visual.js"></script>
 <script src="JS/View/View_vol_edit.js"></script>
 <script src="JS/View/View_freq_edit.js"></script>
-<script src="JS/View/View_dadj_edit.js"></script>
+<script src="JS/View/View_chroma_edit.js"></script>
 <script src="JS/View/View_settings.js"></script>
 
 <script src="JS/View/Elements/Row.js"></script>
 <script src="JS/View/Elements/Knob.js"></script>
-<script src="JS/View/Elements/Dadj_freq_graph.js"></script>
-<script src="JS/View/Elements/Dadj_vol_graph.js"></script>
+<script src="JS/View/Elements/Chroma_freq_graph.js"></script>
+<script src="JS/View/Elements/Chroma_vol_graph.js"></script>
 <script src="JS/View/Elements/Vol_scale.js"></script>
 <script src="JS/View/Elements/Freq_scale.js"></script>
 
@@ -927,7 +997,7 @@
 <script src="JS/Controller/Controller_zoom.js"></script>
 <script src="JS/Controller/Controller_vol_edit.js"></script>
 <script src="JS/Controller/Controller_freq_edit.js"></script>
-<script src="JS/Controller/Controller_dadj_edit.js"></script>
+<script src="JS/Controller/Controller_chroma_edit.js"></script>
 <script src="JS/Controller/Controller_audio.js"></script>
 <script src="JS/Controller/Audio_generator.js"></script>
 <script src="JS/Controller/Controller_settings.js"></script>

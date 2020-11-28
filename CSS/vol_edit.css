@@ -107,9 +107,6 @@
             .ve_apply_button:hover{
                background-color: var(--blue-3);
             }
-            .ve_apply_button:active{
-               background-color: var(--blue-4);
-            }
          .ve_reset_button_section{
             width: 40%;
             padding: 6px;
@@ -121,9 +118,6 @@
             }
             .ve_reset_button:hover{
                background-color: var(--blue-2);
-            }
-            .ve_reset_button:active{
-               background-color: var(--blue-4);
             }
 
    .ve_visual_section{

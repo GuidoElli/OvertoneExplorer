@@ -5,13 +5,13 @@ class Model {
 		this._vols_base = new Array(TOTAL_TRACKS).fill(-40);
 		this._vols_ve_shape_amounts = new Array(TOTAL_TRACKS).fill(0);
 		this._vols_ve_amounts = new Array(TOTAL_TRACKS).fill(0);
-		this._last_played_note_dadj_vols = new Array(TOTAL_TRACKS).fill(0);
+		this._last_played_note_chroma_vols = new Array(TOTAL_TRACKS).fill(0);
 
 		//Freqs
 		this._freqs_base = new Array(TOTAL_TRACKS).fill(0);
 		this._freqs_fe_shape_amounts = new Array(TOTAL_TRACKS).fill(0);
 		this._freqs_fe_amounts = new Array(TOTAL_TRACKS).fill(0);
-		this._last_played_note_dadj_freqs = new Array(TOTAL_TRACKS).fill(0);
+		this._last_played_note_chroma_freqs = new Array(TOTAL_TRACKS).fill(0);
 
 		//Layout
 		this._layout_left = LAYOUT_LEFT.HOME;
@@ -24,14 +24,14 @@ class Model {
 
 		//Rows
 		this._playback_tracks = new Array(TOTAL_TRACKS).fill(true);
-		this._vol_edit_tracks = new Array(TOTAL_TRACKS).fill(true);
-		this._freq_edit_tracks = new Array(TOTAL_TRACKS).fill(true);
-		this._dadj_edit_tracks = new Array(TOTAL_TRACKS).fill(true);
+		this._vol_edit_tracks = new Array(TOTAL_TRACKS).fill(false);
+		this._freq_edit_tracks = new Array(TOTAL_TRACKS).fill(false);
+		this._chroma_edit_tracks = new Array(TOTAL_TRACKS).fill(false);
 
 		this._playback_tracks_backup = null;
 		this._vol_edit_tracks_backup = null;
 		this._freq_edit_tracks_backup = null;
-		this._dadj_edit_tracks_backup = null;
+		this._chroma_edit_tracks_backup = null;
 
 		//Zoom
 		this._first_visible_track = 0;
@@ -50,7 +50,7 @@ class Model {
 
 		//Freq edit
 		this._fe_shape = EDITOR_SHAPE.FLAT;
-		this._fe_amount = 0; // in Cents
+		this._fe_amount = 0; // in cents
 		this._fe_center = 0.7; // 0 to 1
 		this._fe_width = 0.4; // 0 to 1
 
@@ -60,12 +60,12 @@ class Model {
 
 
 
-		//Dadj
-		this._dadj_freq_range = 0;
-		this._dadj_freq_coeff = 0;
-		this._dadj_vol_range = 0;
-		this._dadj_vol_coeff = 0;
-		this._dadj_vol_amount = 0;
+		//Chroma
+		this._chroma_freq_range = 0;
+		this._chroma_freq_coeff = 0;
+		this._chroma_vol_range = 0;
+		this._chroma_vol_coeff = 0;
+		this._chroma_vol_amount = 0;
 
 
 
@@ -269,8 +269,8 @@ class Model {
 	get freq_edit_tracks() {
 		return this._freq_edit_tracks;
 	}
-	get dadj_edit_tracks() {
-		return this._dadj_edit_tracks;
+	get chroma_edit_tracks() {
+		return this._chroma_edit_tracks;
 	}
 	get playback_tracks_backup() {
 		return this._playback_tracks_backup;
@@ -281,8 +281,8 @@ class Model {
 	get freq_edit_tracks_backup() {
 		return this._freq_edit_tracks_backup;
 	}
-	get dadj_edit_tracks_backup() {
-		return this._dadj_edit_tracks_backup;
+	get chroma_edit_tracks_backup() {
+		return this._chroma_edit_tracks_backup;
 	}
 	set_playback_track = (track, value) => {
 		this._playback_tracks[track] = value;
@@ -295,8 +295,8 @@ class Model {
 		this._freq_edit_tracks[track] = value;
 		this.compute_freqs_fe_amounts();
 	}
-	set_dadj_edit_track = (track, value) => {
-		this._dadj_edit_tracks[track] = value;
+	set_chroma_edit_track = (track, value) => {
+		this._chroma_edit_tracks[track] = value;
 	}
 
 
@@ -309,8 +309,8 @@ class Model {
 	backup_freq_edit_tracks = () => {
 		this._freq_edit_tracks_backup = this._freq_edit_tracks.slice();
 	}
-	backup_dadj_edit_tracks = () => {
-		this._dadj_edit_tracks_backup = this._dadj_edit_tracks.slice();
+	backup_chroma_edit_tracks = () => {
+		this._chroma_edit_tracks_backup = this._chroma_edit_tracks.slice();
 	}
 
 
@@ -431,36 +431,36 @@ class Model {
 	}
 
 
-	//Dadj
-	get dadj_freq_range() {
-		return this._dadj_freq_range;
+	//Chroma
+	get chroma_freq_range() {
+		return this._chroma_freq_range;
 	}
-	get dadj_freq_coeff() {
-		return this._dadj_freq_coeff;
+	get chroma_freq_coeff() {
+		return this._chroma_freq_coeff;
 	}
-	get dadj_vol_range() {
-		return this._dadj_vol_range;
+	get chroma_vol_range() {
+		return this._chroma_vol_range;
 	}
-	get dadj_vol_coeff() {
-		return this._dadj_vol_coeff;
+	get chroma_vol_coeff() {
+		return this._chroma_vol_coeff;
 	}
-	get dadj_vol_amount() {
-		return this._dadj_vol_amount;
+	get chroma_vol_amount() {
+		return this._chroma_vol_amount;
 	}
-	set dadj_freq_range(value) {
-		this._dadj_freq_range = value;
+	set chroma_freq_range(value) {
+		this._chroma_freq_range = value;
 	}
-	set dadj_freq_coeff(value) {
-		this._dadj_freq_coeff = value;
+	set chroma_freq_coeff(value) {
+		this._chroma_freq_coeff = value;
 	}
-	set dadj_vol_range(value) {
-		this._dadj_vol_range = value;
+	set chroma_vol_range(value) {
+		this._chroma_vol_range = value;
 	}
-	set dadj_vol_coeff(value) {
-		this._dadj_vol_coeff = value;
+	set chroma_vol_coeff(value) {
+		this._chroma_vol_coeff = value;
 	}
-	set dadj_vol_amount(value) {
-		this._dadj_vol_amount = value;
+	set chroma_vol_amount(value) {
+		this._chroma_vol_amount = value;
 	}
 	process_bass_ovts(){
 		let bass_ovts = [];
@@ -477,8 +477,8 @@ class Model {
 	}
 	process_notes(){
 		if(this._notes.length === 0 || this._bass_notes.length === 0){
-			this._last_played_note_dadj_freqs.fill(0);
-			this._last_played_note_dadj_vols.fill(0);
+			this._last_played_note_chroma_freqs.fill(0);
+			this._last_played_note_chroma_vols.fill(0);
 		}
 		for(let i = 0; i < this._notes.length; i++){
 			this.process_note(this._notes[i]);
@@ -526,8 +526,8 @@ class Model {
 			v = (v< MIN_DB) ? MIN_DB : v;
 
 
-			//dadj
-			if(this._bass_notes.length > 0 && this.dadj_edit_tracks[i]){
+			//chroma
+			if(this._bass_notes.length > 0 && this.chroma_edit_tracks[i]){
 
 				//find nearest bass ovt
 				let nearest_2 = this.nearest_ovts(f);
@@ -542,18 +542,18 @@ class Model {
 
 				//Freq
 				let cents_to_add = 0;
-				if(Math.abs(min_cents_diff) < this._dadj_freq_range){
-					let x_01 = Math.abs(min_cents_diff / this._dadj_freq_range);
+				if(Math.abs(min_cents_diff) < this._chroma_freq_range){
+					let x_01 = Math.abs(min_cents_diff / this._chroma_freq_range);
 					let exp;
-					if(this._dadj_freq_coeff >= 0){
-						exp = 1 / (1 - this._dadj_freq_coeff + 0.0001)
+					if(this._chroma_freq_coeff >= 0){
+						exp = 1 / (1 - this._chroma_freq_coeff + 0.0001)
 					}else{
-						exp = 1 + this._dadj_freq_coeff + 0.0001;
+						exp = 1 + this._chroma_freq_coeff + 0.0001;
 					}
 					let y_01 = Math.sign(min_cents_diff) * (Math.pow(x_01, exp) - x_01);
-					cents_to_add = y_01 * this._dadj_freq_range;
+					cents_to_add = y_01 * this._chroma_freq_range;
 
-					if(this.dadj_freq_coeff < 0){
+					if(this.chroma_freq_coeff < 0){
 						let avg = (cents_diff_1 - cents_diff_2) / 2;
 						if(min_cents_diff >= 0){
 							cents_to_add = Math.min(cents_to_add, avg - cents_diff_1);
@@ -563,29 +563,29 @@ class Model {
 					}
 
 					f *= Math.pow(2, cents_to_add / 1200);
-					this._last_played_note_dadj_freqs[i] = cents_to_add;
+					this._last_played_note_chroma_freqs[i] = cents_to_add;
 				}else{
-					this._last_played_note_dadj_freqs[i] = 0;
+					this._last_played_note_chroma_freqs[i] = 0;
 				}
 
 
 				//Vol
 				min_cents_diff += cents_to_add;
-				if(Math.abs(min_cents_diff) < this.dadj_vol_range){
-					let x_01 = Math.abs(min_cents_diff / this.dadj_vol_range);
+				if(Math.abs(min_cents_diff) < this.chroma_vol_range){
+					let x_01 = Math.abs(min_cents_diff / this.chroma_vol_range);
 					let exp;
-					if(this._dadj_vol_coeff >= 0){
-						exp = 1 / (1 - this._dadj_vol_coeff + 0.0001)
+					if(this._chroma_vol_coeff >= 0){
+						exp = 1 / (1 - this._chroma_vol_coeff + 0.0001)
 					}else{
-						exp = 1 + this._dadj_vol_coeff + 0.0001;
+						exp = 1 + this._chroma_vol_coeff + 0.0001;
 					}
 					let y_01 = Math.pow(1 - x_01, exp);
-					let y_db = this._dadj_vol_amount * y_01;
+					let y_db = this._chroma_vol_amount * y_01;
 
-					this._last_played_note_dadj_vols[i] = y_db;
+					this._last_played_note_chroma_vols[i] = y_db;
 					v += y_db;
 				}else{
-					this._last_played_note_dadj_vols[i] = 0;
+					this._last_played_note_chroma_vols[i] = 0;
 				}
 
 			}

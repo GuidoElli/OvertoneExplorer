@@ -7,6 +7,9 @@ class Controller_selection {
 	on_custom_selection_button_click = () => {
 		if(this.m.custom_selection){
 			this.m.selected_group = null;
+			if(!CTRL_DOWN && !SHIFT_DOWN){
+				this.m.selection_mode = SELECTION_MODE.ADD;
+			}
 		}
 		this.m.custom_selection = !this.m.custom_selection;
 		this.c.update_view();

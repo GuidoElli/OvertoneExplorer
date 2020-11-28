@@ -74,10 +74,10 @@
             .freq_edit_all_button:hover{
                background-color: var(--green-3);
             }
-            .dadj_edit_all_button{
+            .chroma_edit_all_button{
                background-color: var(--red-2);
             }
-            .dadj_edit_all_button:hover{
+            .chroma_edit_all_button:hover{
                background-color: var(--red-3);
             }
 

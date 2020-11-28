@@ -3,7 +3,7 @@
    background-color: rgb(47, 47, 47);
 }
    .sel_mode_section{
-      height: 30%;
+      height: 40%;
    }
    .sel_mode_box{
       background-color: #3c3c3c;
@@ -32,7 +32,7 @@
       }
 
    .sel_groups_section{
-      height: 70%;
+      height: 60%;
    }
    .sel_groups_box{
       background-color: #3c3c3c;

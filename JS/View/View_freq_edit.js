@@ -133,7 +133,7 @@ class View_freq_edit {
 		var string_value = (value >= 0) ? "+ " : "- ";
 		string_value = (value === 0) ? "" : string_value;
 		string_value += Math.abs(value).toFixed(1);
-		string_value += " Cents";
+		string_value += " cents";
 
 		this.fe_amount_value.innerHTML = string_value;
 	}

@@ -73,26 +73,26 @@ class View_rows {
         }
 
 
-        let first_dadj_edit_row_item_section = $(".row_dadj_edit_box .row_item_section")[0];
-        $(".row_dadj_edit_box").empty();
+        let first_chroma_edit_row_item_section = $(".row_chroma_edit_box .row_item_section")[0];
+        $(".row_chroma_edit_box").empty();
         for (let i = 0; i < TOTAL_TRACKS; i++) {
-            let clone = first_dadj_edit_row_item_section.cloneNode();
-            clone.append(first_dadj_edit_row_item_section.firstElementChild.cloneNode());
+            let clone = first_chroma_edit_row_item_section.cloneNode();
+            clone.append(first_chroma_edit_row_item_section.firstElementChild.cloneNode());
             clone.firstElementChild.innerHTML = i;
-            $(".row_dadj_edit_box").append(clone);
+            $(".row_chroma_edit_box").append(clone);
         }
-        row = $(".row_dadj_edit_box")[0];
-        sections = $(".row_dadj_edit_box .row_item_section");
-        buttons = $(".row_dadj_edit_item");
-        this.dadj_edit_row = new Row(row, sections, buttons);
-        this.dadj_edit_row.on_change_enter = () => {
-            this.v.on_dadj_edit_change_enter();
+        row = $(".row_chroma_edit_box")[0];
+        sections = $(".row_chroma_edit_box .row_item_section");
+        buttons = $(".row_chroma_edit_item");
+        this.chroma_edit_row = new Row(row, sections, buttons);
+        this.chroma_edit_row.on_change_enter = () => {
+            this.v.on_chroma_edit_change_enter();
         }
-        this.dadj_edit_row.on_change = (first, last) => {
-            this.v.on_dadj_edit_change(first, last);
+        this.chroma_edit_row.on_change = (first, last) => {
+            this.v.on_chroma_edit_change(first, last);
         }
-        this.dadj_edit_row.on_click = (value) => {
-            this.v.on_dadj_edit_click(value);
+        this.chroma_edit_row.on_click = (value) => {
+            this.v.on_chroma_edit_click(value);
         }
 
 
@@ -108,15 +108,15 @@ class View_rows {
     update_freq_edit_tracks = (values) => {
         this.freq_edit_row.update_values(values);
     }
-    update_dadj_edit_tracks = (values) => {
-        this.dadj_edit_row.update_values(values);
+    update_chroma_edit_tracks = (values) => {
+        this.chroma_edit_row.update_values(values);
     }
 
     update_zoom = (first, last) => {
         this.playback_row.update_visible_items(first, last);
         this.vol_edit_row.update_visible_items(first, last);
         this.freq_edit_row.update_visible_items(first, last);
-        this.dadj_edit_row.update_visible_items(first, last);
+        this.chroma_edit_row.update_visible_items(first, last);
     }
 
 

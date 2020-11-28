@@ -22,10 +22,10 @@ const KNOB_MAX_PIXEL_FINE = 4000;
 const MAX_VE_AMOUNT = MAX_DB-MIN_DB;
 const MAX_FE_AMOUNT = 400;
 
-//dadj
-const MAX_DADJ_FREQ_RANGE = 400; //cents
-const MAX_DADJ_VOL_RANGE = 400; //cents
-const MAX_MIN_DADJ_VOL_AMOUNT = 30; //dB
+//chroma
+const MAX_CHROMA_FREQ_RANGE = 400; //cents
+const MAX_CHROMA_VOL_RANGE = 400; //cents
+const MAX_MIN_CHROMA_VOL_AMOUNT = 30; //dB
 
 
 
@@ -50,7 +50,7 @@ const LAYOUT_LEFT = {
    HOME: "home",
    VOL: "vol",
    FREQ: "freq",
-   DADJ: "dadj",
+   CHROMA: "chroma",
    SETTINGS: "settings",
    SELECTION: "selection",
    HELP: "help"

@@ -103,18 +103,18 @@ class Controller_rows {
       this.c.update_audio();
    }
 
-   on_dadj_edit_all_button_click = () => {
+   on_chroma_edit_all_button_click = () => {
       let group_tracks = this.group_tracks(this.m.selected_group);
-      if(this.is_all_group_true(this.m.dadj_edit_tracks, group_tracks)){
+      if(this.is_all_group_true(this.m.chroma_edit_tracks, group_tracks)){
          for (let i = 0; i < TOTAL_TRACKS; i++) {
             if(group_tracks[i]){
-               this.m.set_dadj_edit_track(i, false);
+               this.m.set_chroma_edit_track(i, false);
             }
          }
       }else{
          for (let i = 0; i < TOTAL_TRACKS; i++) {
             if(group_tracks[i]){
-               this.m.set_dadj_edit_track(i, this.c.selection_answer(this.m.dadj_edit_tracks[i]));
+               this.m.set_chroma_edit_track(i, this.c.selection_answer(this.m.chroma_edit_tracks[i]));
             }
          }
       }
@@ -205,18 +205,18 @@ class Controller_rows {
       this.c.update_audio();
    }
 
-   on_dadj_edit_change_enter = () => {
-      this.m.backup_dadj_edit_tracks();
+   on_chroma_edit_change_enter = () => {
+      this.m.backup_chroma_edit_tracks();
    }
-   on_dadj_edit_change = (first, last) => {
+   on_chroma_edit_change = (first, last) => {
       let group_tracks = this.group_tracks(this.m.selected_group);
       if (first !== null && last !== null) {
          for (let i = 0; i < TOTAL_TRACKS; i++) {
             if(group_tracks[i]){
                if (i < first || i > last) {
-                  this.m.set_dadj_edit_track(i, this.m.dadj_edit_tracks_backup[i]);
+                  this.m.set_chroma_edit_track(i, this.m.chroma_edit_tracks_backup[i]);
                } else {
-                  this.m.set_dadj_edit_track(i, this.c.selection_answer(this.m.dadj_edit_tracks_backup[i]));
+                  this.m.set_chroma_edit_track(i, this.c.selection_answer(this.m.chroma_edit_tracks_backup[i]));
                }
             }
          }
@@ -224,9 +224,9 @@ class Controller_rows {
       this.c.update_view();
       this.c.update_audio();
    }
-   on_dadj_edit_click = (track) => {
+   on_chroma_edit_click = (track) => {
 
-      this.m.set_dadj_edit_track(track, !this.m.dadj_edit_tracks_backup[track]);
+      this.m.set_chroma_edit_track(track, !this.m.chroma_edit_tracks_backup[track]);
       this.c.update_view();
       this.c.update_audio();
    }

@@ -51,19 +51,19 @@
       .row_freq_edit_item.active:hover{
          background-color: var(--green-3);
       }
-   .row_dadj_edit_box{
+   .row_chroma_edit_box{
       height: 25%;
    }
-      .row_dadj_edit_item{
+      .row_chroma_edit_item{
          background-color: var(--red-1);
       }
-      .row_dadj_edit_item.active{
+      .row_chroma_edit_item.active{
          background-color: var(--red-4);
       }
-      .row_dadj_edit_item:hover{
+      .row_chroma_edit_item:hover{
          background-color: var(--red-2);
       }
-      .row_dadj_edit_item.active:hover{
+      .row_chroma_edit_item.active:hover{
          background-color: var(--red-3);
       }
       

@@ -32,7 +32,7 @@ class View_freq_visual {
 
 		this.vf_main_bars = $(".vf_main_bar");
 		this.vf_fe_side_bars = $(".vf_fe_side_bar");
-		this.vf_dadj_side_bars = $(".vf_dadj_side_bar");
+		this.vf_chroma_side_bars = $(".vf_chroma_side_bar");
 		this.vf_values = $(".visual_freq_value_box");
 
 		this.freq_scale_canvas = $(".freq_scale_canvas")[0];
@@ -40,11 +40,11 @@ class View_freq_visual {
 
 	}
 
-	update_values = (base, fe, dadj) => {
+	update_values = (base, fe, chroma) => {
 		for (let i = 0; i < TOTAL_TRACKS; i++) {
 
 			//main bar
-			let tot = base[i] + fe[i] + dadj[i];
+			let tot = base[i] + fe[i] + chroma[i];
 			tot = (tot > MAX_MIN_CENTS) ? MAX_MIN_CENTS : tot;
 			tot = (tot < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : tot;
 			this.vf_main_bars[i].style.height = Math.abs(tot/MAX_MIN_CENTS/2*100) + "%";
@@ -78,27 +78,27 @@ class View_freq_visual {
 				this.vf_fe_side_bars[i].style.height = Math.abs(fe[i] / (MAX_MIN_CENTS - -MAX_MIN_CENTS)) * 100 + "%";
 			}
 
-			//dadj side bar
-			let dadj_begin = base[i] + fe[i];
-			let dadj_end = dadj_begin + dadj[i];
+			//chroma side bar
+			let chroma_begin = base[i] + fe[i];
+			let chroma_end = chroma_begin + chroma[i];
 			let max = 0;
 			let min = 0;
-			this.vf_dadj_side_bars[i].style.bottom = "";
-			this.vf_dadj_side_bars[i].style.top = "";
+			this.vf_chroma_side_bars[i].style.bottom = "";
+			this.vf_chroma_side_bars[i].style.top = "";
 
-			min = (dadj_begin < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : dadj_begin;
-			min = (dadj_begin > MAX_MIN_CENTS) ? MAX_MIN_CENTS : min;
-			max = (dadj_end < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : dadj_end;
-			max = (dadj_end > MAX_MIN_CENTS) ? MAX_MIN_CENTS : max;
+			min = (chroma_begin < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : chroma_begin;
+			min = (chroma_begin > MAX_MIN_CENTS) ? MAX_MIN_CENTS : min;
+			max = (chroma_end < -MAX_MIN_CENTS) ? -MAX_MIN_CENTS : chroma_end;
+			max = (chroma_end > MAX_MIN_CENTS) ? MAX_MIN_CENTS : max;
 
-			if(dadj[i] < 0){
+			if(chroma[i] < 0){
 				let temp = min;
 				min = max;
 				max = temp;
 			}
 
-			this.vf_dadj_side_bars[i].style.top = Math.abs((MAX_MIN_CENTS - max) / (MAX_MIN_CENTS - -MAX_MIN_CENTS)) * 100 + "%";
-			this.vf_dadj_side_bars[i].style.height = Math.abs((min - max) / (MAX_MIN_CENTS - -MAX_MIN_CENTS)) * 100 + "%";
+			this.vf_chroma_side_bars[i].style.top = Math.abs((MAX_MIN_CENTS - max) / (MAX_MIN_CENTS - -MAX_MIN_CENTS)) * 100 + "%";
+			this.vf_chroma_side_bars[i].style.height = Math.abs((min - max) / (MAX_MIN_CENTS - -MAX_MIN_CENTS)) * 100 + "%";
 
 		}
 	}

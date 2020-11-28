@@ -13,7 +13,7 @@ class View_layout {
       this.settings_button = $(".settings_button")[0];
       this.vol_edit_button = $(".vol_edit_button")[0];
       this.freq_edit_button = $(".freq_edit_button")[0];
-      this.dadj_edit_button = $(".dadj_edit_button")[0];
+      this.chroma_edit_button = $(".chroma_edit_button")[0];
       this.selection_button = $(".selection_button")[0];
       this.help_button = $(".help_button")[0];
 
@@ -30,8 +30,8 @@ class View_layout {
       this.freq_edit_button.addEventListener("click", () => {
          this.v.on_freq_edit_button_click();
       })
-      this.dadj_edit_button.addEventListener("click", () => {
-         this.v.on_dadj_edit_button_click();
+      this.chroma_edit_button.addEventListener("click", () => {
+         this.v.on_chroma_edit_button_click();
       })
       this.help_button.addEventListener("click", () => {
          this.v.on_help_button_click();
@@ -46,7 +46,7 @@ class View_layout {
       this.row_playback_box = $(".row_playback_box")[0];
       this.row_vol_edit_box = $(".row_vol_edit_box")[0];
       this.row_freq_edit_box = $(".row_freq_edit_box")[0];
-      this.row_dadj_edit_box = $(".row_dadj_edit_box")[0];
+      this.row_chroma_edit_box = $(".row_chroma_edit_box")[0];
 
       //Zoom
       this.zoom_box = $(".zoom_box")[0];
@@ -55,7 +55,7 @@ class View_layout {
       this.home_box = $(".home_box")[0];
       this.vol_edit_box = $(".vol_edit_box")[0];
       this.freq_edit_box = $(".freq_edit_box")[0];
-      this.dadj_edit_box = $(".dadj_edit_box")[0];
+      this.chroma_edit_box = $(".chroma_edit_box")[0];
       this.settings_box = $(".settings_box")[0];
       this.selection_box = $(".selection_box")[0];
       this.help_box = $(".help_box")[0];
@@ -65,13 +65,13 @@ class View_layout {
       this.playback_all_button = $(".playback_all_button")[0];
       this.vol_edit_all_button = $(".vol_edit_all_button")[0];
       this.freq_edit_all_button = $(".freq_edit_all_button")[0];
-      this.dadj_edit_all_button = $(".dadj_edit_all_button")[0];
+      this.chroma_edit_all_button = $(".chroma_edit_all_button")[0];
 
 
       this.playback_all_button_section = $(".playback_all_button_section")[0];
       this.vol_edit_all_button_section = $(".vol_edit_all_button_section")[0];
       this.freq_edit_all_button_section = $(".freq_edit_all_button_section")[0];
-      this.dadj_edit_all_button_section = $(".dadj_edit_all_button_section")[0];
+      this.chroma_edit_all_button_section = $(".chroma_edit_all_button_section")[0];
 
 
       this.playback_all_button.addEventListener("click", () => {
@@ -83,8 +83,8 @@ class View_layout {
       this.freq_edit_all_button.addEventListener("click", () => {
          this.v.on_freq_edit_all_button_click();
       })
-      this.dadj_edit_all_button.addEventListener("click", () => {
-         this.v.on_dadj_edit_all_button_click();
+      this.chroma_edit_all_button.addEventListener("click", () => {
+         this.v.on_chroma_edit_all_button_click();
       })
 
 
@@ -107,8 +107,8 @@ class View_layout {
       this.layout_right = layout_right;
 
       this.home_button_section.classList.toggle("hidden", false);
-      this.home_button_section.style.width = "25%";
-      this.title_field.style.width = "75%";
+      this.home_button_section.style.width = "20%";
+      this.title_field.style.width = "80%";
 
       this.visual_vol_section.classList.toggle("hidden", true);
       this.visual_freq_section.classList.toggle("hidden", true);
@@ -118,7 +118,7 @@ class View_layout {
       this.home_box.classList.toggle("hidden", true);
       this.vol_edit_box.classList.toggle("hidden", true);
       this.freq_edit_box.classList.toggle("hidden", true);
-      this.dadj_edit_box.classList.toggle("hidden", true);
+      this.chroma_edit_box.classList.toggle("hidden", true);
       this.settings_box.classList.toggle("hidden", true);
       this.selection_box.classList.toggle("hidden", true);
       this.help_box.classList.toggle("hidden", true);
@@ -139,12 +139,12 @@ class View_layout {
          this.row_playback_box.style.height = "100%";
          this.row_vol_edit_box.classList.toggle("hidden", true);
          this.row_freq_edit_box.classList.toggle("hidden", true);
-         this.row_dadj_edit_box.classList.toggle("hidden", true);
+         this.row_chroma_edit_box.classList.toggle("hidden", true);
 
          this.playback_all_button_section.style.height = "100%";
          this.vol_edit_all_button_section.classList.toggle("hidden", true);
          this.freq_edit_all_button_section.classList.toggle("hidden", true);
-         this.dadj_edit_all_button_section.classList.toggle("hidden", true);
+         this.chroma_edit_all_button_section.classList.toggle("hidden", true);
 
          switch(this.layout_left){
             case LAYOUT_LEFT.HOME:
@@ -153,7 +153,7 @@ class View_layout {
                this.title_field.style.width = "100%";
 
                this.home_box.classList.toggle("hidden", false);
-               this.set_title("Home");
+               this.set_title("Overtone Explorer");
                break;
 
             case LAYOUT_LEFT.VOL:
@@ -167,7 +167,7 @@ class View_layout {
                this.vol_edit_all_button_section.style.height = "50%";
                this.vol_edit_all_button_section.classList.toggle("hidden", false);
 
-               this.set_title("Volume Editor");
+               this.set_title("Amplitude Editor");
                break;
 
             case LAYOUT_LEFT.FREQ:
@@ -184,18 +184,18 @@ class View_layout {
                this.set_title("Frequency Editor");
                break;
 
-            case LAYOUT_LEFT.DADJ:
-               this.dadj_edit_box.classList.toggle("hidden", false);
-               this.row_dadj_edit_box.classList.toggle("hidden", false);
+            case LAYOUT_LEFT.CHROMA:
+               this.chroma_edit_box.classList.toggle("hidden", false);
+               this.row_chroma_edit_box.classList.toggle("hidden", false);
 
                this.row_playback_box.style.height = "50%";
-               this.row_dadj_edit_box.style.height = "50%";
+               this.row_chroma_edit_box.style.height = "50%";
 
                this.playback_all_button_section.style.height = "50%";
-               this.dadj_edit_all_button_section.style.height = "50%";
-               this.dadj_edit_all_button_section.classList.toggle("hidden", false);
+               this.chroma_edit_all_button_section.style.height = "50%";
+               this.chroma_edit_all_button_section.classList.toggle("hidden", false);
 
-               this.set_title("DADJ Editor");
+               this.set_title("Chroma Editor");
                break;
 
             case LAYOUT_LEFT.SETTINGS:

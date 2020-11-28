@@ -33,8 +33,8 @@ class Controller_layout {
       this.m.layout_right = LAYOUT_RIGHT.FREQ_ONLY;
       this.c.update_view();
    }
-   on_dadj_edit_button_click = () => {
-      this.m.layout_left = LAYOUT_LEFT.DADJ;
+   on_chroma_edit_button_click = () => {
+      this.m.layout_left = LAYOUT_LEFT.CHROMA;
       this.m.custom_selection = false;
       this.m.layout_right = LAYOUT_RIGHT.DEFAULT;
       this.c.update_view();

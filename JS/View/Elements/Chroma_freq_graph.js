@@ -1,10 +1,9 @@
-class Dadj_vol_graph {
+class Chroma_freq_graph {
 	constructor(canvas) {
 
 		this.canvas = canvas;
 		this.coeff = 0;
 		this.range = 0;
-		this.amount = 0;
 
 		this.background_color = "#111111";
 
@@ -68,30 +67,43 @@ class Dadj_vol_graph {
 		ctx.lineTo(w/2+10, 10);
 		ctx.stroke();
 
+		//base line
+		ctx.strokeStyle = "grey";
+		ctx.lineWidth = 0.5;
+		ctx.beginPath();
+		ctx.moveTo(w, 0);
+		ctx.lineTo(0, h);
+		ctx.stroke();
+
 		//function
 		let ext = 0.1;
-		let pixel_range_x = w / (2 * (ext + 1)) / MAX_DADJ_FREQ_RANGE * this.range;
-		let pixel_range_y = h / (2 * (ext + 1)) / MAX_MIN_DADJ_VOL_AMOUNT * this.amount;
+		let pixel_range_x = w / (2 * (ext + 1)) / MAX_CHROMA_FREQ_RANGE * this.range;
+		let pixel_range_y = h / (2 * (ext + 1)) / MAX_CHROMA_FREQ_RANGE * this.range;
 		ctx.strokeStyle = "#bf0000";
 		ctx.lineWidth = 2.5;
 		ctx.beginPath();
-		ctx.moveTo(0, h/2);
+		ctx.moveTo(0, h);
 		for(let x = 0; x < w; x++){
 			if(x < w/2 - pixel_range_x){
-				ctx.lineTo(x, h/2);
+				ctx.lineTo(x, h * (1 - x/w));
 			}else if(x < w/2 + pixel_range_x){
-				let x_01 = Math.abs((w/2 - x) / pixel_range_x);
+				let x_01 = Math.abs(w/2 - x) / pixel_range_x;
 				let exp;
-				if(this.coeff >= 0){
-					exp = 1 / (1 - this.coeff + 0.0001)
+				if(this.coeff >= 0) {
+					exp = 1 / (1 - this.coeff + 0.0001);
 				}else{
 					exp = 1 + this.coeff + 0.0001;
 				}
-				let y_01 = Math.pow(1 - x_01, exp);
-				let h_final= h/2 - y_01 * pixel_range_y;
+				let y_01 = (Math.pow(x_01, exp) - x_01);
+				let h_final;
+				if (x < w/2){
+					h_final = h * (1 - x/w) + y_01 * pixel_range_y;
+				}else{
+					h_final = h * (1 - x/w) - y_01 * pixel_range_y;
+				}
 				ctx.lineTo(x, h_final);
 			}else{
-				ctx.lineTo(x, h/2);
+				ctx.lineTo(x, h * (1 - x/w));
 			}
 		}
 		ctx.stroke();
@@ -101,31 +113,25 @@ class Dadj_vol_graph {
 		ctx.strokeStyle = "grey";
 		ctx.lineWidth = 0.5;
 		ctx.beginPath();
-		ctx.moveTo(w/2 - pixel_range_x, 0);
-		ctx.lineTo(w/2 - pixel_range_x, h);
+		ctx.moveTo(w/2 - pixel_range_x, h/2);
+		ctx.lineTo(w/2 - pixel_range_x, h * (1 - (w/2 - pixel_range_x)/w));
+		ctx.lineTo(w/2, h * (1 - (w/2 - pixel_range_x)/w));
 		ctx.stroke();
 		//right
 		ctx.beginPath();
-		ctx.moveTo(w/2 + pixel_range_x, 0);
-		ctx.lineTo(w/2 + pixel_range_x, h);
+		ctx.moveTo(w/2 + pixel_range_x, h/2);
+		ctx.lineTo(w/2 + pixel_range_x, h * (1 - (w/2 + pixel_range_x)/w));
+		ctx.lineTo(w/2, h * (1 - (w/2 + pixel_range_x)/w));
 		ctx.stroke();
 
 		//texts
 		//range numbers
 		ctx.font='12px sans-serif';
 		ctx.fillStyle = "grey";
-
-		if(this.amount >= 0){
-			ctx.textAlign = "right";
-			ctx.fillText("- " + this.range.toFixed(1) + " Cents", Math.min(w/2 - 10, w/2 - pixel_range_x + 70), h/2 + 13);
-			ctx.textAlign = "left";
-			ctx.fillText("+ " + this.range.toFixed(1) + " Cents", Math.max(w/2 + 10, w/2 + pixel_range_x - 70), h/2 + 13);
-		}else{
-			ctx.textAlign = "right";
-			ctx.fillText("- " + this.range.toFixed(1) + " Cents", Math.min(w/2 - 10, w/2 - pixel_range_x + 70), h/2 - 5);
-			ctx.textAlign = "left";
-			ctx.fillText("+ " + this.range.toFixed(1) + " Cents", Math.max(w/2 + 10, w/2 + pixel_range_x - 70), h/2 - 5);
-		}
+		ctx.textAlign = "right";
+		ctx.fillText("- " + this.range.toFixed(1) + " cents", Math.min(w/2 - 10, w/2 - pixel_range_x + 70), h/2 - 5);
+		ctx.textAlign = "left";
+		ctx.fillText("+ " + this.range.toFixed(1) + " cents", Math.max(w/2 + 10, w/2 + pixel_range_x - 70), h/2 + 13);
 		//axis label
 		ctx.textAlign = "right";
 		ctx.fillText("Out", w/2-15, 20);

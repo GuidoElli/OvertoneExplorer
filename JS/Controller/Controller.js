@@ -16,7 +16,7 @@ class Controller {
 		this.zoom = new Controller_zoom(this, model);
 		this.vol_edit = new Controller_vol_edit(this, model);
 		this.freq_edit = new Controller_freq_edit(this, model);
-		this.dadj_edit = new Controller_dadj_edit(this, model);
+		this.chroma_edit = new Controller_chroma_edit(this, model);
 		this.audio = new Controller_audio(this, model);
 		this.settings = new Controller_settings(this, model);
 
@@ -29,7 +29,7 @@ class Controller {
 		view.on_help_button_click = this.layout.on_help_button_click;
 		view.on_vol_edit_button_click = this.layout.on_vol_edit_button_click;
 		view.on_freq_edit_button_click = this.layout.on_freq_edit_button_click;
-		view.on_dadj_edit_button_click = this.layout.on_dadj_edit_button_click;
+		view.on_chroma_edit_button_click = this.layout.on_chroma_edit_button_click;
 
 		//Rows
 		view.on_playback_change_enter = this.rows.on_playback_change_enter;
@@ -44,15 +44,15 @@ class Controller {
 		view.on_freq_edit_change = this.rows.on_freq_edit_change;
 		view.on_freq_edit_click = this.rows.on_freq_edit_click;
 
-		view.on_dadj_edit_change_enter = this.rows.on_dadj_edit_change_enter;
-		view.on_dadj_edit_change = this.rows.on_dadj_edit_change;
-		view.on_dadj_edit_click = this.rows.on_dadj_edit_click;
+		view.on_chroma_edit_change_enter = this.rows.on_chroma_edit_change_enter;
+		view.on_chroma_edit_change = this.rows.on_chroma_edit_change;
+		view.on_chroma_edit_click = this.rows.on_chroma_edit_click;
 
 
 		view.on_playback_all_button_click = this.rows.on_playback_all_button_click;
 		view.on_vol_edit_all_button_click = this.rows.on_vol_edit_all_button_click;
 		view.on_freq_edit_all_button_click = this.rows.on_freq_edit_all_button_click;
-		view.on_dadj_edit_all_button_click = this.rows.on_dadj_edit_all_button_click;
+		view.on_chroma_edit_all_button_click = this.rows.on_chroma_edit_all_button_click;
 
 		//selection
 		view.on_custom_selection_button_click = this.selection.on_custom_selection_button_click;
@@ -105,12 +105,12 @@ class Controller {
 		view.on_fe_reset_click = this.freq_edit.on_fe_reset_click;
 
 
-		//Dadj
-		view.on_dadj_freq_range_change = this.dadj_edit.on_dadj_freq_range_change;
-		view.on_dadj_freq_coeff_change = this.dadj_edit.on_dadj_freq_coeff_change;
-		view.on_dadj_vol_range_change = this.dadj_edit.on_dadj_vol_range_change;
-		view.on_dadj_vol_coeff_change = this.dadj_edit.on_dadj_vol_coeff_change;
-		view.on_dadj_vol_amount_change = this.dadj_edit.on_dadj_vol_amount_change;
+		//Chroma
+		view.on_chroma_freq_range_change = this.chroma_edit.on_chroma_freq_range_change;
+		view.on_chroma_freq_coeff_change = this.chroma_edit.on_chroma_freq_coeff_change;
+		view.on_chroma_vol_range_change = this.chroma_edit.on_chroma_vol_range_change;
+		view.on_chroma_vol_coeff_change = this.chroma_edit.on_chroma_vol_coeff_change;
+		view.on_chroma_vol_amount_change = this.chroma_edit.on_chroma_vol_amount_change;
 
 
 		//settings
@@ -187,7 +187,7 @@ class Controller {
 			this.view.update_playback_tracks(this.model.playback_tracks);
 			this.view.update_vol_edit_tracks(this.model.vol_edit_tracks);
 			this.view.update_freq_edit_tracks(this.model.freq_edit_tracks);
-			this.view.update_dadj_edit_tracks(this.model.dadj_edit_tracks);
+			this.view.update_chroma_edit_tracks(this.model.chroma_edit_tracks);
 
 
 			this.view.update_selection(this.model.selection_mode, this.model.selected_group);
@@ -218,16 +218,16 @@ class Controller {
 
 
 
-			this.view.update_dadj(
-				this.model.dadj_freq_range,
-				this.model.dadj_freq_coeff,
-				this.model.dadj_vol_range,
-				this.model.dadj_vol_coeff,
-				this.model.dadj_vol_amount
+			this.view.update_chroma(
+				this.model.chroma_freq_range,
+				this.model.chroma_freq_coeff,
+				this.model.chroma_vol_range,
+				this.model.chroma_vol_coeff,
+				this.model.chroma_vol_amount
 			);
 
-			this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_dadj_vols);
-			this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_dadj_freqs);
+			this.view.update_vol_visual(this.model.vols_base, this.model.vols_ve_amounts, this.model._last_played_note_chroma_vols);
+			this.view.update_freq_visual(this.model.freqs_base, this.model.freqs_fe_amounts, this.model._last_played_note_chroma_freqs);
 
 			this.view.update_settings_env(this.model.out_attack, this.model.out_decay_time, this.model.out_decay_vol, this.model.out_release)
 			this.view.update_settings_midi(this.model.split_note, this.model.octave_shift, this.model.a4_tuning);

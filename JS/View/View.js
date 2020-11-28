@@ -10,7 +10,7 @@ class View {
         this.freq_visual = new View_freq_visual(this);
         this.vol_edit = new View_vol_edit(this);
         this.freq_edit = new View_freq_edit(this);
-        this.dadj_edit = new View_dadj_edit(this);
+        this.chroma_edit = new View_chroma_edit(this);
         this.settings = new View_settings(this);
 
 
@@ -19,7 +19,7 @@ class View {
         this.on_settings_button_click = null;
         this.on_vol_edit_button_click = null;
         this.on_freq_edit_button_click = null;
-        this.on_dadj_edit_button_click = null;
+        this.on_chroma_edit_button_click = null;
         this.on_selection_button_click = null;
         this.on_help_button_click = null;
 
@@ -36,15 +36,15 @@ class View {
         this.on_freq_edit_change = null;
         this.on_freq_edit_click = null;
 
-        this.on_dadj_edit_change_enter = null;
-        this.on_dadj_edit_change = null;
-        this.on_dadj_edit_click = null;
+        this.on_chroma_edit_change_enter = null;
+        this.on_chroma_edit_change = null;
+        this.on_chroma_edit_click = null;
 
 
         this.on_playback_all_button_click = null;
         this.on_vol_edit_all_button_click = null;
         this.on_freq_edit_all_button_click = null;
-        this.on_dadj_edit_all_button_click = null;
+        this.on_chroma_edit_all_button_click = null;
 
         this.on_custom_selection_button_click = null;
 
@@ -98,12 +98,12 @@ class View {
         this.on_fe_reset_click = null;
 
 
-        //Dadj
-        this.on_dadj_freq_range_change = null;
-        this.on_dadj_freq_coeff_change = null;
-        this.on_dadj_vol_range_change = null;
-        this.on_dadj_vol_coeff_change = null;
-        this.on_dadj_freq_coeff_change = null;
+        //Chroma
+        this.on_chroma_freq_range_change = null;
+        this.on_chroma_freq_coeff_change = null;
+        this.on_chroma_vol_range_change = null;
+        this.on_chroma_vol_coeff_change = null;
+        this.on_chroma_freq_coeff_change = null;
 
 
         //settings
@@ -153,9 +153,9 @@ class View {
         this.zoom.update_freq_edit_tracks(values);
     }
 
-    update_dadj_edit_tracks(values) {
-        this.rows.update_dadj_edit_tracks(values);
-        this.zoom.update_dadj_edit_tracks(values);
+    update_chroma_edit_tracks(values) {
+        this.rows.update_chroma_edit_tracks(values);
+        this.zoom.update_chroma_edit_tracks(values);
     }
 
 
@@ -180,12 +180,12 @@ class View {
     }
 
 
-    update_dadj(freq_range, freq_coeff, vol_range, vol_coeff, vol_amount){
-        this.dadj_edit.update_freq_range(freq_range);
-        this.dadj_edit.update_freq_coeff(freq_coeff);
-        this.dadj_edit.update_vol_range(vol_range);
-        this.dadj_edit.update_vol_coeff(vol_coeff);
-        this.dadj_edit.update_vol_amount(vol_amount);
+    update_chroma(freq_range, freq_coeff, vol_range, vol_coeff, vol_amount){
+        this.chroma_edit.update_freq_range(freq_range);
+        this.chroma_edit.update_freq_coeff(freq_coeff);
+        this.chroma_edit.update_vol_range(vol_range);
+        this.chroma_edit.update_vol_coeff(vol_coeff);
+        this.chroma_edit.update_vol_amount(vol_amount);
     }
 
 
@@ -199,12 +199,12 @@ class View {
 
 
 
-    update_vol_visual(base, ve, dadj) {
-        this.vol_visual.update_values(base, ve, dadj);
+    update_vol_visual(base, ve, chroma) {
+        this.vol_visual.update_values(base, ve, chroma);
     }
 
-    update_freq_visual(base, ve, dadj) {
-        this.freq_visual.update_values(base, ve, dadj);
+    update_freq_visual(base, ve, chroma) {
+        this.freq_visual.update_values(base, ve, chroma);
     }
 
     update_settings_env(attack, decay_time, decay_vol, release){
@@ -222,7 +222,7 @@ class View {
     update_canvases() {
         this.vol_edit.update_canvases();
         this.freq_edit.update_canvases();
-        this.dadj_edit.update_canvases();
+        this.chroma_edit.update_canvases();
         this.vol_visual.vol_scale.update();
         this.freq_visual.freq_scale.update();
     }

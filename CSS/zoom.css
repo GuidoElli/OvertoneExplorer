@@ -22,7 +22,7 @@
       .zoom_playback_prevs_box,
       .zoom_vol_edit_prevs_box,
       .zoom_freq_edit_prevs_box,
-      .zoom_dadj_edit_prevs_box {
+      .zoom_chroma_edit_prevs_box {
          width: 100%;
          height: 25%;
       }
@@ -31,14 +31,14 @@
          background-color: var(--greyscale-3);
       }
       .zoom_playback_prev.active{
-         background-color: var(--greyscale-8);
+         background-color: var(--greyscale-12);
       }
 
       .zoom_vol_edit_prev{
          background-color: var(--blue-1);
       }
       .zoom_vol_edit_prev.active{
-         background-color: var(--blue-3);
+         background-color: var(--blue-4);
       }
 
       .zoom_freq_edit_prev{
@@ -48,10 +48,10 @@
          background-color: var(--green-3);
       }
 
-      .zoom_dadj_edit_prev{
+      .zoom_chroma_edit_prev{
          background-color: var(--red-1);
       }
-      .zoom_dadj_edit_prev.active{
+      .zoom_chroma_edit_prev.active{
          background-color: var(--red-3);
       }
 

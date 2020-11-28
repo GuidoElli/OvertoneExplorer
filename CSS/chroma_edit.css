@@ -1,72 +1,72 @@
 
-.dadj_edit_box{
+.chroma_edit_box{
    background-color: rgb(47, 47, 47);
    overflow: auto;
 }
 
-   .dadj_freq_section{
+   .chroma_freq_section{
       height: 80%;
    }
-   .dadj_freq_box{
+   .chroma_freq_box{
       background-color: rgb(59, 59, 59);
    }
-      .dadj_freq_label{
+      .chroma_freq_label{
          height: 15%;
          width: 100%;
          font-size: 19px;
          text-align: center;
       }
-      .dadj_freq_graph_section{
+      .chroma_freq_graph_section{
          height: 55%;
       }
-         .dadj_freq_graph{
+         .chroma_freq_graph{
             border-radius: var(--border-radius);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
          }
-      .dadj_freq_controls_section{
+      .chroma_freq_controls_section{
          padding: 10px;
          height: 30%;
       }
-         .dadj_freq_range_knob_section{
+         .chroma_freq_range_knob_section{
             width: 50%;
          }
-         .dadj_freq_coeff_knob_section{
+         .chroma_freq_coeff_knob_section{
             width: 50%;
          }
 
-   .dadj_vol_section{
+   .chroma_vol_section{
       height: 80%;
    }
-   .dadj_vol_box{
+   .chroma_vol_box{
       background-color: rgb(59, 59, 59);
    }
-      .dadj_vol_label{
+      .chroma_vol_label{
          height: 15%;
          width: 100%;
          font-size: 19px;
          text-align: center;
       }
-      .dadj_vol_graph_section{
+      .chroma_vol_graph_section{
          height: 55%;
       }
-         .dadj_vol_graph{
+         .chroma_vol_graph{
             border-radius: var(--border-radius);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
          }
-      .dadj_vol_controls_section{
+      .chroma_vol_controls_section{
          height: 30%;
          padding: 10px;
       }
-         .dadj_vol_range_knob_section{
+         .chroma_vol_range_knob_section{
             width: 33.33333%;
          }
-         .dadj_vol_coeff_knob_section{
+         .chroma_vol_coeff_knob_section{
             width: 33.33333%;
          }
-         .dadj_vol_amount_knob_section{
+         .chroma_vol_amount_knob_section{
             width: 33.33333%;
          }

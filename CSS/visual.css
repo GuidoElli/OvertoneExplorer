@@ -4,6 +4,7 @@
    width: 100%;
    height: 100%;
    background-color: rgb(14, 14, 14);
+   cursor: ns-resize;
 }
    .visual_vol_box{
       padding: 2px;
@@ -15,7 +16,7 @@
       }
       .visual_vol_value_box{
          height: 10%;
-         color: #5b5b5b;
+         color: var(--blue-3);
          font-size: 12px;
       }
       .visual_vol_item_box{
@@ -33,7 +34,7 @@
             .vv_main_bar{
                width: 95%;
                height: 70%;/**/
-               background-color: var(--greyscale-13);
+               background-color: var(--greyscale-12);
                border-radius: 3px;
                left: 50%;
                top: 30%;/**/
@@ -48,7 +49,7 @@
                width: 95%;
                position: absolute;
             }
-            .vv_dadj_side_bar{
+            .vv_chroma_side_bar{
                background-color: #ee0000;
                width: 95%;
                position: absolute;
@@ -60,7 +61,7 @@
    }
       .visual_freq_value_box{
          height: 10%;
-         color: #5b5b5b;
+         color: var(--green-3);
          font-size: 12px;
       }
    .visual_freq_zero_line{
@@ -105,7 +106,7 @@
                width: 95%;
                position: absolute;
             }
-            .vf_dadj_side_bar{
+            .vf_chroma_side_bar{
                background-color: #ee0000;
                width: 95%;
                position: absolute;

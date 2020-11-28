@@ -7,7 +7,7 @@ class View_zoom {
       this.zoom_playback_prevs_box = $(".zoom_playback_prevs_box")[0];
       this.zoom_vol_edit_prevs_box = $(".zoom_vol_edit_prevs_box")[0];
       this.zoom_freq_edit_prevs_box = $(".zoom_freq_edit_prevs_box")[0];
-      this.zoom_dadj_edit_prevs_box = $(".zoom_dadj_edit_prevs_box")[0];
+      this.zoom_chroma_edit_prevs_box = $(".zoom_chroma_edit_prevs_box")[0];
 
 
       //Cloning
@@ -43,21 +43,21 @@ class View_zoom {
          clone_freq_edit.style.width = 100 / TOTAL_TRACKS + "%";
       }
 
-      let first_zoom_dadj_edit_prev = $(".zoom_dadj_edit_prevs_box .prev_section")[0];
-      content = first_zoom_dadj_edit_prev.innerHTML;
-      this.zoom_dadj_edit_prevs_box.innerHTML = "";
+      let first_zoom_chroma_edit_prev = $(".zoom_chroma_edit_prevs_box .prev_section")[0];
+      content = first_zoom_chroma_edit_prev.innerHTML;
+      this.zoom_chroma_edit_prevs_box.innerHTML = "";
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         let clone_dadj_edit = first_zoom_dadj_edit_prev.cloneNode();
-         clone_dadj_edit.innerHTML = content;
-         this.zoom_dadj_edit_prevs_box.append(clone_dadj_edit);
-         clone_dadj_edit.style.width = 100 / TOTAL_TRACKS + "%";
+         let clone_chroma_edit = first_zoom_chroma_edit_prev.cloneNode();
+         clone_chroma_edit.innerHTML = content;
+         this.zoom_chroma_edit_prevs_box.append(clone_chroma_edit);
+         clone_chroma_edit.style.width = 100 / TOTAL_TRACKS + "%";
       }
 
 
       this.zoom_playback_prevs = $(".zoom_playback_prev");
       this.zoom_vol_edit_prevs = $(".zoom_vol_edit_prev");
       this.zoom_freq_edit_prevs = $(".zoom_freq_edit_prev");
-      this.zoom_dadj_edit_prevs = $(".zoom_dadj_edit_prev");
+      this.zoom_chroma_edit_prevs = $(".zoom_chroma_edit_prev");
 
       this.zoom_slider = $(".zoom_slider")[0];
 
@@ -137,9 +137,9 @@ class View_zoom {
          this.zoom_freq_edit_prevs[i].classList.toggle("active", values[i]);
       }
    }
-   update_dadj_edit_tracks = (values) => {
+   update_chroma_edit_tracks = (values) => {
       for (let i = 0; i < TOTAL_TRACKS; i++) {
-         this.zoom_dadj_edit_prevs[i].classList.toggle("active", values[i]);
+         this.zoom_chroma_edit_prevs[i].classList.toggle("active", values[i]);
       }
    }
 

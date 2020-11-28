@@ -28,7 +28,7 @@ class View_vol_visual {
 
 		this.vv_main_bars = $(".vv_main_bar");
 		this.vv_ve_side_bars = $(".vv_ve_side_bar");
-		this.vv_dadj_side_bars = $(".vv_dadj_side_bar");
+		this.vv_chroma_side_bars = $(".vv_chroma_side_bar");
 		this.vv_values = $(".visual_vol_value_box");
 
 		this.vol_scale_canvas = $(".vol_scale_canvas")[0];
@@ -36,11 +36,11 @@ class View_vol_visual {
 
 	}
 
-	update_values = (base, ve, dadj) => {
+	update_values = (base, ve, chroma) => {
 		for (let i = 0; i < TOTAL_TRACKS; i++) {
 
 			//main bar
-			let tot = base[i] + ve[i] + dadj[i];
+			let tot = base[i] + ve[i] + chroma[i];
 			tot = (tot > MAX_DB) ? MAX_DB : tot;
 			tot = (tot < MIN_DB) ? MIN_DB : tot;
 			this.vv_main_bars[i].style.top = Math.abs((MAX_DB - tot) / (MAX_DB - MIN_DB)) * 100 + "%";
@@ -68,27 +68,27 @@ class View_vol_visual {
 				this.vv_ve_side_bars[i].style.height = Math.abs(ve[i] / (MAX_DB - MIN_DB)) * 100 + "%";
 			}
 
-			//dadj side bar
-			let dadj_begin = base[i] + ve[i];
-			let dadj_end = dadj_begin + dadj[i];
+			//chroma side bar
+			let chroma_begin = base[i] + ve[i];
+			let chroma_end = chroma_begin + chroma[i];
 			let max = 0;
 			let min = 0;
-			this.vv_dadj_side_bars[i].style.bottom = "";
-			this.vv_dadj_side_bars[i].style.top = "";
+			this.vv_chroma_side_bars[i].style.bottom = "";
+			this.vv_chroma_side_bars[i].style.top = "";
 
-			min = (dadj_begin < MIN_DB) ? MIN_DB : dadj_begin;
-			min = (dadj_begin > MAX_DB) ? MAX_DB : min;
-			max = (dadj_end < MIN_DB) ? MIN_DB : dadj_end;
-			max = (dadj_end > MAX_DB) ? MAX_DB : max;
+			min = (chroma_begin < MIN_DB) ? MIN_DB : chroma_begin;
+			min = (chroma_begin > MAX_DB) ? MAX_DB : min;
+			max = (chroma_end < MIN_DB) ? MIN_DB : chroma_end;
+			max = (chroma_end > MAX_DB) ? MAX_DB : max;
 
-			if(dadj[i] < 0){
+			if(chroma[i] < 0){
 				let temp = min;
 				min = max;
 				max = temp;
 			}
 
-			this.vv_dadj_side_bars[i].style.top = Math.abs((MAX_DB - max) / (MAX_DB - MIN_DB)) * 100 + "%";
-			this.vv_dadj_side_bars[i].style.height = Math.abs((min - max) / (MAX_DB - MIN_DB)) * 100 + "%";
+			this.vv_chroma_side_bars[i].style.top = Math.abs((MAX_DB - max) / (MAX_DB - MIN_DB)) * 100 + "%";
+			this.vv_chroma_side_bars[i].style.height = Math.abs((min - max) / (MAX_DB - MIN_DB)) * 100 + "%";
 
 		}
 	}

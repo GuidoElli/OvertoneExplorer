@@ -6,16 +6,16 @@
 	--greyscale-1: #111111;
 	--greyscale-1-5: #1b1b1b;
 	--greyscale-2: #222222;
-	--greyscale-3: #414141;
+	--greyscale-3: #484848;
 	--greyscale-4: #444444;
 	--greyscale-5: #555555;
 	--greyscale-6: #666666;
 	--greyscale-6-5: #6d6d6d;
 	--greyscale-7: #777777;
-	--greyscale-8: #888888;
+	--greyscale-8: #d4d4d4;
 	--greyscale-8-5: #8d8d8d;
-	--greyscale-9: #999999;
-	--greyscale-10: #aaaaaa;
+	--greyscale-9: #cacaca;
+	--greyscale-10: #d2d2d2;
 	--greyscale-11: #bbbbbb;
 	--greyscale-12: #cccccc;
 	--greyscale-13: #dddddd;
@@ -64,8 +64,6 @@
 	/*Font*/
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 13px;
-	letter-spacing: 0px;
-	word-spacing: 0px;
 	color: var(--greyscale-14);
 	font-weight: 400;
 
@@ -88,7 +86,7 @@ button{
 	cursor: pointer;
 }
 
-.fake_button, .param_label, .param_value{
+.fake_button, .param_label, .param_value, .section_label{
 	cursor: default !important;
 }
 
@@ -112,6 +110,20 @@ button{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #868686;
+}
+
+
+h1, h1 *{
+	font-size: 35px;
+}
+h2, h2 *{
+	font-size: 28px;
+}
+h3, h3 *{
+	font-size: 23px;
+}
+h4, h4 *{
+	font-size: 18px;
 }
 
 
@@ -139,11 +151,14 @@ button{
       height: 20%;
       width: 100%;
 		text-align: center;
+	   color: #e7e7e7;
+		font-size: 20px;
 		font-style: italic;
-	   color: #cccccc;
+
    }
    .section_content{
-      height: 80%;
+		top: 10%;
+      height: 70%;
       width: 100%;
       border-radius: var(--border-radius);
    }
@@ -151,7 +166,6 @@ button{
     height: 15%;
     width: 100%;
     text-align: center;
-	font-style: italic;
 }
 .param_content{
    height: 65%;
@@ -261,12 +275,12 @@ button{
 				}.freq_edit_button:hover{
 					 background-color: var(--green-3);
 				 }
-				.dadj_edit_button{
+				.chroma_edit_button{
 					height: 15%;
 					width: 80%;
 					top: 45%;
 					background-color: var(--red-2);
-				}.dadj_edit_button:hover{
+				}.chroma_edit_button:hover{
 					 background-color: var(--red-3);
 				 }
 				.settings_button{
@@ -275,7 +289,7 @@ button{
 					top: 68%;
 					background-color: var(--greyscale-6);
 				}.settings_button:hover{
-					 background-color: var(--greyscale-8);
+					 background-color: var(--greyscale-7);
 				 }
 				.help_button{
 					height: 10%;
@@ -283,7 +297,11 @@ button{
 					top: 85%;
 					background-color: var(--greyscale-6);
 				}.help_button:hover{
-					 background-color: var(--greyscale-8);
+					 background-color: var(--greyscale-7);
+				 }
+				 .help_box{
+					 padding: 10%;
+					 overflow: scroll;
 				 }
 
 			.home_button_section{
@@ -292,13 +310,20 @@ button{
 				.home_button{
 					font-size: large;
 					background-color: #323232;
+					padding: 8px;
 				}
 				.home_button:hover{
 					background-color: #474747;
 				}
+					.home_button img{
+						height: 100%;
+						width: auto;
+						left: 50%;
+						transform: translate(-50%);
+					}
 			.left_bar_title_section{
 				width: 75%;
-				font-size: x-large;
+				font-size: xx-large;
 			}
 		.left_bar_content_section{
 			height: 90%;
