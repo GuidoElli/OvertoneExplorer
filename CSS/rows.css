@@ -14,6 +14,7 @@
       }
       .row_playback_item.active{
          background-color: var(--greyscale-10);
+         color: black;
       }
       .row_playback_item:hover{
          background-color: var(--greyscale-4);

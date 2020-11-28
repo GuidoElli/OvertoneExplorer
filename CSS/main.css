@@ -305,7 +305,7 @@ h4, h4 *{
 				 }
 
 			.home_button_section{
-				width: 25%;
+				width: 20%;
 			}
 				.home_button{
 					font-size: large;
@@ -322,7 +322,7 @@ h4, h4 *{
 						transform: translate(-50%);
 					}
 			.left_bar_title_section{
-				width: 75%;
+				width: 80%;
 				font-size: xx-large;
 			}
 		.left_bar_content_section{
