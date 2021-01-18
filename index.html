@@ -34,7 +34,7 @@
 					<div class="left_bar_top_box box">
 						<div class="home_button_section section">
 							<button class="home_button button">
-								<img src="IMG/home.png">
+								<img src="IMG/home.png" alt="*">
 							</button>
 						</div>
 						<button class="left_bar_title_section section fake_button">
@@ -674,25 +674,27 @@
 
 
 						<h1 style="text-align: center;">Overtone Explorer</h1>
-						<p>A harmonic sound can be synthesized by a sum of several sinusoidal signals: one at a funfamental frequency and the others at its exact multiples (theese are called "overtones" or "harmonics"). Overtones are important as they change the timbre: this software allows you to create different sounds, just controlling its overtones, in terms of amplitude and frequency.</p>
+						<p>A harmonic sound can be synthesized by a sum of several sinusoidal signals: one at a fundamental frequency and the others at its exact multiples (theese are called "overtones" or "harmonics"). Overtones are important as they change the timbre: this software allows you to create different sounds, just controlling its overtones, in terms of amplitude and frequency.</p>
 						<p>&nbsp;</p>
 						<h2>Keyboard</h2>
-						<p>If you have a midi keyboard, just connect it to you PC. Otherwise, you can play notes using your PC keyboard.</p>
+						<p>If you have a midi keyboard, connect it to your PC. Otherwise, you can play notes using your PC keyboard (will see later).</p>
+                        <p>Hold CTRL to have more precision while changing knobs or sliders.</p>
+                        <p>Hold CTRL or SHIFT to change selection mode (will see later).</p>
 						<p>&nbsp;</p>
 						<h2>Visualizer</h2>
 						<p>In the right part of the screen, the vertical items represent the overtones (here called tracks). Track 0 (in the left) is the fundamental, track 1 is the first harmonic, and so on.</p>
 						<p>The section coloured in blue is related to the amplitude (measured in dB). You can drag the mouse and change this value for every track.</p>
-						<p>The green section is about frequency. If they are all set to 0, it does not mean they have zero frequency, but that they are at exact multiples of the fundamental. The interval between the exact multiple and the actual frequency is measured in&nbsp;cents in semitone (eg. "+100" means 1 semitone above).&nbsp;You can drag the mouse on the tracks and change this interval.</p>
-						<p>You can zoom in using the controls at the top or the mouse wheel. When you zoom in you can see the track numbers, as well as amplitude and frequency values.</p>
+						<p>The green section is about frequency. If they are all set to 0, it does not mean they have zero frequency, but that they are at exact multiples of the fundamental. The interval between the exact multiple and the actual frequency is measured in&nbsp;cents of semitone (eg. "+100 cents" means 1 semitone above).&nbsp;You can drag the mouse on the tracks and change this interval.</p>
+						<p>Zoom in and out using the controls at the top or the mouse wheel. When you zoom in, at a certain level, you can see the track numbers, as well as amplitude and frequency values.</p>
 						<p>&nbsp;</p>
 						<h2>Track selection</h2>
-						<p>There are some buttons above each track:</p>
+						<p>There are some buttons above amplitude visualizer:</p>
 						<ul>
 							<li>Play&nbsp;buttons (coloured in grey)</li>
 							<li>Edit&nbsp;buttons (visible only in editors)</li>
 						</ul>
 						<p>For selection,&nbsp;edit and play buttons behave the same, so we will see just the play ones.</p>
-						<p>If you click on Play (All)&nbsp;you can toggle playback to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time.</p>
+						<p>If you click on Play (All)&nbsp;you can toggle playback (mute and unmute) to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time.</p>
 						<p>Clicking on the gear button, some options are available.</p>
 						<p>The selection mode changes the behaviour of the buttons:</p>
 						<ul>
@@ -700,12 +702,12 @@
 							<li>REMOVE:&nbsp;[hold CTRL] remove elements</li>
 							<li>TOGGLE:&nbsp;[hold SHIFT] toggle elements</li>
 						</ul>
-						<p>The groups&nbsp;are predefined groups of tracks (for example the ones with even/odd track number). While a group is selected you can toggle selection just to the tracks that belong to the group.</p>
+						<p>The groups&nbsp;are predefined groups of tracks (for example the ones with even/odd track number). While a group is selected you can select just the tracks that belong to the group.</p>
 						<p>Note: if a single play button is clicked, it will always toggle from the previous value. Instead, selection mode and groups options work with the Play (All) button or by selecting multiple tracks dragging the mouse.</p>
 						<p>&nbsp;</p>
 						<h2>Amplitude&nbsp;Editor</h2>
 						<p>In this section you can change the amplitude of the tracks, adding or subtracting a specific amount.</p>
-						<p>You can choose the tracks you want to edit by using the edit buttons above the tracks, the same as for playback.</p>
+						<p>You can choose the tracks you want to edit by using the edit buttons above the visualizer (the same as for playback).</p>
 						<p>You can give a shape to the tracks, choosing between:</p>
 						<ul>
 							<li>FLAT:&nbsp;all tracks with the same amount</li>
@@ -714,15 +716,15 @@
 						</ul>
 						<p>Under the shape section you can visualize what is happening in an intuitive way.</p>
 						<p>When the random&nbsp;option is on, every amount is scaled by a random factor in range (0, 1). The mirror option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on randomize.</p>
-						<p>After clicking Apply, changes are saves and you can do other editings. To set all amplitudes to default, click Reset.</p>
+						<p>After clicking Apply, changes are saves and you can do other editing. To set all amplitudes to default, click Reset.</p>
 						<p>&nbsp;</p>
 						<h2>Frequency Editor</h2>
-						<p>This has the exact same structure as the amplitude editor: here, instead, you are changing the frequencies.</p>
+						<p>This has the exact same structure as the amplitude editor: here, instead, you change the frequencies.</p>
 						<p>&nbsp;</p>
 						<h2>Chroma Editor</h2>
 						<p>The Chroma editor allows to change amplitudes and frequencies in a particular way.</p>
 						<p>On a MIDI keyboard, you should play both keys below and above a "split note" (that you can choose in settings). Keys below the split note are the "actual notes" you are playing, while keys above the split note (we will call them "overtone notes") change the overtones' amplitude and frequency of the actual notes.</p>
-						<p>On the PC keyboard, actual notes are in the lower half of the keyboard (from "Z" to "."), while overtone notes are in the upper part (from "A" to "L").</p>
+						<p>On the PC keyboard, actual notes are in the lower half of the keyboard (from "<" to "."), while overtone notes are in the upper part (from "A" to "L").</p>
 						<p>How does it work? First, for each track (overtone) of the actual note, it computes the interval (in cents) from its frequency to the closest overtone note frequency.</p>
 						<p>Example: track 20 has frequency 886Hz, which is a little bit more than an A, but we are playing a G on the overtone notes. So, the closest G to 886Hzis about&nbsp;784Hz. The interval, in this case, would be around 211 cents.</p>
 						<p>This interval is the input of both Chroma editors (on the x axis in both graphs).</p>
@@ -764,23 +766,23 @@
 
 						<div class="zoom_minus_button_section section">
 							<button class="zoom_minus_button">
-								<img src="IMG/minus.png">
+								<img src="IMG/minus.png" alt="*">
 							</button>
 						</div>
 						<div class="zoom_plus_button_section section">
 							<button class="zoom_plus_button">
-								<img src="IMG/plus.png">
+								<img src="IMG/plus.png" alt="*">
 							</button>
 						</div>
 
 						<div class="zoom_left_button_section section">
 							<button class="zoom_left_button">
-								<img src="IMG/arrow%20left.png">
+								<img src="IMG/arrow%20left.png" alt="*">
 							</button>
 						</div>
 						<div class="zoom_right_button_section section">
 							<button class="zoom_right_button">
-								<img src="IMG/arrow%20right.png">
+								<img src="IMG/arrow%20right.png" alt="*">
 							</button>
 						</div>
 
@@ -793,7 +795,7 @@
 						<div class="row_custom_selection_section section">
 							<div class="row_custom_selection_box box">
 								<button class="custom_selection_button">
-									<img src="IMG/gear.png">
+									<img src="IMG/gear.png" alt="*">
 								</button>
 							</div>
 						</div>
