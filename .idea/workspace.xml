@@ -57,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JS/Controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ComputerGraphicsProject" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -117,6 +117,8 @@
       <workItem from="1606599537697" duration="58000" />
       <workItem from="1610992902404" duration="3118000" />
       <workItem from="1611006320968" duration="578000" />
+      <workItem from="1611161857213" duration="1791000" />
+      <workItem from="1611312027162" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="Added side bars on visuals">
       <created>1589401007932</created>
@@ -426,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611006508789</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Finished">
+      <created>1611161885751</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1611161885751</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +467,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added" />
     <MESSAGE value="Added side bars on visuals" />
     <MESSAGE value="Improved dadj coeff shape" />
     <MESSAGE value="Dadj freq graph works" />
@@ -483,6 +491,7 @@
     <MESSAGE value="almost finished" />
     <MESSAGE value="Almost finished" />
     <MESSAGE value="Fixed help section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed help section" />
+    <MESSAGE value="Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished" />
   </component>
 </project>
