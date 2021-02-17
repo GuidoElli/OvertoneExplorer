@@ -156,13 +156,17 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
 
 ## Settings
 
-<p align="left">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/settings.PNG" alt="img" width="30%"/>
-</p>
 
+<p align="left">
+<img align="left" src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/settings.PNG" alt="img" width="30%"/>
+  
+  <div align="left" width="70%">
+   
 You can choose some parameters for sound output
 - **ADSR Envelope** (Attack, decay, sustain and release)
 - **Split note** (where to split the keyboard between *real notes* and *overtone notes*)
 - **Octave shift** (shift by octaves the sound output)
 - **A4 frequency** (default: 440 Hz)
 
+  </div>
+ </p>
