@@ -79,7 +79,7 @@ The Chroma editor allows to change amplitudes and frequencies in a particular wa
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard%20split.png" alt="img" width="100%"/>
 </p>
 
-On the PC keyboard, actual notes are in the lower half of the keyboard (from *<* to *.*), while overtone notes are in the upper part (from *Q* to *P*).
+On the PC keyboard, actual notes are in the lower half of the keyboard (from *Z* to *M*), while overtone notes are in the upper part (from *Q* to *P*).
 
 For each track (overtone) of the actual note, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
 Example: track 20 has frequency 886Hz, which is a little bit more than an A, but we are playing a G on the overtone notes. So, the closest G to 886Hzis about 784Hz. The interval, in this case, would be around 211 cents. This interval is the input of both Chroma editors (on the x axis in both graphs).
