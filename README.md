@@ -11,6 +11,7 @@ The idea behind this project was to create an additive synthesizer in which the 
 
 If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play notes using your PC keyboard.
 
+<br>
 ## Visualizer
 
 In the right part of the screen, the columns represent the sinusoidal overtones (here called tracks). Track 0 (on the left) is the fundamental frequency, track 1 is the first harmonic, track 2 is the second, and so on.
@@ -28,6 +29,7 @@ The **green** section is about **frequency**. If all the tracks are set to 0, th
 - **Zoom in and out** using the controls at the top or the mouse wheel. When you zoom in, at a certain level, you can see the track numbers, as well as amplitude and frequency values.
 
 
+<br>
 
 ## Track selection
 There are some buttons above amplitude visualizer:
@@ -58,6 +60,7 @@ While a group is selected you can select just the tracks that belong to that gro
 *Note: if a single button is clicked, it will always toggle from the previous value. Instead, selection mode and groups options work with the 'Play (All)' button or by selecting multiple tracks dragging the mouse.*
 
 
+<br>
 ## Amplitude Editor
 
 In this section you can change the amplitude of multiple tracks at the same time, adding or subtracting a specific amount. You can choose the tracks you want to edit by using the edit buttons above the visualizer (the same as for playback). You can give a shape to the tracks, choosing between:
@@ -67,6 +70,7 @@ In this section you can change the amplitude of multiple tracks at the same time
 
 Under the shape section you can visualize what is happening in an intuitive way.
 
+<br>
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/amp%20edit%20all.PNG" alt="img" width="100%"/>
@@ -78,15 +82,19 @@ Under the shape section you can visualize what is happening in an intuitive way.
 
 
 
+<br>
 ## Frequency Editor
 This has the exact same structure as the amplitude editor. Here, instead, you can change the frequencies.
 
+<br>
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/freq%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
 
+<br>
 
+<br>
 ## Chroma Editor
 The Chroma editor allows to change amplitudes and frequencies in a particular way.
 
@@ -119,6 +127,11 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
   </div>
 </p>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Chroma Frequency:
 <p align="left">
@@ -131,6 +144,12 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
 
   </div>
 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 
 
