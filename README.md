@@ -116,10 +116,10 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
   
   <div align="left" width="70%">
   
-- The y axis of the graph represents the amount in dB to add or subtract from the current amplitude.
-- The maximum amplitude can be set using the **Amount** knob: positive amount values enhance frequencies closer to the overtone notes, while negative values attenuate them.
-- Use the **Range** knob to expand or shrink the maximum interval (in cents) in which to act.
-- The **Coefficient** knob changes the shape of the function.
+- The y axis of the graph represents the amount in dB to add or subtract from the current amplitude
+- The maximum amplitude can be set using the **Amount** knob: positive amount values enhance frequencies closer to the overtone notes, while negative values attenuate them
+- Use the **Range** knob to expand or shrink the maximum interval (in cents) in which to act
+- The **Coefficient** knob changes the shape of the function
 
 
   </div>
@@ -136,7 +136,9 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
   <img align="left" src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20freq.PNG" alt="img" width="30%"/>
   
   <div align="left" width="70%">
-  Here, the y axis represents the new (modified) frequency of a track. The *Range* knob, as before, expands or shrinks the maximum interval and the *Coefficient* knob changes the shape of the function. Positive coefficient values make the frequencies approach the overtone notes, negative ones do the opposite, making the interval larger.
+  - Here, the y axis represents the new (modified) frequency of a track
+  - The *Range* knob, as before, expands or shrinks the maximum interval
+  - *Coefficient* knob changes the shape of the function. Positive coefficient values make the frequencies approach the overtone notes, negative ones do the opposite, making the interval larger.
 
 *Note: the computation of frequency happens before the amplitude, so, the input of Chroma amplitude is the output of Chroma frequency. In other words, we first compute the new frequency, then we use it to compute the new amplitude.*
 
