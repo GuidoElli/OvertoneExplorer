@@ -96,7 +96,7 @@ This has the exact same structure as the amplitude editor. Here, instead, you ca
 The Chroma editor allows to change amplitudes and frequencies in a particular way.
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard%20split.png" alt="img" width="100%"/>
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard.png" alt="img" width="100%"/>
 </p>
 
 On a MIDI keyboard, you should play both keys below and above a *split note* (a specific note that you can change in the settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the *real notes*.
