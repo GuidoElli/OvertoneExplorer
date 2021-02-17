@@ -5,7 +5,7 @@ The idea behind this project was to create an additive synthesizer in which the 
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/all.PNG" alt="img" width="40%"/>
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/all.PNG" alt="img" width="80%"/>
 </p>
 
 
