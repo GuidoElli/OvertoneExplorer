@@ -9,9 +9,10 @@ The idea behind this project was to create an additive synthesizer in which the 
 
 ## Connect the keyboard
 
-If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play notes using your PC keyboard.
+If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play using your PC keyboard.
 
 <br>
+
 ## Visualizer
 
 In the right part of the screen, the columns represent the sinusoidal overtones (here called tracks). Track 0 (on the left) is the fundamental frequency, track 1 is the first harmonic, track 2 is the second, and so on.
@@ -78,26 +79,20 @@ Under the shape section you can visualize what is happening in an intuitive way.
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/amp%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
 
-- When the **Random** option is turned on, every amount is scaled by a random factor in range (0, 1).
-- The **Mirror** option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on **Randomize**. - - After clicking on ***Apply***, changes are saves and you can do other editing.
-- Click on ***Reset*** to set all amplitudes to default.
-
-
-
+- When the **Random** option is turned on, every amount is scaled by a random factor in range (0, 1)
+- The **Mirror** option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on **Randomize**
+- After clicking on ***Apply***, changes are saves and you can do other editing
+- Click on ***Reset*** to set all amplitudes to default
 <br>
-
 
 ## Frequency Editor
 This has the exact same structure as the amplitude editor. Here, instead, you can change the frequencies.
 
 <br>
-
 <p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/freq%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
-
 <br>
-
 
 ## Chroma Editor
 The Chroma editor allows to change amplitudes and frequencies in a particular way.
@@ -107,7 +102,6 @@ The Chroma editor allows to change amplitudes and frequencies in a particular wa
 </p>
 
 On a MIDI keyboard, you should play both keys below and above a *split note* (a specific note that you can change in the settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the *real notes*.
-
 
 For each overtone (track) of the actual note, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
 
@@ -149,24 +143,18 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
   </div>
 </p>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
 ## Settings
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/settings.PNG" alt="img" width="40%"/>
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/settings.PNG" alt="img" width="30%"/>
 </p>
 
 You can choose some parameters for sound output
-- **Envelope** (Attack, decay, sustain, release)
+- **ADSR Envelope** (Attack, decay, sustain and release)
 - **Split note** (where to split the keyboard between *real notes* and *overtone notes*)
 - **Octave shift** (shift by octaves the sound output)
-- **A4 frequency** (default: 440)
+- **A4 frequency** (default: 440 Hz)
 
