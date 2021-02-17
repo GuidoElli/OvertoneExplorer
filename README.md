@@ -134,6 +134,7 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
   <img align="left" src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20freq.PNG" alt="img" width="30%"/>
   
   <div align="left" width="70%">
+  
   - Here, the y axis represents the new (modified) frequency of a track
   - The *Range* knob, as before, expands or shrinks the maximum interval
   - *Coefficient* knob changes the shape of the function. Positive coefficient values make the frequencies approach the overtone notes, negative ones do the opposite, making the interval larger.
@@ -142,6 +143,13 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
 
   </div>
 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 
 
