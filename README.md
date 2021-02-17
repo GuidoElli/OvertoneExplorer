@@ -3,11 +3,13 @@
 
 The idea behind this project was to create an additive synthesizer in which the user has full control, in terms of amplitude and frequency, over all the sinusoidal waves that make up the sound. The user plays some notes on the keyboard and visualizes, in a graphic way, amplitude and frequancy values of every harmonic.
 
-# Conntct the keyboard
+
+# Instructions
+
+## Connect the keyboard
 
 If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play notes using your PC keyboard.
 
-# Instructions
 ## Visualizer
 
 In the right part of the screen, the columns represent the overtones (here called tracks). Track 0 (on the left) is the fundamental, track 1 is the first harmonic, track 2 is the second harmonic, and so on. The section coloured in blue is related to the amplitude (in dB). The green section is about frequency. If they are all set to 0, it does not mean they have zero frequency, but that they are at exact multiples of the fundamental. The interval between the exact multiple and the actual frequency is measured in cents of semitone (eg. "+100 cents" means 1 semitone above). 
