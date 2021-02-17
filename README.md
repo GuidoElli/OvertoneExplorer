@@ -33,16 +33,20 @@ There are some buttons above amplitude visualizer:
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/controls.png" alt="img" width="100%"/>
 </p>
 
-For selection, edit and play buttons behave the same, so we will see just the play ones. If you click on *Play (All)* you can toggle playback (mute and unmute) to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time. Clicking on the *gear* button, some options are available. The *selection mode* changes the behaviour of the buttons:
+For selection, edit and play buttons behave the same, so we will see just the play ones. If you click on *Play (All)* you can toggle playback (mute and unmute) to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time. 
+
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/selection.PNG" alt="img" width="30%"/>
+</p>
+
+
+Clicking on the *gear* button, some options are available. The *selection mode* changes the behaviour of the buttons:
 - **ADD**: default, add elements (removes if all selected)
 - **REMOVE**: [hold CTRL] remove elements
 - **TOGGLE**: [hold SHIFT] toggle elements
 
 The *groups* are predefined groups of tracks (for example the ones with even/odd track number).
-
-<p align="left">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/selection.PNG" alt="img" width="30%"/>
-</p>
 
 While a group is selected you can select just the tracks that belong to the group.
 
