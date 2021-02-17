@@ -11,8 +11,6 @@ The idea behind this project was to create an additive synthesizer in which the 
 
 If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play using your PC keyboard.
 
-<br>
-
 ## Visualizer
 
 In the right part of the screen, the columns represent the sinusoidal overtones (here called tracks). Track 0 (on the left) is the fundamental frequency, track 1 is the first harmonic, track 2 is the second, and so on.
