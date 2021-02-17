@@ -26,7 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5300ad08-4c76-4f71-88a4-3b33d17bf6d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img-readme/visuals.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +119,7 @@
       <workItem from="1611006320968" duration="578000" />
       <workItem from="1611161857213" duration="1791000" />
       <workItem from="1611312027162" duration="12000" />
+      <workItem from="1613570922728" duration="399000" />
     </task>
     <task id="LOCAL-00001" summary="Added side bars on visuals">
       <created>1589401007932</created>
@@ -435,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611161885751</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="added img for readme">
+      <created>1613570972138</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1613570972138</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added side bars on visuals" />
     <MESSAGE value="Improved dadj coeff shape" />
     <MESSAGE value="Dadj freq graph works" />
     <MESSAGE value="dadj freq graph improved" />
@@ -492,6 +499,7 @@
     <MESSAGE value="Almost finished" />
     <MESSAGE value="Fixed help section" />
     <MESSAGE value="Finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished" />
+    <MESSAGE value="added img for readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="added img for readme" />
   </component>
 </project>
