@@ -108,7 +108,7 @@ For each overtone (track) of the actual note, it is computed the interval (in ce
 
 On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z* to *M*), while *overtone notes* are in the upper part (from *Q* to *P*).
 
-### Chroma Amplitude:
+#### Chroma Amplitude:
 <p align="left">
   <img align="left" src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20amp.PNG" alt="img" width="30%"/>
   
@@ -129,7 +129,7 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
 <br>
 <br>
 
-### Chroma Frequency:
+#### Chroma Frequency:
 <p align="left">
   <img align="left" src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20freq.PNG" alt="img" width="30%"/>
   
