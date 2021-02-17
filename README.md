@@ -46,7 +46,7 @@ For selection, edit and play buttons behave the same, so we will see just the pl
 </p>
 
 
-Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.PNG" height="10px"> button, some options are available. The *selection mode* changes the behaviour of the buttons:
+Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="10px"> button, some options are available. The *selection mode* changes the behaviour of the buttons:
 - **ADD**: default, add elements (removes if all selected)
 - **REMOVE**: [hold CTRL] remove elements
 - **TOGGLE**: [hold SHIFT] toggle elements
