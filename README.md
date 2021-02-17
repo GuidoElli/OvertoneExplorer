@@ -46,62 +46,77 @@ For selection, edit and play buttons behave the same, so we will see just the pl
 </p>
 
 
-Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="10px"> button, some options are available. The *selection mode* changes the behaviour of the buttons:
-- **ADD**: default, add elements (removes if all selected)
-- **REMOVE**: [hold CTRL] remove elements
-- **TOGGLE**: [hold SHIFT] toggle elements
+Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="13px"> button, some options are available. The *selection mode* changes the behaviour of the buttons:
+- **ADD**: default, adds elements (if all tracks are selected, it removes every track from selection)
+- **REMOVE**: removes elements (hold *CTRL*)
+- **TOGGLE**: toggles elements (hold *SHIFT*)
 
-The *groups* are predefined groups of tracks (for example the ones with even/odd track number).
+The **Groups** are predefined groups of tracks (for example the ones with even/odd track number, or those with the same note as the fundamental).
 
-While a group is selected you can select just the tracks that belong to the group.
+While a group is selected you can select just the tracks that belong to that group.
 
 *Note: if a single button is clicked, it will always toggle from the previous value. Instead, selection mode and groups options work with the 'Play (All)' button or by selecting multiple tracks dragging the mouse.*
 
 
-
 ## Amplitude Editor
 
-In this section you can change the amplitude of the tracks, adding or subtracting a specific amount. You can choose the tracks you want to edit by using the edit buttons above the visualizer (the same as for playback). You can give a shape to the tracks, choosing between:
+In this section you can change the amplitude of multiple tracks at the same time, adding or subtracting a specific amount. You can choose the tracks you want to edit by using the edit buttons above the visualizer (the same as for playback). You can give a shape to the tracks, choosing between:
 - **FLAT**: all tracks with the same amount
 - **TRIANGLE**: a sort of bandpass filter. Use the *Center* and *Width* knobs to control the triangle's position and shape
 - **CURVE**: same as triangle, but with a gaussian shape
+
+Under the shape section you can visualize what is happening in an intuitive way.
+
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/amp%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
 
-Under the shape section you can visualize what is happening in an intuitive way. When the *Random* option is on, every amount is scaled by a random factor in range (0, 1). The mirror option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on randomize. After clicking on *Apply*, changes are saves and you can do other editing. To set all amplitudes to default, click *Reset*.
+- When the **Random** option is turned on, every amount is scaled by a random factor in range (0, 1).
+- The **Mirror** option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on **Randomize**. - - After clicking on ***Apply***, changes are saves and you can do other editing.
+- Click on ***Reset*** to set all amplitudes to default.
 
 
 
 ## Frequency Editor
-This has the exact same structure as the amplitude editor: here, instead, you change the frequencies.
+This has the exact same structure as the amplitude editor. Here, instead, you can change the frequencies.
+
+
 <p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/freq%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
 
 
 ## Chroma Editor
-The Chroma editor allows to change amplitudes and frequencies in a particular way. On a MIDI keyboard, you should play both keys below and above a *split note* (that you can choose in settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the actual notes.
+The Chroma editor allows to change amplitudes and frequencies in a particular way.
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard%20split.png" alt="img" width="100%"/>
 </p>
 
-On the PC keyboard, actual notes are in the lower half of the keyboard (from *Z* to *M*), while overtone notes are in the upper part (from *Q* to *P*).
+On a MIDI keyboard, you should play both keys below and above a *split note* (a specific note that you can change in the settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the *real notes*.
 
-For each track (overtone) of the actual note, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
-Example: track 20 has frequency 886Hz, which is a little bit more than an A, but we are playing a G on the overtone notes. So, the closest G to 886Hzis about 784Hz. The interval, in this case, would be around 211 cents. This interval is the input of both Chroma editors (on the x axis in both graphs).
+
+For each overtone (track) of the actual note, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
+
+*Example: you play a note on the keyboard and track 20 turns out to have frequency 886Hz, which is slightly higher than an A note on the scale. At the same time, you play a G on the overtone notes. So, the closest G to 886Hz is about 784Hz. The interval between the two, in this case, would be around 211 cents. This value is the input of Chroma editors (on the x axis in both graphs).*
+
+
+On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z* to *M*), while *overtone notes* are in the upper part (from *Q* to *P*).
 
 ### Chroma Amplitude:
 <p align="left">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20amp.PNG" alt="img" width="40%"/>
-</p>
+  <img align="left" src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20amp.PNG" alt="img" width="30%"/>
+  
+  <div align="left" width="70%">
+  
 The y axis of the graph represents the amount in dB to add or subtract from the current amplitude. The maximum amplitude can be set using the *Amount* knob: positive amount values enhance frequencies closer to the overtone notes, while negative values attenuate them. Use the *Range* knob to expand or shrink the maximum interval (in cents) in which to act. The *Coefficient* knob changes the shape of the function.
+  </div>
+</p>
 
 ### Chroma Frequency:
 <p align="left">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20freq.PNG" alt="img" width="40%"/>
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20freq.PNG" alt="img" width="30%"/>
 </p>
 Here, the y axis represents the new (modified) frequency of a track. The *Range* knob, as before, expands or shrinks the maximum interval and the *Coefficient* knob changes the shape of the function. Positive coefficient values make the frequencies approach the overtone notes, negative ones do the opposite, making the interval larger.
 
