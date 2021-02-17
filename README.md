@@ -73,7 +73,7 @@ This has the exact same structure as the amplitude editor: here, instead, you ch
 The Chroma editor allows to change amplitudes and frequencies in a particular way. On a MIDI keyboard, you should play both keys below and above a *split note* (that you can choose in settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the actual notes.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard.PNG" alt="img" width="100%"/>
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard%20split.png" alt="img" width="100%"/>
 </p>
 
 On the PC keyboard, actual notes are in the lower half of the keyboard (from *<* to *.*), while overtone notes are in the upper part (from *Q* to *P*).
