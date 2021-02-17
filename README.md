@@ -61,6 +61,8 @@ While a group is selected you can select just the tracks that belong to that gro
 
 
 <br>
+
+
 ## Amplitude Editor
 
 In this section you can change the amplitude of multiple tracks at the same time, adding or subtracting a specific amount. You can choose the tracks you want to edit by using the edit buttons above the visualizer (the same as for playback). You can give a shape to the tracks, choosing between:
@@ -83,6 +85,8 @@ Under the shape section you can visualize what is happening in an intuitive way.
 
 
 <br>
+
+
 ## Frequency Editor
 This has the exact same structure as the amplitude editor. Here, instead, you can change the frequencies.
 
@@ -94,7 +98,7 @@ This has the exact same structure as the amplitude editor. Here, instead, you ca
 
 <br>
 
-<br>
+
 ## Chroma Editor
 The Chroma editor allows to change amplitudes and frequencies in a particular way.
 
