@@ -1,22 +1,30 @@
+<h1 align="center">Overtone Explorer</h1>
 
 # Concept
 
-The idea behind this project was to create an additive synthesizer in which the user has full control, in terms of amplitude and frequency, over all the sinusoidal waves that make up the sound. The user plays some notes on the keyboard and visualizes, in a graphic way, amplitude and frequancy values of every harmonic.
+The idea behind this project was to create an additive synthesizer in which the user has full control, in terms of amplitude and frequency, over all the sinusoidal waves that make up the sound. The user can play some notes on the keyboard and visualize, in a graphic way, amplitude and frequancy values of every harmonic.
 
-# Conntct the keyboard
-
-If you have a midi keyboard, connect it to your PC. Otherwise, you can play notes using your PC keyboard.
 
 # Instructions
+
+## Connect the keyboard
+
+If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play notes using your PC keyboard.
+
 ## Visualizer
 
-In the right part of the screen, the columns represent the overtones (here called tracks). Track 0 (on the left) is the fundamental, track 1 is the first harmonic, track 2 is the second harmonic, and so on. The section coloured in blue is related to the amplitude (in dB). The green section is about frequency. If they are all set to 0, it does not mean they have zero frequency, but that they are at exact multiples of the fundamental. The interval between the exact multiple and the actual frequency is measured in cents of semitone (eg. "+100 cents" means 1 semitone above). 
+In the right part of the screen, the columns represent the sinusoidal overtones (here called tracks). Track 0 (on the left) is the fundamental frequency, track 1 is the first harmonic, track 2 is the second, and so on.
 
-<p align="center">
+The section coloured in **blue** is related to the **amplitude** (in **dB**).
+
+The **green** section is about **frequency**. If all the tracks are set to 0, they are at exact multiples of the fundamental frequency. The interval between the exact multiple and the actual frequency is measured in **cents of semitone** (eg. "+100 cents" means 1 semitone above).
+
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/visuals.png" alt="img" width="100%"/>
 </p>
 
 - **Drag the mouse** on the tracks to change amplitude and frequency values.
+- **Hold *CTRL*** while dragging the mouse to have more precision.
 - **Zoom in and out** using the controls at the top or the mouse wheel. When you zoom in, at a certain level, you can see the track numbers, as well as amplitude and frequency values.
 
 
@@ -26,20 +34,24 @@ There are some buttons above amplitude visualizer:
 - **Play buttons** (coloured in grey)
 - **Edit buttons** (visible only in editors)
 
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/controls.png" alt="img" width="100%"/>
 </p>
 
-For selection, edit and play buttons behave the same, so we will see just the play ones. If you click on *Play (All)* you can toggle playback (mute and unmute) to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time. Clicking on the *gear* button, some options are available. The *selection mode* changes the behaviour of the buttons:
+For selection, edit and play buttons behave the same, so we will see just the play ones. If you click on ***Play (All)*** you can toggle playback (mute and unmute) to every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time. 
+
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/selection.PNG" alt="img" width="30%"/>
+</p>
+
+
+Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.PNG" height="10px"> button, some options are available. The *selection mode* changes the behaviour of the buttons:
 - **ADD**: default, add elements (removes if all selected)
 - **REMOVE**: [hold CTRL] remove elements
 - **TOGGLE**: [hold SHIFT] toggle elements
 
 The *groups* are predefined groups of tracks (for example the ones with even/odd track number).
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/selection.PNG" alt="img" width="30%"/>
-</p>
 
 While a group is selected you can select just the tracks that belong to the group.
 
@@ -54,7 +66,7 @@ In this section you can change the amplitude of the tracks, adding or subtractin
 - **TRIANGLE**: a sort of bandpass filter. Use the *Center* and *Width* knobs to control the triangle's position and shape
 - **CURVE**: same as triangle, but with a gaussian shape
 
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/amp%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
 
@@ -64,7 +76,7 @@ Under the shape section you can visualize what is happening in an intuitive way.
 
 ## Frequency Editor
 This has the exact same structure as the amplitude editor: here, instead, you change the frequencies.
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/freq%20edit%20all.PNG" alt="img" width="100%"/>
 </p>
 
@@ -72,23 +84,23 @@ This has the exact same structure as the amplitude editor: here, instead, you ch
 ## Chroma Editor
 The Chroma editor allows to change amplitudes and frequencies in a particular way. On a MIDI keyboard, you should play both keys below and above a *split note* (that you can choose in settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the actual notes.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard.PNG" alt="img" width="100%"/>
+<p align="left">
+  <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/keyboard%20split.png" alt="img" width="100%"/>
 </p>
 
-On the PC keyboard, actual notes are in the lower half of the keyboard (from *<* to *.*), while overtone notes are in the upper part (from *Q* to *P*).
+On the PC keyboard, actual notes are in the lower half of the keyboard (from *Z* to *M*), while overtone notes are in the upper part (from *Q* to *P*).
 
 For each track (overtone) of the actual note, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
 Example: track 20 has frequency 886Hz, which is a little bit more than an A, but we are playing a G on the overtone notes. So, the closest G to 886Hzis about 784Hz. The interval, in this case, would be around 211 cents. This interval is the input of both Chroma editors (on the x axis in both graphs).
 
 ### Chroma Amplitude:
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20amp.PNG" alt="img" width="40%"/>
 </p>
 The y axis of the graph represents the amount in dB to add or subtract from the current amplitude. The maximum amplitude can be set using the *Amount* knob: positive amount values enhance frequencies closer to the overtone notes, while negative values attenuate them. Use the *Range* knob to expand or shrink the maximum interval (in cents) in which to act. The *Coefficient* knob changes the shape of the function.
 
 ### Chroma Frequency:
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/chroma%20freq.PNG" alt="img" width="40%"/>
 </p>
 Here, the y axis represents the new (modified) frequency of a track. The *Range* knob, as before, expands or shrinks the maximum interval and the *Coefficient* knob changes the shape of the function. Positive coefficient values make the frequencies approach the overtone notes, negative ones do the opposite, making the interval larger.
@@ -99,7 +111,7 @@ Here, the y axis represents the new (modified) frequency of a track. The *Range*
 
 ## Settings
 
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/settings.PNG" alt="img" width="40%"/>
 </p>
 
