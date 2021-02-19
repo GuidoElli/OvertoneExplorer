@@ -39,7 +39,7 @@ There are some buttons above amplitude visualizer:
   <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/controls.png" alt="img" width="100%"/>
 </p>
 
-For selection, edit and play buttons behave the same, so we will see just the play ones. If you click on ***Play (All)*** you can **toggle playback** (mute and unmute) every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time. 
+If you click on ***Play (All)*** you can **toggle playback** (mute and unmute) every track. Click on the single buttons to do it independently for each track or drag the mouse to toggle multiple tracks at the same time. 
 
 
 <p align="left">
@@ -47,7 +47,7 @@ For selection, edit and play buttons behave the same, so we will see just the pl
 </p>
 
 
-Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="13px"> button, some options are available.
+Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="14px"> button, some options are available.
 
 The **Selection Mode** changes the behaviour of the buttons:
 - **Add**: default, adds elements (if all tracks are selected, it removes every track from selection)
