@@ -11,7 +11,7 @@ The idea behind this project was to create an additive synthesizer in which the 
 
 If you have a MIDI keyboard, connect it to your PC using a MIDI interface. Otherwise, you can play using your PC keyboard.
 
-## Visualizer
+## Overtone Visualizer
 
 In the right part of the screen, the columns represent the sinusoidal overtones (here called tracks). Track 0 (on the left) is the fundamental frequency, track 1 is the first harmonic, track 2 is the second, and so on.
 
@@ -47,16 +47,18 @@ For selection, edit and play buttons behave the same, so we will see just the pl
 </p>
 
 
-Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="13px"> button, some options are available. The *selection mode* changes the behaviour of the buttons:
-- **ADD**: default, adds elements (if all tracks are selected, it removes every track from selection)
-- **REMOVE**: removes elements (hold *CTRL*)
-- **TOGGLE**: toggles elements (hold *SHIFT*)
+Clicking on the <img src="https://raw.githubusercontent.com/GuidoElli/OvertoneExplorer/master/img-readme/gear.png" height="13px"> button, some options are available.
+
+The **Selection Mode** changes the behaviour of the buttons:
+- **Add**: default, adds elements (if all tracks are selected, it removes every track from selection)
+- **Remove**: removes elements (hold *CTRL*)
+- **Toggle**: toggles elements (hold *SHIFT*)
 
 **Groups** are predefined groups of tracks (for example the ones with even/odd track number, or those with the same note as the fundamental).
 
 While a group is selected you can select only the tracks that belong to that group.
 
-*Note: if a single button is clicked, it will always toggle from the previous value, even if the. Instead, selection mode and groups options work with the 'Play (All)' button or by selecting multiple tracks dragging the mouse.*
+*Note: if a single button is clicked, it will always toggle from the previous value. Instead, selection mode and groups options work with the 'Play (All)' and 'Edit (All)' buttons or by selecting multiple tracks dragging the mouse.*
 
 
 <br>
@@ -65,11 +67,11 @@ While a group is selected you can select only the tracks that belong to that gro
 ## Amplitude Editor
 
 In this section you can change the amplitude of multiple tracks at the same time, adding or subtracting a specific amount. You can choose the tracks you want to edit by using the edit buttons above the visualizer (the same as for playback). You can give a shape to the tracks, choosing between:
-- **FLAT**: all tracks with the same amount
-- **TRIANGLE**: a sort of bandpass filter. Use the *Center* and *Width* knobs to control the triangle's position and shape
-- **CURVE**: same as triangle, but with a gaussian shape
+- **Flat**: all tracks with the same amount
+- **Triangle**: a sort of bandpass filter. Use the *Center* and *Width* knobs to control the triangle's position and shape
+- **Curve**: same as triangle, but with a gaussian shape
 
-Under the shape section you can visualize what is happening in an intuitive way.
+In the graph you can visualize the amplitude amount for every track. The blue lines that appear in the visualizer resemble these amounts.
 
 <br>
 
@@ -78,7 +80,7 @@ Under the shape section you can visualize what is happening in an intuitive way.
 </p>
 
 - When the **Random** option is turned on, every amount is scaled by a random factor in range (0, 1)
-- The **Mirror** option enables also the opposite direction and the random factor will be in range (-1, 1). You can change all the random factors by clicking on **Randomize**
+- The **Mirror** option enables negative factors, in range (-1, 1). You can change all the random factors by clicking on **Randomize**
 - After clicking on ***Apply***, changes are saves and you can do other editing
 - Click on ***Reset*** to set all amplitudes to default
 <br>
@@ -101,7 +103,7 @@ The Chroma editor allows to change amplitudes and frequencies in a particular wa
 
 On a MIDI keyboard, you should play both keys below and above a *split note* (a specific note that you can change in the settings). The keys below the split note are the *real notes* you are playing, while keys above the split note (we will call them *overtone notes*) change the overtones' amplitude and frequency of the *real notes*.
 
-For each overtone (track) of the actual note, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
+For each overtone (track) of the *real note*, it is computed the interval (in cents) from its frequency to the closest *overtone note* frequency.
 
 *Example: you play a note on the keyboard and track 20 turns out to have frequency 886Hz, which is slightly higher than an A note on the scale. At the same time, you play a G on the overtone notes. So, the closest G to 886Hz is about 784Hz. The interval between the two, in this case, would be around 211 cents. This value is the input of Chroma editors (on the x axis in both graphs).*
 
@@ -115,7 +117,7 @@ On the PC keyboard, *real notes* are in the lower half of the keyboard (from *Z*
   <div align="left" width="70%">
   
 - The y axis of the graph represents the amount in dB to add or subtract from the current amplitude
-- The maximum amplitude can be set using the **Amount** knob: positive amount values enhance frequencies closer to the overtone notes, while negative values attenuate them
+- The maximum amplitude can be set using the **Amount** knob: positive amount values enhance frequencies closer to the *overtone notes*, while negative values attenuate them
 - Use the **Range** knob to expand or shrink the maximum interval (in cents) in which to act
 - The **Coefficient** knob changes the shape of the function
 
